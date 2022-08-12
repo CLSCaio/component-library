@@ -2,14 +2,14 @@ import styled, { css } from 'styled-components';
 import MaskedInput from 'react-text-mask';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
-// import { colors } from '../../../global';
+import { colors } from '../../../global';
 
 import * as I from './interface';
 
 const passwordIcon = css`
   height: 1.5rem;
   width: 1.5rem;
-  fill: 'red';
+  fill: ${colors.text.black};
 `;
 
 export const Container = styled.div<I.InputStyleProps>`
@@ -28,7 +28,11 @@ export const Container = styled.div<I.InputStyleProps>`
 
 export const Label = styled.label<I.InputStyleProps>`
   color: ${({ disabled, readOnly, error }) =>
-    disabled || readOnly ? 'red' : error ? 'red' : 'red'};
+    disabled || readOnly
+      ? colors.elements.disabled
+      : error
+      ? colors.support.error
+      : colors.text.black};
 `;
 
 export const Field = styled.span`
@@ -40,7 +44,11 @@ export const Input = styled(MaskedInput)<I.InputStyleProps>`
   border: none;
   border-bottom: 2px solid
     ${({ disabled, readOnly, error }) =>
-      disabled || readOnly ? 'red' : error ? 'red' : 'red'};
+      disabled || readOnly
+        ? colors.elements.disabled
+        : error
+        ? colors.support.error
+        : colors.text.black};
   outline: none;
   text-indent: 5px;
   background: none;
@@ -53,17 +61,17 @@ export const Input = styled(MaskedInput)<I.InputStyleProps>`
   width: 100%;
 
   :focus {
-    border-bottom: 2px solid 'red';
+    border-bottom: 2px solid ${colors.elements.focus};
   }
 
   :disabled,
   :readonly {
-    border-bottom: 2px solid 'red';
+    border-bottom: 2px solid ${colors.elements.disabled};
   }
 
   :placeholder {
     color: ${({ disabled, readOnly }) =>
-      disabled || readOnly ? 'red' : 'red'};
+      disabled || readOnly ? colors.elements.disabled : colors.text.black};
   }
 
   ::-webkit-inner-spin-button {

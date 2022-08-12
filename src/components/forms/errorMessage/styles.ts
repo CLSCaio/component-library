@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { colors } from '../../../global';
+import { colors } from '../../../global';
 
 export const ErrorContainer = styled.div`
   height: 100%;
@@ -11,5 +11,5 @@ export const ErrorContainer = styled.div`
   gap: 8px;
   margin-top: 3px;
 
-  color: 'red';
+  color: ${colors.support.error};
 `;
