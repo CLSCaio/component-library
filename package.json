@@ -1,0 +1,97 @@
+{
+  "name": "caiol.sousa-library",
+  "version": "1.0.6",
+  "author": "Caio Sousa",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "card-validator": "^8.1.1",
+    "cpf-cnpj-validator": "^1.0.3",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-markdown": "^8.0.3",
+    "react-refresh-webpack-plugin": "^0.1.0",
+    "react-scripts": "5.0.1",
+    "react-text-mask": "^5.4.3",
+    "styled-components": "^5.1.0",
+    "text-mask-addons": "^3.8.0",
+    "tsc-alias": "^1.7.0",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook --output-dir docs -s public",
+    "buildtp": "rimraf dist && tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-controls": "^6.5.10",
+    "@storybook/addon-docs": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/addon-viewport": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/node-logger": "^6.5.10",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^16.9.34",
+    "@types/react-text-mask": "^5.4.11",
+    "@types/storybook__addon-info": "^5.2.5",
+    "@types/styled-components": "^5.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "prop-types": "^15.8.1",
+    "typescript": "^3.8.3",
+    "webpack": "^5.74.0",
+    "yup": "^0.32.11"
+  }
+}

@@ -1,0 +1,52 @@
+// prettier-ignore
+
+{
+  "exclude": [
+    "dist",
+    "./stories",
+    "node_modules",
+    "lib",
+    "src/stories",
+    "**/__stories__"
+  ],
+  "include": [
+    "src/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+  ],
+  "types": [
+    "react",
+    "node"
+  ],
+  "paths": {
+    "*": ["./src/*"],
+  },
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "es6",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "es6",                          /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "lib": ["es6", "dom"],                    /* Specify library files to be included in the compilation. */
+    "jsx": "react",                           /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    "declaration": true,                       /* Generates corresponding '.d.ts' file. */
+    "sourceMap": false,                       /* Generates corresponding '.map' file. */
+    "outDir": "./dist",                       /* Redirect output structure to the directory. */
+    "rootDirs": ["./src", "./stories"],       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    "strict": true,                           /* Enable all strict type-checking options. */
+    "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "noImplicitUseStrict": true,
+    "alwaysStrict": false,
+    "typeRoots" : ["node_modules/@types"],
+    "allowJs": true,
+    "declarationMap": true,
+  },
+  "tsc-alias": {
+    "verbose": true,
+    "resolveFullPaths": true,
+  },
+}

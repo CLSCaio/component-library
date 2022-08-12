@@ -1,0 +1,17 @@
+node_modules
+src
+tsconfig.json
+
+public
+docs
+
+.storybook
+.eslintignore
+.eslintrc
+prettier.config.js
+
+.vscode
+
+.github
+__tests__
+yarn-error.log
