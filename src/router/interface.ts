@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 type width = 'default' | 'block';
 type types = 'fixed' | 'default';
 
