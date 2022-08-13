@@ -21,7 +21,7 @@ export const Input = ({
   className,
   placeholder,
   tooltip,
-  border,
+  border = 'inline',
   autoComplete = 'off',
   ...rest
 }: I.InputProps) => {
