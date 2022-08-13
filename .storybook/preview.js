@@ -1,6 +1,5 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-
-import { Provider } from '../src/index'
+import { GlobalStyle } from '../src/stories/reset'
 
 const customViewports = {
   small: {
@@ -69,8 +68,11 @@ export const parameters = {
 
 export const decorators = [
   Story => (
-    <Provider>
+   
+    <>
       <Story /> 
-    </Provider>
+      <GlobalStyle />
+    </>
+   
   ),
 ];
