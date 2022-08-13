@@ -17,15 +17,16 @@ export interface ColorsProps {
   };
 
   // Support colors
-  error: string;
-  warning: string;
-  sucess: string;
+  error: '#DC143C';
+  warning: '#FFD700';
+  sucess: '#00FF00';
 
   // Element colors
-  disabled: string;
-  hover: string;
-  link: string;
-  focus: string;
+
+  disabled: '#708090';
+  hover: '#4682B4';
+  link: '#0000FF';
+  focus: '#00BFFF';
 
   // Other colors
   others: {
