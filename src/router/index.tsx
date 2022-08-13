@@ -1,24 +1,26 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { Main } from '..';
+import { Main, Header } from '..';
 
 import * as I from './interface';
 
-export const Router = ({ routes }: I.RouterProps) => (
+export const Router = ({ routes, withHeader }: I.RouterProps) => (
   <BrowserRouter>
-    <Routes>
-      {routes.map(({ component: Component, ...route }) => (
-        <Route
-          key={route.path}
-          path={route.path}
-          element={
-            <Main>
-              <Component />
-            </Main>
-          }
-        />
-      ))}
-    </Routes>
+    {withHeader?.header && (
+      <Header
+        routes={routes}
+        type={withHeader.type}
+        bgColor={withHeader.bgColor}
+        maxW={withHeader.maxW}
+      />
+    )}
+    <Main>
+      <Routes>
+        {routes.map(({ component, name, ...route }) => (
+          <Route {...route} key={name} element={component} />
+        ))}
+      </Routes>
+    </Main>
   </BrowserRouter>
 );

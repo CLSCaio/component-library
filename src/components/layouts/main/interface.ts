@@ -9,7 +9,7 @@ export const sizes = {
 type Sizes = 'maxContent' | 'block' | 'default';
 
 export interface MainProps extends MainStylesProps {
-  children: JSX.Element;
+  children: ReactNode;
 }
 
 export interface MainStylesProps {
