@@ -19,6 +19,6 @@ export interface GroupStylesProps {
     bottom: number;
     right: number;
   };
-  gap?: { desktop: number; mobile: number };
+  gap?: { desktop: number; mobile?: number };
   bgColor?: string;
 }
