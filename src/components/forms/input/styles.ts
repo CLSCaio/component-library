@@ -33,6 +33,9 @@ export const Label = styled.label<I.InputStyleProps>`
       : error
       ? colors.error
       : colors.black};
+
+  margin-left: ${({ positionLabel, border }) =>
+    positionLabel === 'top' && border === 'outline' && '10px'};
 `;
 
 export const Field = styled.span`
@@ -41,19 +44,12 @@ export const Field = styled.span`
 `;
 
 export const Input = styled(MaskedInput)<I.InputStyleProps>`
-  border: none;
-  border-bottom: 2px solid
-    ${({ disabled, readOnly, error }) =>
-      disabled || readOnly
-        ? colors.disabled
-        : error
-        ? colors.error
-        : colors.black};
   outline: none;
   text-indent: 5px;
   background: none;
 
-  padding: ${({ positionLabel }) => (positionLabel === 'left' ? '' : '7px 0')};
+  padding: ${({ positionLabel, border }) =>
+    positionLabel && border === 'outline' ? '7px 0' : '0 0 7px 0'};
 
   cursor: ${({ disabled, readOnly }) =>
     (disabled || readOnly) && 'not-allowed'};
@@ -63,12 +59,26 @@ export const Input = styled(MaskedInput)<I.InputStyleProps>`
   width: 100%;
 
   :focus {
-    border-bottom: 2px solid ${colors.focus};
+    ${({ border }) =>
+      border && border === 'outline'
+        ? `
+        border-radius: 10px;
+        border: 2px solid ${colors.focus}`
+        : `
+      border-bottom: 2px solid ${colors.focus};
+  `};
   }
 
   :disabled,
   :readonly {
-    border-bottom: 2px solid ${colors.disabled};
+    ${({ border }) =>
+      border && border === 'outline'
+        ? `
+        border-radius: 10px;
+        border: 2px solid ${colors.disabled}`
+        : `
+      border-bottom: 2px solid ${colors.disabled};
+  `};
   }
 
   :placeholder {
@@ -82,6 +92,30 @@ export const Input = styled(MaskedInput)<I.InputStyleProps>`
 
   -moz-appearance: textfield;
   appearance: textfield;
+
+  ${({ disabled, readOnly, error, border }) =>
+    border && border === 'outline'
+      ? `
+        border-radius: 10px;
+        border: 2px solid ${
+          disabled || readOnly
+            ? colors.disabled
+            : error
+            ? colors.error
+            : colors.black
+        }`
+      : `
+        border: none;
+        border-bottom: 2px solid
+
+        ${
+          disabled || readOnly
+            ? colors.disabled
+            : error
+            ? colors.error
+            : colors.black
+        }
+  `};
 `;
 
 export const Toggle = styled.button.attrs(() => ({ type: 'button' }))`

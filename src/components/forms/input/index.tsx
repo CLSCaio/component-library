@@ -21,7 +21,7 @@ export const Input = ({
   className,
   placeholder,
   tooltip,
-  positionLabel,
+  border,
   autoComplete = 'off',
   ...rest
 }: I.InputProps) => {
@@ -89,23 +89,31 @@ export const Input = ({
     <S.Container maxW={maxW} className={className}>
       <C.Group
         direction={
-          positionLabel
-            ? positionLabel === 'top'
+          label?.position
+            ? label?.position === 'top'
               ? 'column'
               : 'row'
             : 'column'
         }
-        gap={positionLabel === 'left' ? { desktop: 10 } : { desktop: 0 }}
-        align={positionLabel === 'left' ? 'flex-end' : 'flex-start'}
+        gap={label?.position && border && { desktop: 7 }}
+        align={
+          label?.position === 'left' && border === 'outline'
+            ? 'center'
+            : label?.position === 'left' && border === 'inline'
+            ? 'center'
+            : 'flex-start'
+        }
       >
-        {label && (
+        {label?.name && (
           <C.Group gap={{ desktop: 10 }} maxW="max-content">
             <S.Label
               htmlFor={rest.name}
               disabled={disabled || readOnly}
               error={error}
+              positionLabel={label.position}
+              border={border}
             >
-              {label}
+              {label?.name}
             </S.Label>
             {tooltip && (
               <C.Tooltip disabled={disabled || error} description={tooltip} />
@@ -125,6 +133,7 @@ export const Input = ({
               false
             }
             id={rest.name}
+            border={border}
             mask={validateMask}
             placeholder={placeholder}
             type={inputType}
@@ -134,7 +143,7 @@ export const Input = ({
             disabled={disabled || readOnly}
             error={error}
             onBlur={handleBlur}
-            positionLabel={positionLabel}
+            positionLabel={label?.position}
             guide={false}
             onPaste={e => type === 'password' && e.preventDefault()}
             autoComplete={autoComplete}

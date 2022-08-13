@@ -49,5 +49,8 @@ export const Overview: Story<InputProps> = args => {
 
 Overview.args = {
   name: 'input',
-  label: 'Label input!',
+  label: {
+    name: 'Label input!',
+    position: 'top',
+  },
 };

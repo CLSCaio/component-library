@@ -1,6 +1,8 @@
 type types = 'text' | 'number' | 'password';
 type maxW = 'block' | number | 'max-content';
 type transform = 'capitalize' | 'lowercase' | 'uppercase';
+type borders = 'outline' | 'inline';
+
 type masks =
   | 'user'
   | 'billingZipCode'
@@ -18,7 +20,10 @@ type masks =
 
 export interface InputProps {
   tooltip?: string;
-  label?: string;
+  label?: {
+    name: string;
+    position?: 'top' | 'left';
+  };
   name: string;
   placeholder?: string;
   type?: types;
@@ -30,7 +35,7 @@ export interface InputProps {
   mask?: masks;
   autoComplete?: 'off' | 'on';
   onBlur?: () => void;
-  positionLabel?: 'top' | 'left';
+  border?: borders;
 }
 
 export interface InputStyleProps {
@@ -41,6 +46,7 @@ export interface InputStyleProps {
   readOnly?: boolean;
   error?: boolean;
   positionLabel?: 'top' | 'left';
+  border?: borders;
 }
 
 export const widths = {
