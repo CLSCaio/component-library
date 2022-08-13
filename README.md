@@ -6,9 +6,8 @@ Caio L Sousa Library
 <p align="center">Published at <a href="url npm">NPM</a>.</p>
 
 <p align="center">
-  <a href="https://clscaio.github.io/component-library/">
-    <img src="img storybook" alt="link storybook">
-  </a>
+  NPM Install  
+  <a href="https://clscaio.github.io/component-library/"></a>
 </p>
 
 <hr>
