@@ -21,4 +21,5 @@ export interface GroupStylesProps {
   };
   gap?: { desktop: number; mobile?: number };
   bgColor?: string;
+  align?: 'center' | 'flex-end' | 'flex-start';
 }

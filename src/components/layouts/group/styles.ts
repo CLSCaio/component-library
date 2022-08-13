@@ -7,6 +7,8 @@ export const Container = styled.span<I.GroupStylesProps>`
   display: flex;
   width: 100%;
 
+  align-items: ${({ align }) => align};
+
   max-width: ${({ maxW }) =>
     maxW
       ? typeof maxW !== 'number'

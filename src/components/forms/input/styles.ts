@@ -53,6 +53,8 @@ export const Input = styled(MaskedInput)<I.InputStyleProps>`
   text-indent: 5px;
   background: none;
 
+  padding: ${({ positionLabel }) => (positionLabel === 'left' ? '' : '7px 0')};
+
   cursor: ${({ disabled, readOnly }) =>
     (disabled || readOnly) && 'not-allowed'};
 

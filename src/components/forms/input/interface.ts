@@ -30,6 +30,7 @@ export interface InputProps {
   mask?: masks;
   autoComplete?: 'off' | 'on';
   onBlur?: () => void;
+  positionLabel?: 'top' | 'left';
 }
 
 export interface InputStyleProps {
@@ -39,6 +40,7 @@ export interface InputStyleProps {
   disabled?: boolean;
   readOnly?: boolean;
   error?: boolean;
+  positionLabel?: 'top' | 'left';
 }
 
 export const widths = {

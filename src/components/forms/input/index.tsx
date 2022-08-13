@@ -21,6 +21,7 @@ export const Input = ({
   className,
   placeholder,
   tooltip,
+  positionLabel,
   autoComplete = 'off',
   ...rest
 }: I.InputProps) => {
@@ -86,58 +87,70 @@ export const Input = ({
 
   return (
     <S.Container maxW={maxW} className={className}>
-      {label && (
-        <C.Group gap={{ desktop: 10 }}>
-          <S.Label
-            htmlFor={rest.name}
+      <C.Group
+        direction={
+          positionLabel
+            ? positionLabel === 'top'
+              ? 'column'
+              : 'row'
+            : 'column'
+        }
+        gap={positionLabel === 'left' ? { desktop: 10 } : { desktop: 0 }}
+        align={positionLabel === 'left' ? 'flex-end' : 'flex-start'}
+      >
+        {label && (
+          <C.Group gap={{ desktop: 10 }} maxW="max-content">
+            <S.Label
+              htmlFor={rest.name}
+              disabled={disabled || readOnly}
+              error={error}
+            >
+              {label}
+            </S.Label>
+            {tooltip && (
+              <C.Tooltip disabled={disabled || error} description={tooltip} />
+            )}
+          </C.Group>
+        )}
+
+        <S.Field>
+          <S.Input
+            {...field}
+            pipe={
+              (mask === ('date' || 'shortDate') &&
+                {
+                  date: autoCorrectedDatePipe,
+                  shortDate: autoCorrectedShortDatePipe,
+                }[mask]) ||
+              false
+            }
+            id={rest.name}
+            mask={validateMask}
+            placeholder={placeholder}
+            type={inputType}
+            placeholderChar=" "
+            keepCharPositions
+            transform={transform}
             disabled={disabled || readOnly}
             error={error}
-          >
-            {label}
-          </S.Label>
-          {tooltip && (
-            <C.Tooltip disabled={disabled || error} description={tooltip} />
+            onBlur={handleBlur}
+            positionLabel={positionLabel}
+            guide={false}
+            onPaste={e => type === 'password' && e.preventDefault()}
+            autoComplete={autoComplete}
+          />
+
+          {field.value && type === 'password' && (
+            <S.Toggle onClick={handleInputPassword}>
+              {inputType === 'password' ? (
+                <S.ClosedEye size={20} />
+              ) : (
+                <S.OpenedEye size={20} />
+              )}
+            </S.Toggle>
           )}
-        </C.Group>
-      )}
-
-      <S.Field>
-        <S.Input
-          {...field}
-          pipe={
-            (mask === ('date' || 'shortDate') &&
-              {
-                date: autoCorrectedDatePipe,
-                shortDate: autoCorrectedShortDatePipe,
-              }[mask]) ||
-            false
-          }
-          id={rest.name}
-          mask={validateMask}
-          placeholder={placeholder}
-          type={inputType}
-          placeholderChar=" "
-          keepCharPositions
-          transform={transform}
-          disabled={disabled || readOnly}
-          error={error}
-          onBlur={handleBlur}
-          guide={false}
-          onPaste={e => type === 'password' && e.preventDefault()}
-          autoComplete={autoComplete}
-        />
-
-        {field.value && type === 'password' && (
-          <S.Toggle onClick={handleInputPassword}>
-            {inputType === 'password' ? (
-              <S.ClosedEye size={20} />
-            ) : (
-              <S.OpenedEye size={20} />
-            )}
-          </S.Toggle>
-        )}
-      </S.Field>
-
+        </S.Field>
+      </C.Group>
       {error && <C.ErrorMessage error={meta.error || 'Occorreu um erro'} />}
     </S.Container>
   );
