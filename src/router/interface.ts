@@ -11,8 +11,8 @@ export type Router = {
 
 export interface RouterProps {
   routes: Router[];
-  withHeader?: {
-    header?: boolean;
+  externalHeader?: JSX.Element;
+  internalHeader?: {
     maxW?: width;
     type?: types;
     bgColor?: string;

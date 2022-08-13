@@ -5,14 +5,18 @@ import { Main, Header } from '..';
 
 import * as I from './interface';
 
-export const Router = ({ routes, withHeader }: I.RouterProps) => (
+export const Router = ({
+  routes,
+  externalHeader,
+  internalHeader,
+}: I.RouterProps) => (
   <BrowserRouter>
-    {withHeader?.header && (
+    {externalHeader || (
       <Header
         routes={routes}
-        type={withHeader.type}
-        bgColor={withHeader.bgColor}
-        maxW={withHeader.maxW}
+        type={internalHeader?.type}
+        bgColor={internalHeader?.bgColor}
+        maxW={internalHeader?.maxW}
       />
     )}
     <Main>
