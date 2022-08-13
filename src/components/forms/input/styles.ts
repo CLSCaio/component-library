@@ -9,7 +9,7 @@ import * as I from './interface';
 const passwordIcon = css`
   height: 1.5rem;
   width: 1.5rem;
-  fill: ${colors.text.black};
+  fill: ${colors.black};
 `;
 
 export const Container = styled.div<I.InputStyleProps>`
@@ -29,10 +29,10 @@ export const Container = styled.div<I.InputStyleProps>`
 export const Label = styled.label<I.InputStyleProps>`
   color: ${({ disabled, readOnly, error }) =>
     disabled || readOnly
-      ? colors.elements.disabled
+      ? colors.disabled
       : error
-      ? colors.support.error
-      : colors.text.black};
+      ? colors.error
+      : colors.black};
 `;
 
 export const Field = styled.span`
@@ -45,10 +45,10 @@ export const Input = styled(MaskedInput)<I.InputStyleProps>`
   border-bottom: 2px solid
     ${({ disabled, readOnly, error }) =>
       disabled || readOnly
-        ? colors.elements.disabled
+        ? colors.disabled
         : error
-        ? colors.support.error
-        : colors.text.black};
+        ? colors.error
+        : colors.black};
   outline: none;
   text-indent: 5px;
   background: none;
@@ -61,17 +61,17 @@ export const Input = styled(MaskedInput)<I.InputStyleProps>`
   width: 100%;
 
   :focus {
-    border-bottom: 2px solid ${colors.elements.focus};
+    border-bottom: 2px solid ${colors.focus};
   }
 
   :disabled,
   :readonly {
-    border-bottom: 2px solid ${colors.elements.disabled};
+    border-bottom: 2px solid ${colors.disabled};
   }
 
   :placeholder {
     color: ${({ disabled, readOnly }) =>
-      disabled || readOnly ? colors.elements.disabled : colors.text.black};
+      disabled || readOnly ? colors.disabled : colors.black};
   }
 
   ::-webkit-inner-spin-button {

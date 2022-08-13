@@ -29,17 +29,13 @@ export default {
 } as Meta;
 
 export const Overview: Story<InputProps> = args => {
-  const onSubmit = () => {
-    console.log(form.values.input);
-  };
-
   const form = useFormik({
     initialValues: {
       input: '',
     },
     validationSchema,
     validateOnBlur: true,
-    onSubmit,
+    onSubmit: () => document.write(''),
   });
 
   return (

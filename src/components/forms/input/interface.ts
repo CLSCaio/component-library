@@ -17,6 +17,7 @@ type masks =
   | 'name';
 
 export interface InputProps {
+  tooltip?: string;
   label?: string;
   name: string;
   placeholder?: string;
@@ -37,7 +38,7 @@ export interface InputStyleProps {
   transform?: transform;
   disabled?: boolean;
   readOnly?: boolean;
-  error?: string;
+  error?: boolean;
 }
 
 export const widths = {

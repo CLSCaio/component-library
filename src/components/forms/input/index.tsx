@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useField } from 'formik';
 
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe';
 
-import { ErrorMessage } from '../errorMessage';
+import * as C from 'src/components';
 
 import * as M from './masks';
 import * as I from './interface';
@@ -20,12 +20,14 @@ export const Input = ({
   disabled,
   className,
   placeholder,
+  tooltip,
   autoComplete = 'off',
   ...rest
 }: I.InputProps) => {
   const [field, meta] = useField(rest);
 
   const [inputType, setInputType] = useState(type || 'text');
+  const [error, setError] = useState(false);
 
   const autoCorrectedDatePipe = createAutoCorrectedDatePipe('dd/mm/yyyy');
   const autoCorrectedShortDatePipe = createAutoCorrectedDatePipe('mm/yyyy');
@@ -39,6 +41,11 @@ export const Input = ({
       state === 'password' ? 'text' : 'password',
     );
   };
+
+  useEffect(() => {
+    if (meta.touched && meta.error) setError(true);
+    if (!meta.error) setError(false);
+  }, [meta.touched && meta.error]);
 
   const validateMask = (value: any) => {
     if (!mask) return false;
@@ -78,11 +85,20 @@ export const Input = ({
   };
 
   return (
-    <S.Container maxW={maxW} error={meta.error}>
+    <S.Container maxW={maxW} className={className}>
       {label && (
-        <S.Label disabled={disabled || readOnly} error={meta.error}>
-          {label}
-        </S.Label>
+        <C.Group gap={{ desktop: 10 }}>
+          <S.Label
+            htmlFor={rest.name}
+            disabled={disabled || readOnly}
+            error={error}
+          >
+            {label}
+          </S.Label>
+          {tooltip && (
+            <C.Tooltip disabled={disabled || error} description={tooltip} />
+          )}
+        </C.Group>
       )}
 
       <S.Field>
@@ -96,16 +112,15 @@ export const Input = ({
               }[mask]) ||
             false
           }
+          id={rest.name}
           mask={validateMask}
           placeholder={placeholder}
           type={inputType}
-          id={rest.name}
           placeholderChar=" "
           keepCharPositions
-          disabled={disabled || readOnly}
           transform={transform}
-          className={className}
-          error={meta.error}
+          disabled={disabled || readOnly}
+          error={error}
           onBlur={handleBlur}
           guide={false}
           onPaste={e => type === 'password' && e.preventDefault()}
@@ -123,7 +138,7 @@ export const Input = ({
         )}
       </S.Field>
 
-      {meta.touched && meta.error && <ErrorMessage error={meta.error} />}
+      {error && <C.ErrorMessage error={meta.error || 'Occorreu um erro'} />}
     </S.Container>
   );
 };
