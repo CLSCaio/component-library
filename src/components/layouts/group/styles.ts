@@ -3,7 +3,7 @@ import { medias } from '../../../global';
 
 import * as I from './interface';
 
-export const Container = styled.div<I.GroupStylesProps>`
+export const Container = styled.span<I.GroupStylesProps>`
   display: flex;
   width: 100%;
 

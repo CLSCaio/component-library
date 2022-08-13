@@ -8,117 +8,117 @@ export const colorsMap = [
   {
     name: 'Black',
     description: text,
-    color: colors.text.black,
+    color: colors.black,
   },
   {
     name: 'White',
     description: text,
-    color: colors.text.white,
+    color: colors.white,
   },
   {
     name: 'Grey100',
     description: text,
-    color: colors.text.grey['100'],
+    color: colors.grey['100'],
   },
   {
     name: 'Grey200',
     description: text,
-    color: colors.text.grey['200'],
+    color: colors.grey['200'],
   },
   {
     name: 'Grey300',
     description: text,
-    color: colors.text.grey['300'],
+    color: colors.grey['300'],
   },
   {
     name: 'Grey400',
     description: text,
-    color: colors.text.grey['400'],
+    color: colors.grey['400'],
   },
   {
     name: 'Grey500',
     description: text,
-    color: colors.text.grey['500'],
+    color: colors.grey['500'],
   },
   {
     name: 'Grey600',
     description: text,
-    color: colors.text.grey['600'],
+    color: colors.grey['600'],
   },
   {
     name: 'SkyGrey',
     description: text,
-    color: colors.text.grey.sky,
+    color: colors.grey.sky,
   },
 
   // elements colors
   {
     name: 'StellGrey',
     description: 'Usada para disabled, readOnly, loading',
-    color: colors.elements.disabled,
+    color: colors.disabled,
   },
   {
     name: 'SkyBlue',
     description: 'Usada para focus, active',
-    color: colors.elements.focus,
+    color: colors.focus,
   },
   {
     name: 'StellBlue',
     description: 'Usada para hover',
-    color: colors.elements.hover,
+    color: colors.hover,
   },
   {
     name: 'Blue',
     description: 'Usada para link',
-    color: colors.elements.link,
+    color: colors.link,
   },
 
   // suport colors
   {
-    name: 'Support Success',
+    name: 'Success',
     description: 'Use como indicação de sucesso',
-    color: colors.support.sucess,
+    color: colors.sucess,
   },
   {
-    name: 'Support Warning',
+    name: 'Warning',
     description: 'Use como indicação de alertas',
-    color: colors.support.warning,
+    color: colors.warning,
   },
   {
-    name: 'Support Error',
+    name: 'Error',
     description: 'Use como indicação de error',
-    color: colors.support.error,
+    color: colors.error,
   },
 
   // other colors
   {
     name: 'DarkRed',
     description: others,
-    color: colors.others.darkRed,
+    color: colors.others?.[1],
   },
   {
     name: 'Indigo',
     description: others,
-    color: colors.others.indigo,
+    color: colors.others?.[2],
   },
   {
     name: 'Lavender',
     description: others,
-    color: colors.others.lavender,
+    color: colors.others?.[3],
   },
   {
     name: 'MidnightBlue',
     description: others,
-    color: colors.others.midnightBlue,
+    color: colors.others?.[4],
   },
   {
     name: 'PhosphorescentGreen',
     description: others,
-    color: colors.others.phosphorescentGreen,
+    color: colors.others?.[5],
   },
   {
     name: 'PhosphorescentPurple',
     description: others,
-    color: colors.others.phosphorescentPurple,
+    color: colors.others?.[6],
   },
 ];

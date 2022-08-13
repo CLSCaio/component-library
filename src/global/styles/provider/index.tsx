@@ -10,7 +10,6 @@ const theme = {
   colors,
   sizes,
   weights,
-  medias,
 };
 
 type ProviderProps = {

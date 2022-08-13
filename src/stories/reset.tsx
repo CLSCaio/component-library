@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { medias, sizes, weights } from '../..';
+import { medias, sizes, weights } from '../global';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 11px;
+    width: 100%;
+    height: 100%;
 
     ${medias.small} {
       font-size: 13px;
@@ -37,6 +39,9 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    width: 100%;
+    height: 100%;
   }
 
   h1 {
