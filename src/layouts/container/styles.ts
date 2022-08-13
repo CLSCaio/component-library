@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { medias } from '../../../global';
+import { medias } from '../..';
 
 import * as I from './interface';
 

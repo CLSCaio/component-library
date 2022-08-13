@@ -8,6 +8,8 @@ export const Main = styled.main<I.MainStylesProps>`
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-height: calc(100vh - 150px);
+  margin-top: 30px;
   max-width: ${({ maxW }) =>
     maxW ? (typeof maxW === 'number' ? `${maxW}px` : I.sizes[maxW]) : '1280px'};
 

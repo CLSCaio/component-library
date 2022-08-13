@@ -4,7 +4,7 @@ import { useField } from 'formik';
 
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe';
 
-import * as C from 'src/components';
+import * as C from '../../..';
 
 import * as M from './masks';
 import * as I from './interface';

@@ -1,4 +1,4 @@
-import { Router } from '../../../router/interface';
+import { Router } from '../../router/interface';
 
 export const sizes = {
   block: '100%',

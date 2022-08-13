@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { colors, medias } from '../../../../../global';
+import { colors, medias } from '../../../..';
 
 export const Container = styled.div`
   display: flex;
