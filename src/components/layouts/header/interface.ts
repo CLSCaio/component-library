@@ -12,10 +12,12 @@ export interface HeaderProps {
   routes: Router[];
   maxW?: width;
   type?: types;
+  bgColor?: string;
 }
 
 export interface HeaderStyleProps {
   menu?: boolean;
   maxW?: width;
   type?: types;
+  bgColor?: string;
 }

@@ -17,6 +17,8 @@ export const Container = styled.header<I.HeaderStyleProps>`
 
   position: ${({ type }) => (type && type === 'fixed' ? 'fixed' : 'static')};
 
+  background: ${({ bgColor }) => bgColor || 'transparent'};
+
   transition: 0.7s;
 
   border-bottom: 5px double ${colors.primary};

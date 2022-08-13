@@ -6,7 +6,7 @@ import * as S from './styles';
 export const Opc = ({ openMenu, routes }: I.OpcProps) => (
   <S.Container>
     {routes.map(({ name, path }) => (
-      <S.Router key={name} href={path} onClick={() => openMenu(false)}>
+      <S.Router key={name} to={path} onClick={() => openMenu(false)}>
         {name}
       </S.Router>
     ))}

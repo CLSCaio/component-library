@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { colors, medias } from '../../../../../global';
@@ -17,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Router = styled.a`
+export const Router = styled(Link)`
   padding: 5px 20px;
   text-decoration: none;
   width: max-content;
