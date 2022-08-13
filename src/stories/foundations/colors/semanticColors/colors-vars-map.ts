@@ -94,31 +94,26 @@ export const colorsMap = [
   {
     name: 'DarkRed',
     description: others,
-    color: colors.others?.[1],
+    color: colors.others.darkRed,
   },
   {
     name: 'Indigo',
     description: others,
-    color: colors.others?.[2],
+    color: colors.others.indigo,
   },
   {
     name: 'Lavender',
     description: others,
-    color: colors.others?.[3],
+    color: colors.others.lavender,
   },
   {
     name: 'MidnightBlue',
     description: others,
-    color: colors.others?.[4],
+    color: colors.others.midnightBlue,
   },
   {
-    name: 'PhosphorescentGreen',
+    name: 'LightGreen',
     description: others,
-    color: colors.others?.[5],
-  },
-  {
-    name: 'PhosphorescentPurple',
-    description: others,
-    color: colors.others?.[6],
+    color: colors.others.lightGreen,
   },
 ];

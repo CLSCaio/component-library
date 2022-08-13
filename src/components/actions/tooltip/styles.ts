@@ -123,7 +123,7 @@ export const Description = styled.p<I.TooltipStyles>`
         ? colors.hover
         : color === 'steelGray'
         ? colors.disabled
-        : colors.others?.[color]
+        : colors.others[color]
       : colors.black};
 
   &::before {
@@ -138,7 +138,7 @@ export const Description = styled.p<I.TooltipStyles>`
             ? colors.hover
             : color === 'steelGray'
             ? colors.disabled
-            : colors.others?.[color]
+            : colors.others[color]
           : colors.black}
       transparent;
     border-width: 4px 4px 0 4px;
@@ -161,7 +161,7 @@ export const Icon = styled.span<I.TooltipStyles>`
           ? colors.hover
           : color === 'steelGray'
           ? colors.disabled
-          : colors.others?.[color]
+          : colors.others[color]
         : colors.black};
     width: 16px;
     height: 16px;

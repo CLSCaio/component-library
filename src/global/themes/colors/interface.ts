@@ -28,7 +28,7 @@ export interface ColorsProps {
   focus: string;
 
   // Other colors
-  others?: {
+  others: {
     darkRed: '#940008';
     lightGreen: '#41f0a8';
     indigo: '#4B0082';
