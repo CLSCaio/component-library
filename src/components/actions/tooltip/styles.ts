@@ -4,6 +4,64 @@ import { medias, colors } from 'src/global';
 
 import * as I from './interface';
 
+const returnColor = ({ color, sinal }: I.TooltipStyles) => {
+  if (!sinal) {
+    switch (color) {
+      case 'others-1':
+        return css`
+          ${colors.others[1]};
+        `;
+      case 'others-2':
+        return css`
+          ${colors.others[2]};
+        `;
+      case 'others-3':
+        return css`
+          ${colors.others[3]};
+        `;
+      case 'others-4':
+        return css`
+          ${colors.others[4]};
+        `;
+      case 'others-5':
+        return css`
+          ${colors.others[5]};
+        `;
+      default:
+        return css`
+          ${colors.black};
+        `;
+    }
+  } else {
+    switch (color) {
+      case 'others-1':
+        return css`
+          border-color: ${colors.others[1]} transparent;
+        `;
+      case 'others-2':
+        return css`
+          border-color: ${colors.others[2]} transparent;
+        `;
+      case 'others-3':
+        return css`
+          border-color: ${colors.others[3]} transparent;
+        `;
+      case 'others-4':
+        return css`
+          border-color: ${colors.others[4]} transparent;
+        `;
+      case 'others-5':
+        return css`
+          border-color: ${colors.others[5]} transparent;
+        `;
+      default:
+        return css`
+          border-color: ${colors.black} transparent;
+        `;
+    }
+  }
+};
+
 const handlePlacementTooltip = ({ placement }: I.TooltipStyles) => {
   switch (placement) {
     case 'downBegin':
@@ -66,22 +124,22 @@ export const Container = styled.div<I.TooltipStyles>`
 
   ${({ disabled }) =>
     disabled &&
-    `
-    cursor: not-allowed;
+    css`
+      cursor: not-allowed;
 
-    p:hover {
-      opacity: 1;
-    }
-  
-    &:hover p:first-of-type {
-      opacity: 0;
-      visibility: none;
-    }
+      p:hover {
+        opacity: 1;
+      }
 
-    * {
-      color: ${colors.disabled};
-    }
-  `}
+      &:hover p:first-of-type {
+        opacity: 0;
+        visibility: none;
+      }
+
+      * {
+        color: ${colors.disabled};
+      }
+    `}
 `;
 
 export const Description = styled.p<I.TooltipStyles>`
@@ -115,33 +173,14 @@ export const Description = styled.p<I.TooltipStyles>`
   text-align: center;
   color: ${colors.white};
 
-  background: ${({ color }) =>
-    color
-      ? color === 'black'
-        ? colors.black
-        : color === 'steelBlue'
-        ? colors.hover
-        : color === 'steelGray'
-        ? colors.disabled
-        : colors.others[color]
-      : colors.black};
+  background: ${({ color }) => returnColor({ color })};
 
   &::before {
     content: '';
     border-width: 1px;
     border-style: solid;
-    border-color: ${({ color }) =>
-        color
-          ? color === 'black'
-            ? colors.black
-            : color === 'steelBlue'
-            ? colors.hover
-            : color === 'steelGray'
-            ? colors.disabled
-            : colors.others[color]
-          : colors.black}
-      transparent;
-    border-width: 4px 4px 0 4px;
+    ${({ color, sinal }) => returnColor({ color, sinal })};
+    border-width: 4px 4px 0px 4px;
     top: 100%;
     position: absolute;
 
@@ -153,16 +192,7 @@ export const Icon = styled.span<I.TooltipStyles>`
   display: flex;
 
   svg {
-    color: ${({ color }) =>
-      color
-        ? color === 'black'
-          ? colors.black
-          : color === 'steelBlue'
-          ? colors.hover
-          : color === 'steelGray'
-          ? colors.disabled
-          : colors.others[color]
-        : colors.black};
+    color: ${({ color }) => returnColor({ color })};
     width: 16px;
     height: 16px;
 

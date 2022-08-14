@@ -11,7 +11,7 @@ export const Tooltip = ({
   disabled,
 }: I.TooltipProps) => (
   <S.Container placement={placement} disabled={disabled}>
-    <S.Description color={color} placement={placement}>
+    <S.Description color={color} sinal placement={placement}>
       {description}
     </S.Description>
     <S.Icon color={color}>

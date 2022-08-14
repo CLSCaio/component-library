@@ -2,7 +2,8 @@ import { ColorsProps } from './interface';
 
 export const colors: ColorsProps = {
   primary: '#000000',
-  secundary: '#ffffff',
+  secundary: '#B0C4DE',
+  third: '',
 
   black: '#000000',
   white: '#ffffff',
@@ -21,16 +22,16 @@ export const colors: ColorsProps = {
   warning: '#FFD700',
   sucess: '#00FF00',
 
-  disabled: '#708090',
+  disabled: '#696969',
   hover: '#4682B4', // steelBlue,
   link: '#0000FF',
   focus: '#00BFFF', // ciano,
 
   others: {
-    darkRed: '#940008',
-    lightGreen: '#41f0a8',
-    indigo: '#4B0082',
-    lavender: '#e6e6fa',
-    midnightBlue: '#191970',
+    1: '#940008', // darkRed
+    2: '#00ffcb', // lightGreen
+    3: '#4B0082', // indigo
+    4: '#e6e6fa', // lavender
+    5: '#191970', // midnightBlue
   },
 };

@@ -112,6 +112,6 @@ export const Select = styled.select<I.SelectStyleProps>`
 `;
 
 export const Option = styled.option`
-  background-color: ${colors.others.lavender};
+  background-color: ${colors.others[4]};
   color: ${colors.black};
 `;

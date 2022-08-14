@@ -1,8 +1,8 @@
 export interface ColorsProps {
   primary: string;
   secundary: string;
+  third?: string;
 
-  // Text colors
   black: '#000000';
   white: '#ffffff';
   grey: {
@@ -16,24 +16,20 @@ export interface ColorsProps {
     '100': '#C0C0C0';
   };
 
-  // Support colors
-  error: '#DC143C';
-  warning: '#FFD700';
-  sucess: '#00FF00';
+  error: string;
+  warning: string;
+  sucess: string;
 
-  // Element colors
+  disabled: string;
+  hover: string; // steelBlue,
+  link: string;
+  focus: string; // ciano,
 
-  disabled: '#708090';
-  hover: '#4682B4';
-  link: '#0000FF';
-  focus: '#00BFFF';
-
-  // Other colors
   others: {
-    darkRed: '#940008';
-    lightGreen: '#41f0a8';
-    indigo: '#4B0082';
-    lavender: '#e6e6fa';
-    midnightBlue: '#191970';
+    1: string; // darkRed
+    2: string; // lightGreen
+    3: string; // indigo
+    4: string; // lavender
+    5: string; // midnightBlue
   };
 }
