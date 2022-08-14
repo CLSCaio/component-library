@@ -34,7 +34,4 @@ Overview.args = {
       path: '/tela3',
     },
   ],
-  withHeader: {
-    header: true,
-  },
 };

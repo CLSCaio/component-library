@@ -23,6 +23,11 @@ Overview.args = {
       name: 'h1',
       path: '/h1',
     },
+    {
+      component: <Group> dfdsf sdfd</Group>,
+      name: 'h2',
+      path: '/h2',
+    },
   ],
   type: 'default',
 };
