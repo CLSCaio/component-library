@@ -91,6 +91,7 @@
     "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "prop-types": "^15.8.1",
+    "react-spinners": "^0.13.4",
     "typescript": "^3.8.3",
     "webpack": "^5.74.0",
     "yup": "^0.32.11"
