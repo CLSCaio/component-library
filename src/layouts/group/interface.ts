@@ -6,6 +6,8 @@ export const sizes = {
   default: '1280px',
 };
 
+type align = 'center' | 'flex-end' | 'flex-start';
+
 export interface GroupProps extends GroupStylesProps {
   children: ReactNode;
 }
@@ -21,5 +23,15 @@ export interface GroupStylesProps {
   };
   gap?: { desktop: number; mobile?: number };
   bgColor?: string;
-  align?: 'center' | 'flex-end' | 'flex-start';
+  align?: align;
+  justify?: align | 'space-around' | 'space-evenly' | 'space-between';
+
+  pos?: {
+    style: 'relative' | 'absolute' | 'fixed';
+    top?: number;
+    left?: number;
+    right?: number;
+    bottom?: number;
+    type?: 'px' | '%';
+  };
 }
