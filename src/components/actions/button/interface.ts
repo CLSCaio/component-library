@@ -4,9 +4,16 @@ export interface ButtonProps extends ButtonStyleProps {
   className?: string;
   id?: string;
   type?: 'button' | 'submit' | 'reset';
+  onClick: () => void;
 }
 
-type maxW = 'block' | number | 'max-content';
+export type maxWs = 'block' | number | 'max-content';
+export type variants =
+  | 'outline'
+  | 'outline-reverse'
+  | 'pulse'
+  | 'floating'
+  | 'default';
 
 export const widths = {
   block: '100%',
@@ -14,8 +21,8 @@ export const widths = {
 };
 
 export interface ButtonStyleProps {
-  variant?: 'outline' | 'outline-reverse' | 'pulse' | 'floating' | 'default';
+  variant?: variants;
 
-  maxW?: maxW;
+  maxW?: maxWs;
   disabled?: boolean;
 }

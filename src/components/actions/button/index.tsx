@@ -14,16 +14,18 @@ export const Button = ({
   disabled,
   variant,
   className,
+  onClick,
   ...rest
 }: I.ButtonProps) => (
   <S.Container disabled={isLoading || disabled} variant={variant} {...rest}>
     <S.Button
+      onClick={onClick}
       disabled={isLoading || disabled}
       className={`btn btn-bg btn-animate effect effect-1 ${
         className && className
       }`}
       variant={variant}
-      type={rest.type}
+      type={rest.type || 'submit'}
     >
       {isLoading && !disabled && (
         <ClipLoader color={colors.warning} size={16} />
