@@ -3,7 +3,7 @@ import { ColorsProps } from './interface';
 export const colors: ColorsProps = {
   primary: '#000000',
   secundary: '#B0C4DE',
-  third: '',
+  third: 'rgba(0, 0, 0, 0.6)',
 
   black: '#000000',
   white: '#ffffff',
