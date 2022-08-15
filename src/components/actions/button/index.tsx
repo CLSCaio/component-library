@@ -1,6 +1,7 @@
 import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { MdAdsClick } from 'react-icons/md';
+// import { Link } from 'react-router-dom';
 
 import { colors } from 'src/global';
 
@@ -29,7 +30,7 @@ export const Button = ({
       )}
       {!isLoading && variant !== 'floating' && label}
       {isLoading && disabled && variant !== 'floating' && label}
-      {!isLoading && !disabled && variant === 'floating' && <MdAdsClick />}
+      {!isLoading && variant === 'floating' && <MdAdsClick />}
     </S.Button>
   </S.Container>
 );

@@ -86,7 +86,6 @@ export const Container = styled.div<I.ButtonStyleProps>`
           rgba(79, 209, 197, 1) 100%
         );
         border: none;
-        box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
         transition: all 0.3s ease-in-out 0s;
       }
 
@@ -223,10 +222,27 @@ export const Button = styled.button<I.ButtonStyleProps>`
   }
 
   :disabled {
-    background-color: ${colors.disabled};
-    color: ${colors.secundary};
-    border: 3px solid ${colors.primary};
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
+    ${({ variant }) =>
+      variant !== 'floating'
+        ? css`
+            background-color: ${colors.disabled};
+            color: ${colors.secundary};
+            border: 3px solid ${colors.primary};
+            cursor: not-allowed;
+            opacity: 0.5;
+          `
+        : css`
+            padding: 0;
+            width: 40px;
+            min-width: fit-content;
+            border-radius: 100%;
+            background-color: ${colors.disabled};
+            cursor: not-allowed;
+            opacity: 0.5;
+
+            ::after,
+            :hover,
+            :focus {
+            }
+          `}
 `;
