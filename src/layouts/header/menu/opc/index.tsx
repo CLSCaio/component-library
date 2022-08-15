@@ -1,14 +1,19 @@
 import React from 'react';
 
+import { Link } from 'src/components';
+
 import * as I from './interface';
 import * as S from './styles';
 
 export const Opc = ({ openMenu, routes }: I.OpcProps) => (
   <S.Container>
     {routes.map(({ name, path }) => (
-      <S.Router key={name} to={path} onClick={() => openMenu(false)}>
-        {name}
-      </S.Router>
+      <Link
+        key={name}
+        label={name}
+        link={path}
+        onClick={() => openMenu(false)}
+      />
     ))}
   </S.Container>
 );

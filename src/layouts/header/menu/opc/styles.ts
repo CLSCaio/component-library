@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { colors, medias } from '../../../..';
+import { medias } from '../../../..';
 
 export const Container = styled.div`
   display: flex;
@@ -15,17 +14,5 @@ export const Container = styled.div`
     flex-direction: row;
     max-width: max-content;
     padding: 0;
-  }
-`;
-
-export const Router = styled(Link)`
-  padding: 5px 20px;
-  text-decoration: none;
-  width: max-content;
-
-  :hover {
-    color: ${colors.hover};
-
-    border-bottom: 2px solid ${colors.hover};
   }
 `;
