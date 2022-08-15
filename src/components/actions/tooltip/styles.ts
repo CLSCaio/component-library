@@ -4,6 +4,28 @@ import { medias, colors } from 'src/global';
 
 import * as I from './interface';
 
+const returnTextColor = ({ color }: I.TooltipStyles) => {
+  if (color) {
+    switch (color) {
+      case 'black':
+      case 'transparent':
+      case 'others-3':
+      case 'others-5':
+        return css`
+          ${colors.white};
+        `;
+
+      default:
+        return css`
+          ${colors.black};
+        `;
+    }
+  } else
+    return css`
+      ${colors.white};
+    `;
+};
+
 const returnColor = ({ color, sinal }: I.TooltipStyles) => {
   if (!sinal) {
     switch (color) {
@@ -26,6 +48,15 @@ const returnColor = ({ color, sinal }: I.TooltipStyles) => {
       case 'others-5':
         return css`
           ${colors.others[5]};
+        `;
+      case 'white':
+        return css`
+          ${colors.white};
+        `;
+
+      case 'transparent':
+        return css`
+          ${colors.third};
         `;
       default:
         return css`
@@ -53,6 +84,14 @@ const returnColor = ({ color, sinal }: I.TooltipStyles) => {
       case 'others-5':
         return css`
           border-color: ${colors.others[5]} transparent;
+        `;
+      case 'white':
+        return css`
+          border-color: ${colors.white} transparent;
+        `;
+      case 'transparent':
+        return css`
+          border-color: ${colors.third} transparent;
         `;
       default:
         return css`
@@ -166,12 +205,13 @@ export const Description = styled.p<I.TooltipStyles>`
 
   transition: opacity 0.4s;
 
+  color: ${({ color }) => returnTextColor({ color })};
+
   bottom: calc(100% + 8px);
 
   ${({ placement }) => handlePlacementTooltip({ placement })}
 
   text-align: center;
-  color: ${colors.white};
 
   background: ${({ color }) => returnColor({ color })};
 

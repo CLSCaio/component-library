@@ -1,13 +1,24 @@
+type colors =
+  | 'others-1'
+  | 'others-2'
+  | 'others-3'
+  | 'others-4'
+  | 'others-5'
+  | 'transparent'
+  | 'black'
+  | 'white';
+type placement = 'downBegin' | 'downMiddle' | 'downLast';
+
 export interface TooltipStyles {
-  placement?: 'downBegin' | 'downMiddle' | 'downLast';
+  placement?: placement;
   disabled?: boolean;
-  color?: 'others-1' | 'others-2' | 'others-3' | 'others-4' | 'others-5';
+  color?: colors;
   sinal?: boolean;
 }
 
 export interface TooltipProps {
   description: string;
-  placement?: 'downBegin' | 'downMiddle' | 'downLast';
+  placement?: placement;
   disabled?: boolean;
-  color?: 'others-1' | 'others-2' | 'others-3' | 'others-4' | 'others-5';
+  color?: colors;
 }
