@@ -8,11 +8,11 @@ export const sizes = {
 
 type align = 'center' | 'flex-end' | 'flex-start';
 
-export interface GroupProps extends GroupStylesProps {
+export interface GroupProps extends GroupStyles {
   children: ReactNode;
 }
 
-export interface GroupStylesProps {
+export interface GroupStyles {
   maxW?: 'default' | 'block' | 'max-content' | number;
   direction?: 'row' | 'column';
   pad?: {

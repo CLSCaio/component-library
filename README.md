@@ -39,7 +39,7 @@ Caio L Sousa Library
 
 ## Usage
 
-1. Run `npm install / yarn add name project` in your React.js project.<br />
+1. Run `npm install / yarn add library-caiol.sousa` in your React.js project.<br />
 2. Import components from the package and get started.<br />
 3. Visit the website page for details. <a href="" target="blank"> </a>
 

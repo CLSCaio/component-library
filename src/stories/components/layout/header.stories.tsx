@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-
 import { BrowserRouter } from 'react-router-dom';
+
 import { Header, Group } from '../../..';
-import { HeaderProps } from '../../../layouts/header/interface';
+import { HeaderProps } from '../../../layouts/interfaces';
 
 export default {
   title: 'Layouts/Header',

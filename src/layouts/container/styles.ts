@@ -3,7 +3,7 @@ import { medias } from '../..';
 
 import * as I from './interface';
 
-export const Container = styled.div<I.ContainerStyleProps>`
+export const Container = styled.div<I.ContainerStyles>`
   display: flex;
 
   flex-direction: ${({ direction }) => direction || 'row'};

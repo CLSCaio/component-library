@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Router } from '../../../router';
-import { RouterProps } from '../../../router/interface';
+import { Router, RouterProps } from '../../..';
 
 export default {
   title: 'Layouts/Router',

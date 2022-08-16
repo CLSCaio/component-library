@@ -3,8 +3,8 @@ import { FormikProvider, useFormik } from 'formik';
 import { Meta, Story } from '@storybook/react';
 
 import * as yup from 'yup';
-import { Input } from '../../../components';
-import { InputProps } from '../../../components/forms/input/interface';
+import { Input } from '../../..';
+import { InputProps } from '../../../components/interfaces';
 
 const error = {
   input: 'Escreva algo no input!',

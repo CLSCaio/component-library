@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { IoIosArrowDown } from 'react-icons/io';
 
 import { colors } from '../../../global';
 
 import * as I from './interface';
 
-export const Container = styled.div<I.SelectStyleProps>`
+export const Container = styled.div<I.SelectStyle>`
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -19,7 +18,7 @@ export const Container = styled.div<I.SelectStyleProps>`
       : `${maxW}px`};
 `;
 
-export const Label = styled.label<I.SelectStyleProps>`
+export const Label = styled.label<I.SelectStyle>`
   color: ${({ disabled, readOnly, error }) =>
     disabled || readOnly
       ? colors.disabled
@@ -36,7 +35,7 @@ export const Field = styled.span`
   position: relative;
 `;
 
-export const Select = styled.select<I.SelectStyleProps>`
+export const Select = styled.select<I.SelectStyle>`
   outline: none;
   text-indent: 5px;
   background: none;

@@ -20,13 +20,13 @@ com que você consiga criar components reutilizáveis com muito mais praticidade
 
 ### Como usar
 
-1. Rode o comando `npm install / yarn add name project` no seu projeto React.
+1. Rode o comando `npm install / yarn library-caiol.sousa` no seu projeto React.
 2. Importe os components do pacote e comece a usar.
 
 ### Iniciar ambiente de desenvolvimento
 
 1. Clone este repositorio. 
-2. Rode o comando `npm or yarn install` no seu projeto para instalar as dependencias.
+2. Rode o comando `npm install or yarn` no seu projeto para instalar as dependencias.
 3. Rode o comando `yarn storybook`.
 4. Acesse `localhost:6006` no seu navegador.
 5. Rode o comando `yarn buildtp` para gerar o seu build "/dist".

@@ -15,7 +15,7 @@ export interface HeaderProps {
   bgColor?: string;
 }
 
-export interface HeaderStyleProps {
+export interface HeaderStyles {
   menu?: boolean;
   maxW?: width;
   type?: types;

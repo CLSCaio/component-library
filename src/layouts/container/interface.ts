@@ -7,11 +7,11 @@ export const sizes = {
 type Sizes = 'maxContent' | 'block' | 'default';
 type Align = 'center' | 'flex-end' | 'flex-start';
 
-export interface ContainerProps extends ContainerStyleProps {
+export interface ContainerProps extends ContainerStyles {
   children: JSX.Element;
 }
 
-export interface ContainerStyleProps {
+export interface ContainerStyles {
   gap?: { desktop: number; mobile?: number };
   direction?: 'row' | 'column';
   bgColor?: string;

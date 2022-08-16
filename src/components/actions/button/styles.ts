@@ -4,7 +4,7 @@ import { colors, medias } from 'src/global';
 
 import * as I from './interface';
 
-export const Container = styled.div<I.ButtonStyleProps>`
+export const Container = styled.div<I.ButtonStyle>`
   position: relative;
   width: 100%;
 
@@ -160,7 +160,7 @@ export const Container = styled.div<I.ButtonStyleProps>`
   }
 `;
 
-export const Button = styled.button<I.ButtonStyleProps>`
+export const Button = styled.button<I.ButtonStyle>`
   display: flex;
   align-items: center;
   justify-content: center;

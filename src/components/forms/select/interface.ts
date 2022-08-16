@@ -3,7 +3,7 @@ export const widths = {
   maxContent: 'max-content',
 };
 
-export type SelectOptions = {
+export type OptionsProps = {
   label: string;
   value: string | number;
 };
@@ -18,7 +18,7 @@ export interface SelectProps {
     name: string;
     position?: 'top' | 'left';
   };
-  options: SelectOptions[];
+  options: OptionsProps[];
   id?: string;
   required?: boolean;
   tooltip?: string;
@@ -27,14 +27,13 @@ export interface SelectProps {
   transform?: transform;
   disabled?: boolean;
   readOnly?: boolean;
-  error?: boolean;
   positionLabel?: 'top' | 'left';
   border?: borders;
   className: string;
   placeholder: string;
 }
 
-export interface SelectStyleProps {
+export interface SelectStyle {
   maxW?: maxW;
   transform?: transform;
   disabled?: boolean;

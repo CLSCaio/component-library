@@ -29,7 +29,7 @@ export const sizes = {
 };
 
 export const variants = {
-  transparent: 'rgba(0, 0, 0, 0.6)',
+  transparent: colors.third,
   dark: colors.black,
   light: colors.white,
 };

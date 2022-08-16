@@ -6,15 +6,25 @@ const others = 'Cor adicional para usar avontade';
 export const colorsMap = [
   // text colors
   {
-    name: 'Black',
-    description: text,
-    color: colors.black,
+    name: 'Primary',
+    description:
+      'Cor bastante usada no website, geralmente para texto, inputs, select, bordas, etc...',
+    color: colors.primary,
   },
   {
-    name: 'White',
-    description: text,
-    color: colors.white,
+    name: 'Secundary',
+    description:
+      'Cor bastante usada no website, geralmente para o mesmo proposito da primary, porem em contraste',
+    color: colors.secundary,
   },
+  {
+    name: 'Third',
+    description:
+      'Cor para usar como backgrounds, ou textos com menor importacia no website',
+    color: colors.third,
+  },
+
+  // text colors
   {
     name: 'Grey100',
     description: text,
@@ -94,26 +104,26 @@ export const colorsMap = [
   {
     name: 'DarkRed',
     description: others,
-    color: colors.others.darkRed,
+    color: colors.others[1],
   },
   {
     name: 'Indigo',
     description: others,
-    color: colors.others.indigo,
+    color: colors.others[2],
   },
   {
     name: 'Lavender',
     description: others,
-    color: colors.others.lavender,
+    color: colors.others[3],
   },
   {
     name: 'MidnightBlue',
     description: others,
-    color: colors.others.midnightBlue,
+    color: colors.others[4],
   },
   {
     name: 'LightGreen',
     description: others,
-    color: colors.others.lightGreen,
+    color: colors.others[5],
   },
 ];

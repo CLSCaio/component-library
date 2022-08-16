@@ -3,6 +3,11 @@ import { GlobalStyle } from '../src/stories/reset'
 
 const customViewports = {
   small: {
+    name: 'xXsmall',
+    styles: {
+      width: '300px',
+      height: '520px',
+    },
     name: 'Small',
     styles: {
       width: '520px',

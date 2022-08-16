@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import { Modal } from '../../..';
-import { ModalProps } from '../../../components/utilities/modal/interface';
+import { ModalProps } from '../../../components/interfaces';
 
 export default {
   title: 'Utilities/Modal',

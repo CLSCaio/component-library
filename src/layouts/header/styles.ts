@@ -4,7 +4,7 @@ import { medias, colors } from '../..';
 
 import * as I from './interface';
 
-export const Container = styled.header<I.HeaderStyleProps>`
+export const Container = styled.header<I.HeaderStyles>`
   padding: 15px 0;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ export const Container = styled.header<I.HeaderStyleProps>`
   }
 `;
 
-export const Separator = styled.span<I.HeaderStyleProps>`
+export const Separator = styled.span<I.HeaderStyles>`
   display: flex;
   flex-direction: column;
   padding: 0 20px;

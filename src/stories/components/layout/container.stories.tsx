@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Meta, Story } from '@storybook/react';
 
 import { Container } from '../../..';
-import { ContainerProps } from '../../../layouts/container/interface';
+import { ContainerProps } from '../../../layouts/interfaces';
 
 export default {
   title: 'Layouts/Container',

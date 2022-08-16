@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import { Base } from '../../..';
-import { BaseProps } from '../../../components/utilities/base/interface';
+import { BaseProps } from '../../../components/interfaces';
 
 export default {
   title: 'Utilities/Base',

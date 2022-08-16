@@ -12,7 +12,7 @@ const passwordIcon = css`
   fill: ${colors.black};
 `;
 
-export const Container = styled.div<I.InputStyleProps>`
+export const Container = styled.div<I.InputStyle>`
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -26,7 +26,7 @@ export const Container = styled.div<I.InputStyleProps>`
       : `${maxW}px`};
 `;
 
-export const Label = styled.label<I.InputStyleProps>`
+export const Label = styled.label<I.InputStyle>`
   color: ${({ disabled, readOnly, error }) =>
     disabled || readOnly
       ? colors.disabled
@@ -43,7 +43,7 @@ export const Field = styled.span`
   position: relative;
 `;
 
-export const Input = styled(MaskedInput)<I.InputStyleProps>`
+export const Input = styled(MaskedInput)<I.InputStyle>`
   outline: none;
   text-indent: 5px;
   background: none;

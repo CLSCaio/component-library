@@ -38,7 +38,7 @@ export interface InputProps {
   border?: borders;
 }
 
-export interface InputStyleProps {
+export interface InputStyle {
   type?: types;
   maxW?: maxW;
   transform?: transform;

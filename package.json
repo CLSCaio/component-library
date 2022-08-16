@@ -1,6 +1,6 @@
 {
-  "name": "caiol.sousa-library",
-  "version": "1.0.6",
+  "name": "library-caiol.sousa",
+  "version": "1.0.0",
   "author": "Caio Sousa",
   "main": "dist/index.js",
   "license": "MIT",
@@ -20,6 +20,7 @@
     "text-mask-addons": "^3.8.0",
     "tsc-alias": "^1.7.0",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "use-breakpoint": "^3.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

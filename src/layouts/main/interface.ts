@@ -8,11 +8,11 @@ export const sizes = {
 
 type Sizes = 'maxContent' | 'block' | 'default';
 
-export interface MainProps extends MainStylesProps {
+export interface MainProps extends MainStyles {
   children: ReactNode;
 }
 
-export interface MainStylesProps {
+export interface MainStyles {
   maxW?: Sizes;
   withPad?: boolean;
 }

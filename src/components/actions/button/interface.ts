@@ -1,4 +1,4 @@
-export interface ButtonProps extends ButtonStyleProps {
+export interface ButtonProps extends ButtonStyle {
   isLoading?: boolean;
   label: string;
   className?: string;
@@ -20,7 +20,7 @@ export const widths = {
   maxContent: 'max-content',
 };
 
-export interface ButtonStyleProps {
+export interface ButtonStyle {
   variant?: variants;
 
   maxW?: maxWs;
