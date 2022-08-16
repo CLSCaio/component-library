@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors, medias } from 'src/global';
+import { colors as defaultColors, medias } from 'src/global';
 
 import * as I from './interface';
 
@@ -8,7 +8,7 @@ export const Container = styled.div<I.ButtonStyle>`
   position: relative;
   width: 100%;
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, colors }) =>
     variant === 'pulse' &&
     !disabled &&
     css`
@@ -24,8 +24,8 @@ export const Container = styled.div<I.ButtonStyle>`
       .btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        color: ${colors.others[1]};
-        border-color: ${colors.others[1]};
+        color: ${colors?.third || defaultColors.others[1]};
+        border-color: ${colors?.third || defaultColors.others[1]};
         background-color: transparent;
       }
 
@@ -43,7 +43,7 @@ export const Container = styled.div<I.ButtonStyle>`
       }
 
       .btn-bg::after {
-        background-color: ${colors.others[1]};
+        background-color: ${colors?.third || defaultColors.others[1]};
       }
 
       .btn:hover::after {
@@ -69,12 +69,12 @@ export const Container = styled.div<I.ButtonStyle>`
       }
     `}
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, colors }) =>
     variant === 'floating' &&
     !disabled &&
     css`
       .btn {
-        color: ${colors.primary};
+        color: ${colors?.primary || defaultColors.primary};
         padding: 0;
         min-width: fit-content;
         width: 40px;
@@ -167,9 +167,9 @@ export const Button = styled.button<I.ButtonStyle>`
 
   position: relative;
 
-  color: ${colors.secundary};
-  background-color: ${colors.others[1]};
-  border: 2px solid ${colors.primary};
+  color: ${({ colors }) => colors?.secundary || defaultColors.secundary};
+  background-color: ${({ colors }) => colors?.third || defaultColors.others[1]};
+  border: 2px solid ${({ colors }) => colors?.primary || defaultColors.primary};
   transition: 0.7s;
 
   width: 100%;
@@ -181,39 +181,39 @@ export const Button = styled.button<I.ButtonStyle>`
   outline: none;
   cursor: pointer;
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, colors }) =>
     (!variant || variant === 'default') &&
     !disabled &&
     css`
       :hover {
-        color: ${colors.primary};
+        color: ${colors?.primary || defaultColors.primary};
       }
     `}
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, colors }) =>
     variant === 'outline' &&
     !disabled &&
     css`
       background-color: transparent;
-      color: ${colors.primary};
-      border-color: ${colors.others[1]};
+      color: ${colors?.primary || defaultColors.primary};
+      border-color: ${colors?.third || defaultColors.others[1]};
       :hover {
-        border: 3px solid ${colors.primary};
-        background-color: ${colors.others[1]};
-        color: ${colors.secundary};
+        border: 3px solid ${colors?.primary || defaultColors.primary};
+        background-color: ${colors?.third || defaultColors.others[1]};
+        color: ${colors?.secundary || defaultColors.secundary};
       }
     `}
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, colors }) =>
     variant === 'outline-reverse' &&
     !disabled &&
     css`
-      border: 2px solid ${colors.primary};
+      border: 2px solid ${colors?.primary || defaultColors.primary};
       :hover {
-        border: 2px solid ${colors.others[1]};
+        border: 2px solid ${colors?.third || defaultColors.others[1]};
         background-color: transparent;
-        color: ${colors.primary};
-        box-shadow: 0 0 15px ${colors.others[1]};
+        color: ${colors?.primary || defaultColors.primary};
+        box-shadow: 0 0 15px ${colors?.third || defaultColors.others[1]};
       }
     `}
   
@@ -222,12 +222,12 @@ export const Button = styled.button<I.ButtonStyle>`
   }
 
   :disabled {
-    ${({ variant }) =>
+    ${({ variant, colors }) =>
       variant !== 'floating'
         ? css`
-            background-color: ${colors.disabled};
-            color: ${colors.secundary};
-            border: 3px solid ${colors.primary};
+            background-color: ${defaultColors.disabled};
+            color: ${colors?.secundary || defaultColors.secundary};
+            border: 3px solid ${colors?.primary || defaultColors.primary};
             cursor: not-allowed;
             opacity: 0.5;
           `
@@ -236,7 +236,7 @@ export const Button = styled.button<I.ButtonStyle>`
             width: 40px;
             min-width: fit-content;
             border-radius: 100%;
-            background-color: ${colors.disabled};
+            background-color: ${defaultColors.disabled};
             cursor: not-allowed;
             opacity: 0.5;
 
