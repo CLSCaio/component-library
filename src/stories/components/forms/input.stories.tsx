@@ -1,10 +1,9 @@
 import React from 'react';
 import { FormikProvider, useFormik } from 'formik';
 import { Meta, Story } from '@storybook/react';
-
 import * as yup from 'yup';
-import { Input } from '../../..';
-import { InputProps } from '../../../components/interfaces';
+
+import { Input, InputProps } from '../../..';
 
 const error = {
   input: 'Escreva algo no input!',

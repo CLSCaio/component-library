@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Modal } from '../../..';
-import { ModalProps } from '../../../components/interfaces';
+import { Modal, ModalProps } from '../../..';
 
 export default {
   title: 'Utilities/Modal',

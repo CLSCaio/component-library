@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Loading } from '../../..';
-import { LoadingProps } from '../../../components/interfaces';
+import { Loading, LoadingProps } from '../../..';
 
 export default {
   title: 'Utilities/Loading',

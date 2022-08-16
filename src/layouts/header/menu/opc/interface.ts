@@ -1,6 +1,6 @@
-import { Router } from '../../../../router/interface';
+import { Routes } from '../../../../router/interface';
 
 export interface OpcProps {
   openMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  routes: Router[];
+  routes: Routes[];
 }

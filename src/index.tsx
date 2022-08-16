@@ -3,4 +3,4 @@ export * from './global';
 export * from './router';
 export * from './layouts';
 
-export type { RouterProps } from './router/interface';
+export type { RouterProps, Routes } from './router/interface';

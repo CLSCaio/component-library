@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Tooltip } from '../../..';
-import { TooltipProps } from '../../../components/interfaces';
+import { Tooltip, TooltipProps } from '../../..';
 
 export default {
   title: 'Actions/Tooltip',

@@ -1,4 +1,4 @@
-import { Router } from '../../router/interface';
+import { Routes } from '../../router/interface';
 
 export const sizes = {
   block: '100%',
@@ -9,7 +9,7 @@ type width = 'default' | 'block';
 type types = 'fixed' | 'default';
 
 export interface HeaderProps {
-  routes: Router[];
+  routes: Routes[];
   maxW?: width;
   type?: types;
   bgColor?: string;

@@ -1,7 +1,7 @@
 type width = 'default' | 'block';
 type types = 'fixed' | 'default';
 
-export type Router = {
+export type Routes = {
   path: string;
   name: string;
   component: JSX.Element;
@@ -10,7 +10,7 @@ export type Router = {
 };
 
 export interface RouterProps {
-  routes: Router[];
+  routes: Routes[];
   externalHeader?: JSX.Element;
   internalHeader?: {
     maxW?: width;
