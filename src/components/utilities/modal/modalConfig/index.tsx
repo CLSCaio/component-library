@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, Group, Tooltip } from 'src';
+import { Button, Group, Tooltip } from '../../../../index';
 
 import * as I from './interface';
 import * as S from './styles';

@@ -1,4 +1,4 @@
-import { colors } from 'src/global';
+import { colors } from '../../../../global';
 
 export type sizes = 'small' | 'medium' | 'large';
 export type variants = 'transparent' | 'dark' | 'light';

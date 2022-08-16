@@ -2,7 +2,7 @@ import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { MdAdsClick } from 'react-icons/md';
 
-import { colors as themeColor } from 'src/global';
+import { colors as themeColor } from '../../../global';
 
 import * as I from './interface';
 import * as S from './styles';

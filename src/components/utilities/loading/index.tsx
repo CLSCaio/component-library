@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { medias } from 'src/global';
 import useBreakpoint from 'use-breakpoint';
+
+import { medias } from '../../../global';
 
 import { Base } from '../base';
 

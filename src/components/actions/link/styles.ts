@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-import { colors } from 'src/global';
+import { colors } from '../../../global';
 
 const linkStyles = css`
   display: flex;
