@@ -1,9 +1,9 @@
 # Changelog
 
-## Versão 1.0.0
+## Versão 0.0.0
 #### dia 12/08/2022
 
 ### Features
-- Iniciando building no NPM -
+- Iniciando building de teste da lib no NPM -
   by [Caio Sousa](https://github.com/CLSCaio)
 

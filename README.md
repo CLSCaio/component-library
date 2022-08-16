@@ -6,7 +6,7 @@ Caio L Sousa Library
 <p align="center">Published at <a href="url npm">NPM</a>.</p>
 
 <p align="center">
-  NPM Install  
+  Project Install  
   <a href="https://clscaio.github.io/component-library/"></a>
 </p>
 
@@ -22,8 +22,11 @@ Caio L Sousa Library
 
 ## Components
 
+- [x] Foundations
+- [x] Actions
 - [x] Forms
 - [x] Layouts
+- [x] Utilities
 
 ## Techs
 
@@ -41,7 +44,7 @@ Caio L Sousa Library
 
 1. Run `npm install / yarn add library-caiol.sousa` in your React.js project.<br />
 2. Import components from the package and get started.<br />
-3. Visit the website page for details. <a href="" target="blank"> </a>
+3. Visit the website page for details. <a href="https://clscaio.github.io/component-library/?path=/story/welcome--page" target="_blank"> </a>
 
 ## Start Development Environment
 
