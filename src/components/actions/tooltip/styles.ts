@@ -27,88 +27,97 @@ const returnTextColor = ({ color }: I.TooltipStyles) => {
 };
 
 const returnColor = ({ color, sinal }: I.TooltipStyles) => {
-  if (!sinal) {
-    switch (color) {
-      case 'others-1':
+  switch (color) {
+    case 'others-1':
+      if (!sinal)
         return css`
           ${colors.others[1]};
         `;
-      case 'others-2':
-        return css`
-          ${colors.others[2]};
-        `;
-      case 'others-3':
-        return css`
-          ${colors.others[3]};
-        `;
-      case 'others-4':
-        return css`
-          ${colors.others[4]};
-        `;
-      case 'others-5':
-        return css`
-          ${colors.others[5]};
-        `;
-      case 'white':
-        return css`
-          ${colors.white};
-        `;
-
-      case 'transparent':
-        return css`
-          ${colors.third};
-        `;
-      default:
-        return css`
-          ${colors.black};
-        `;
-    }
-  } else {
-    switch (color) {
-      case 'others-1':
+      if (sinal)
         return css`
           border-color: ${colors.others[1]} transparent;
         `;
-      case 'others-2':
+      break;
+    case 'others-2':
+      if (!sinal)
+        return css`
+          ${colors.others[2]};
+        `;
+      if (sinal)
         return css`
           border-color: ${colors.others[2]} transparent;
         `;
-      case 'others-3':
+      break;
+    case 'others-3':
+      if (!sinal)
+        return css`
+          ${colors.others[3]};
+        `;
+      if (sinal)
         return css`
           border-color: ${colors.others[3]} transparent;
         `;
-      case 'others-4':
+      break;
+    case 'others-4':
+      if (!sinal)
+        return css`
+          ${colors.others[4]};
+        `;
+      if (sinal)
         return css`
           border-color: ${colors.others[4]} transparent;
         `;
-      case 'others-5':
+      break;
+    case 'others-5':
+      if (!sinal)
+        return css`
+          ${colors.others[5]};
+        `;
+      if (sinal)
         return css`
           border-color: ${colors.others[5]} transparent;
         `;
-      case 'white':
+      break;
+    case 'white':
+      if (!sinal)
+        return css`
+          ${colors.white};
+        `;
+      if (sinal)
         return css`
           border-color: ${colors.white} transparent;
         `;
-      case 'transparent':
+      break;
+    case 'transparent':
+      if (!sinal)
+        return css`
+          ${colors.third};
+        `;
+      if (sinal)
         return css`
           border-color: ${colors.third} transparent;
         `;
-      default:
+      break;
+    default:
+      if (!sinal)
+        return css`
+          ${colors.black};
+        `;
+      if (sinal)
         return css`
           border-color: ${colors.black} transparent;
         `;
-    }
   }
 };
 
 const handlePlacementTooltip = ({ placement }: I.TooltipStyles) => {
   switch (placement) {
-    case 'downBegin':
+    case 'begin':
       return css`
         left: 5%;
         transform: translate(-2%);
       `;
-    case 'downMiddle':
+    case 'middle':
       return css`
         left: 55%;
         transform: translateX(-50%);
@@ -123,7 +132,7 @@ const handlePlacementTooltip = ({ placement }: I.TooltipStyles) => {
 
 const handlePlacementTooltipArrow = ({ placement }: I.TooltipStyles) => {
   switch (placement) {
-    case 'downBegin':
+    case 'begin':
       return css`
         left: 4%;
 
@@ -132,7 +141,7 @@ const handlePlacementTooltipArrow = ({ placement }: I.TooltipStyles) => {
           transform: translateX(-12%);
         }
       `;
-    case 'downMiddle':
+    case 'middle':
       return css`
         left: 50%;
         transform: translate(-56%);

@@ -7,7 +7,7 @@ type colors =
   | 'transparent'
   | 'black'
   | 'white';
-type placement = 'downBegin' | 'downMiddle' | 'downLast';
+type placement = 'begin' | 'middle' | 'last';
 
 export interface TooltipStyles {
   placement?: placement;

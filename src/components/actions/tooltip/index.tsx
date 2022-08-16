@@ -6,7 +6,7 @@ import * as S from './styles';
 
 export const Tooltip = ({
   description,
-  placement = 'downBegin',
+  placement = 'begin',
   color,
   disabled,
 }: I.TooltipProps) => (
