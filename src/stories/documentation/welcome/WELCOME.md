@@ -10,6 +10,10 @@ O storybook é uma ferramenta para visualização de components, em geral é mui
 os mesmos, pois facilita a visualização deles sem precisar executar uma aplicação por trás, fazendo
 com que você consiga criar components reutilizáveis com muito mais praticidade e perfeição.
 
+### O que é e pra que serve o change log?
+o Change Log é o local onde serão anotadas todas as alterações feitas dentro da lib de components. 
+Pode-se encontrar um exemplo na aba abaixo "CHANGE LOG"
+
 ### Techs
 
 - [x] React.js
@@ -31,10 +35,6 @@ com que você consiga criar components reutilizáveis com muito mais praticidade
 4. Acesse `localhost:6006` no seu navegador.
 5. Rode o comando `yarn buildtp` para gerar o seu build "/dist".
 6. Rode o comando `yarn build-storybook` para gerar o build para o storybook "/docs".
-
-### O que é e pra que serve o change log?
-o Change Log é o local onde serão anotadas todas as alterações feitas dentro da lib de components. 
-Pode-se encontrar um exemplo na aba abaixo "CHANGE LOG"
 
 ### Conheça a equipe que faz parte desse projeto
 

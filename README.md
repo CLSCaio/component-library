@@ -3,11 +3,11 @@ Caio L Sousa Library
 </h1>
 
 <p align="center">Simple Library for React.js with Storybook.</p>
-<p align="center">Published at <a href="url npm">NPM</a>.</p>
+<p align="center">Published at <a href="https://www.npmjs.com/package/library-caiol.sousa">NPM</a>.</p>
 
 <p align="center">
-  Project Install  
-  <a href="https://clscaio.github.io/component-library/"></a>
+  Storybook  
+  <a href="https://clscaio.github.io/component-library/?path=/story/welcome--page"></a>
 </p>
 
 <hr>
