@@ -1,6 +1,6 @@
 {
   "name": "library-caiol.sousa",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Caio Sousa",
   "main": "dist/index.js",
   "license": "MIT",
@@ -28,7 +28,9 @@
     "build": "build-storybook --output-dir docs -s public rimraf dist && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public"
+    "storybook": "start-storybook -p 6006 -s public",
+    "npm": "rimraf dist && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "github": "build-storybook --output-dir docs -s public"
   },
   "eslintConfig": {
     "extends": [
