@@ -114,15 +114,15 @@ const handlePlacementTooltip = ({ placement }: I.TooltipStyles) => {
   switch (placement) {
     case 'begin':
       return css`
-        transform: translate(137px, -40px);
+        transform: translate(96px, -43px);
       `;
     case 'middle':
       return css`
-        transform: translateY(-40px);
+        transform: translate(-4px, -43px);
       `;
     default:
       return css`
-        transform: translate(-127px, -40px);
+        transform: translate(-104px, -43px);
       `;
   }
 };
@@ -131,22 +131,15 @@ const handlePlacementTooltipArrow = ({ placement }: I.TooltipStyles) => {
   switch (placement) {
     case 'begin':
       return css`
-        transform: translateX(5%);
-        ${medias.xXsmall} {
-          transform: translateX(-12%);
-        }
+        left: 10%;
       `;
     case 'middle':
       return css`
-        transform: translate(-56%);
+        left: 50%;
       `;
     default:
       return css`
-        transform: translateX(30%);
-
-        ${medias.xXsmall} {
-          transform: translateX(10%);
-        }
+        left: 90%;
       `;
   }
 };
@@ -157,6 +150,8 @@ export const Container = styled.div<I.TooltipStyles>`
   align-items: center;
   justify-content: center;
   width: max-content;
+
+  position: relative;
 
   p:hover {
     opacity: 0.7;
@@ -188,17 +183,12 @@ export const Container = styled.div<I.TooltipStyles>`
 `;
 
 export const Description = styled.p<I.TooltipStyles>`
-  width: max-content;
+  width: 250px;
+  height: auto;
 
-  ${medias.xXsmall} {
-    width: 214px;
-  }
+  position: absolute;
 
-  ${medias.small} {
-    width: 304px;
-  }
-
-  padding: 12px 20px;
+  padding: 15px;
 
   z-index: 15;
 

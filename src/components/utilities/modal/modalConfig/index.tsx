@@ -22,6 +22,7 @@ export const ModalConfig = ({
         {tooltip && (
           <Tooltip
             description={tooltip}
+            placement="middle"
             color={
               variant ? (variant !== 'light' ? 'white' : 'black') : 'black'
             }
