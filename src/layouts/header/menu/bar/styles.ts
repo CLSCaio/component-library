@@ -19,7 +19,7 @@ export const IMG = styled.img`
   width: 40px;
   height: 40px;
 
-  ${medias.small} {
+  ${medias.xXsmall} {
     display: flex;
   }
 `;
@@ -31,7 +31,7 @@ export const Bars = styled(GoThreeBars)`
 
   cursor: pointer;
 
-  ${medias.small} {
+  ${medias.xXsmall} {
     display: none;
   }
 `;
@@ -43,7 +43,7 @@ export const Close = styled(AiOutlineClose)`
 
   cursor: pointer;
 
-  ${medias.small} {
+  ${medias.xXsmall} {
     display: none;
   }
 `;

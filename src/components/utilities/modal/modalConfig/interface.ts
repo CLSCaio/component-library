@@ -9,7 +9,7 @@ export interface ModalConfigProps extends ModalConfigStyles {
   description?: string;
   closeButton?: string;
   tooltip?: string;
-  button?: {
+  onSubmit?: {
     isLoading?: boolean;
     label: string;
     onClick: () => void;
@@ -24,8 +24,8 @@ export interface ModalConfigStyles {
 
 export const sizes = {
   small: '200px',
-  medium: '400px',
-  large: '600px',
+  medium: '300px',
+  large: '400px',
 };
 
 export const variants = {

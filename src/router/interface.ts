@@ -1,5 +1,5 @@
 type width = 'default' | 'block';
-type types = 'fixed' | 'default';
+type types = 'fixed' | 'static';
 
 export type Routes = {
   path: string;
@@ -11,6 +11,7 @@ export type Routes = {
 
 export interface RouterProps {
   routes: Routes[];
+  withPad?: boolean;
   externalHeader?: JSX.Element;
   internalHeader?: {
     maxW?: width;

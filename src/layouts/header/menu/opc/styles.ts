@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding: 30px 0 0 40px;
   gap: 30px;
 
-  ${medias.small} {
+  ${medias.xXsmall} {
     align-items: center;
     justify-content: center;
     flex-direction: row;

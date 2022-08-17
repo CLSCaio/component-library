@@ -29,8 +29,8 @@ export interface SelectProps {
   readOnly?: boolean;
   positionLabel?: 'top' | 'left';
   border?: borders;
-  className: string;
-  placeholder: string;
+  className?: string;
+  placeholder?: string;
 }
 
 export interface SelectStyle {

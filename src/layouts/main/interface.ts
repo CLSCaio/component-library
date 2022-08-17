@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 export const sizes = {
   maxContent: 'max-content',
   block: '100%',
-  default: '1266px',
+  default: '1280px',
 };
 
 type Sizes = 'maxContent' | 'block' | 'default';

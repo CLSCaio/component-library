@@ -82,11 +82,11 @@ export const Container = styled.span<I.ModalConfigStyles>`
     width: ${({ size }) =>
       size
         ? size === 'small'
-          ? '100px'
+          ? '110px'
           : size === 'medium'
-          ? '300px'
-          : '500px'
-        : '100px'};
+          ? '210px'
+          : '310px'
+        : '110px'};
   }
 `;
 

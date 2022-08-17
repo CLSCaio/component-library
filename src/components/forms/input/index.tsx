@@ -95,7 +95,11 @@ export const Input = ({
               : 'row'
             : 'column'
         }
-        gap={label?.position && border && { desktop: 7 }}
+        gap={
+          !label?.position && !border
+            ? { desktop: 7 }
+            : label?.position && border && { desktop: 7 }
+        }
         align={
           label?.position === 'left' && border === 'outline'
             ? 'center'

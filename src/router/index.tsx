@@ -9,6 +9,7 @@ export const Router = ({
   routes,
   externalHeader,
   internalHeader,
+  withPad,
 }: I.RouterProps) => (
   <BrowserRouter>
     {externalHeader || (
@@ -19,7 +20,7 @@ export const Router = ({
         maxW={internalHeader?.maxW}
       />
     )}
-    <Main>
+    <Main withPad={withPad}>
       <Routes>
         {routes.map(({ component, name, ...route }) => (
           <Route {...route} key={name} element={component} />

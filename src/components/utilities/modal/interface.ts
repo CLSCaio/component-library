@@ -9,7 +9,8 @@ export interface ModalProps {
   variant?: I.variants;
   tooltip?: string;
   closeButton?: string;
-  button?: {
+  onClose: React.Dispatch<React.SetStateAction<boolean>>;
+  onSubmit?: {
     isLoading?: boolean;
     label: string;
     onClick: () => void;

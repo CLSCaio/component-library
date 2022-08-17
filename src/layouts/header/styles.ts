@@ -10,12 +10,12 @@ export const Container = styled.header<I.HeaderStyles>`
   flex-direction: column;
   width: 100%;
   gap: 15px;
-  height: ${({ menu }) => (menu ? '270px' : '70px')};
+  height: ${({ menu }) => (menu ? 'auto' : '70px')};
 
   overflow: hidden;
   top: 0;
 
-  position: ${({ type }) => (type && type === 'fixed' ? 'fixed' : 'static')};
+  position: ${({ type }) => type || 'fixed'};
 
   background: ${({ bgColor }) => bgColor || 'transparent'};
 
@@ -23,7 +23,7 @@ export const Container = styled.header<I.HeaderStyles>`
 
   border-bottom: 5px double ${colors.primary};
 
-  ${medias.small} {
+  ${medias.xXsmall} {
     align-items: center;
     justify-content: center;
     height: 70px;
@@ -37,7 +37,7 @@ export const Separator = styled.span<I.HeaderStyles>`
   width: 100%;
   max-width: max-content;
 
-  ${medias.small} {
+  ${medias.xXsmall} {
     align-items: center;
     justify-content: space-between;
     flex-direction: row;

@@ -9,7 +9,7 @@ export const ModalConfig = ({
   title,
   onClose,
   description,
-  button,
+  onSubmit,
   closeButton,
   tooltip,
   variant = 'light',
@@ -45,15 +45,15 @@ export const ModalConfig = ({
           variant="outline"
           label={closeButton}
           className="btn-modal-1"
-          maxW={250}
+          maxW="block"
         />
       )}
-      {button?.label && (
+      {onSubmit?.label && (
         <Button
-          {...button}
+          {...onSubmit}
           className="btn-modal-2"
           variant="outline-reverse"
-          maxW={250}
+          maxW="block"
         />
       )}
     </Group>

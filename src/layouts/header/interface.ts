@@ -6,7 +6,7 @@ export const sizes = {
 };
 
 type width = 'default' | 'block';
-type types = 'fixed' | 'default';
+type types = 'fixed' | 'static';
 
 export interface HeaderProps {
   routes: Routes[];

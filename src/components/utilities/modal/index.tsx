@@ -5,18 +5,14 @@ import { ModalConfig } from './modalConfig';
 
 import * as I from './interface';
 
-export const Modal = ({ isVisible, withBase, ...rest }: I.ModalProps) => {
-  const [visible, setVisible] = useState(isVisible);
-
-  const onClose = () => setVisible(false);
-
-  useEffect(() => {
-    setVisible(isVisible);
-  }, [isVisible]);
-
-  return visible ? (
+export const Modal = ({
+  isVisible,
+  withBase,
+  onClose,
+  ...rest
+}: I.ModalProps) =>
+  isVisible ? (
     <Base transparent={!withBase}>
-      <ModalConfig onClose={onClose} {...rest} />
+      <ModalConfig onClose={() => onClose(false)} {...rest} />
     </Base>
   ) : null;
-};
