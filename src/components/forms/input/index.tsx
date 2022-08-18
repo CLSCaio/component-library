@@ -96,9 +96,9 @@ export const Input = ({
             : 'column'
         }
         gap={
-          !label?.position && !border
-            ? { desktop: 7 }
-            : label?.position && border && { desktop: 7 }
+          ((!label?.position && border) || (label?.position && border)) && {
+            desktop: 7,
+          }
         }
         align={
           label?.position === 'left' && border === 'outline'
