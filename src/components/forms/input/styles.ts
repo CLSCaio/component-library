@@ -34,8 +34,8 @@ export const Label = styled.label<I.InputStyle>`
       ? colors.error
       : colors.black};
 
-  margin-left: ${({ positionLabel, border }) =>
-    positionLabel === 'top' && border === 'outline' && '10px'};
+  margin-left: ${({ labelposition, border }) =>
+    labelposition === 'top' && border === 'outline' && '10px'};
 `;
 
 export const Field = styled.span`
@@ -45,11 +45,11 @@ export const Field = styled.span`
 
 export const Input = styled(MaskedInput)<I.InputStyle>`
   outline: none;
-  text-indent: 5px;
+  text-indent: 9px;
   background: none;
 
-  padding: ${({ positionLabel, border }) =>
-    positionLabel && border === 'outline' ? '7px 0' : '0 0 7px 0'};
+  padding: ${({ labelposition, border }) =>
+    labelposition && border === 'outline' ? '7px 0' : '0 0 7px 0'};
 
   cursor: ${({ disabled, readOnly }) =>
     (disabled || readOnly) && 'not-allowed'};

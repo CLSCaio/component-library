@@ -1,26 +1,7 @@
 import { FormikContextType } from 'formik';
-import { ButtonProps } from 'src/components/actions';
 import { OptionsProps } from '../select/interface';
 
-type types = 'text' | 'number' | 'password';
-type maxW = 'block' | number | 'max-content';
-type transform = 'capitalize' | 'lowercase' | 'uppercase';
-type borders = 'outline' | 'inline';
-
-type masks =
-  | 'user'
-  | 'billingZipCode'
-  | 'text'
-  | 'cellphone'
-  | 'document'
-  | 'date'
-  | 'shortDate'
-  | 'creditCard'
-  | 'placa'
-  | 'cvv3'
-  | 'cvv4'
-  | 'height'
-  | 'name';
+import { masks, transform, types, maxW, borders } from '../input/interface';
 
 export type Inputs = {
   name: string;

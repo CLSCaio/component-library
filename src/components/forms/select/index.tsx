@@ -23,10 +23,18 @@ export const Select = ({
   const [field, meta] = useField(rest);
 
   const [error, setError] = useState(false);
+  const [errorStyle, setErrorStyle] = useState<'error' | undefined>(undefined);
 
   useEffect(() => {
-    if (meta.touched && meta.error) setError(true);
-    if (!meta.error) setError(false);
+    if (meta.touched && meta.error) {
+      setError(true);
+      setErrorStyle('error');
+    }
+
+    if (!meta.error) {
+      setError(false);
+      setErrorStyle(undefined);
+    }
   }, [meta.touched && meta.error]);
 
   return (
@@ -53,11 +61,11 @@ export const Select = ({
         }
       >
         {label?.name && (
-          <C.Group gap={{ desktop: 10 }} maxW="max-content">
+          <C.Group gap={{ desktop: 10 }} align="center" maxW="max-content">
             <S.Label
               htmlFor={rest.name}
               disabled={disabled || readOnly}
-              error={error}
+              error={errorStyle}
               positionLabel={label.position}
               border={border}
             >
@@ -81,7 +89,7 @@ export const Select = ({
             transform={transform}
             disabled={disabled || readOnly}
             required={required}
-            error={error}
+            error={errorStyle}
             data-gtm-form="select"
             data-gtm-name={label?.name}
             positionLabel={label?.position}

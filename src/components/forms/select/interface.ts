@@ -27,7 +27,6 @@ export interface SelectProps {
   transform?: transform;
   disabled?: boolean;
   readOnly?: boolean;
-  positionLabel?: 'top' | 'left';
   border?: borders;
   className?: string;
   placeholder?: string;
@@ -38,7 +37,7 @@ export interface SelectStyle {
   transform?: transform;
   disabled?: boolean;
   readOnly?: boolean;
-  error?: boolean;
+  error?: 'error';
   positionLabel?: 'top' | 'left';
   border?: borders;
 }

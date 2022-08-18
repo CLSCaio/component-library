@@ -1,9 +1,9 @@
-type types = 'text' | 'number' | 'password';
-type maxW = 'block' | number | 'max-content';
-type transform = 'capitalize' | 'lowercase' | 'uppercase';
-type borders = 'outline' | 'inline';
+export type types = 'text' | 'number' | 'password';
+export type maxW = 'block' | number | 'max-content';
+export type transform = 'capitalize' | 'lowercase' | 'uppercase';
+export type borders = 'outline' | 'inline';
 
-type masks =
+export type masks =
   | 'user'
   | 'billingZipCode'
   | 'text'
@@ -44,8 +44,8 @@ export interface InputStyle {
   transform?: transform;
   disabled?: boolean;
   readOnly?: boolean;
-  error?: boolean;
-  positionLabel?: 'top' | 'left';
+  error?: 'error';
+  labelposition?: 'top' | 'left';
   border?: borders;
 }
 

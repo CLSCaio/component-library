@@ -15,10 +15,15 @@ export const Form = ({
 }: I.FormProps) => (
   <FormikProvider value={form}>
     <S.Form onSubmit={form.handleSubmit}>
-      {inputs && inputs.map(({ ...rest }) => <Input {...rest} {...design} />)}
+      {inputs &&
+        inputs.map(({ ...rest }) => (
+          <Input key={rest.name} {...rest} {...design} />
+        ))}
 
       {selects &&
-        selects.map(({ ...rest }) => <Select {...rest} {...design} />)}
+        selects.map(({ ...rest }) => (
+          <Select key={rest.name} {...rest} {...design} />
+        ))}
 
       <Button
         onClick={() => form.handleSubmit}

@@ -28,6 +28,7 @@ export const Input = ({
 
   const [inputType, setInputType] = useState(type || 'text');
   const [error, setError] = useState(false);
+  const [errorStyle, setErrorStyle] = useState<'error' | undefined>(undefined);
 
   const autoCorrectedDatePipe = createAutoCorrectedDatePipe('dd/mm/yyyy');
   const autoCorrectedShortDatePipe = createAutoCorrectedDatePipe('mm/yyyy');
@@ -43,8 +44,15 @@ export const Input = ({
   };
 
   useEffect(() => {
-    if (meta.touched && meta.error) setError(true);
-    if (!meta.error) setError(false);
+    if (meta.touched && meta.error) {
+      setError(true);
+      setErrorStyle('error');
+    }
+
+    if (!meta.error) {
+      setError(false);
+      setErrorStyle(undefined);
+    }
   }, [meta.touched && meta.error]);
 
   const validateMask = (value: any) => {
@@ -108,12 +116,12 @@ export const Input = ({
         }
       >
         {label?.name && (
-          <C.Group gap={{ desktop: 10 }} maxW="max-content">
+          <C.Group gap={{ desktop: 10 }} align="center" maxW="max-content">
             <S.Label
               htmlFor={rest.name}
               disabled={disabled || readOnly}
-              error={error}
-              positionLabel={label.position}
+              error={errorStyle}
+              labelposition={label?.position}
               border={border}
             >
               {label?.name}
@@ -147,9 +155,9 @@ export const Input = ({
             keepCharPositions
             transform={transform}
             disabled={disabled || readOnly}
-            error={error}
+            error={errorStyle}
             onBlur={handleBlur}
-            positionLabel={label?.position}
+            labelposition={label?.position}
             guide={false}
             onPaste={e => type === 'password' && e.preventDefault()}
             autoComplete={autoComplete}
