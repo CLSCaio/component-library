@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px 0 0 40px;
-  gap: 30px;
+  gap: 10px;
 
   ${medias.xXsmall} {
     align-items: center;

@@ -20,4 +20,5 @@ export interface HeaderStyles {
   maxW?: width;
   type?: types;
   bgColor?: string;
+  routes?: Routes[];
 }

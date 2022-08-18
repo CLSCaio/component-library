@@ -27,6 +27,25 @@ Overview.args = {
       name: 'h2',
       path: '/h2',
     },
+    {
+      component: <Group> dfdsf sdfd</Group>,
+      name: 'h3',
+      path: '/h3',
+    },
+    {
+      component: <Group> dfdsf sdfd</Group>,
+      name: 'h4',
+      path: '/h4',
+    },
+    // {
+    //   component: <Group> dfdsf sdfd</Group>,
+    //   name: 'h5',
+    //   path: '/h5',
+    // },
+    // {
+    //   component: <Group> dfdsf sdfd</Group>,
+    //   name: 'h6',
+    //   path: '/h6',
+    // },
   ],
-  type: 'default',
 };

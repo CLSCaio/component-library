@@ -1,8 +1,23 @@
-import styled from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 
 import { medias, colors } from '../..';
 
 import * as I from './interface';
+
+const calcHeight = ({ menu, routes }: I.HeaderStyles) => {
+  const lenght = routes?.length;
+  const calc = lenght && (lenght + 1) * 60;
+  const px = `${calc}px`;
+
+  if (menu) {
+    return css`
+      height: ${px};
+    `;
+  }
+  return css`
+    height: 70px;
+  `;
+};
 
 export const Container = styled.header<I.HeaderStyles>`
   padding: 15px 0;
@@ -10,7 +25,7 @@ export const Container = styled.header<I.HeaderStyles>`
   flex-direction: column;
   width: 100%;
   gap: 15px;
-  height: ${({ menu }) => (menu ? 'auto' : '70px')};
+  ${({ menu, routes }) => calcHeight({ menu, routes })}
 
   overflow: hidden;
   top: 0;
