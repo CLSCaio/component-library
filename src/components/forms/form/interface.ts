@@ -22,7 +22,7 @@ type masks =
   | 'height'
   | 'name';
 
-type Inputs = {
+export type Inputs = {
   name: string;
   placeholder?: string;
   type?: types;
@@ -39,7 +39,7 @@ type Inputs = {
   autoComplete?: 'off' | 'on';
 };
 
-interface Selects extends Inputs {
+export interface Selects extends Inputs {
   options: OptionsProps[];
 }
 
