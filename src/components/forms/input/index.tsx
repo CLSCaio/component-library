@@ -20,7 +20,6 @@ export const Input = ({
   disabled,
   className,
   placeholder,
-  tooltip,
   border = 'inline',
   autoComplete = 'off',
   ...rest
@@ -119,8 +118,11 @@ export const Input = ({
             >
               {label?.name}
             </S.Label>
-            {tooltip && (
-              <C.Tooltip disabled={disabled || error} description={tooltip} />
+            {label?.tooltip && (
+              <C.Tooltip
+                disabled={disabled || error}
+                description={label?.tooltip}
+              />
             )}
           </C.Group>
         )}

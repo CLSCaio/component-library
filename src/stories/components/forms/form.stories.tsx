@@ -36,7 +36,7 @@ export const Overview: Story<FormProps> = ({ form, ...args }) => {
     validateOnBlur: true,
     validateOnChange: true,
     validateOnMount: true,
-    onSubmit: () => alert(''),
+    onSubmit: () => document.write(''),
   });
   return <Form form={forms} {...args} />;
 };

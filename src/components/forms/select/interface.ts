@@ -17,11 +17,11 @@ export interface SelectProps {
   label?: {
     name: string;
     position?: 'top' | 'left';
+    tooltip?: string;
   };
   options: OptionsProps[];
   id?: string;
   required?: boolean;
-  tooltip?: string;
   onChange?: (event: any) => void;
   maxW?: maxW;
   transform?: transform;

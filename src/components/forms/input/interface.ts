@@ -19,10 +19,10 @@ type masks =
   | 'name';
 
 export interface InputProps {
-  tooltip?: string;
   label?: {
     name: string;
     position?: 'top' | 'left';
+    tooltip?: string;
   };
   name: string;
   placeholder?: string;

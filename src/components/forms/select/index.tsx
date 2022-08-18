@@ -18,7 +18,6 @@ export const Select = ({
   disabled,
   label,
   required,
-  tooltip,
   ...rest
 }: I.SelectProps) => {
   const [field, meta] = useField(rest);
@@ -64,8 +63,11 @@ export const Select = ({
             >
               {label?.name}
             </S.Label>
-            {tooltip && (
-              <C.Tooltip disabled={disabled || error} description={tooltip} />
+            {label?.tooltip && (
+              <C.Tooltip
+                disabled={disabled || error}
+                description={label?.tooltip}
+              />
             )}
           </C.Group>
         )}
