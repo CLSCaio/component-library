@@ -114,15 +114,15 @@ const handlePlacementTooltip = ({ placement }: I.TooltipStyles) => {
   switch (placement) {
     case 'begin':
       return css`
-        transform: translate(96px, -43px);
+        transform: translate(108px, -48px);
       `;
     case 'middle':
       return css`
-        transform: translate(-4px, -43px);
+        transform: translate(-4px, -48px);
       `;
     default:
       return css`
-        transform: translate(-104px, -43px);
+        transform: translate(-115px, -48px);
       `;
   }
 };
@@ -183,8 +183,12 @@ export const Container = styled.div<I.TooltipStyles>`
 `;
 
 export const Description = styled.p<I.TooltipStyles>`
-  width: 250px;
-  height: auto;
+  width: 280px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   position: absolute;
 
