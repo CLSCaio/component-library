@@ -6,8 +6,11 @@ Caio L Sousa Library
 <p align="center">Published at <a href="https://www.npmjs.com/package/library-caiol.sousa">NPM</a>.</p>
 
 <p align="center">
-  Storybook  
-  <a href="https://clscaio.github.io/component-library/?path=/story/welcome--page"></a>
+  <a href="https://clscaio.github.io/component-library/?path=/story/welcome--page">Storybook</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/CLSCaio/component-library">Github</a>
 </p>
 
 <hr>
