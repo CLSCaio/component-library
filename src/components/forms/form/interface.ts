@@ -23,7 +23,6 @@ type masks =
   | 'name';
 
 type Inputs = {
-  tooltip?: string;
   name: string;
   placeholder?: string;
   type?: types;
@@ -35,6 +34,7 @@ type Inputs = {
   label?: {
     name: string;
     position?: 'top' | 'left';
+    tooltip?: string;
   };
   autoComplete?: 'off' | 'on';
 };
