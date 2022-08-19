@@ -7,12 +7,13 @@ export const Container = styled.div<I.ContainerStyles>`
   display: flex;
 
   flex-direction: ${({ direction }) => direction || 'row'};
-  align-items: ${({ direction, align }) =>
-    !align ? (direction === 'column' ? 'center' : 'flex-start') : align};
-  justify-content: ${({ direction, justify }) =>
-    !justify ? (direction === 'column' ? 'flex-start' : 'center') : justify};
+  align-items: ${({ align, mobileResponsive }) =>
+    !align ? (mobileResponsive ? 'center' : align) : align};
+  justify-content: ${({ justify, mobileResponsive }) =>
+    !justify ? (mobileResponsive ? 'center' : justify) : justify};
 
-  gap: ${({ gap }) => (gap ? `${gap.mobile}px` || `${gap.desktop}px` : 0)};
+  gap: ${({ gap }) =>
+    gap ? (gap.mobile ? `${gap.mobile}px` : `${gap.desktop}px`) : 0};
   padding: ${({ pad }) =>
     pad ? `${pad.top}px ${pad.right}px ${pad.bottom}px ${pad.left}px` : 0};
 
