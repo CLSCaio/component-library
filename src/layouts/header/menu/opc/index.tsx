@@ -7,13 +7,16 @@ import * as S from './styles';
 
 export const Opc = ({ openMenu, routes }: I.OpcProps) => (
   <S.Container>
-    {routes.map(({ name, path }) => (
-      <Link
-        key={name}
-        label={name}
-        link={path}
-        onClick={() => openMenu(false)}
-      />
-    ))}
+    {routes.map(
+      ({ name, path }) =>
+        path !== '/*' && (
+          <Link
+            key={name}
+            label={name}
+            link={path}
+            onClick={() => openMenu(false)}
+          />
+        ),
+    )}
   </S.Container>
 );
