@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { medias } from '../..';
 
 import * as I from './interface';
@@ -7,10 +7,22 @@ export const Container = styled.div<I.ContainerStyles>`
   display: flex;
 
   flex-direction: ${({ direction }) => direction || 'row'};
-  align-items: ${({ align, mobileResponsive }) =>
-    !align ? (mobileResponsive ? 'center' : align) : align};
-  justify-content: ${({ justify, mobileResponsive }) =>
-    !justify ? (mobileResponsive ? 'center' : justify) : justify};
+  ${({ align, mobileResponsive }) =>
+    mobileResponsive
+      ? css`
+          align-items: center;
+        `
+      : css`
+          align-items: ${align || 'center'};
+        `};
+  ${({ justify, mobileResponsive }) =>
+    mobileResponsive
+      ? css`
+          justify-content: center;
+        `
+      : css`
+          justify-content: ${justify || 'center'};
+        `};
 
   gap: ${({ gap }) =>
     gap ? (gap.mobile ? `${gap.mobile}px` : `${gap.desktop}px`) : 0};
@@ -48,22 +60,22 @@ export const Container = styled.div<I.ContainerStyles>`
   ${medias.medium} {
     flex-direction: ${({ direction, mobileResponsive }) =>
       mobileResponsive && direction === 'column' ? 'row' : 'column'};
-    align-items: ${({ direction, align }) =>
-      !align
-        ? direction === 'row'
-          ? 'flex-start'
-          : 'center'
-        : align === 'flex-start'
-        ? 'center'
-        : 'flex-start'};
-    justify-content: ${({ direction, justify }) =>
-      !justify
-        ? direction === 'row'
-          ? 'center'
-          : justify === 'flex-start'
-          ? 'center'
-          : 'flex-start'
-        : justify};
+    ${({ align }) =>
+      align
+        ? css`
+            align-items: ${align};
+          `
+        : css`
+            align-items: center;
+          `};
+    ${({ justify }) =>
+      justify
+        ? css`
+            justify-content: ${justify};
+          `
+        : css`
+            justify-content: center;
+          `};
     gap: ${({ gap }) => gap && `${gap.desktop}px`};
   }
 `;
