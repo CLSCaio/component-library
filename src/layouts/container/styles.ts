@@ -13,7 +13,8 @@ export const Container = styled.div<I.ContainerStyles>`
     !justify ? (direction === 'column' ? 'flex-start' : 'center') : justify};
 
   gap: ${({ gap }) => (gap ? `${gap.mobile}px` || `${gap.desktop}px` : 0)};
-  padding: ${({ pad }) => pad || '10px'};
+  padding: ${({ pad }) =>
+    pad ? `${pad.top}px ${pad.right}px ${pad.bottom}px ${pad.left}px` : 0};
 
   background-color: ${({ bgColor }) => bgColor || 'transparent'};
 
