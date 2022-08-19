@@ -38,7 +38,7 @@ const linkStyles = css`
     backface-visibility: hidden;
     border-color: ${colors.link};
     transition: width 350ms ease-in-out;
-    width: 300%;
+    width: 120%;
     bottom: auto;
     top: 0;
   }

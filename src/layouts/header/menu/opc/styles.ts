@@ -14,5 +14,6 @@ export const Container = styled.div`
     flex-direction: row;
     max-width: max-content;
     padding: 0;
+    gap: 50px;
   }
 `;
