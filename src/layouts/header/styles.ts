@@ -63,3 +63,7 @@ export const Separator = styled.span<I.HeaderStyles>`
       maxW && maxW === 'block' ? I.sizes.block : I.sizes.default};
   }
 `;
+
+export const Divider = styled.span`
+  height: 75px;
+`;

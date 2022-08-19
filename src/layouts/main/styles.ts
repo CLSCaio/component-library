@@ -9,9 +9,8 @@ export const Main = styled.main<I.MainStyles>`
   align-items: center;
   width: 100%;
   min-height: calc(100vh - 150px);
-  margin-top: 30px;
   max-width: ${({ maxW }) =>
     maxW ? (typeof maxW === 'number' ? `${maxW}px` : I.sizes[maxW]) : '1280px'};
 
-  padding: ${({ withPad }) => withPad && '15px'};
+  padding: ${({ withPad }) => withPad && '30px 15px'};
 `;
