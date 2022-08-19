@@ -43,6 +43,8 @@ export const Container = styled.header<I.HeaderStyles>`
     justify-content: center;
     height: 70px;
   }
+
+  z-index: 99;
 `;
 
 export const Separator = styled.span<I.HeaderStyles>`
