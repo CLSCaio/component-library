@@ -6,7 +6,8 @@ import * as I from './interface';
 export const Container = styled.div<I.ContainerStyles>`
   display: flex;
 
-  flex-direction: ${({ direction }) => direction || 'row'};
+  flex-direction: ${({ direction, mobileResponsive }) =>
+    mobileResponsive ? 'column' : direction || 'row'};
   ${({ align, mobileResponsive }) =>
     mobileResponsive
       ? css`
@@ -24,10 +25,9 @@ export const Container = styled.div<I.ContainerStyles>`
           justify-content: ${justify || 'center'};
         `};
 
-  gap: ${({ gap }) =>
-    gap ? (gap.mobile ? `${gap.mobile}px` : `${gap.desktop}px`) : 0};
+  gap: ${({ gap }) => (gap?.[1] ? `${gap[1]}px` : 0)};
   padding: ${({ pad }) =>
-    pad ? `${pad.top}px ${pad.right}px ${pad.bottom}px ${pad.left}px` : 0};
+    pad ? `${pad[0]}px ${pad[1]}px ${pad[2]}px ${pad[3]}px` : 0};
 
   background-color: ${({ bgColor }) => bgColor || 'transparent'};
 
@@ -45,13 +45,10 @@ export const Container = styled.div<I.ContainerStyles>`
     w ? (typeof w === 'number' ? `${w}px` : I.sizes[w]) : '100%'};
 
   border-radius: ${({ radius }) =>
-    radius === 'none'
-      ? 'none'
-      : radius
-      ? `${radius?.size}${radius?.style}`
-      : '16px'};
+    radius === 'none' ? 'none' : radius && `${radius?.size}${radius?.style}`};
 
-  border-width: ${({ border }) => (border === 'none' ? 'none' : border?.size)};
+  border-width: ${({ border }) =>
+    border === 'none' ? 'none' : `${border?.size}px`};
   border-color: ${({ border }) => (border === 'none' ? 'none' : border?.color)};
   border-style: ${({ border }) => (border === 'none' ? 'none' : border?.style)};
 
@@ -59,7 +56,7 @@ export const Container = styled.div<I.ContainerStyles>`
 
   ${medias.medium} {
     flex-direction: ${({ direction, mobileResponsive }) =>
-      mobileResponsive && direction === 'column' ? 'row' : 'column'};
+      mobileResponsive ? 'row' : direction || 'column'};
     ${({ align }) =>
       align
         ? css`
@@ -76,6 +73,6 @@ export const Container = styled.div<I.ContainerStyles>`
         : css`
             justify-content: center;
           `};
-    gap: ${({ gap }) => gap && `${gap.desktop}px`};
+    gap: ${({ gap }) => (gap?.[0] ? `${gap[0]}px` : 0)};
   }
 `;

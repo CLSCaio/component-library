@@ -18,10 +18,9 @@ export const Container = styled.div<I.GroupStyles>`
       : I.sizes.block};
 
   flex-direction: ${({ direction }) => direction || 'row'};
-  gap: ${({ gap }) =>
-    gap ? (gap.mobile ? `${gap.mobile}px` : `${gap.desktop}px`) : 0};
+  gap: ${({ gap }) => (gap?.[1] ? `${gap[1]}px` : 0)};
   padding: ${({ pad }) =>
-    pad ? `${pad.top}px ${pad.right}px ${pad.bottom}px ${pad.left}px` : 0};
+    pad ? `${pad[0]}px ${pad[1]}px ${pad[2]}px ${pad[3]}px` : 0};
   background-color: ${({ bgColor }) => bgColor};
 
   ${({ pos }) =>
@@ -71,6 +70,6 @@ export const Container = styled.div<I.GroupStyles>`
         `};
 
   ${medias.medium} {
-    gap: ${({ gap }) => (gap ? `${gap.desktop}px` : 0)};
+    gap: ${({ gap }) => (gap?.[0] ? `${gap[0]}px` : 0)};
   }
 `;

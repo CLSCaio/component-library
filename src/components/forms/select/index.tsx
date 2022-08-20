@@ -48,9 +48,9 @@ export const Select = ({
             : 'column'
         }
         gap={
-          ((!label?.position && border) || (label?.position && border)) && {
-            desktop: 7,
-          }
+          ((!label?.position && border) || (label?.position && border)) && [
+            7, 7,
+          ]
         }
         align={
           label?.position === 'left' && border === 'outline'
@@ -61,7 +61,7 @@ export const Select = ({
         }
       >
         {label?.name && (
-          <C.Group gap={{ desktop: 10 }} align="center" maxW="max-content">
+          <C.Group gap={[10, 10]} align="center" maxW="max-content">
             <S.Label
               htmlFor={rest.name}
               disabled={disabled || readOnly}

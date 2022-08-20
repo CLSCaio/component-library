@@ -16,7 +16,7 @@ export const ModalConfig = ({
   ...rest
 }: I.ModalConfigProps) => (
   <S.Container {...rest} variant={variant}>
-    <Group direction="column" gap={{ desktop: 20 }}>
+    <Group direction="column" gap={[20, 20]}>
       <Group justify="space-between" align="center">
         <h2 className="text">{title}</h2>
         {tooltip && (
@@ -33,12 +33,7 @@ export const ModalConfig = ({
       <p className="text">{description}</p>
     </Group>
 
-    <Group
-      direction="column"
-      justify="center"
-      align="center"
-      gap={{ desktop: 7 }}
-    >
+    <Group direction="column" justify="center" align="center" gap={[7, 7]}>
       {closeButton && (
         <Button
           type="button"

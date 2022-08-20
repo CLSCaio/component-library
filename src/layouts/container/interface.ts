@@ -12,7 +12,8 @@ export interface ContainerProps extends ContainerStyles {
 }
 
 export interface ContainerStyles {
-  gap?: { desktop: number; mobile?: number };
+  pad?: [top: number, right: number, bottom: number, left: number];
+  gap?: [desktop?: number, mobile?: number];
   direction?: 'row' | 'column';
   bgColor?: string;
   maxW?: number | Sizes;
@@ -20,7 +21,6 @@ export interface ContainerStyles {
   minH?: number | Sizes;
   w?: number | Sizes;
   h?: number | Sizes;
-  pad?: { top: number; right: number; bottom: number; left: number };
   border?:
     | 'none'
     | {

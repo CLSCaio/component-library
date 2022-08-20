@@ -15,17 +15,11 @@ export interface GroupProps extends GroupStyles {
 export interface GroupStyles {
   maxW?: 'default' | 'block' | 'max-content' | number;
   direction?: 'row' | 'column';
-  pad?: {
-    top: number;
-    left: number;
-    bottom: number;
-    right: number;
-  };
-  gap?: { desktop: number; mobile?: number };
+  pad?: [top: number, right: number, bottom: number, left: number];
+  gap?: [desktop?: number, mobile?: number];
   bgColor?: string;
   align?: align;
   justify?: align | 'space-around' | 'space-evenly' | 'space-between';
-
   pos?: {
     style: 'relative' | 'absolute' | 'fixed';
     top?: number;
