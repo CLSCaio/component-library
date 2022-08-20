@@ -23,6 +23,11 @@ export const Container = styled.div<I.GroupStyles>`
     pad ? `${pad[0]}px ${pad[1]}px ${pad[2]}px ${pad[3]}px` : 0};
   background-color: ${({ bgColor }) => bgColor};
 
+  border-radius: ${({ border }) =>
+    border && border !== 'none'
+      ? `${border?.radius?.size}${border?.radius?.style}`
+      : 'none'};
+
   ${({ pos }) =>
     pos &&
     css`

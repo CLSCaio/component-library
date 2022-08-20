@@ -44,13 +44,17 @@ export const Container = styled.div<I.ContainerStyles>`
   width: ${({ w }) =>
     w ? (typeof w === 'number' ? `${w}px` : I.sizes[w]) : '100%'};
 
-  border-radius: ${({ radius }) =>
-    radius === 'none' ? 'none' : radius && `${radius?.size}${radius?.style}`};
+  border-radius: ${({ border }) =>
+    border && border !== 'none'
+      ? `${border?.radius?.size}${border?.radius?.style}`
+      : 'none'};
 
   border-width: ${({ border }) =>
-    border === 'none' ? 'none' : `${border?.size}px`};
-  border-color: ${({ border }) => (border === 'none' ? 'none' : border?.color)};
-  border-style: ${({ border }) => (border === 'none' ? 'none' : border?.style)};
+    border && border !== 'none' ? `${border.size}px` : 'none'};
+  border-color: ${({ border }) =>
+    border && border !== 'none' ? border.color : 'none'};
+  border-style: ${({ border }) =>
+    border && border !== 'none' ? border.style : 'none'};
 
   position: ${({ pos }) => pos};
 

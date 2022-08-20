@@ -17,6 +17,17 @@ export interface GroupStyles {
   direction?: 'row' | 'column';
   pad?: [top: number, right: number, bottom: number, left: number];
   gap?: [desktop?: number, mobile?: number];
+  border?:
+    | 'none'
+    | {
+        size: number;
+        color: string;
+        style: 'solid' | 'double' | 'dashed';
+        radius?: {
+          size: number;
+          style: '%' | 'px';
+        };
+      };
   bgColor?: string;
   align?: align;
   justify?: align | 'space-around' | 'space-evenly' | 'space-between';

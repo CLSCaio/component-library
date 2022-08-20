@@ -27,12 +27,10 @@ export interface ContainerStyles {
         size: number;
         color: string;
         style: 'solid' | 'double' | 'dashed';
-      };
-  radius?:
-    | 'none'
-    | {
-        size: number;
-        style: '%' | 'px';
+        radius?: {
+          size: number;
+          style: '%' | 'px';
+        };
       };
   align?: Align;
   justify?: Align | 'space-between' | 'space-around' | 'space-evenly';
