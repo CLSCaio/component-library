@@ -40,8 +40,7 @@ export const Select = styled.select<I.SelectStyle>`
   text-indent: 5px;
   background: none;
 
-  padding: ${({ positionLabel, border }) =>
-    positionLabel && border === 'outline' ? '7px 0' : '0 0 7px 0'};
+  padding: ${({ border }) => (border === 'outline' ? '7px 0' : '0 0 7px 0')};
 
   cursor: ${({ disabled, readOnly }) =>
     (disabled || readOnly) && 'not-allowed'};
@@ -54,7 +53,7 @@ export const Select = styled.select<I.SelectStyle>`
     ${({ border }) =>
       border && border === 'outline'
         ? `
-        border-radius: 10px;
+        border-radius: 5px;
         border: 2px solid ${colors.focus}`
         : `
       border-bottom: 2px solid ${colors.focus};
@@ -66,7 +65,7 @@ export const Select = styled.select<I.SelectStyle>`
     ${({ border }) =>
       border && border === 'outline'
         ? `
-        border-radius: 10px;
+        border-radius: 5px;
         border: 2px solid ${colors.disabled}`
         : `
       border-bottom: 2px solid ${colors.disabled};
@@ -88,7 +87,7 @@ export const Select = styled.select<I.SelectStyle>`
   ${({ disabled, readOnly, error, border }) =>
     border && border === 'outline'
       ? `
-        border-radius: 10px;
+        border-radius: 5px;
         border: 2px solid ${
           disabled || readOnly
             ? colors.disabled

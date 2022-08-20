@@ -48,8 +48,7 @@ export const Input = styled(MaskedInput)<I.InputStyle>`
   text-indent: 9px;
   background: none;
 
-  padding: ${({ labelposition, border }) =>
-    labelposition && border === 'outline' ? '7px 0' : '0 0 7px 0'};
+  padding: ${({ border }) => (border === 'outline' ? '7px 0' : '0 0 7px 0')};
 
   cursor: ${({ disabled, readOnly }) =>
     (disabled || readOnly) && 'not-allowed'};
@@ -62,7 +61,7 @@ export const Input = styled(MaskedInput)<I.InputStyle>`
     ${({ border }) =>
       border && border === 'outline'
         ? `
-        border-radius: 10px;
+        border-radius: 5px;
         border: 2px solid ${colors.focus}`
         : `
       border-bottom: 2px solid ${colors.focus};
@@ -74,7 +73,7 @@ export const Input = styled(MaskedInput)<I.InputStyle>`
     ${({ border }) =>
       border && border === 'outline'
         ? `
-        border-radius: 10px;
+        border-radius: 5px;
         border: 2px solid ${colors.disabled}`
         : `
       border-bottom: 2px solid ${colors.disabled};
@@ -96,7 +95,7 @@ export const Input = styled(MaskedInput)<I.InputStyle>`
   ${({ disabled, readOnly, error, border }) =>
     border && border === 'outline'
       ? `
-        border-radius: 10px;
+        border-radius: 5px;
         border: 2px solid ${
           disabled || readOnly
             ? colors.disabled
