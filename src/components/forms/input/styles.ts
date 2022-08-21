@@ -34,7 +34,11 @@ export const Label = styled.label<I.InputStyle>`
       ? colors.error
       : colors.black};
 
-  ${({ boldLabel }) => boldLabel && weights.bold};
+  ${({ boldLabel }) =>
+    boldLabel &&
+    css`
+      font-weight: ${weights.bold};
+    `};
 
   margin-left: ${({ labelposition, border }) =>
     labelposition === 'top' && border === 'outline' && '10px'};
