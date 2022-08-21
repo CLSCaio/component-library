@@ -1,6 +1,6 @@
 {
   "name": "library-caiol.sousa",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "author": "Caio Sousa",
   "main": "dist/index.js",
   "license": "MIT",
