@@ -1,10 +1,11 @@
 export const sizes = {
-  maxContent: 'max-content',
+  'max-content': 'max-content',
   block: '100%',
   default: '1280px',
+  '100vh': '100vh',
 };
 
-type Sizes = 'maxContent' | 'block' | 'default';
+type Sizes = 'max-content' | 'block' | 'default' | '100vh';
 type Align = 'center' | 'flex-end' | 'flex-start';
 
 export interface ContainerProps extends ContainerStyles {
