@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import MaskedInput from 'react-text-mask';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
-import { colors } from '../../../global';
+import { colors, weights } from '../../../global';
 
 import * as I from './interface';
 
@@ -33,6 +33,8 @@ export const Label = styled.label<I.InputStyle>`
       : error
       ? colors.error
       : colors.black};
+
+  ${({ boldLabel }) => boldLabel && weights.bold};
 
   margin-left: ${({ labelposition, border }) =>
     labelposition === 'top' && border === 'outline' && '10px'};

@@ -17,6 +17,7 @@ export interface SelectProps {
   label?: {
     name: string;
     position?: 'top' | 'left';
+    bold?: boolean;
     tooltip?: string;
   };
   options: OptionsProps[];
@@ -40,4 +41,5 @@ export interface SelectStyle {
   error?: 'error';
   positionLabel?: 'top' | 'left';
   border?: borders;
+  boldLabel?: boolean;
 }

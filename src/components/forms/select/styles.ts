@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors } from '../../../global';
+import { colors, weights } from '../../../global';
 
 import * as I from './interface';
 
@@ -25,6 +25,8 @@ export const Label = styled.label<I.SelectStyle>`
       : error
       ? colors.error
       : colors.black};
+
+  ${({ boldLabel }) => boldLabel && weights.bold};
 
   margin-left: ${({ positionLabel, border }) =>
     positionLabel === 'top' && border === 'outline' && '10px'};

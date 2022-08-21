@@ -68,6 +68,7 @@ export const Select = ({
               error={errorStyle}
               positionLabel={label.position}
               border={border}
+              boldLabel={label?.bold}
             >
               {label?.name}
             </S.Label>

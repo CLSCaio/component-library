@@ -22,6 +22,7 @@ export interface InputProps {
   label?: {
     name: string;
     position?: 'top' | 'left';
+    bold?: boolean;
     tooltip?: string;
   };
   name: string;
@@ -47,6 +48,7 @@ export interface InputStyle {
   error?: 'error';
   labelposition?: 'top' | 'left';
   border?: borders;
+  boldLabel?: boolean;
 }
 
 export const widths = {

@@ -123,6 +123,7 @@ export const Input = ({
               error={errorStyle}
               labelposition={label?.position}
               border={border}
+              boldLabel={label?.bold}
             >
               {label?.name}
             </S.Label>
