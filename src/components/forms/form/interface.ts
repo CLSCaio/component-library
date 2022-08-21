@@ -16,6 +16,7 @@ export type Inputs = {
     name: string;
     position?: 'top' | 'left';
     tooltip?: string;
+    bold?: boolean;
   };
   autoComplete?: 'off' | 'on';
 };
