@@ -22,8 +22,10 @@ export const Router = ({
     )}
     <Main withPad={withPad}>
       <Routes>
-        {routes.map(({ component, name, ...route }) => (
-          <Route {...route} key={name} element={component} />
+        {routes.map(({ component, children, id, ...route }) => (
+          <Route {...route} key={id} element={component}>
+            {children}
+          </Route>
         ))}
       </Routes>
     </Main>
