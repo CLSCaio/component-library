@@ -70,7 +70,7 @@ export const Select = ({
               border={border}
               boldLabel={label?.bold}
             >
-              {label?.name}
+              {label?.name} {required && '*'}
             </S.Label>
             {label?.tooltip && (
               <C.Tooltip
