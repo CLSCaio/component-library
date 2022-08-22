@@ -80,7 +80,7 @@ export const shortDate = [
   /[0-9]/,
 ];
 
-export const creditCardDefault = [
+export const creditCard = [
   /\d/,
   /\d/,
   /\d/,
@@ -96,43 +96,6 @@ export const creditCardDefault = [
   /\d/,
   /\d/,
   '\u2000',
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-];
-export const creditCardDiners = [
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  '\u2000',
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  '\u2000',
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-];
-export const creditCardAmex = [
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  '\u2000',
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  '\u2000',
-  /\d/,
   /\d/,
   /\d/,
   /\d/,
