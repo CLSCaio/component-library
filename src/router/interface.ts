@@ -19,6 +19,9 @@ export interface RouterProps {
     maxW?: width;
     type?: types;
     bgColor?: string;
-    linkColor?: [text: string, hover?: string];
+    link?: {
+      color?: [text: string, hover?: string];
+      variant?: 'default' | 'doubleLine' | 'underline';
+    };
   };
 }
