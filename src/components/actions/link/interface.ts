@@ -1,6 +1,6 @@
 export interface LinkProps {
   link: string;
   label: string;
-  normalLink?: boolean;
+  type?: 'default' | 'next' | 'react';
   onClick?: () => void;
 }
