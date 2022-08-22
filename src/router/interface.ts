@@ -19,5 +19,6 @@ export interface RouterProps {
     maxW?: width;
     type?: types;
     bgColor?: string;
+    linkColor?: [text: string, hover?: string];
   };
 }

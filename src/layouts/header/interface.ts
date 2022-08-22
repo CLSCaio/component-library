@@ -13,7 +13,10 @@ export interface HeaderProps {
   maxW?: width;
   type?: types;
   bgColor?: string;
-  link?: 'next' | 'react';
+  link?: {
+    type: 'next' | 'react';
+    colors?: [text: string, hover?: string];
+  };
   title?: string;
 }
 

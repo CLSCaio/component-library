@@ -10,7 +10,7 @@ export const Header = ({
   maxW,
   type,
   bgColor,
-  link = 'react',
+  link,
   title,
 }: I.HeaderProps) => {
   const [menu, openMenu] = useState(false);

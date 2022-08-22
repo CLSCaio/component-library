@@ -2,15 +2,17 @@ import styled, { css } from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-import { colors } from '../../../global';
+import { colors as defaultColors } from '../../../global';
 
-const linkStyles = css`
+import * as I from './interface';
+
+const linkStyles = (colors?: [text: string, hover?: string]) => css`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  color: ${colors.link};
+  color: ${colors?.[0] || defaultColors.link};
   cursor: pointer;
   width: max-content;
   position: relative;
@@ -21,6 +23,7 @@ const linkStyles = css`
   :hover,
   :active {
     letter-spacing: 3px;
+    color: ${colors?.[1] || colors?.[0] || defaultColors.link};
   }
 
   :after,
@@ -34,9 +37,9 @@ const linkStyles = css`
 
   :hover:after,
   :hover:before {
-    border: 0.5px solid ${colors.link};
+    border: 0.5px solid ${colors?.[1] || colors?.[0] || defaultColors.link};
     backface-visibility: hidden;
-    border-color: ${colors.link};
+    border-color: ${colors?.[1] || colors?.[0] || defaultColors.link};
     transition: width 350ms ease-in-out;
     width: 120%;
     bottom: auto;
@@ -53,10 +56,10 @@ export const Container = styled.span`
   }
 `;
 
-export const To = styled(Link)`
-  ${linkStyles}
+export const To = styled(Link)<I.LinkStyles>`
+  ${({ colors }) => linkStyles(colors)}
 `;
 
-export const Href = styled.a`
-  ${linkStyles}
+export const Href = styled.a<I.LinkStyles>`
+  ${({ colors }) => linkStyles(colors)}
 `;

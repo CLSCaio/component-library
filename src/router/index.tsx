@@ -18,6 +18,7 @@ export const Router = ({
         type={internalHeader?.type}
         bgColor={internalHeader?.bgColor}
         maxW={internalHeader?.maxW}
+        link={{ type: 'react', colors: internalHeader?.linkColor }}
       />
     )}
     <Main withPad={withPad}>

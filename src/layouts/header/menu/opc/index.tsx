@@ -11,7 +11,8 @@ export const Opc = ({ openMenu, routes, link }: I.OpcProps) => (
       ({ label, href }) =>
         href !== '/*' && (
           <Link
-            type={link}
+            type={link?.type}
+            colors={link?.colors}
             key={label}
             href={href}
             onClick={() => openMenu(false)}
