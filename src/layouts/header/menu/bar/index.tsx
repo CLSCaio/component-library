@@ -3,7 +3,7 @@ import React from 'react';
 import * as I from './interface';
 import * as S from './styles';
 
-export const Bar = ({ menu, openMenu, img }: I.BarProps) => (
+export const Bar = ({ menu, openMenu, img, title }: I.BarProps) => (
   <S.Container>
     {img && <S.IMG src={img.url} alt={img.alt} />}
     {!menu ? (
@@ -12,6 +12,6 @@ export const Bar = ({ menu, openMenu, img }: I.BarProps) => (
       <S.Close onClick={() => openMenu(!menu)} />
     )}
 
-    <p>Caio Sousa</p>
+    <p>{title}</p>
   </S.Container>
 );

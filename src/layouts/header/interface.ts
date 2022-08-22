@@ -13,6 +13,8 @@ export interface HeaderProps {
   maxW?: width;
   type?: types;
   bgColor?: string;
+  link?: 'next' | 'react';
+  title?: string;
 }
 
 export interface HeaderStyles {
