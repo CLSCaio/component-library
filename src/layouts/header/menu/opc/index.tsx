@@ -8,16 +8,15 @@ import * as S from './styles';
 export const Opc = ({ openMenu, routes, link }: I.OpcProps) => (
   <S.Container>
     {routes.map(
-      ({ id, children, path }) =>
-        path !== '/*' && (
+      ({ label, href }) =>
+        href !== '/*' && (
           <Link
             type={link}
-            key={id}
-            link={path}
+            key={label}
+            href={href}
             onClick={() => openMenu(false)}
-          >
-            {children}
-          </Link>
+            label={label}
+          />
         ),
     )}
   </S.Container>

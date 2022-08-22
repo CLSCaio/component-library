@@ -1,8 +1,6 @@
-import { ReactNode } from 'react';
-
 export interface LinkProps {
-  link: `/${string}` | '/';
+  href: `/${string}` | '/' | `#${string}` | `https://${string}`;
+  label: string;
   type?: 'default' | 'next' | 'react';
   onClick?: () => void;
-  children: ReactNode;
 }

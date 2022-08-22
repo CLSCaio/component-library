@@ -14,23 +14,23 @@ Overview.args = {
   routes: [
     {
       component: <div> Home </div>,
-      name: 'home',
-      path: '/',
+      label: 'home',
+      href: '/',
     },
     {
       component: <div> Tela 1 </div>,
-      name: 'tela1',
-      path: '/tela1',
+      label: 'tela1',
+      href: '/tela1',
     },
     {
       component: <div> Tela 2 </div>,
-      name: 'tela2',
-      path: '/tela2',
+      label: 'tela2',
+      href: '/tela2',
     },
     {
       component: <div> Tela 3 </div>,
-      name: 'tela3',
-      path: '/tela3',
+      label: 'tela3',
+      href: '/tela3',
     },
   ],
 };

@@ -4,9 +4,8 @@ type width = 'default' | 'block';
 type types = 'fixed' | 'static';
 
 export type Routes = {
-  path: `/${string}` | '/';
-  id: string;
-  children: ReactNode;
+  href: `/${string}` | '/' | `#${string}` | `https://${string}`;
+  label: string;
   component: JSX.Element;
   public?: boolean;
   exact?: boolean;

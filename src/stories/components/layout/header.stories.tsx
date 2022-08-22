@@ -19,33 +19,23 @@ Overview.args = {
   routes: [
     {
       component: <Group> dfdsf sdfd</Group>,
-      name: 'h1',
-      path: '/h1',
+      label: 'h1',
+      href: '/h1',
     },
     {
       component: <Group> dfdsf sdfd</Group>,
-      name: 'h2',
-      path: '/h2',
+      label: 'h2',
+      href: '/h2',
     },
     {
       component: <Group> dfdsf sdfd</Group>,
-      name: 'h3',
-      path: '/h3',
+      label: 'h3',
+      href: '/h3',
     },
     {
       component: <Group> dfdsf sdfd</Group>,
-      name: 'h4',
-      path: '/h4',
+      label: 'h4',
+      href: '/h4',
     },
-    // {
-    //   component: <Group> dfdsf sdfd</Group>,
-    //   name: 'h5',
-    //   path: '/h5',
-    // },
-    // {
-    //   component: <Group> dfdsf sdfd</Group>,
-    //   name: 'h6',
-    //   path: '/h6',
-    // },
   ],
 };
