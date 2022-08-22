@@ -6,4 +6,5 @@ export interface LinkProps extends LinkStyles {
 }
 export interface LinkStyles {
   colors?: [text: string, hover?: string];
+  variant?: 'default' | 'doubleLine' | 'underline';
 }
