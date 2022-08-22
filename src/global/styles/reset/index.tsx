@@ -51,6 +51,11 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: ${weights.bold};
   }
 
+  a {
+    font-size: ${sizes.medium};
+    font-weight: ${weights.bold};
+  }
+
   h3, p, a, li, ul, span, input, label, select {
     font-size: ${sizes.default};
     font-weight: ${weights.regular};
