@@ -1,9 +1,12 @@
+import { ReactNode } from 'react';
+
 type width = 'default' | 'block';
 type types = 'fixed' | 'static';
 
 export type Routes = {
   path: `/${string}` | '/';
-  name: string;
+  id: string;
+  children: ReactNode;
   component: JSX.Element;
   public?: boolean;
   exact?: boolean;
