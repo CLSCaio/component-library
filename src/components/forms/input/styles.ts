@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import MaskedInput from 'react-text-mask';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 import { colors, weights } from '../../../global';
