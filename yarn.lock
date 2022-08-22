@@ -14697,6 +14697,13 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
+ts-remask@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ts-remask/-/ts-remask-0.2.0.tgz#6d259cea9ac6790ff276e32e40d9c03764752e51"
+  integrity sha512-c4XpbU2YeESHwGgiixzzogKLQBw6/EqI6msuFAXA1C+Jws88lh++zxPzJICB6d+V+bhIT4hIuCxbuHRWPvyYXA==
+  dependencies:
+    vanilla-masker "^1.2.0"
+
 tsc-alias@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/tsc-alias/-/tsc-alias-1.7.0.tgz#733482751133a25b97608ee424f8a1f085fcaaef"
@@ -15238,6 +15245,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+vanilla-masker@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vanilla-masker/-/vanilla-masker-1.2.0.tgz#c2830e9d994a5fecd2261506477c2707fe589756"
+  integrity sha512-5SQeksiWaRYfbTaLVcqDPlvINGRt7ODbmWqqMMdT4GuZEC01KJm7FxaytscI5GZ9mlkTNQDwqllSHbv1ENxQEA==
 
 vary@~1.1.2:
   version "1.1.2"

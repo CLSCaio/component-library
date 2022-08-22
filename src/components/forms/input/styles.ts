@@ -49,7 +49,7 @@ export const Field = styled.span`
   position: relative;
 `;
 
-export const Input = styled(MaskedInput)<I.InputStyle>`
+export const Input = styled.input<I.InputStyle>`
   outline: none;
   text-indent: 9px;
   background: none;

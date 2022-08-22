@@ -1,8 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useField } from 'formik';
 
-import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe';
+import { mask as masker, unMask } from 'ts-remask';
 
 import * as C from '../../..';
 
@@ -25,14 +24,11 @@ export const Input = ({
   autoComplete = 'off',
   ...rest
 }: I.InputProps) => {
-  const [field, meta] = useField(rest);
+  const [field, meta, helpers] = useField(rest);
 
   const [inputType, setInputType] = useState(type || 'text');
   const [error, setError] = useState(false);
   const [errorStyle, setErrorStyle] = useState<'error' | undefined>(undefined);
-
-  const autoCorrectedDatePipe = createAutoCorrectedDatePipe('dd/mm/yyyy');
-  const autoCorrectedShortDatePipe = createAutoCorrectedDatePipe('mm/yyyy');
 
   const handleBlur = (event: any) => {
     field.onBlur(event);
@@ -42,6 +38,10 @@ export const Input = ({
     setInputType((state: string) =>
       state === 'password' ? 'text' : 'password',
     );
+  };
+
+  const onKeyUp = (event: any) => {
+    mask && helpers.setValue(masker(unMask(event.target.value), M[mask]));
   };
 
   useEffect(() => {
@@ -55,31 +55,6 @@ export const Input = ({
       setErrorStyle(undefined);
     }
   }, [meta.touched && meta.error]);
-
-  const validateMask = (value: any) => {
-    if (!mask) return false;
-
-    if (mask === 'user') {
-      if (!value) return false;
-      return Array.from(value).map(() => /[A-Za-z0-9* ]/);
-    }
-
-    if (mask === 'name') {
-      if (!value) return false;
-      return Array.from(value).map(
-        () => /[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s* ]/,
-      );
-    }
-
-    if (mask === 'text') {
-      if (!value) return false;
-      return Array.from(value).map(
-        () => /[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\-,.\s* ]/,
-      );
-    }
-
-    return M[mask] || false;
-  };
 
   return (
     <S.Container maxW={maxW} className={className}>
@@ -128,28 +103,17 @@ export const Input = ({
         <S.Field>
           <S.Input
             {...field}
-            pipe={
-              (mask === ('date' || 'shortDate') &&
-                {
-                  date: autoCorrectedDatePipe,
-                  shortDate: autoCorrectedShortDatePipe,
-                }[mask]) ||
-              false
-            }
             id={rest.name}
             border={border}
-            mask={validateMask}
             placeholder={placeholder}
             type={inputType}
-            placeholderChar=" "
-            keepCharPositions
             transform={transform}
             disabled={disabled || readOnly}
             error={errorStyle}
             required={required}
             onBlur={handleBlur}
+            onKeyUp={onKeyUp}
             labelposition={label?.position}
-            guide={false}
             onPaste={e => type === 'password' && e.preventDefault()}
             autoComplete={autoComplete}
           />

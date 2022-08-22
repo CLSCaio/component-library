@@ -4,19 +4,18 @@ export type transform = 'capitalize' | 'lowercase' | 'uppercase';
 export type borders = 'outline' | 'inline';
 
 export type masks =
-  | 'user'
-  | 'billingZipCode'
-  | 'text'
+  | 'cep'
   | 'cellphone'
-  | 'document'
+  | 'phone'
+  | 'plate'
+  | 'cpf'
+  | 'cnpj'
+  | 'cpf_cnpj'
   | 'date'
   | 'shortDate'
   | 'creditCard'
-  | 'placa'
-  | 'cvv3'
-  | 'cvv4'
-  | 'height'
-  | 'name';
+  | 'cvv'
+  | 'height';
 
 export interface InputProps {
   label?: {

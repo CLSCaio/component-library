@@ -1,108 +1,23 @@
-export const placa = [
-  /[A-Za-z]/,
-  /[A-Za-z]/,
-  /[A-Za-z]/,
-  '-',
-  /[0-9]/,
-  /[0-9A-Za-z]/,
-  /[0-9]/,
-  /[0-9]/,
-];
+export const plate = ['AAA-9S99'];
 
-export const billingZipCode = [
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-  '-',
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-];
+export const cep = ['99999-999'];
 
-export const cellphone = [
-  '(',
-  /[1-9]/,
-  /[1-9]/,
-  ')',
-  '\u2000',
-  /[0-9*]/,
-  '\u2000',
-  /[0-9*]/,
-  /[0-9*]/,
-  /[0-9*]/,
-  /[0-9*]/,
-  '-',
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-];
+export const cellphone = ['(99) 9 9999-9999'];
 
-export const document = [
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-  '.',
-  /[0-9*]/,
-  /[0-9*]/,
-  /[0-9*]/,
-  '.',
-  /[0-9*]/,
-  /[0-9*]/,
-  /[0-9*]/,
-  '-',
-  /[0-9*]/,
-  /[0-9*]/,
-];
+export const phone = ['(99) 9999-9999'];
 
-export const date = [
-  /[*0-9]/,
-  /[0-9]/,
-  '/',
-  /[*0-9]/,
-  /[0-9]/,
-  '/',
-  /[0-9]/,
-  /[*0-9]/,
-  /[*0-9]/,
-  /[0-9]/,
-];
+export const cpf = ['999.999.999-99'];
 
-export const shortDate = [
-  /[0-9]/,
-  /[0-9]/,
-  '/',
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-  /[0-9]/,
-];
+export const cnpj = ['99.999.999/9999-99'];
 
-export const creditCard = [
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  '\u2000',
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  '\u2000',
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  '\u2000',
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-];
+export const cpf_cnpj = [...cpf, ...cnpj];
 
-export const height = [/[1-9]/, '.', /[1-9]/, /[1-9]/];
+export const date = ['99/99/9999'];
 
-export const cvv3 = [/\d/, /\d/, /\d/];
-export const cvv4 = [/\d/, /\d/, /\d/, /\d/];
+export const shortDate = ['99/9999'];
+
+export const creditCard = ['9999 9999 9999 9999'];
+
+export const height = ['9.99'];
+
+export const cvv = ['999', '9999'];
