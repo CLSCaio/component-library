@@ -25,6 +25,7 @@ export interface InputProps {
     bold?: boolean;
     tooltip?: string;
   };
+  required?: boolean;
   name: string;
   placeholder?: string;
   type?: types;

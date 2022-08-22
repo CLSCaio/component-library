@@ -21,6 +21,7 @@ export const Input = ({
   className,
   placeholder,
   border = 'inline',
+  required,
   autoComplete = 'off',
   ...rest
 }: I.InputProps) => {
@@ -77,18 +78,6 @@ export const Input = ({
       );
     }
 
-    if (mask === 'creditCard') {
-      // Amex
-      if (/^3[47][0-9]/.test(value.replace(' ', ''))) {
-        return M.creditCardAmex;
-      }
-      // Diners
-      if (/^3(?:0[0-5]|[68][0-9])[0-9]/.test(value.replace(' ', ''))) {
-        return M.creditCardDiners;
-      }
-      // Default
-      return M.creditCardDefault;
-    }
     return M[mask] || false;
   };
 
@@ -125,7 +114,7 @@ export const Input = ({
               border={border}
               boldLabel={label?.bold}
             >
-              {label?.name}
+              {label?.name} {required && '*'}
             </S.Label>
             {label?.tooltip && (
               <C.Tooltip
@@ -157,6 +146,7 @@ export const Input = ({
             transform={transform}
             disabled={disabled || readOnly}
             error={errorStyle}
+            required={required}
             onBlur={handleBlur}
             labelposition={label?.position}
             guide={false}
