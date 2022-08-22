@@ -5,6 +5,7 @@ export interface OpcProps {
   link?: {
     type: 'next' | 'react';
     colors?: [text: string, hover?: string];
+    variant?: 'default' | 'doubleLine' | 'underline';
   };
   routes: Routes[];
 }

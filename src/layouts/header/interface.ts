@@ -16,6 +16,7 @@ export interface HeaderProps {
   link?: {
     type: 'next' | 'react';
     colors?: [text: string, hover?: string];
+    variant?: 'default' | 'doubleLine' | 'underline';
   };
   title?: string;
 }
