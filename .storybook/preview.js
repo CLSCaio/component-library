@@ -60,6 +60,7 @@ export const parameters = {
         "Actions",
         "Forms",
         "Layouts",
+        "Content",
         "Utilities",
       ]
     }

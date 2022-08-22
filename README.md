@@ -29,6 +29,7 @@ Caio L Sousa Library
 - [x] Actions
 - [x] Forms
 - [x] Layouts
+- [x] Content
 - [x] Utilities
 
 ## Techs
