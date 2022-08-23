@@ -1,7 +1,7 @@
 import { name } from './name';
 import { cep } from './cep';
 import { email } from './email';
-import { date } from './date';
+import { dateWithRestrictionOfAge } from './dates';
 
 import { cpf, cnpj, cpf_cnpj } from './cpf_cnpj';
 import {
@@ -16,7 +16,7 @@ export const validations = {
   name,
   cep,
   email,
-  date,
+  dateWithRestrictionOfAge,
   cpf,
   cnpj,
   cpf_cnpj,

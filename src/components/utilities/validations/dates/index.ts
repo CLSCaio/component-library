@@ -5,7 +5,7 @@ import { functions } from '../../../../functions';
 import * as C from './content';
 import * as I from './interface';
 
-export const date = ({
+export const dateWithRestrictionOfAge = ({
   message = C.message,
   message2 = C.message2,
   minAge,
