@@ -14,13 +14,12 @@ export const date = ({
   const validate = yup
     .date()
     .transform(functions.parseDateString)
-    .nullable()
-    .typeError(message)
     .min(
       functions.returnMinDate(maxAge),
       `A data não poder ser menor que  ${functions.returnMinDate()}`,
     )
     .max(functions.returnMaxDate(minAge), message2)
+    .typeError(message)
     .test('date', message, value => {
       if (value) return value.toString().trim().length >= 10;
       return false;
