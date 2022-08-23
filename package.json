@@ -1,6 +1,6 @@
 {
   "name": "library-caiol.sousa",
-  "version": "0.0.35",
+  "version": "0.0.35-validation-test",
   "author": "Caio Sousa",
   "main": "dist/index.js",
   "license": "MIT",
