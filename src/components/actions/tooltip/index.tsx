@@ -9,8 +9,9 @@ export const Tooltip = ({
   placement = 'begin',
   color,
   disabled,
+  isLoading,
 }: I.TooltipProps) => (
-  <S.Container placement={placement} disabled={disabled}>
+  <S.Container placement={placement} disabled={disabled || isLoading}>
     <S.Description color={color} sinal placement={placement}>
       {description}
     </S.Description>

@@ -21,4 +21,5 @@ export interface TooltipProps {
   placement?: placement;
   disabled?: boolean;
   color?: colors;
+  isLoading?: boolean;
 }

@@ -91,12 +91,7 @@ export const Input = ({
             >
               {label?.name} {required && '*'}
             </S.Label>
-            {label?.tooltip && (
-              <C.Tooltip
-                disabled={disabled || error}
-                description={label?.tooltip}
-              />
-            )}
+            {label?.tooltip && <C.Tooltip description={label?.tooltip} />}
           </C.Group>
         )}
 
