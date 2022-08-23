@@ -10,7 +10,7 @@ import * as I from './interface';
 
 export const Loading = ({
   isLoading,
-  withBase,
+  withoutBase,
   size = 200,
   color,
 }: I.LoadingProps) => {
@@ -29,7 +29,7 @@ export const Loading = ({
   const isMobile = breakpoint === 'mobile';
 
   return isLoading ? (
-    <Base transparent={!withBase}>
+    <Base withoutBase={withoutBase}>
       <ClipLoader size={isMobile ? 200 : size} color={color} />
     </Base>
   ) : null;

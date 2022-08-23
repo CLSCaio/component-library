@@ -40,7 +40,8 @@ export const Container = styled.span<I.ModalConfigStyles>`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: ${({ isLoading }) =>
+    !isLoading ? 'space-between' : 'center'};
   align-items: center;
 
   gap: 20px;

@@ -5,5 +5,5 @@ export interface BaseProps extends BaseStyles {
 }
 
 export interface BaseStyles {
-  transparent?: boolean;
+  withoutBase?: boolean;
 }

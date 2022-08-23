@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
-import { Base } from '../base';
+import { Base } from '../index';
 import { ModalConfig } from './modalConfig';
 
 import * as I from './interface';
 
 export const Modal = ({
   isVisible,
-  withBase,
+  withoutBase,
   onClose,
   ...rest
 }: I.ModalProps) =>
   isVisible ? (
-    <Base transparent={!withBase}>
+    <Base withoutBase={withoutBase}>
       <ModalConfig onClose={() => onClose(false)} {...rest} />
     </Base>
   ) : null;

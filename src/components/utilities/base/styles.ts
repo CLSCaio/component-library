@@ -17,6 +17,6 @@ export const Container = styled.span<I.BaseStyles>`
   left: 0;
   z-index: 100;
 
-  background: ${({ transparent }) =>
-    transparent ? 'transparent' : 'rgba(0, 0, 0, 0.6)'};
+  background: ${({ withoutBase }) =>
+    withoutBase ? 'transparent' : 'rgba(0, 0, 0, 0.6)'};
 `;

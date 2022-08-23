@@ -1,6 +1,6 @@
 import { colors } from '../../../../global';
 
-export type sizes = 'small' | 'medium' | 'large';
+export type sizes = 'xXsmall' | 'small' | 'medium' | 'large' | 'xXlarge';
 export type variants = 'transparent' | 'dark' | 'light';
 
 export interface ModalConfigProps extends ModalConfigStyles {
@@ -9,8 +9,8 @@ export interface ModalConfigProps extends ModalConfigStyles {
   description?: string;
   closeButton?: string;
   tooltip?: string;
+  isLoading?: boolean;
   onSubmit?: {
-    isLoading?: boolean;
     label: string;
     onClick: () => void;
     disabled?: boolean;
@@ -20,12 +20,15 @@ export interface ModalConfigProps extends ModalConfigStyles {
 export interface ModalConfigStyles {
   size?: sizes;
   variant?: variants;
+  isLoading?: boolean;
 }
 
 export const sizes = {
-  small: '200px',
+  xXsmall: '200px',
+  small: '250px',
   medium: '300px',
-  large: '400px',
+  large: '350px',
+  xXlarge: '400px',
 };
 
 export const variants = {

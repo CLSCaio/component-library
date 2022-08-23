@@ -1,6 +1,6 @@
 export interface LoadingProps {
   isLoading: boolean;
   size?: number;
-  withBase?: boolean;
+  withoutBase?: boolean;
   color?: 'black' | 'white';
 }
