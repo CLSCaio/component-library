@@ -4,48 +4,53 @@ import { regex } from '../../regex';
 import * as C from './content';
 import * as I from './interface';
 
-export const password = ({
+export const normalPassword = ({
   message = C.message1,
   message2 = C.message3,
-  passwordType = 'weak',
-}: I.ValidationsProps) => {
-  let validate;
+}) => {
+  const validate = yup
+    .string()
+    .min(8, message2)
+    .test('password', message, value => {
+      if (value) return value.trim().length >= 1;
+      return false;
+    });
 
-  if (passwordType === 'normal') {
-    validate = yup
-      .string()
-      .min(8, message2)
-      .test('password', message, value => {
-        if (value) return value.trim().length >= 1;
-        return false;
-      });
-  }
+  return validate;
+};
 
-  if (passwordType === 'weak') {
-    validate = yup
-      .string()
-      .test('password', message, value => {
-        if (value) return value.trim().length >= 1;
-        return false;
-      })
-      .test('password', message2, value => {
-        if (value) return value.length >= 1 && regex.weakPassword.test(value);
-        return false;
-      });
-  }
+export const weakPassword = ({
+  message = C.message1,
+  message2 = C.message3,
+}) => {
+  const validate = yup
+    .string()
+    .test('password', message, value => {
+      if (value) return value.trim().length >= 1;
+      return false;
+    })
+    .test('password', message2, value => {
+      if (value) return value.length >= 1 && regex.weakPassword.test(value);
+      return false;
+    });
 
-  if (passwordType === 'strong') {
-    validate = yup
-      .string()
-      .test('password', message, value => {
-        if (value) return value.trim().length >= 1;
-        return false;
-      })
-      .test('password', message2, value => {
-        if (value) return value.length >= 1 && regex.strongPassword.test(value);
-        return false;
-      });
-  }
+  return validate;
+};
+
+export const strongPassword = ({
+  message = C.message1,
+  message2 = C.message3,
+}) => {
+  const validate = yup
+    .string()
+    .test('password', message, value => {
+      if (value) return value.trim().length >= 1;
+      return false;
+    })
+    .test('password', message2, value => {
+      if (value) return value.length >= 1 && regex.strongPassword.test(value);
+      return false;
+    });
 
   return validate;
 };

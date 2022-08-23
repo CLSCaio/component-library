@@ -4,7 +4,12 @@ import { email } from './email';
 import { date } from './date';
 
 import { cpf, cnpj, cpf_cnpj } from './cpf_cnpj';
-import { password, passwordConfirm } from './passwords';
+import {
+  normalPassword,
+  strongPassword,
+  weakPassword,
+  passwordConfirm,
+} from './passwords';
 import { cellphone, phone } from './phones';
 
 export const validations = {
@@ -17,6 +22,8 @@ export const validations = {
   cpf_cnpj,
   cellphone,
   phone,
-  password,
+  normalPassword,
+  strongPassword,
+  weakPassword,
   passwordConfirm,
 };
