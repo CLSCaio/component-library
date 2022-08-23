@@ -1,27 +1,31 @@
 const strongPassword =
-  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#!%&'"])[0-9a-zA-Z$*&@#!%&'"]{8,}$/gm;
+  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#!%'"-])(?:([\da-zA-Z$*&@#!%'"-])(?!\1)){8,}$/;
 
-const cpf = /^([\d]{3}.){2}[\d]{3}-[\d]{2}$/gm;
+const weakPassword =
+  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?:([\da-zA-Z])(?!\1)){8,}$/;
 
-const cnpj = /^[\d]{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}$/gm;
+const cpf = /^([\d]{3}.){2}[\d]{3}-[\d]{2}$/;
 
-const cep = /^[\d]{5}-[\d]{3}$/gm;
+const cnpj = /^[\d]{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}$/;
 
-const date = /^([\d]{2}\/){2}[\d]{4}$/gm;
+const cep = /^[\d]{5}-[\d]{3}$/;
 
-const shortDate = /^[\d]{2}\/[\d]{4}$/gm;
+const date = /^([\d]{2}\/){2}[\d]{4}$/;
 
-const email = /^[a-z0-9.]+@[a-z]+\.((com)((.br)?))$/gm;
+const shortDate = /^[\d]{2}\/[\d]{4}$/;
 
-const cellphone = /^\([\d]{2}\) 9 [\d]{4}-[\d]{4}$/gm;
+const email = /^[a-z\d.]+@[a-z]+\.((com)((.br)?))$/;
 
-const phone = /^\([\d]{2}\) [\d]{4}-[\d]{4}$/gm;
+const cellphone = /^\([\d]{2}\) 9 [\d]{4}-[\d]{4}$/;
+
+const phone = /^\([\d]{2}\) [\d]{4}-[\d]{4}$/;
 
 const cpf_cnpj =
   /((([\d]{3}).){2}[\d]{3}-[\d]{2})|[\d]{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}/;
 
 export const regex = {
   strongPassword,
+  weakPassword,
   cpf,
   cnpj,
   cpf_cnpj,
