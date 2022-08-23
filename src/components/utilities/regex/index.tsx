@@ -17,10 +17,14 @@ const cellphone = /^\([\d]{2}\) 9 [\d]{4}-[\d]{4}$/gm;
 
 const phone = /^\([\d]{2}\) [\d]{4}-[\d]{4}$/gm;
 
+const cpf_cnpj =
+  /((([\d]{3}).){2}[\d]{3}-[\d]{2})|[\d]{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}/;
+
 export const regex = {
   strongPassword,
   cpf,
   cnpj,
+  cpf_cnpj,
   cep,
   date,
   shortDate,
