@@ -1,4 +1,3 @@
 export interface ValidationsProps {
-  mensage?: string;
-  min?: number;
+  message?: string;
 }
