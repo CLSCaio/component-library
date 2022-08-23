@@ -17,7 +17,6 @@ export const Select = ({
   options,
   disabled,
   label,
-  required,
   ...rest
 }: I.SelectProps) => {
   const [field, meta] = useField(rest);
@@ -70,7 +69,7 @@ export const Select = ({
               border={border}
               boldLabel={label?.bold}
             >
-              {label?.name} {required && '*'}
+              {label?.name} {label?.required && '*'}
             </S.Label>
             {label?.tooltip && <C.Tooltip description={label?.tooltip} />}
           </C.Group>
@@ -84,7 +83,7 @@ export const Select = ({
             placeholder={placeholder}
             transform={transform}
             disabled={disabled || readOnly}
-            required={required}
+            required={label?.required}
             error={errorStyle}
             data-gtm-form="select"
             data-gtm-name={label?.name}

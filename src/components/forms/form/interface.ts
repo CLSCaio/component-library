@@ -17,6 +17,7 @@ export type Inputs = {
     position?: 'top' | 'left';
     tooltip?: string;
     bold?: boolean;
+    required?: boolean;
   };
   autoComplete?: 'off' | 'on';
 };

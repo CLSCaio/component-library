@@ -23,8 +23,8 @@ export interface InputProps {
     position?: 'top' | 'left';
     bold?: boolean;
     tooltip?: string;
+    required?: boolean;
   };
-  required?: boolean;
   name: string;
   placeholder?: string;
   type?: types;

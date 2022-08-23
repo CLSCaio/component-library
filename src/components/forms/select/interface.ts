@@ -19,10 +19,10 @@ export interface SelectProps {
     position?: 'top' | 'left';
     bold?: boolean;
     tooltip?: string;
+    required?: boolean;
   };
   options: OptionsProps[];
   id?: string;
-  required?: boolean;
   onChange?: (event: any) => void;
   maxW?: maxW;
   transform?: transform;

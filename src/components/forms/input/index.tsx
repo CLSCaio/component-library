@@ -20,7 +20,6 @@ export const Input = ({
   className,
   placeholder,
   border = 'inline',
-  required,
   autoComplete = 'off',
   ...rest
 }: I.InputProps) => {
@@ -89,7 +88,7 @@ export const Input = ({
               border={border}
               boldLabel={label?.bold}
             >
-              {label?.name} {required && '*'}
+              {label?.name} {label?.required && '*'}
             </S.Label>
             {label?.tooltip && <C.Tooltip description={label?.tooltip} />}
           </C.Group>
@@ -105,7 +104,7 @@ export const Input = ({
             transform={transform}
             disabled={disabled || readOnly}
             error={errorStyle}
-            required={required}
+            required={label?.required}
             onBlur={handleBlur}
             onKeyUp={onKeyUp}
             labelposition={label?.position}
