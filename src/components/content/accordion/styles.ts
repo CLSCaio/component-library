@@ -25,8 +25,12 @@ export const Panel = styled.div<I.AccordionStyles>`
           border: none;
         `}
 
+  .icons {
+    display: none;
+  }
+
   .open {
-    display: flex;
+    display: flex !important;
   }
 `;
 

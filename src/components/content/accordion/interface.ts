@@ -10,7 +10,6 @@ export interface AccordionList {
   title: string;
   description: string;
   isInnerHtml?: boolean;
-  isActive?: boolean;
 }
 
 export interface AccordionStyles {
