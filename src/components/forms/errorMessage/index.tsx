@@ -4,6 +4,6 @@ import * as S from './styles';
 
 export const ErrorMessage = ({ error }: I.ErrorMessageProps) => (
   <S.ErrorContainer>
-    <h4>{error}</h4>
+    <h5>{error}</h5>
   </S.ErrorContainer>
 );

@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { medias } from '../../index';
 import { GlobalStyle } from '../reset';
 
 import { colors, sizes, weights } from '../../themes';
