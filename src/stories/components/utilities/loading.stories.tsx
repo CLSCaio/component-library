@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Loading, LoadingProps } from '../../..';
+import { Loading, LoadingProps, Button } from '../../..';
 
 export default {
   title: 'Utilities/Loading',
   component: Loading,
 } as Meta;
 
-export const Overview: Story<LoadingProps> = args => (
-  <>
-    <h1>Coloque &quot;isLoading&quot; para true para visualizar o Loading</h1>
-    <Loading {...args} />
-  </>
-);
+export const Overview: Story<LoadingProps> = ({ isLoading, ...args }) => {
+  const [loading, setloading] = useState(false);
 
-Overview.args = {
-  withBase: true,
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => {
+        setloading(false);
+      }, 1500);
+    }
+  }, [loading]);
+
+  return (
+    <>
+      <Loading isLoading={loading} {...args} />
+      <Button
+        type="button"
+        onClick={() => setloading(true)}
+        label="set loading true"
+      />
+    </>
+  );
 };

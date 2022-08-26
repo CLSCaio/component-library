@@ -27,7 +27,6 @@ export const Overview: Story<ModalProps> = ({
 };
 
 Overview.args = {
-  withBase: true,
   title: 'Este é um modal',
   description: 'descrição do modal',
   closeButton: 'voltar',
