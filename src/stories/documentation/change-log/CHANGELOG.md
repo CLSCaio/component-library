@@ -245,10 +245,17 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### dia 25/08/2022
 ## Versão 0.0.39
 ### Feature
+- Adicionando description ao storybook
 - Adicionando accordion ao storybook
 ## Versão 0.0.40
 ### Chore
 - Subindo changeLog
+
+### dia 25/08/2022
+## Versão 0.0.41
+### Feature / Refactor
+- Adicionando table ao storybook
+- Ajustando stories do loading e modal
 
 
 
