@@ -17,6 +17,7 @@ Pode-se encontrar um exemplo na aba abaixo "CHANGE LOG"
 ### Techs
 
 - [x] React.js
+- [x] Next.js
 - [x] Storybook
 - [x] Styled Components
 - [x] TypeScript
@@ -26,6 +27,7 @@ Pode-se encontrar um exemplo na aba abaixo "CHANGE LOG"
 
 1. Rode o comando `npm install / yarn library-caiol.sousa` no seu projeto React.
 2. Importe os components do pacote e comece a usar.
+OBS: A lib é compativel com React.js e Next.js
 
 ### Iniciar ambiente de desenvolvimento
 

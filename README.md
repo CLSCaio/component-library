@@ -35,6 +35,7 @@ Caio L Sousa Library
 ## Techs
 
 - [x] React.js
+- [x] Next.js
 - [x] Storybook
 - [x] Styled Components
 - [x] TypeScript
@@ -43,6 +44,7 @@ Caio L Sousa Library
 ## What can be better?
 
 - More components
+- If you find a bug report it on my linkedin
 
 ## Usage
 
