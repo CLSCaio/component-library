@@ -251,11 +251,16 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Chore
 - Subindo changeLog
 
-### dia 25/08/2022
+### dia 26/08/2022
 ## Versão 0.0.41
 ### Feature / Refactor
 - Adicionando table ao storybook
 - Ajustando stories do loading e modal
+
+## Versão 0.0.42
+### Feature
+- Adicionando propriedades a table para deixa-la mais dinamica
+
 
 
 

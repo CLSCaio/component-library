@@ -4,7 +4,12 @@ import { colors, medias } from 'src/global';
 
 import * as I from './interface';
 
-export const Table = styled.div`
+export const Container = styled.div<I.TableStyles>`
+  width: 100%;
+  max-width: ${({ size }) => (!size ? '1280px' : `${size}px`)};
+`;
+
+export const Table = styled.table`
   display: flex;
   flex-direction: column;
 
@@ -24,11 +29,13 @@ export const Table = styled.div`
   border: 1px solid ${colors.grey['200']};
 `;
 
-export const Row = styled.span<I.TableStyles>`
+export const Row = styled.tr<I.TableStyles>`
   display: flex;
   width: max-content;
   padding: 12px 15px;
   border-bottom: 1px solid ${colors.grey['100']};
+  background-color: ${({ color, colorDivider }) => colorDivider && color};
+
   gap: 25px;
 
   ${({ click }) =>
@@ -46,7 +53,7 @@ export const Row = styled.span<I.TableStyles>`
     `}
 `;
 
-export const Heading = styled.span`
+export const Heading = styled.thead`
   display: flex;
   justify-content: space-between;
 
@@ -57,11 +64,32 @@ export const Heading = styled.span`
   border-bottom: 1px solid ${colors.grey['200']};
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h2<I.TableStyles>`
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  ${({ textAlign }) =>
+    !textAlign
+      ? css`
+          text-align: center;
+        `
+      : css`
+          text-align: ${textAlign};
+        `}
+
+  ${({ textAlign }) =>
+    textAlign === 'left'
+      ? css`
+          justify-content: flex-start;
+        `
+      : textAlign === 'right'
+      ? css`
+          justify-content: flex-end;
+        `
+      : css`
+          justify-content: center;
+        `}
+    
+
   width: 150px;
 
   ${medias.small} {
@@ -69,12 +97,34 @@ export const Title = styled.h2`
   }
 `;
 
-export const Content = styled.p`
+export const Content = styled.p<I.TableStyles>`
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   width: 150px;
+
+  ${({ textAlign }) =>
+    !textAlign
+      ? css`
+          text-align: center;
+        `
+      : css`
+          text-align: ${textAlign};
+        `}
+
+  ${({ textAlign }) =>
+    textAlign === 'left'
+      ? css`
+          justify-content: flex-start;
+        `
+      : textAlign === 'right'
+      ? css`
+          justify-content: flex-end;
+        `
+      : css`
+          justify-content: center;
+        `}
 
   ${medias.small} {
     width: 293.2px;
