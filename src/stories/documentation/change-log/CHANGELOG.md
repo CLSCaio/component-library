@@ -261,6 +261,11 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Feature
 - Adicionando propriedades a table para deixa-la mais dinamica
 
+### dia 02/09/2022
+## Versão 0.0.43
+### Refactor
+- Ajustando importações da table e accordion
+
 
 
 

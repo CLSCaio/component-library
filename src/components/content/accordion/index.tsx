@@ -27,7 +27,11 @@ export const Accordion = ({
   return list ? (
     <S.Container>
       {list.map(({ title, description, isInnerHtml }, i) => (
-        <S.Panel variant={variant} onClick={() => displayDescription(i)}>
+        <S.Panel
+          key={`accordion-${title}`}
+          variant={variant}
+          onClick={() => displayDescription(i)}
+        >
           <S.Title variant={variant} id={title}>
             {title}
             {icon === 'none' ? null : icon === 'default' ? (

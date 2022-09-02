@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors, medias } from 'src/global';
+import { colors, medias } from '../../../global';
 
 import * as I from './interface';
 
