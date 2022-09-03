@@ -32,7 +32,7 @@ export const Link = ({
     )}
 
     {type === 'next' && ( // Next link
-      <NextLink href={{ ...href?.customLink } || href.defautlLink} as={href.as}>
+      <NextLink href={href?.customLink || href.defautlLink} as={href.as}>
         <S.Href colors={colors} variant={variant}>
           {label}
         </S.Href>

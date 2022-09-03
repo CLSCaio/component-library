@@ -1,15 +1,18 @@
 type link = `/${string}` | '/' | `https://${string}`;
 
-export interface LinkProps extends LinkStyles {
-  href: {
-    defautlLink: link | `#${string}`;
-    customLink?: {
-      // apenas pro next.js
-      pathname: link;
-      rest?: object;
-    };
-    as?: string; // apenas pro next.js
+export interface HrefProps {
+  defautlLink: link | `#${string}`;
+
+  // apenas pro next.js
+  customLink?: {
+    pathname: link;
+    rest?: object;
   };
+  as?: string;
+}
+
+export interface LinkProps extends LinkStyles {
+  href: HrefProps;
   label: string;
   type?: 'default' | 'next' | 'react';
   onClick?: () => void;
