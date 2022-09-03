@@ -266,7 +266,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Ajustando importações da table e accordion
 
-
+### dia 03/09/2022
+## Versão 0.0.44
+### Refactor
+- Ajustando regex de senha fraca
 
 
   
