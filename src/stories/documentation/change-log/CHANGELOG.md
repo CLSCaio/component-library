@@ -271,6 +271,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Ajustando regex de senha fraca
 
+## Versão 0.0.45
+### Feature
+- Adicionando as e rest para o next-link
+
 
   
 
