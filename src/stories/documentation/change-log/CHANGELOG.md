@@ -276,6 +276,7 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Adicionando as e rest para o next-link
 
 ## Versão 0.0.46
+## Versão 0.0.47
 ### Refactor
 - Ajustando link para melhorar a interface no next.js
 
