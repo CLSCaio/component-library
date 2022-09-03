@@ -1,7 +1,13 @@
+type link = `/${string}` | '/' | `https://${string}`;
+
 export interface LinkProps extends LinkStyles {
   href: {
-    pathname: `/${string}` | '/' | `#${string}` | `https://${string}`;
-    rest?: object; // apenas pro next.js
+    defautlLink: link | `#${string}`;
+    customLink?: {
+      // apenas pro next.js
+      pathname: link;
+      rest?: object;
+    };
     as?: string; // apenas pro next.js
   };
   label: string;

@@ -14,14 +14,14 @@ export const Link = ({
 }: I.LinkProps) => (
   <S.Container onClick={onClick}>
     {type === 'react' && ( // React link
-      <S.To colors={colors} variant={variant} to={href.pathname}>
+      <S.To colors={colors} variant={variant} to={href.defautlLink}>
         {label}
       </S.To>
     )}
 
     {type === 'default' && ( // Normal link
       <S.Href
-        href={href.pathname}
+        href={href.defautlLink}
         target="_blank"
         rel="noreferrer"
         colors={colors}
@@ -32,7 +32,7 @@ export const Link = ({
     )}
 
     {type === 'next' && ( // Next link
-      <NextLink href={{ pathname: href.pathname, ...href.rest }} as={href.as}>
+      <NextLink href={{ ...href?.customLink } || href.defautlLink} as={href.as}>
         <S.Href colors={colors} variant={variant}>
           {label}
         </S.Href>
