@@ -27,8 +27,13 @@ export const Router = ({
     )}
     <Main withPad={withPad}>
       <Routes>
-        {routes.map(({ component, href, ...route }) => (
-          <Route {...route} path={href} key={route.label} element={component} />
+        {routes.map(({ reactComponent, href, ...route }) => (
+          <Route
+            {...route}
+            path={href}
+            key={route.label}
+            element={reactComponent}
+          />
         ))}
       </Routes>
     </Main>

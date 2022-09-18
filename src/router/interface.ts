@@ -1,12 +1,10 @@
-import { ReactNode } from 'react';
-
 type width = 'default' | 'block';
 type types = 'fixed' | 'static';
 
 export type Routes = {
   href: `/${string}` | '/' | `#${string}` | `https://${string}`;
   label: string;
-  component: JSX.Element;
+  reactComponent?: JSX.Element;
   public?: boolean;
   exact?: boolean;
 };

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export const sizes = {
   'max-content': 'max-content',
   block: '100%',
@@ -9,7 +11,7 @@ type Sizes = 'max-content' | 'block' | 'default' | '100vh';
 type Align = 'center' | 'flex-end' | 'flex-start';
 
 export interface ContainerProps extends ContainerStyles {
-  children: JSX.Element;
+  children: ReactNode;
 }
 
 export interface ContainerStyles {

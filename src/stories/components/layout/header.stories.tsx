@@ -18,22 +18,22 @@ export const Overview: Story<HeaderProps> = args => (
 Overview.args = {
   routes: [
     {
-      component: <Group> dfdsf sdfd</Group>,
+      reactComponent: <Group> dfdsf sdfd</Group>,
       label: 'h1',
       href: '/h1',
     },
     {
-      component: <Group> dfdsf sdfd</Group>,
+      reactComponent: <Group> dfdsf sdfd</Group>,
       label: 'h2',
       href: '/h2',
     },
     {
-      component: <Group> dfdsf sdfd</Group>,
+      reactComponent: <Group> dfdsf sdfd</Group>,
       label: 'h3',
       href: '/h3',
     },
     {
-      component: <Group> dfdsf sdfd</Group>,
+      reactComponent: <Group> dfdsf sdfd</Group>,
       label: 'h4',
       href: '/h4',
     },

@@ -15,9 +15,7 @@ const H1 = styled.h1`
 
 export const Overview: Story<ContainerProps> = args => (
   <Container {...args}>
-    <>
-      <H1> caio </H1> <H1> sousa </H1>
-    </>
+    <H1> caio </H1> <H1> sousa </H1>
   </Container>
 );
 

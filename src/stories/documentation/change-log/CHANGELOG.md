@@ -285,5 +285,9 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Feat
 - Adicionando id do next "__next" ao reset.css
 
+## Versão 0.0.49
+### Refactor
+- Melhorando codigo - ajustes gerais
+
 
 

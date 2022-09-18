@@ -17,5 +17,5 @@ export const Overview: Story<GroupProps> = args => (
 
 Overview.args = {
   direction: 'column',
-  gap: { desktop: 10, mobile: 5 },
+  gap: [10, 5],
 };
