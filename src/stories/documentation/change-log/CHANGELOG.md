@@ -280,6 +280,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Ajustando link para melhorar a interface no next.js
 
+### dia 18/09/2022
+## Versão 0.0.48
+### Feat
+- Adicionando id do next "__next" ao reset.css
 
 
 

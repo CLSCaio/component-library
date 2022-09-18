@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  body, #root {
+  body, #root, #__next {
     display: flex;
     align-items: center;
     justify-content: flex-start;
