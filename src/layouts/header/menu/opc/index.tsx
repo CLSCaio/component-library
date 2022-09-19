@@ -8,7 +8,7 @@ import * as S from './styles';
 export const Opc = ({ openMenu, routes, link }: I.OpcProps) => (
   <S.Container>
     {routes.map(
-      ({ label, href }) =>
+      ({ label, href, onClick }) =>
         href !== '/*' && (
           <Link
             type={link?.type}
@@ -16,7 +16,10 @@ export const Opc = ({ openMenu, routes, link }: I.OpcProps) => (
             variant={link?.variant}
             key={label}
             href={{ defautlLink: href }}
-            onClick={() => openMenu(false)}
+            onClick={() => {
+              openMenu(false);
+              onClick && onClick();
+            }}
             label={label}
           />
         ),
