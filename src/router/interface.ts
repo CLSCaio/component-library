@@ -7,6 +7,7 @@ export type Routes = {
   reactComponent?: JSX.Element;
   public?: boolean;
   exact?: boolean;
+  onClick?: () => void;
 };
 
 export interface RouterProps {

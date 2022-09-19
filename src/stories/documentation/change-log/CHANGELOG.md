@@ -289,5 +289,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Melhorando codigo - ajustes gerais
 
+## Versão 0.0.50
+### Feature / Refactor
+- Adicionando onClick ao header para deixa-lo mais dinamico
+- Ajustando modal
+
 
 
