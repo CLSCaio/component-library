@@ -30,7 +30,7 @@ export const ModalConfig = ({
     ) : (
       <>
         <Group direction="column" gap={[20, 20]}>
-          <Group justify="space-between" align="center">
+          <Group justify="space-between">
             <h2 className="text">{title}</h2>
             {tooltip && (
               <Tooltip
