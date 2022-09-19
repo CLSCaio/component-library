@@ -25,11 +25,7 @@ export const Form = ({
           <Select key={rest.name} {...rest} {...design} />
         ))}
 
-      <Button
-        onClick={() => form.handleSubmit}
-        disabled={!(form.isValid && form.dirty) || form.isSubmitting}
-        {...button}
-      />
+      <Button onClick={() => form.handleSubmit} {...button} />
     </S.Form>
   </FormikProvider>
 );

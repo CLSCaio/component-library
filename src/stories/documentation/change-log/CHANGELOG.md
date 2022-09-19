@@ -289,10 +289,16 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Melhorando codigo - ajustes gerais
 
+### dia 19/09/2022
 ## Versão 0.0.50
 ### Feature / Refactor
 - Adicionando onClick ao header para deixa-lo mais dinamico
 - Ajustando modal
+
+## Versão 0.0.51
+### Refactor
+- Ajustando botão
+- Ajustando form
 
 
 

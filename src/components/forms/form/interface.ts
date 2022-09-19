@@ -52,6 +52,7 @@ type Button = {
   isLoading?: boolean;
   label: string;
   className?: string;
+  disabled?: boolean;
   id?: string;
   type?: 'button' | 'submit' | 'reset';
 };

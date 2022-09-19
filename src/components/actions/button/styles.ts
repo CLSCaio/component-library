@@ -16,7 +16,7 @@ export const Container = styled.div<I.ButtonStyle>`
       .btn:visited {
         padding: 15px 40px;
         display: inline-block;
-        border-radius: 20px;
+        border-radius: 15px;
         transition: all 0.2s;
         position: absolute;
       }
@@ -34,7 +34,7 @@ export const Container = styled.div<I.ButtonStyle>`
         display: inline-block;
         height: 100%;
         width: 100%;
-        border-radius: 20px;
+        border-radius: 15px;
         position: absolute;
         top: 0;
         left: 0;
@@ -156,7 +156,7 @@ export const Container = styled.div<I.ButtonStyle>`
           : maxW === 'max-content'
           ? I.widths.maxContent
           : `${maxW}px`
-        : 'max-content'};
+        : '250px'};
   }
 `;
 
@@ -177,7 +177,7 @@ export const Button = styled.button<I.ButtonStyle>`
   min-width: 150px;
   transition: 0.7s;
   height: 40px;
-  border-radius: 20px;
+  border-radius:  15px;
   outline: none;
   cursor: pointer;
 
