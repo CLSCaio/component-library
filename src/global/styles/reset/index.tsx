@@ -36,9 +36,9 @@ export const GlobalStyle = createGlobalStyle`
   body, #root, #__next {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     flex-direction: column;
     width: 100vw;
+    height: 100vh;
   }
 
   h1 {

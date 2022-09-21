@@ -300,5 +300,9 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Ajustando botão
 - Ajustando form
 
+### dia 19/09/2022
+## Versão 0.0.52
+### Refactor
+- Ajustando reset css
 
 
