@@ -315,5 +315,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Ajustando bug do accordion
 
+## Versão 0.0.55
+### Refactor
+- Ajustando children do accordion
+
+
 
 
