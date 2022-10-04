@@ -311,4 +311,9 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Ajustando tsconfig
 - Ajustando accordion
 
+## Versão 0.0.54
+### Refactor
+- Ajustando bug do accordion
+
+
 
