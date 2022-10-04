@@ -327,6 +327,12 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Feature
 - Adicionando max width para o accordion
 
+## Versão 0.0.58
+### Feature
+- Ajustando obrigatoriedade da descrição no accordion
+
+
+
 
 
 
