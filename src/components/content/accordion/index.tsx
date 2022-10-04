@@ -63,9 +63,8 @@ export const Accordion = ({
             ) : (
               <p>{description}</p>
             )}
+            {children}
           </S.Text>
-
-          {children}
         </S.Panel>
       ))}
     </S.Container>
