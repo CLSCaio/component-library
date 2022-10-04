@@ -319,6 +319,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Ajustando children do accordion
 
+## Versão 0.0.56
+### Refactor
+- Ajustando design e click do accordion
+
 
 
 
