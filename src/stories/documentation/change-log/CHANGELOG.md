@@ -305,4 +305,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Ajustando reset css
 
+### dia 04/10/2022
+## Versão 0.0.53
+### Refactor
+- Ajustando tsconfig
+- Ajustando accordion
+
 
