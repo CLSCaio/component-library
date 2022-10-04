@@ -323,6 +323,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Refactor
 - Ajustando design e click do accordion
 
+## Versão 0.0.57
+### Feature
+- Adicionando max width para o accordion
+
 
 
 
