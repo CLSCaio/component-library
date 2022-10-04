@@ -26,54 +26,48 @@ export const Accordion = ({
 
   return list ? (
     <S.Container>
-      {list.map(({ title, description, isInnerHtml, children }) => {
-        const formattedTitle = title.replaceAll(' ', '');
-        return (
-          <S.Panel
-            key={`accordion-${formattedTitle}`}
-            variant={variant}
-            onClick={() => displayDescription(formattedTitle)}
-          >
-            <S.Title variant={variant} id={formattedTitle}>
-              {title}
-              {icon === 'none' ? null : icon === 'default' ? (
-                <>
-                  <AiOutlinePlus
-                    id={`openIcon-${formattedTitle}`}
-                    className="icons open"
-                  />
-                  <AiOutlineMinus
-                    id={`closeIcon-${formattedTitle}`}
-                    className="icons"
-                  />
-                </>
-              ) : (
-                <>
-                  <MdKeyboardArrowDown
-                    id={`openIcon-${formattedTitle}`}
-                    className="icons open"
-                  />
+      {list.map(({ title, description, isInnerHtml, children }) => (
+        <S.Panel
+          key={`accordion-${title}`}
+          variant={variant}
+          onClick={() => displayDescription(title)}
+        >
+          <S.Title variant={variant} id={title}>
+            {title}
+            {icon === 'none' ? null : icon === 'default' ? (
+              <>
+                <AiOutlinePlus
+                  id={`openIcon-${title}`}
+                  className="icons open"
+                />
+                <AiOutlineMinus id={`closeIcon-${title}`} className="icons" />
+              </>
+            ) : (
+              <>
+                <MdKeyboardArrowDown
+                  id={`openIcon-${title}`}
+                  className="icons open"
+                />
 
-                  <MdKeyboardArrowUp
-                    id={`closeIcon-${formattedTitle}`}
-                    className="icons"
-                  />
-                </>
-              )}
-            </S.Title>
+                <MdKeyboardArrowUp
+                  id={`closeIcon-${title}`}
+                  className="icons"
+                />
+              </>
+            )}
+          </S.Title>
 
-            <S.Text id={`accordion-${formattedTitle}`}>
-              {isInnerHtml ? (
-                <Description text={description} />
-              ) : (
-                <p>{description}</p>
-              )}
-            </S.Text>
+          <S.Text id={`accordion-${title}`}>
+            {isInnerHtml ? (
+              <Description text={description} />
+            ) : (
+              <p>{description}</p>
+            )}
+          </S.Text>
 
-            {children}
-          </S.Panel>
-        );
-      })}
+          {children}
+        </S.Panel>
+      ))}
     </S.Container>
   ) : (
     <ClipLoader />
