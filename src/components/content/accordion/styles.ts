@@ -66,4 +66,7 @@ export const Text = styled.span<I.AccordionStyles>`
   text-align: left;
 
   display: none;
+
+  flex-direction: column;
+  gap: 20px;
 `;
