@@ -59,7 +59,7 @@ export const Accordion = ({
           </S.Title>
 
           <S.Text id={`accordion-${title}`}>
-            {isInnerHtml ? (
+            {description && isInnerHtml ? (
               <Description text={description} />
             ) : (
               <p>{description}</p>

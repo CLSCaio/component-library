@@ -9,7 +9,7 @@ export interface AccordionProps extends AccordionStyles {
 
 export interface AccordionList {
   title: string;
-  description: string;
+  description?: string;
   isInnerHtml?: boolean;
   children?: ReactNode;
 }
