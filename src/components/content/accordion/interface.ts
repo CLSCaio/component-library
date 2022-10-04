@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 type variants = 'default' | 'inline' | 'onlyBg';
 
 export interface AccordionProps {
@@ -10,6 +12,7 @@ export interface AccordionList {
   title: string;
   description: string;
   isInnerHtml?: boolean;
+  children?: ReactNode;
 }
 
 export interface AccordionStyles {

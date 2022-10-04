@@ -14,10 +14,10 @@ export const Accordion = ({
   icon = 'default',
   variant = 'default',
 }: I.AccordionProps) => {
-  const displayDescription = (indice: number) => {
-    const acc = document.getElementById(`accordion${indice + 1}`);
-    const openIcon = document.getElementById(`openIcon${indice + 1}`);
-    const closeIcon = document.getElementById(`closeIcon${indice + 1}`);
+  const displayDescription = (title: string) => {
+    const acc = document.getElementById(`accordion-${title}`);
+    const openIcon = document.getElementById(`openIcon-${title}`);
+    const closeIcon = document.getElementById(`closeIcon-${title}`);
 
     openIcon?.classList?.toggle('open');
     closeIcon?.classList?.toggle('open');
@@ -26,40 +26,54 @@ export const Accordion = ({
 
   return list ? (
     <S.Container>
-      {list.map(({ title, description, isInnerHtml }, i) => (
-        <S.Panel
-          key={`accordion-${title}`}
-          variant={variant}
-          onClick={() => displayDescription(i)}
-        >
-          <S.Title variant={variant} id={title}>
-            {title}
-            {icon === 'none' ? null : icon === 'default' ? (
-              <>
-                <AiOutlinePlus id={`openIcon${i + 1}`} className="icons open" />
-                <AiOutlineMinus id={`closeIcon${i + 1}`} className="icons" />
-              </>
-            ) : (
-              <>
-                <MdKeyboardArrowDown
-                  id={`openIcon${i + 1}`}
-                  className="icons open"
-                />
+      {list.map(({ title, description, isInnerHtml, children }) => {
+        const formattedTitle = title.replaceAll(' ', '');
+        return (
+          <S.Panel
+            key={`accordion-${formattedTitle}`}
+            variant={variant}
+            onClick={() => displayDescription(formattedTitle)}
+          >
+            <S.Title variant={variant} id={formattedTitle}>
+              {title}
+              {icon === 'none' ? null : icon === 'default' ? (
+                <>
+                  <AiOutlinePlus
+                    id={`openIcon-${formattedTitle}`}
+                    className="icons open"
+                  />
+                  <AiOutlineMinus
+                    id={`closeIcon-${formattedTitle}`}
+                    className="icons"
+                  />
+                </>
+              ) : (
+                <>
+                  <MdKeyboardArrowDown
+                    id={`openIcon-${formattedTitle}`}
+                    className="icons open"
+                  />
 
-                <MdKeyboardArrowUp id={`closeIcon${i + 1}`} className="icons" />
-              </>
-            )}
-          </S.Title>
+                  <MdKeyboardArrowUp
+                    id={`closeIcon-${formattedTitle}`}
+                    className="icons"
+                  />
+                </>
+              )}
+            </S.Title>
 
-          <S.Text id={`accordion${i + 1}`}>
-            {isInnerHtml ? (
-              <Description text={description} />
-            ) : (
-              <p>{description}</p>
-            )}
-          </S.Text>
-        </S.Panel>
-      ))}
+            <S.Text id={`accordion-${formattedTitle}`}>
+              {isInnerHtml ? (
+                <Description text={description} />
+              ) : (
+                <p>{description}</p>
+              )}
+            </S.Text>
+
+            {children}
+          </S.Panel>
+        );
+      })}
     </S.Container>
   ) : (
     <ClipLoader />
