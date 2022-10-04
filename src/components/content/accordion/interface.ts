@@ -2,10 +2,9 @@ import { ReactNode } from 'react';
 
 type variants = 'default' | 'inline' | 'onlyBg';
 
-export interface AccordionProps {
+export interface AccordionProps extends AccordionStyles {
   list: AccordionList[];
   icon?: 'default' | 'arrow' | 'none';
-  variant?: variants;
 }
 
 export interface AccordionList {
@@ -17,4 +16,5 @@ export interface AccordionList {
 
 export interface AccordionStyles {
   variant?: variants;
+  maxW?: number;
 }
