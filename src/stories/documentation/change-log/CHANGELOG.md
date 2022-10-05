@@ -331,6 +331,10 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Feature
 - Ajustando obrigatoriedade da descrição no accordion
 
+## Versão 0.0.59
+### Feature
+- Ajustes gerais
+
 
 
 
