@@ -71,3 +71,7 @@ export const Text = styled.span<I.AccordionStyles>`
   flex-direction: column;
   gap: 20px;
 `;
+
+export const Desc = styled.p`
+  width: 100%;
+`;

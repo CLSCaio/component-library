@@ -65,7 +65,7 @@ export const Accordion = ({
             {description && isInnerHtml ? (
               <Description text={description} />
             ) : (
-              <p>{description}</p>
+              <S.Desc>{description}</S.Desc>
             )}
             {children}
           </S.Text>

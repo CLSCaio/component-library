@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import * as I from './interface';
 
 export const Text = styled.p<I.DescriptionStyles>`
-  width: ${({ width }) => (width ? `${width}px` : 'max-content')};
+  width: ${({ width }) => (width ? `${width}px` : '100%')};
 
   ${({ align }) =>
     align &&
