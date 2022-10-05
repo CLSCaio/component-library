@@ -328,12 +328,16 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Adicionando max width para o accordion
 
 ## Versão 0.0.58
-### Feature
+### Refactor
 - Ajustando obrigatoriedade da descrição no accordion
 
 ## Versão 0.0.59
-### Feature
+### Refactor
 - Ajustes gerais
+
+## Versão 0.0.60
+### Feature
+- Adicionando id para deixar o accordaion mais dinamico
 
 
 
