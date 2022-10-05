@@ -15,10 +15,10 @@ export const Accordion = ({
   variant = 'default',
   maxW,
 }: I.AccordionProps) => {
-  const displayDescription = (title: string) => {
-    const acc = document.getElementById(`accordion-${title}`);
-    const openIcon = document.getElementById(`openIcon-${title}`);
-    const closeIcon = document.getElementById(`closeIcon-${title}`);
+  const displayDescription = (id: string) => {
+    const acc = document.getElementById(`accordion-${id}`);
+    const openIcon = document.getElementById(`openIcon-${id}`);
+    const closeIcon = document.getElementById(`closeIcon-${id}`);
 
     openIcon?.classList?.toggle('open');
     closeIcon?.classList?.toggle('open');
@@ -27,38 +27,41 @@ export const Accordion = ({
 
   return list ? (
     <S.Container maxW={maxW}>
-      {list.map(({ title, description, isInnerHtml, children }) => (
-        <S.Panel key={`accordion-${title}`} variant={variant}>
+      {list.map(({ title, description, isInnerHtml, children, id }) => (
+        <S.Panel key={`accordion-${id || title}`} variant={variant}>
           <S.Title
             variant={variant}
-            id={title}
-            onClick={() => displayDescription(title)}
+            id={id || title}
+            onClick={() => displayDescription(id || title)}
           >
             {title}
             {icon === 'none' ? null : icon === 'default' ? (
               <>
                 <AiOutlinePlus
-                  id={`openIcon-${title}`}
+                  id={`openIcon-${id || title}`}
                   className="icons open"
                 />
-                <AiOutlineMinus id={`closeIcon-${title}`} className="icons" />
+                <AiOutlineMinus
+                  id={`closeIcon-${id || title}`}
+                  className="icons"
+                />
               </>
             ) : (
               <>
                 <MdKeyboardArrowDown
-                  id={`openIcon-${title}`}
+                  id={`openIcon-${id || title}`}
                   className="icons open"
                 />
 
                 <MdKeyboardArrowUp
-                  id={`closeIcon-${title}`}
+                  id={`closeIcon-${id || title}`}
                   className="icons"
                 />
               </>
             )}
           </S.Title>
 
-          <S.Text id={`accordion-${title}`}>
+          <S.Text id={`accordion-${id || title}`}>
             {description && isInnerHtml ? (
               <Description text={description} />
             ) : (
