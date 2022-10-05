@@ -339,6 +339,12 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### Feature
 - Adicionando id para deixar o accordaion mais dinamico
 
+### dia 05/10/2022
+## Versão 0.0.61
+### Refactor
+- Ajustando accordion
+- Ajustando description
+
 
 
 
