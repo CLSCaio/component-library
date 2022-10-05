@@ -37,8 +37,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
   }
 
   h1 {

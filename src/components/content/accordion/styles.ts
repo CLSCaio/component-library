@@ -6,7 +6,7 @@ import * as I from './interface';
 
 export const Container = styled.span<I.AccordionStyles>`
   width: 100%;
-  max-width: ${({ maxW }) => `${maxW}px` || '100%'};
+  max-width: ${({ maxW }) => (maxW ? `${maxW}px` : '100%')};
 `;
 
 export const Panel = styled.div<I.AccordionStyles>`
