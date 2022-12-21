@@ -345,6 +345,12 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Ajustando accordion
 - Ajustando description
 
+### dia 21/12/2022
+## Versão 0.0.62
+### Refactor / Feature
+- Ajustando estilo do accordion
+- Adicionando cores hexadecimais para utilização no Accordion
+
 
 
 

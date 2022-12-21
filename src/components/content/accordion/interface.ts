@@ -7,7 +7,26 @@ export interface AccordionProps extends AccordionStyles {
   icon?: 'default' | 'arrow' | 'none';
 }
 
-export interface AccordionList {
+type Digits =
+  | '0'
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
+  | 'a'
+  | 'b'
+  | 'c'
+  | 'd'
+  | 'e'
+  | 'f';
+type Hexadecimal = `${Digits}${Digits}${Digits}`;
+
+export interface AccordionList extends AccordionStyles {
   title: string;
   id?: string;
   description?: string;
@@ -18,4 +37,9 @@ export interface AccordionList {
 export interface AccordionStyles {
   variant?: variants;
   maxW?: number;
+  colors?: [
+    bg?: `#${Hexadecimal}`,
+    hover?: `#${Hexadecimal}`,
+    border?: `#${Hexadecimal}`,
+  ];
 }

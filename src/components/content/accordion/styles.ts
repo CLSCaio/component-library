@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors } from '../../../global';
+import { colors as themeColor } from '../../../global';
 
 import * as I from './interface';
 
@@ -13,14 +13,14 @@ export const Panel = styled.div<I.AccordionStyles>`
   width: 100%;
   height: max-content;
 
-  ${({ variant }) =>
+  ${({ variant, colors }) =>
     variant === 'default'
       ? css`
-          border: 1px solid ${colors.black};
+          border: 1px solid ${colors?.[2] || themeColor.black};
         `
       : variant === 'inline'
       ? css`
-          border-bottom: 1px solid ${colors.black};
+          border-bottom: 1px solid ${colors?.[2] || themeColor.black}; ;
         `
       : css`
           border: none;
@@ -45,18 +45,18 @@ export const Title = styled.h3<I.AccordionStyles>`
   width: 100%;
   outline: none;
 
-  ${({ variant }) =>
+  ${({ variant, colors }) =>
     variant !== 'inline'
       ? css`
-          background-color: ${colors.grey['100']};
+          background-color: ${colors?.[0]};
           :hover {
-            background-color: ${colors.grey['200']};
+            background-color: ${colors?.[1]};
           }
         `
       : css`
           background-color: transparent;
           :hover {
-            background-color: ${colors.grey['100']};
+            background-color: color;
           }
         `}
 `;

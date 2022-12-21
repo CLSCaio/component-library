@@ -13,6 +13,7 @@ export const Accordion = ({
   list,
   icon = 'default',
   variant = 'default',
+  colors,
   maxW,
 }: I.AccordionProps) => {
   const displayDescription = (id: string) => {
@@ -28,8 +29,13 @@ export const Accordion = ({
   return list ? (
     <S.Container maxW={maxW}>
       {list.map(({ title, description, isInnerHtml, children, id }) => (
-        <S.Panel key={`accordion-${id || title}`} variant={variant}>
+        <S.Panel
+          key={`accordion-${id || title}`}
+          variant={variant}
+          colors={colors}
+        >
           <S.Title
+            colors={colors}
             variant={variant}
             id={id || title}
             onClick={() => displayDescription(id || title)}
