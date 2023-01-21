@@ -20,9 +20,10 @@ export const Table = ({ list, ...rest }: I.TableProps) => (
       {list.columns.map((rows, i) => (
         <S.Row
           {...rest}
+          id={`row-table-${i + 1}`}
           key={`table-row${rows}`}
           click={list.onClick}
-          onClick={() => list.onClick}
+          onClick={e => list.onClick && list.onClick(e)}
           color={i % 2 === 0 ? colors.grey.sky : ''}
         >
           {rows.map(descriptions => (

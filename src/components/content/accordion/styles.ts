@@ -35,15 +35,13 @@ export const Panel = styled.div<I.AccordionStyles>`
   }
 `;
 
-export const Title = styled.h3<I.AccordionStyles>`
+export const PanelHead = styled.span<I.AccordionStyles>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 18px;
 
   cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  outline: none;
 
   ${({ variant, colors }) =>
     variant !== 'inline'
@@ -59,7 +57,15 @@ export const Title = styled.h3<I.AccordionStyles>`
             background-color: color;
           }
         `}
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: ${themeColor.black};
+  }
 `;
+
+export const Title = styled.h3``;
 
 export const Text = styled.span<I.AccordionStyles>`
   padding: 13px 18px;

@@ -10,15 +10,17 @@ export interface TableProps {
   size?: number;
 }
 
+type onClick = (e?: React.MouseEvent<HTMLTableRowElement, MouseEvent>) => void;
+
 export interface TableList {
   titles: string[];
   columns: rows[];
-  onClick?: () => void;
+  onClick?: onClick;
 }
 
 export interface TableStyles {
   color?: string;
-  click?: () => void;
+  click?: onClick;
   textAlign?: align;
   colorDivider?: boolean;
   size?: number;

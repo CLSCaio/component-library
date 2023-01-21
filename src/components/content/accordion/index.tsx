@@ -1,10 +1,9 @@
 import React from 'react';
-import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
 import ClipLoader from 'react-spinners/ClipLoader';
 
 import { Description } from '../description';
+import { returnIcon } from './content';
 
 import * as I from './interface';
 import * as S from './styles';
@@ -28,55 +27,37 @@ export const Accordion = ({
 
   return list ? (
     <S.Container maxW={maxW}>
-      {list.map(({ title, description, isInnerHtml, children, id }) => (
-        <S.Panel
-          key={`accordion-${id || title}`}
-          variant={variant}
-          colors={colors}
-        >
-          <S.Title
-            colors={colors}
+      {list.map(({ title, description, isInnerHtml, children, id }) => {
+        const validTitle = title.replace(/[' ']/g, '-').toLowerCase();
+        const validId = id || validTitle;
+
+        return (
+          <S.Panel
+            key={`accordion-${validId}`}
             variant={variant}
-            id={id || title}
-            onClick={() => displayDescription(id || title)}
+            colors={colors}
           >
-            {title}
-            {icon === 'none' ? null : icon === 'default' ? (
-              <>
-                <AiOutlinePlus
-                  id={`openIcon-${id || title}`}
-                  className="icons open"
-                />
-                <AiOutlineMinus
-                  id={`closeIcon-${id || title}`}
-                  className="icons"
-                />
-              </>
-            ) : (
-              <>
-                <MdKeyboardArrowDown
-                  id={`openIcon-${id || title}`}
-                  className="icons open"
-                />
+            <S.PanelHead
+              colors={colors}
+              variant={variant}
+              id={validId}
+              onClick={() => displayDescription(validId)}
+            >
+              <S.Title>{title}</S.Title>
+              {returnIcon({ title: validId, icon })}
+            </S.PanelHead>
 
-                <MdKeyboardArrowUp
-                  id={`closeIcon-${id || title}`}
-                  className="icons"
-                />
-              </>
-            )}
-          </S.Title>
-
-          <S.Text id={`accordion-${id || title}`}>
-            {description && isInnerHtml ? (
-              <Description text={description} />
-            ) : (
-              <S.Desc>{description}</S.Desc>
-            )}
-            {children}
-          </S.Text>
-        </S.Panel>
-      ))}
+            <S.Text id={`accordion-${validId}`}>
+              {description && isInnerHtml ? (
+                <Description text={description} />
+              ) : (
+                <S.Desc>{description}</S.Desc>
+              )}
+              {children}
+            </S.Text>
+          </S.Panel>
+        );
+      })}
     </S.Container>
   ) : (
     <ClipLoader />
