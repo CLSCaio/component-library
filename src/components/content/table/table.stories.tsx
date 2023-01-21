@@ -56,6 +56,6 @@ Overview.args = {
         'Uma Table 5 com innerHtml 5',
       ],
     ],
-    onClick: () => console.log,
+    onClick: e => console.log(e?.currentTarget.id),
   },
 };

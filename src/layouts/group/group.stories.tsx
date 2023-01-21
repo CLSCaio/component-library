@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Group, GroupProps } from '../../..';
+import { Group, GroupProps } from '../..';
 
 export default {
   title: 'Layouts/Group',

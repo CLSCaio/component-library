@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Meta, Story } from '@storybook/react';
 
-import { Container, ContainerProps } from '../../..';
+import { Container, ContainerProps } from '../..';
 
 export default {
   title: 'Layouts/Container',
