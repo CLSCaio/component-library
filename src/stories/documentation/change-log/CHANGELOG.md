@@ -352,6 +352,14 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Adicionando cores hexadecimais para utilização no Accordion
 
 
+### dia 21/01/2023
+## Versão 0.0.63
+### Refactor
+- Melhorando estruturação do accordion
+- Melhorando estruturação da table
+- Melhorando estruturação dos stories dos componentes
+
+
 
 
 
