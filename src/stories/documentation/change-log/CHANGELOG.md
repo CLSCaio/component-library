@@ -361,9 +361,14 @@ by [Caio Sousa](https://github.com/CLSCaio)
 
 ### dia 22/01/2023
 ## Versão 0.0.64
-### Refactor
+### Refactor \ Feature
 - Movendo functions / regex / validations para nova pasta utils
 - Movendo pasta layout para dentro de components
+- Criando pastas para typagens globais e conversão de tipagens em valores
+- Ajustando tipagens e importes do button e form/button
+- Ajustando tipagens e importes do link e header/link
+- Ajustando tipagens e importes do tooltip
+- Ajustando importes e styles do accordion
 
 
 

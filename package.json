@@ -4,24 +4,6 @@
   "author": "Caio Sousa",
   "main": "dist/index.js",
   "license": "MIT",
-  "dependencies": {
-    "date-fns": "^2.29.2",
-    "formik": "^2.2.9",
-    "next": "12.1.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0",
-    "react-markdown": "^8.0.3",
-    "react-refresh-webpack-plugin": "^0.1.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.1.0",
-    "ts-remask": "^0.2.0",
-    "tsc-alias": "^1.7.0",
-    "tsconfig-paths-webpack-plugin": "^4.0.0",
-    "use-breakpoint": "^3.0.3",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "build-storybook --output-dir docs -s public rimraf dist && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
@@ -58,6 +40,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "date-fns": "^2.29.2",
+    "formik": "^2.2.9",
+    "next": "12.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-markdown": "^8.0.3",
+    "react-refresh-webpack-plugin": "^0.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^5.1.0",
+    "ts-remask": "^0.2.0",
+    "tsc-alias": "^1.7.0",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "use-breakpoint": "^3.0.3",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@storybook/addon-controls": "^6.5.10",
