@@ -1,6 +1,8 @@
 import { FormikContextType } from 'formik';
-import { OptionsProps } from '../select/interface';
 
+import { TbuttonTypes, TbuttonVariants, Tsize } from 'src/types';
+
+import { OptionsProps } from '../select/interface';
 import { masks, transform, types, maxW, borders } from '../input/interface';
 
 export type Inputs = {
@@ -31,14 +33,6 @@ type Design = {
   maxW?: maxW;
 };
 
-export type maxWs = 'block' | number | 'max-content';
-export type variants =
-  | 'outline'
-  | 'outline-reverse'
-  | 'pulse'
-  | 'floating'
-  | 'default';
-
 type colors = {
   primary?: string;
   secundary?: string;
@@ -46,15 +40,15 @@ type colors = {
 };
 
 type Button = {
-  variant?: variants;
+  variant?: TbuttonVariants;
   colors?: colors;
-  maxW?: maxWs;
+  maxW?: Tsize;
   isLoading?: boolean;
   label: string;
   className?: string;
   disabled?: boolean;
   id?: string;
-  type?: 'button' | 'submit' | 'reset';
+  type?: TbuttonTypes;
 };
 
 export interface FormProps {

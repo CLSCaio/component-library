@@ -1,10 +1,4 @@
-export type maxWs = 'block' | number | 'max-content';
-export type variants =
-  | 'outline'
-  | 'outline-reverse'
-  | 'pulse'
-  | 'floating'
-  | 'default';
+import { TbuttonVariants, Tsize, TbuttonTypes } from 'src/types';
 
 type colors = {
   primary?: string;
@@ -12,23 +6,18 @@ type colors = {
   third?: string;
 };
 
-export const widths = {
-  block: '100%',
-  maxContent: 'max-content',
-};
-
 export interface ButtonProps extends ButtonStyle {
   isLoading?: boolean;
   label: string;
   className?: string;
   id?: string;
-  type?: 'button' | 'submit' | 'reset';
-  onClick: () => void;
+  type?: TbuttonTypes;
+  onClick: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export interface ButtonStyle {
-  variant?: variants;
+  variant?: TbuttonVariants;
   colors?: colors;
-  maxW?: maxWs;
+  maxW?: Tsize;
   disabled?: boolean;
 }

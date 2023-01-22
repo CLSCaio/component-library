@@ -2,7 +2,7 @@ import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { MdAdsClick } from 'react-icons/md';
 
-import { colors as themeColor } from '../../../global';
+import { colors as themeColor } from 'src/global';
 
 import * as I from './interface';
 import * as S from './styles';
@@ -25,7 +25,7 @@ export const Button = ({
   >
     <S.Button
       colors={colors}
-      onClick={onClick}
+      onClick={e => onClick(e)}
       disabled={isLoading || disabled}
       className={`btn btn-bg btn-animate effect effect-1 ${
         className && className
