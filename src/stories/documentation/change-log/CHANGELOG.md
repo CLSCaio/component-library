@@ -359,6 +359,11 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Melhorando estruturação da table
 - Melhorando estruturação dos stories dos componentes
 
+### dia 22/01/2023
+## Versão 0.0.64
+### Refactor
+- Movendo functions / regex / validations para nova pasta utils
+
 
 
 

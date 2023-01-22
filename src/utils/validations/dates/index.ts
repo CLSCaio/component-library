@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { functions } from '../../../../functions';
+import { functions } from '../../functions';
 
 import * as C from './content';
 import * as I from './interface';
