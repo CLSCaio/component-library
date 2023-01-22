@@ -1,3 +1,5 @@
+import { TplacementTooltip } from 'src/types';
+
 type colors =
   | 'others-1'
   | 'others-2'
@@ -7,10 +9,9 @@ type colors =
   | 'transparent'
   | 'black'
   | 'white';
-type placement = 'begin' | 'middle' | 'last';
 
 export interface TooltipStyles {
-  placement?: placement;
+  placement?: TplacementTooltip;
   disabled?: boolean;
   color?: colors;
   sinal?: boolean;
@@ -18,7 +19,7 @@ export interface TooltipStyles {
 
 export interface TooltipProps {
   description: string;
-  placement?: placement;
+  placement?: TplacementTooltip;
   disabled?: boolean;
   color?: colors;
   isLoading?: boolean;
