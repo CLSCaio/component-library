@@ -1,3 +1,5 @@
+import { TlinkTypes, TlinkVariants } from 'src/types';
+
 type link = `/${string}` | '/' | `https://${string}`;
 
 export interface HrefProps {
@@ -14,10 +16,10 @@ export interface HrefProps {
 export interface LinkProps extends LinkStyles {
   href: HrefProps;
   label: string;
-  type?: 'default' | 'next' | 'react';
+  type?: TlinkTypes;
   onClick?: () => void;
 }
 export interface LinkStyles {
   colors?: [text: string, hover?: string];
-  variant?: 'default' | 'doubleLine' | 'underline';
+  variant?: TlinkVariants;
 }

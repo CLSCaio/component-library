@@ -1,3 +1,5 @@
+import { TlinkTypes, TlinkVariants } from 'src/types';
+
 import { Routes } from '../../../router/interface';
 
 export const sizes = {
@@ -14,9 +16,9 @@ export interface HeaderProps {
   type?: types;
   bgColor?: string;
   link?: {
-    type: 'next' | 'react';
+    type?: TlinkTypes;
     colors?: [text: string, hover?: string];
-    variant?: 'default' | 'doubleLine' | 'underline';
+    variant?: TlinkVariants;
   };
   title?: string;
 }

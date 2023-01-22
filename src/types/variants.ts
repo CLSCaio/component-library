@@ -4,3 +4,5 @@ export type TbuttonVariants =
   | 'pulse'
   | 'floating'
   | 'default';
+
+export type TlinkVariants = 'default' | 'doubleLine' | 'underline';
