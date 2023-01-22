@@ -1,10 +1,9 @@
 import React from 'react';
-
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import { Description } from '../description';
-import { returnIcon } from './content';
+import { Description } from 'src/components';
 
+import * as C from './content';
 import * as I from './interface';
 import * as S from './styles';
 
@@ -44,7 +43,7 @@ export const Accordion = ({
               onClick={() => displayDescription(validId)}
             >
               <S.Title>{title}</S.Title>
-              {returnIcon({ title: validId, icon })}
+              {C.returnIcon({ title: validId, icon })}
             </S.PanelHead>
 
             <S.Text id={`accordion-${validId}`}>

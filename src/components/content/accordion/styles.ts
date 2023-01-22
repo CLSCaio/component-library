@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { colors as themeColor } from '../../../global';
+import { colors as themeColor } from 'src/global';
 
+import * as C from './content';
 import * as I from './interface';
 
 export const Container = styled.span<I.AccordionStyles>`
@@ -13,18 +14,7 @@ export const Panel = styled.div<I.AccordionStyles>`
   width: 100%;
   height: max-content;
 
-  ${({ variant, colors }) =>
-    variant === 'default'
-      ? css`
-          border: 1px solid ${colors?.[2] || themeColor.black};
-        `
-      : variant === 'inline'
-      ? css`
-          border-bottom: 1px solid ${colors?.[2] || themeColor.black}; ;
-        `
-      : css`
-          border: none;
-        `}
+  ${({ variant, colors }) => C.returnBorder({ variant, colors })}
 
   .icons {
     display: none;

@@ -1,13 +1,14 @@
 import React from 'react';
+import { css } from 'styled-components';
 
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
-import { ChangeIconProps } from './interface';
+import { colors as themeColor } from 'src/global';
 
-export const returnIcon = ({ title, icon }: ChangeIconProps) => {
-  console.log(title);
+import * as I from './interface';
 
+export const returnIcon = ({ title, icon }: I.ChangeIconProps) => {
   const validIcon = {
     none: null,
     default: (
@@ -25,4 +26,25 @@ export const returnIcon = ({ title, icon }: ChangeIconProps) => {
   };
 
   return validIcon[icon];
+};
+
+export const returnBorder = ({ variant, colors }: I.AccordionStyles) => {
+  if (!variant)
+    return css`
+      border: none;
+    `;
+
+  const validVariant = {
+    default: css`
+      border: 1px solid ${colors?.[2] || themeColor.black};
+    `,
+    inline: css`
+      border-bottom: 1px solid ${colors?.[2] || themeColor.black};
+    `,
+    onlyBg: css`
+      border-bottom: 1px solid ${colors?.[2] || themeColor.black};
+    `,
+  };
+
+  return validVariant[variant];
 };
