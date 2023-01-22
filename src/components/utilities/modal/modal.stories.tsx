@@ -20,7 +20,7 @@ export const Overview: Story<ModalProps> = ({
       <Button
         type="button"
         onClick={() => setVisible(true)}
-        label="set visible true"
+        label="visible true"
       />
     </>
   );

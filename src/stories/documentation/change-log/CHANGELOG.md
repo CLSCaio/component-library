@@ -363,6 +363,7 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ## Versão 0.0.64
 ### Refactor
 - Movendo functions / regex / validations para nova pasta utils
+- Movendo pasta layout para dentro de components
 
 
 

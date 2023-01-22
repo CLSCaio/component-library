@@ -25,7 +25,7 @@ export const Overview: Story<LoadingProps> = ({ isLoading, ...args }) => {
       <Button
         type="button"
         onClick={() => setloading(true)}
-        label="set loading true"
+        label="loading true"
       />
     </>
   );

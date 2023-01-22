@@ -6,6 +6,7 @@
     "outDir": "./dist",
     "isolatedModules": true,
     "moduleResolution": "node",
+    // "baseUrl": "src",
     "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -32,22 +33,21 @@
   "paths": {
     "*": ["./src/*"],
   },
-
   "tsc-alias": {
     "verbose": false,
     "resolveFullPaths": true,
   },
   "include": [
     "src",
-    "src/**/*",
-    "**/*.ts",
-    "**/*.tsx"
+    // "src/**/*",
+    // "**/*.ts",
+    // "**/*.tsx"
   ],
   "exclude": [
     "dist",
     "./stories",
-    "node_modules",
-    "lib",
+    // "node_modules",
+    // "lib",
     "src/stories",
     "**/__stories__"
   ],
