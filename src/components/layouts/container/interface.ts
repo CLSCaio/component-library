@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Tsize, TAlignOrJustify, TJustify } from 'src/types';
+import { Tsize, TAlignOrJustify, TJustify, TXy } from 'src/types';
 
 export interface ContainerProps extends ContainerStyles {
   children: ReactNode;
@@ -11,10 +11,8 @@ type radiusStyle = {
   style: '%' | 'px';
 };
 
-type XY = [top: number, right: number, bottom: number, left: number];
-
 export interface ContainerStyles {
-  pad?: XY;
+  pad?: TXy;
   display?: 'flex' | 'none';
   gap?: [desktop: number, mobile?: number];
   direction?: 'row' | 'column';
@@ -36,6 +34,6 @@ export interface ContainerStyles {
   mobileResponsive?: 'row' | 'column';
   pos?: {
     type: 'relative' | 'absolute';
-    XY?: XY;
+    XY?: TXy;
   };
 }

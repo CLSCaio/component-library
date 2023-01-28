@@ -56,11 +56,11 @@ export const Select = ({
             ? 'center'
             : label?.position === 'left' && border === 'inline'
             ? 'center'
-            : 'flex-start'
+            : 'start'
         }
       >
         {label?.name && (
-          <C.Group gap={[10, 10]} align="center" maxW="max-content">
+          <C.Group gap={[10, 10]} align="center" maxW="maxContent">
             <S.Label
               htmlFor={rest.name}
               disabled={disabled || readOnly}

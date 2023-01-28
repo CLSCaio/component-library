@@ -1,80 +1,35 @@
 import styled, { css } from 'styled-components';
-import { medias } from '../../../global';
+
+import { convertAlign, convertJustify, sizesConvert } from 'src/typesConvert';
+import { medias } from 'src/global';
 
 import * as I from './interface';
 
 export const Container = styled.div<I.GroupStyles>`
-  display: flex;
-  width: 100%;
-
-  align-items: ${({ align }) => align};
-  justify-content: ${({ justify }) => justify};
-
-  max-width: ${({ maxW }) =>
-    maxW
-      ? typeof maxW !== 'number'
-        ? I.sizes[maxW]
-        : `${maxW}px`
-      : I.sizes.block};
-
+  display: ${({ display }) => display || 'flex'};
   flex-direction: ${({ direction }) => direction || 'row'};
-  gap: ${({ gap }) => (gap?.[1] ? `${gap[1]}px` : 0)};
+
+  align-items: ${({ align }) => convertAlign(align)};
+  justify-content: ${({ justify }) => convertJustify(justify)};
+
+  max-width: ${({ maxW }) => sizesConvert('1280px', maxW)};
+  width: ${({ w }) => sizesConvert('100%', w)};
+
+  gap: ${({ gap }) => (gap ? `${gap[1]}px` : 0)};
   padding: ${({ pad }) =>
     pad ? `${pad[0]}px ${pad[1]}px ${pad[2]}px ${pad[3]}px` : 0};
-  background-color: ${({ bgColor }) => bgColor};
 
-  border-radius: ${({ border }) =>
-    border && border !== 'none'
-      ? `${border?.radius?.size}${border?.radius?.style}`
-      : 'none'};
-
+  position: ${({ pos }) => pos?.type};
   ${({ pos }) =>
     pos &&
     css`
-      position: ${pos.style};
+      top: ${pos.XY?.[0] || 0}%;
+      right: ${pos.XY?.[1] || 0}%;
+      bottom: ${pos.XY?.[2] || 0}%;
+      left: ${pos.XY?.[3] || 0}%;
     `};
 
-  ${({ pos }) =>
-    pos?.top && pos.type
-      ? css`
-          top: ${pos.top}${pos.type};
-        `
-      : pos?.top &&
-        css`
-          top: ${pos.top}px;
-        `};
-
-  ${({ pos }) =>
-    pos?.left && pos.type
-      ? css`
-          left: ${pos.left}${pos.type};
-        `
-      : pos?.left &&
-        css`
-          left: ${pos.left}px;
-        `};
-
-  ${({ pos }) =>
-    pos?.bottom && pos.type
-      ? css`
-          bottom: ${pos.bottom}${pos.type};
-        `
-      : pos?.bottom &&
-        css`
-          bottom: ${pos.bottom}px;
-        `};
-
-  ${({ pos }) =>
-    pos?.right && pos.type
-      ? css`
-          right: ${pos.right}${pos.type};
-        `
-      : pos?.right &&
-        css`
-          right: ${pos.right}px;
-        `};
-
-  ${medias.medium} {
-    gap: ${({ gap }) => (gap?.[0] ? `${gap[0]}px` : 0)};
+  ${medias.small} {
+    gap: ${({ gap }) => (gap ? (gap?.[0] ? `${gap[0]}px` : `${gap[1]}px`) : 0)};
   }
 `;
