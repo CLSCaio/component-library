@@ -1,7 +1,10 @@
-export type types = 'text' | 'number' | 'password';
-export type maxW = 'block' | number | 'max-content';
-export type transform = 'capitalize' | 'lowercase' | 'uppercase';
-export type borders = 'outline' | 'inline';
+import {
+  TBordersType,
+  TInputTypes,
+  Tsize,
+  TTransformType,
+  InputSelectDefault,
+} from 'src/types';
 
 export type masks =
   | 'cep'
@@ -17,37 +20,21 @@ export type masks =
   | 'cvv'
   | 'height';
 
-export interface InputProps {
-  label?: {
-    name: string;
-    position?: 'top' | 'left';
-    bold?: boolean;
-    tooltip?: string;
-    required?: boolean;
-  };
-  name: string;
-  placeholder?: string;
-  type?: types;
-  maxW?: maxW;
-  transform?: transform;
-  disabled?: boolean;
-  readOnly?: boolean;
-  className?: string;
+export interface InputProps extends InputSelectDefault {
   mask?: masks;
   autoComplete?: 'off' | 'on';
-  onBlur?: () => void;
-  border?: borders;
+  type?: TInputTypes;
 }
 
 export interface InputStyle {
-  type?: types;
-  maxW?: maxW;
-  transform?: transform;
+  type?: TInputTypes;
+  maxW?: Tsize;
+  transform?: TTransformType;
   disabled?: boolean;
   readOnly?: boolean;
   error?: 'error';
   labelposition?: 'top' | 'left';
-  border?: borders;
+  border?: TBordersType;
   boldLabel?: boolean;
 }
 

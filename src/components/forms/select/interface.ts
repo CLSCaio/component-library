@@ -1,45 +1,24 @@
-export const widths = {
-  block: '100%',
-  maxContent: 'max-content',
-};
+import {
+  InputSelectDefault,
+  OptionsSelectProps,
+  TBordersType,
+  Tsize,
+  TTransformType,
+} from 'src/types';
 
-export type OptionsProps = {
-  label: string;
-  value: string | number;
-};
-
-type maxW = 'block' | number | 'max-content';
-type transform = 'capitalize' | 'lowercase' | 'uppercase';
-type borders = 'outline' | 'inline';
-
-export interface SelectProps {
-  name: string;
-  label?: {
-    name: string;
-    position?: 'top' | 'left';
-    bold?: boolean;
-    tooltip?: string;
-    required?: boolean;
-  };
-  options: OptionsProps[];
-  id?: string;
-  onChange?: (event: any) => void;
-  maxW?: maxW;
-  transform?: transform;
-  disabled?: boolean;
-  readOnly?: boolean;
-  border?: borders;
-  className?: string;
-  placeholder?: string;
+export interface SelectProps extends InputSelectDefault {
+  options: OptionsSelectProps[];
 }
 
 export interface SelectStyle {
-  maxW?: maxW;
-  transform?: transform;
+  maxW?: Tsize;
+  transform?: TTransformType;
   disabled?: boolean;
   readOnly?: boolean;
   error?: 'error';
   positionLabel?: 'top' | 'left';
-  border?: borders;
+  border?: TBordersType;
   boldLabel?: boolean;
 }
+
+export type { OptionsSelectProps };

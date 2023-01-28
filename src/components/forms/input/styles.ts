@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
-import { colors, weights } from '../../../global';
+import { sizesConvert } from 'src/typesConvert';
+import { colors, weights } from 'src/global';
 
 import * as I from './interface';
 
@@ -17,12 +18,7 @@ export const Container = styled.div<I.InputStyle>`
   gap: 5px;
 
   width: 100%;
-  max-width: ${({ maxW }) =>
-    maxW === 'block'
-      ? I.widths.block
-      : maxW === 'max-content'
-      ? I.widths.maxContent
-      : `${maxW}px`};
+  max-width: ${({ maxW }) => (!maxW ? '100%' : sizesConvert(maxW))};
 `;
 
 export const Label = styled.label<I.InputStyle>`

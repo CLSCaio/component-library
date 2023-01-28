@@ -42,20 +42,31 @@ export const Overview: Story<FormProps> = ({ form, ...args }) => {
 };
 
 Overview.args = {
-  inputs: [
+  components: [
     { name: 'input1', label: { name: 'input 1' } },
     { name: 'input2', label: { name: 'input 2' } },
-    { name: 'input3', label: { name: 'input 3' } },
-  ],
-
-  button: {
-    label: 'confirmar',
-  },
-
-  selects: [
     {
       name: 'select',
-      label: { name: 'select' },
+      label: { name: 'select 1' },
+      options: [
+        {
+          label: 'Selecione um valor ...',
+          value: '',
+        },
+        {
+          label: 'valor 1',
+          value: 'valor 1',
+        },
+        {
+          label: 'valor 2',
+          value: 'valor 2',
+        },
+      ],
+    },
+    { name: 'input3', label: { name: 'input 3' } },
+    {
+      name: 'select2',
+      label: { name: 'select 2' },
       options: [
         {
           label: 'Selecione um valor ...',
@@ -72,4 +83,9 @@ Overview.args = {
       ],
     },
   ],
+
+  button: {
+    onClick: () => console.log(''),
+    label: 'confirmar',
+  },
 };

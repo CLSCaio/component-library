@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../global';
+import { colors } from 'src/global';
 
 export const ErrorContainer = styled.div`
   display: flex;

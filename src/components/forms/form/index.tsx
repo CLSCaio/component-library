@@ -7,25 +7,23 @@ import * as I from './interface';
 import * as S from './styles';
 
 export const Form = ({
-  inputs,
-  selects,
-  design,
+  // inputs,
+  // selects,
+  components,
   button,
   form,
 }: I.FormProps) => (
   <FormikProvider value={form}>
     <S.Form onSubmit={form.handleSubmit}>
-      {inputs &&
-        inputs.map(({ ...rest }) => (
-          <Input key={rest.name} {...rest} {...design} />
-        ))}
+      {components.map(({ options, ...rest }) =>
+        !options ? (
+          <Input key={rest.name} {...rest} />
+        ) : (
+          <Select key={rest.name} {...rest} options={options} />
+        ),
+      )}
 
-      {selects &&
-        selects.map(({ ...rest }) => (
-          <Select key={rest.name} {...rest} {...design} />
-        ))}
-
-      <Button onClick={() => form.handleSubmit} {...button} />
+      <Button {...button} onClick={() => form.handleSubmit} />
     </S.Form>
   </FormikProvider>
 );
