@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Meta, Story } from '@storybook/react';
 
-import { Container, ContainerProps } from '../../index';
+import { Container, ContainerProps } from 'src/components';
 
 export default {
   title: 'Layouts/Container',
@@ -18,8 +18,3 @@ export const Overview: Story<ContainerProps> = args => (
     <H1> caio </H1> <H1> sousa </H1>
   </Container>
 );
-
-Overview.args = {
-  mobileResponsive: true,
-  direction: 'column',
-};
