@@ -10,6 +10,7 @@ export type masks =
   | 'cep'
   | 'cellphone'
   | 'phone'
+  | 'phone_cellphone'
   | 'plate'
   | 'cpf'
   | 'cnpj'

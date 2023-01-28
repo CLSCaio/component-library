@@ -6,6 +6,8 @@ export const cellphone = ['(99) 9 9999-9999'];
 
 export const phone = ['(99) 9999-9999'];
 
+export const phone_cellphone = [...phone, ...cellphone];
+
 export const cpf = ['999.999.999-99'];
 
 export const cnpj = ['99.999.999/9999-99'];
