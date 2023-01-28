@@ -18,7 +18,7 @@ export const Container = styled.div<I.InputStyle>`
   gap: 5px;
 
   width: 100%;
-  max-width: ${({ maxW }) => (!maxW ? '100%' : sizesConvert(maxW))};
+  max-width: ${({ maxW }) => sizesConvert('1280px', maxW)};
 `;
 
 export const Label = styled.label<I.InputStyle>`

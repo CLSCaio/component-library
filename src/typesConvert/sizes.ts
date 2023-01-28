@@ -1,11 +1,13 @@
 import { Tsize } from 'src/types';
 
-export const sizesConvert = (size: Tsize) => {
+export const sizesConvert = (defaultSize?: string, size?: Tsize) => {
   if (typeof size === 'number') return `${size}px`;
+  if (!size) return defaultSize;
 
   const validSize = {
     block: '100%',
     maxContent: 'max-content',
+    default: defaultSize,
   };
 
   return validSize[size];

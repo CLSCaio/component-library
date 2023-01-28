@@ -1,1 +1,1 @@
-export type Tsize = 'block' | number | 'maxContent';
+export type Tsize = 'block' | number | 'maxContent' | 'default';

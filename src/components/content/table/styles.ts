@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
 
-import { colors, medias } from 'src/global';
+import { colors } from 'src/global';
 import { convertTextAlign, sizesConvert } from 'src/typesConvert';
 
 import * as I from './interface';
 
 export const Container = styled.div<I.TableStyles>`
   width: 100%;
-  max-width: ${({ size }) => (!size ? '1280px' : sizesConvert(size))};
+  max-width: ${({ size }) => sizesConvert('1280px', size)};
 `;
 
 export const Table = styled.div`

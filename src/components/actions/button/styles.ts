@@ -150,7 +150,7 @@ export const Container = styled.div<I.ButtonStyle>`
     `}
 
   ${medias.xXsmall} {
-    max-width: ${({ maxW }) => (!maxW ? '250px' : sizesConvert(maxW))};
+    max-width: ${({ maxW }) => sizesConvert('250px', maxW)};
   }
 `;
 
