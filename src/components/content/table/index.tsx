@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { colors } from '../../../global';
+import { colors } from 'src/global';
 
 import * as I from './interface';
 
+import eventWheel from './mouseWheelScrollX';
 import * as S from './styles';
 
 export const Table = ({ list, ...rest }: I.TableProps) => (
   <S.Container {...rest}>
-    <S.Table>
+    <S.Table id="eventWheel" onWheel={e => eventWheel(e.currentTarget.id)}>
       <S.Heading>
         {list.titles.map(title => (
           <S.Title key={`table-${title}`} {...rest}>

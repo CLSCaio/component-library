@@ -1,16 +1,15 @@
 import { ReactNode } from 'react';
-
-type align = 'left' | 'center' | 'right';
+import { TTextAlign, Tsize } from 'src/types';
 
 export interface TableProps {
   list: TableList;
   // variant?: 'default' | '';
-  textAlign?: align;
+  textAlign?: TTextAlign;
   colorDivider?: boolean;
-  size?: number;
+  size?: Tsize;
 }
 
-type onClick = (e?: React.MouseEvent<HTMLTableRowElement, MouseEvent>) => void;
+type onClick = (e?: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
 
 export interface TableList {
   titles: string[];
@@ -21,9 +20,9 @@ export interface TableList {
 export interface TableStyles {
   color?: string;
   click?: onClick;
-  textAlign?: align;
+  textAlign?: TTextAlign;
   colorDivider?: boolean;
-  size?: number;
+  size?: Tsize;
 }
 
 type rows = string[] | ReactNode[];
