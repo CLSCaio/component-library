@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Loading, LoadingProps, Button } from '../../..';
+import { Loading, LoadingProps, Button } from 'src/components';
 
 export default {
   title: 'Utilities/Loading',

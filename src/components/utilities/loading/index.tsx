@@ -1,10 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
-import useBreakpoint from 'use-breakpoint';
 
-import { medias } from '../../../global';
-
-import { Base } from '../base';
+import { medias, IsMobile, convertMedia, Base } from 'src';
 
 import * as I from './interface';
 
@@ -13,24 +10,12 @@ export const Loading = ({
   withoutBase,
   size = 200,
   color,
-}: I.LoadingProps) => {
-  const defaultBreakpoints = useMemo(
-    () => ({
-      mobile: 0,
-      desktop:
-        Number(
-          medias.xXsmall.replace('@media (min-width:', '').replace('px)', ''),
-        ) + 1,
-    }),
-    [],
-  );
-
-  const { breakpoint } = useBreakpoint(defaultBreakpoints, 'mobile');
-  const isMobile = breakpoint === 'mobile';
-
-  return isLoading ? (
+}: I.LoadingProps) =>
+  isLoading ? (
     <Base withoutBase={withoutBase}>
-      <ClipLoader size={isMobile ? 200 : size} color={color} />
+      <ClipLoader
+        size={IsMobile(convertMedia(medias.xXsmall)) ? 200 : size}
+        color={color}
+      />
     </Base>
   ) : null;
-};
