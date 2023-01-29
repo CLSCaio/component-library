@@ -70,7 +70,7 @@ export const Heading = styled.span`
 export const Title = styled.h2<I.TableStyles>`
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 300px;
   padding: 0 15px;
 
   ${({ textAlign }) => convertTextAlign(textAlign)};
@@ -81,7 +81,7 @@ export const Content = styled.p<I.TableStyles>`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 250px;
+  width: 300px;
   padding: 0 15px;
 
   ${({ textAlign }) => convertTextAlign(textAlign)};
