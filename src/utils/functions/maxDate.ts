@@ -1,4 +1,4 @@
-import { padTo2Digits, formatDate } from '../formatDate';
+import { padTo2Digits, formatDate } from './formatDate';
 
 export const returnMaxDate = (minAge = 18) => {
   const date = new Date();
