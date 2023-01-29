@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { colors as defaultColors, medias } from 'src/global';
-import { sizesConvert } from 'src/typesConvert';
+import { convertSize } from 'src/typesConvert';
 
 import * as I from './interface';
 
@@ -150,7 +150,7 @@ export const Container = styled.div<I.ButtonStyle>`
     `}
 
   ${medias.xXsmall} {
-    max-width: ${({ maxW }) => sizesConvert('250px', maxW)};
+    max-width: ${({ maxW }) => convertSize('250px', maxW)};
   }
 `;
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { sizesConvert } from 'src/typesConvert';
+import { convertSize } from 'src/typesConvert';
 import { colors, weights } from 'src/global';
 
 import * as I from './interface';
@@ -11,7 +11,7 @@ export const Container = styled.div<I.SelectStyle>`
   gap: 5px;
 
   width: 100%;
-  max-width: ${({ maxW }) => sizesConvert('1280px', maxW)};
+  max-width: ${({ maxW }) => convertSize('1280px', maxW)};
 `;
 
 export const Label = styled.label<I.SelectStyle>`

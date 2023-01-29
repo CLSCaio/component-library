@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { convertAlign, convertJustify, sizesConvert } from 'src/typesConvert';
+import { convertAlign, convertJustify, convertSize } from 'src/typesConvert';
 import { medias } from 'src/global';
 
 import * as I from './interface';
@@ -12,8 +12,8 @@ export const Container = styled.div<I.GroupStyles>`
   align-items: ${({ align }) => convertAlign(align)};
   justify-content: ${({ justify }) => convertJustify(justify)};
 
-  max-width: ${({ maxW }) => sizesConvert('1280px', maxW)};
-  width: ${({ w }) => sizesConvert('100%', w)};
+  max-width: ${({ maxW }) => convertSize('1280px', maxW)};
+  width: ${({ w }) => convertSize('100%', w)};
 
   gap: ${({ gap }) => (gap ? `${gap[1]}px` : 0)};
   padding: ${({ pad }) =>

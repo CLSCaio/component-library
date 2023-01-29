@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { convertAlign, convertJustify, sizesConvert } from 'src/typesConvert';
+import { convertAlign, convertJustify, convertSize } from 'src/typesConvert';
 import { medias } from 'src/global';
 
 import * as I from './interface';
@@ -12,13 +12,13 @@ export const Container = styled.div<I.ContainerStyles>`
 
   background-color: ${({ bgColor }) => bgColor || 'transparent'};
 
-  max-width: ${({ maxW }) => sizesConvert('1280px', maxW)};
-  max-height: ${({ maxH }) => sizesConvert(undefined, maxH)};
+  max-width: ${({ maxW }) => convertSize('1280px', maxW)};
+  max-height: ${({ maxH }) => convertSize(undefined, maxH)};
 
-  min-height: ${({ minH }) => sizesConvert(undefined, minH)};
+  min-height: ${({ minH }) => convertSize(undefined, minH)};
 
-  height: ${({ h }) => sizesConvert(undefined, h)};
-  width: ${({ w }) => sizesConvert('100%', w)};
+  height: ${({ h }) => convertSize(undefined, h)};
+  width: ${({ w }) => convertSize('100%', w)};
 
   border-radius: ${({ border }) =>
     !border
