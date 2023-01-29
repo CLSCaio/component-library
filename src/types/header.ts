@@ -1,10 +1,4 @@
-import {
-  THeaderTypes,
-  Tsize,
-  TLink,
-  TRoutes,
-  THeaderBarDefaultProps,
-} from 'src/types';
+import { THeaderTypes, Tsize, TLink, THeaderBarDefaultProps } from 'src/types';
 
 export interface DefaultTypes {
   bgColor?: string;
@@ -16,4 +10,5 @@ type HeaderExtendsProps = DefaultTypes & THeaderBarDefaultProps;
 
 export interface THeaderProps extends HeaderExtendsProps {
   link?: TLink;
+  withoutBorder?: boolean;
 }

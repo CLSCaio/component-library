@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { convertSize } from 'src/typesConvert';
 import { medias, colors } from 'src/global';
@@ -19,11 +19,15 @@ export const Container = styled.header<I.HeaderStyles>`
 
   position: ${({ type }) => type || 'fixed'};
 
-  background: ${({ bgColor }) => bgColor || 'transparent'};
+  background: ${({ bgColor }) => bgColor || 'white'};
 
   transition: 0.7s;
 
-  border-bottom: 5px double ${colors.primary};
+  ${({ withoutBorder }) =>
+    !withoutBorder &&
+    css`
+      border-bottom: 5px double ${colors.primary};
+    `}
 
   ${medias.xXsmall} {
     align-items: center;

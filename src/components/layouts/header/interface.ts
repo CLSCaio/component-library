@@ -6,5 +6,6 @@ export interface HeaderProps extends THeaderProps {
 
 export interface HeaderStyles extends DefaultTypes {
   menu?: boolean;
+  withoutBorder?: boolean;
   routes?: TRoutes[];
 }

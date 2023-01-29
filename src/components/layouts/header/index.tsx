@@ -15,13 +15,20 @@ export const Header = ({
   openIcon,
   closeIcon,
   title,
+  withoutBorder,
   img,
 }: I.HeaderProps) => {
   const [menu, openMenu] = useState(false);
 
   return (
     <>
-      <S.Container menu={menu} type={type} bgColor={bgColor} routes={routes}>
+      <S.Container
+        menu={menu}
+        withoutBorder={withoutBorder}
+        type={type}
+        bgColor={bgColor}
+        routes={routes}
+      >
         <S.Separator maxW={maxW}>
           <Menu.Bar
             openMenu={openMenu}
