@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { Main, Header } from '..';
+import { Main, Header } from 'src/components';
 
 import * as I from './interface';
 

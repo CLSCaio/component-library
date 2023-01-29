@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Header, HeaderProps, Group } from '../..';
+import { Header, HeaderProps } from '../..';
 
 export default {
   title: 'Layouts/Header',
