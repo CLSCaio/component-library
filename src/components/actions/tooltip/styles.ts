@@ -183,8 +183,11 @@ export const Container = styled.div<I.TooltipStyles>`
 `;
 
 export const Description = styled.p<I.TooltipStyles>`
-  width: 280px;
-  height: 60px;
+  width: max-content;
+  min-width: 120px;
+  height: 70px;
+
+  max-width: 320px;
 
   display: flex;
   justify-content: center;
@@ -192,7 +195,7 @@ export const Description = styled.p<I.TooltipStyles>`
 
   position: absolute;
 
-  padding: 15px;
+  padding: 15px 25px;
 
   z-index: 15;
 
