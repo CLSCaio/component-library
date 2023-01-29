@@ -39,15 +39,15 @@
   },
   "include": [
     "src",
-    // "src/**/*",
-    // "**/*.ts",
-    // "**/*.tsx"
+    "src/**/*",
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "dist",
     "./stories",
-    // "node_modules",
-    // "lib",
+    "node_modules",
+    "lib",
     "src/stories",
     "**/__stories__"
   ],

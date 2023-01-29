@@ -14,8 +14,8 @@ interface ColorsDescriptionProps {
 
 export const ColorsDescription = ({ colorNames }: ColorsDescriptionProps) => (
   <Container>
-    {colorNames.map(({ color, description, name }) => (
-      <Content key={color}>
+    {colorNames.map(({ color, description, name }, i) => (
+      <Content key={color + +i}>
         <Color color={color} />
         <Description>
           <strong>{name}</strong>
