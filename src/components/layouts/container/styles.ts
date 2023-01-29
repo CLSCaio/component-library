@@ -6,7 +6,7 @@ import { medias } from 'src/global';
 import * as I from './interface';
 
 export const Container = styled.div<I.ContainerStyles>`
-  gap: ${({ gap }) => (gap ? `${gap[1]}px` : 0)};
+  gap: ${({ gap }) => (!gap ? 0 : `${gap?.[1] || gap?.[0]}px`)};
   padding: ${({ pad }) =>
     pad ? `${pad[0]}px ${pad[1]}px ${pad[2]}px ${pad[3]}px` : 0};
 
@@ -86,6 +86,6 @@ export const Container = styled.div<I.ContainerStyles>`
         `}
 
   ${medias.small} {
-    gap: ${({ gap }) => (gap ? (gap?.[0] ? `${gap[0]}px` : `${gap[1]}px`) : 0)};
+    gap: ${({ gap }) => (!gap ? 0 : `${gap[0]}px`)};
   }
 `;
