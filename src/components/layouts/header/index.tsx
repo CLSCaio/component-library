@@ -11,7 +11,11 @@ export const Header = ({
   type,
   bgColor,
   link,
+  titleIcon,
+  openIcon,
+  closeIcon,
   title,
+  img,
 }: I.HeaderProps) => {
   const [menu, openMenu] = useState(false);
 
@@ -19,7 +23,15 @@ export const Header = ({
     <>
       <S.Container menu={menu} type={type} bgColor={bgColor} routes={routes}>
         <S.Separator maxW={maxW}>
-          <Menu.Bar openMenu={openMenu} menu={menu} title={title} />
+          <Menu.Bar
+            openMenu={openMenu}
+            menu={menu}
+            img={img}
+            titleIcon={titleIcon}
+            openIcon={openIcon}
+            closeIcon={closeIcon}
+            title={title}
+          />
 
           <Menu.Opc routes={routes} openMenu={openMenu} link={link} />
         </S.Separator>

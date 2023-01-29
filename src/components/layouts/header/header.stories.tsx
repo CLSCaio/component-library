@@ -2,7 +2,9 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Header, HeaderProps } from '../..';
+import { FaFrownOpen, FaCodepen, FaOpencart } from 'react-icons/fa';
+
+import { Header, HeaderProps } from 'src/components';
 
 export default {
   title: 'Layouts/Header',
@@ -16,6 +18,9 @@ export const Overview: Story<HeaderProps> = args => (
 );
 
 Overview.args = {
+  titleIcon: FaFrownOpen,
+  closeIcon: FaCodepen,
+  openIcon: FaOpencart,
   routes: [
     {
       label: 'h1',

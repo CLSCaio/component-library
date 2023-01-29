@@ -1,9 +1,6 @@
-export interface BarProps {
+import { THeaderBarDefaultProps } from 'src/types';
+
+export interface BarProps extends THeaderBarDefaultProps {
   menu: boolean;
   openMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  title?: string;
-  img?: {
-    url: string;
-    alt: string;
-  };
 }

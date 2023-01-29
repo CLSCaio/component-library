@@ -3,15 +3,36 @@ import React from 'react';
 import * as I from './interface';
 import * as S from './styles';
 
-export const Bar = ({ menu, openMenu, img, title }: I.BarProps) => (
+export const Bar = ({
+  menu,
+  openMenu,
+  img,
+  title,
+  titleIcon: Icon,
+  closeIcon: Close,
+  openIcon: Open,
+}: I.BarProps) => (
   <S.Container>
-    {img && <S.IMG src={img.url} alt={img.alt} />}
-    {!menu ? (
-      <S.Bars onClick={() => openMenu(!menu)} />
-    ) : (
-      <S.Close onClick={() => openMenu(!menu)} />
-    )}
+    <S.IconImgGroup>
+      {img && !Icon && (
+        <S.IMG src={img.url} alt={img.alt} onClick={() => openMenu(!menu)} />
+      )}
+      {Icon && !img && <Icon onClick={() => openMenu(!menu)} />}
+    </S.IconImgGroup>
 
-    <p>{title}</p>
+    <S.OpenCloseMenuOpc>
+      {!menu ? (
+        !Open ? (
+          <S.Bars onClick={() => openMenu(!menu)} />
+        ) : (
+          <Open onClick={() => openMenu(!menu)} />
+        )
+      ) : !Close ? (
+        <S.Close onClick={() => openMenu(!menu)} />
+      ) : (
+        <Close onClick={() => openMenu(!menu)} />
+      )}
+    </S.OpenCloseMenuOpc>
+    <h2>{title}</h2>
   </S.Container>
 );

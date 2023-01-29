@@ -11,6 +11,12 @@ export default {
 export const Overview: Story<RouterProps> = args => <Router {...args} />;
 
 Overview.args = {
+  internalHeader: {
+    img: {
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS-wzlH6UF3a7bFTSZbC0V7yKa6Bz18udt7VdzaSefGVOYiDsEzk8OA4m_MR8wwruHUmU&usqp=CAU',
+      alt: '',
+    },
+  },
   routes: [
     {
       reactComponent: <div> Home </div>,

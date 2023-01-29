@@ -1,14 +1,6 @@
-import { THeaderTypes, TLink, TRoutes, Tsize } from 'src/types';
+import { TRoutes, DefaultTypes, THeaderProps } from 'src/types';
 
-interface DefaultTypes {
-  bgColor?: string;
-  type?: THeaderTypes;
-  maxW?: Tsize;
-}
-
-export interface HeaderProps extends DefaultTypes {
-  link?: TLink;
-  title?: string;
+export interface HeaderProps extends THeaderProps {
   routes: TRoutes[];
 }
 
