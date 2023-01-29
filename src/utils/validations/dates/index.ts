@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { functions } from '../../functions';
+import { returnMinDate, returnMaxDate, parseDateString } from 'src/utils';
 
 import * as C from './content';
 import * as I from './interface';
@@ -13,12 +13,12 @@ export const dateWithRestrictionOfAge = ({
 }: I.ValidationsProps) => {
   const validate = yup
     .date()
-    .transform(functions.parseDateString)
+    .transform(parseDateString)
     .min(
-      functions.returnMinDate(maxAge),
-      `A data não poder ser menor que  ${functions.returnMinDate()}`,
+      returnMinDate(maxAge),
+      `A data não poder ser menor que  ${returnMinDate()}`,
     )
-    .max(functions.returnMaxDate(minAge), message2)
+    .max(returnMaxDate(minAge), message2)
     .typeError(message)
     .test('date', message, value => {
       if (value) return value.toString().trim().length >= 10;

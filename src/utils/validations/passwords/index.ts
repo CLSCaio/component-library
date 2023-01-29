@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { regex } from '../../regex';
+import { regex_strongPassword, regex_weakPassword } from 'src/utils';
 
 import * as C from './content';
 import * as I from './interface';
@@ -30,7 +30,7 @@ export const weakPassword = ({
       return false;
     })
     .test('password', message2, value => {
-      if (value) return value.length >= 1 && regex.weakPassword.test(value);
+      if (value) return value.length >= 1 && regex_weakPassword.test(value);
       return false;
     });
 
@@ -48,7 +48,7 @@ export const strongPassword = ({
       return false;
     })
     .test('password', message2, value => {
-      if (value) return value.length >= 1 && regex.strongPassword.test(value);
+      if (value) return value.length >= 1 && regex_strongPassword.test(value);
       return false;
     });
 

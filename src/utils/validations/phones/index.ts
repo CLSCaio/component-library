@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { regex } from '../../regex';
+import { regex_phone, regex_cellphone } from 'src/utils';
 
 import * as C from './content';
 import * as I from './interface';
@@ -11,6 +11,10 @@ export const phone = ({ message = C.message1 }: I.ValidationsProps) => {
     .min(14, message)
     .test('phone', message, value => {
       if (value) return value.trim().length >= 1;
+      return false;
+    })
+    .test('phone', message, value => {
+      if (value) return value.length >= 1 && regex_phone.test(value);
       return false;
     });
 
@@ -25,8 +29,8 @@ export const cellphone = ({ message = C.message2 }: I.ValidationsProps) => {
       if (value) return value.trim().length >= 1;
       return false;
     })
-    .test('password', message, value => {
-      if (value) return value.length >= 1 && regex.cellphone.test(value);
+    .test('cellphone', message, value => {
+      if (value) return value.length >= 1 && regex_cellphone.test(value);
       return false;
     });
 

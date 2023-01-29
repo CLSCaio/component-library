@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { regex } from '../../regex';
+import { regex_email } from 'src/utils';
 
 import * as C from './content';
 import * as I from './interface';
@@ -17,7 +17,7 @@ export const email = ({
       return false;
     })
     .test('e-mail', message, value => {
-      if (value) return value.length >= 1 && regex.email.test(value);
+      if (value) return value.length >= 1 && regex_email.test(value);
       return false;
     });
 
