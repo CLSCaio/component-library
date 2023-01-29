@@ -1,6 +1,6 @@
-export * from './sizes';
 export * from './variants';
 export * from './type';
 export * from './align';
 export * from './others';
 export * from './component';
+export * from './route';

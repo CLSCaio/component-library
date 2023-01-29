@@ -1,23 +1,10 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { medias, colors } from '../../../global';
+import { convertSize } from 'src/typesConvert';
+import { medias, colors } from 'src/global';
 
+import calcHeaderHeight from './calcHeaderHeight';
 import * as I from './interface';
-
-const calcHeight = ({ menu, routes }: I.HeaderStyles) => {
-  const lenght = routes?.length;
-  const calc = lenght && (lenght + 1) * 60;
-  const px = `${calc}px`;
-
-  if (menu) {
-    return css`
-      height: ${px};
-    `;
-  }
-  return css`
-    height: 70px;
-  `;
-};
 
 export const Container = styled.header<I.HeaderStyles>`
   padding: 15px 0;
@@ -25,7 +12,7 @@ export const Container = styled.header<I.HeaderStyles>`
   flex-direction: column;
   width: 100%;
   gap: 15px;
-  ${({ menu, routes }) => calcHeight({ menu, routes })}
+  ${({ menu, routes }) => calcHeaderHeight({ menu, routes })}
 
   overflow: hidden;
   top: 0;
@@ -59,8 +46,7 @@ export const Separator = styled.span<I.HeaderStyles>`
     justify-content: space-between;
     flex-direction: row;
     gap: 30px;
-    max-width: ${({ maxW }) =>
-      maxW && maxW === 'block' ? I.sizes.block : I.sizes.default};
+    max-width: ${({ maxW }) => convertSize('1280px', maxW)};
   }
 `;
 

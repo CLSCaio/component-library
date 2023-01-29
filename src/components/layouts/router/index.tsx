@@ -9,7 +9,7 @@ export const Router = ({
   routes,
   externalHeader,
   internalHeader,
-  withPad,
+  mobileLayout,
 }: I.RouterProps) => (
   <BrowserRouter>
     {externalHeader || (
@@ -20,12 +20,12 @@ export const Router = ({
         maxW={internalHeader?.maxW}
         link={{
           type: 'react',
-          colors: internalHeader?.link?.color,
+          colors: internalHeader?.link?.colors,
           variant: internalHeader?.link?.variant,
         }}
       />
     )}
-    <Main withPad={withPad}>
+    <Main mobileLayout={mobileLayout}>
       <Routes>
         {routes.map(({ reactComponent, href, ...route }) => (
           <Route

@@ -1,32 +1,18 @@
-import { TlinkTypes, TlinkVariants } from 'src/types';
+import { THeaderTypes, TLink, TRoutes, Tsize } from 'src/types';
 
-import { Routes } from '../../../router/interface';
-
-export const sizes = {
-  block: '100%',
-  default: '1280px',
-};
-
-type width = 'default' | 'block';
-type types = 'fixed' | 'static';
-
-export interface HeaderProps {
-  routes: Routes[];
-  maxW?: width;
-  type?: types;
+interface DefaultTypes {
   bgColor?: string;
-  link?: {
-    type?: TlinkTypes;
-    colors?: [text: string, hover?: string];
-    variant?: TlinkVariants;
-  };
-  title?: string;
+  type?: THeaderTypes;
+  maxW?: Tsize;
 }
 
-export interface HeaderStyles {
+export interface HeaderProps extends DefaultTypes {
+  link?: TLink;
+  title?: string;
+  routes: TRoutes[];
+}
+
+export interface HeaderStyles extends DefaultTypes {
   menu?: boolean;
-  maxW?: width;
-  type?: types;
-  bgColor?: string;
-  routes?: Routes[];
+  routes?: TRoutes[];
 }

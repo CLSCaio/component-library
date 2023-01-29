@@ -1,3 +1,4 @@
 export type TbuttonTypes = 'button' | 'submit' | 'reset';
-export type TlinkTypes = 'default' | 'next' | 'react';
+export type TlinkTypes = 'next' | 'react';
 export type TInputTypes = 'text' | 'number' | 'password';
+export type THeaderTypes = 'fixed' | 'static';

@@ -1,13 +1,7 @@
-import { TlinkTypes, TlinkVariants } from 'src/types';
-
-import { Routes } from '../../../../../router/interface';
+import { TLink, TRoutes } from 'src/types';
 
 export interface OpcProps {
   openMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  link?: {
-    type?: TlinkTypes;
-    colors?: [text: string, hover?: string];
-    variant?: TlinkVariants;
-  };
-  routes: Routes[];
+  link?: TLink;
+  routes: TRoutes[];
 }

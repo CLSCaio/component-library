@@ -1,6 +1,6 @@
 import { Tsize } from 'src/types';
 
-export const sizesConvert = (defaultSize?: string, size?: Tsize) => {
+export const convertSize = (defaultSize?: string, size?: Tsize) => {
   if (typeof size === 'number') return `${size}px`;
   if (!size) return defaultSize;
 

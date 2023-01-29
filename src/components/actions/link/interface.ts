@@ -1,13 +1,11 @@
-import { TlinkTypes, TlinkVariants } from 'src/types';
-
-type link = `/${string}` | '/' | `https://${string}`;
+import { TlinkTypes, TlinkVariants, THref } from 'src/types';
 
 export interface HrefProps {
-  defautlLink: link | `#${string}`;
+  defautlLink: THref;
 
   // apenas pro next.js
   customLink?: {
-    pathname: link;
+    pathname: THref;
     rest?: object;
   };
   as?: string;
@@ -16,7 +14,7 @@ export interface HrefProps {
 export interface LinkProps extends LinkStyles {
   href: HrefProps;
   label: string;
-  type?: TlinkTypes;
+  type?: TlinkTypes | 'default';
   onClick?: () => void;
 }
 export interface LinkStyles {
