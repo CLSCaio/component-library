@@ -1,29 +1,8 @@
-import { name } from './name';
-import { cep } from './cep';
-import { email } from './email';
-import { dateWithRestrictionOfAge } from './dates';
-
-import { cpf, cnpj, cpf_cnpj } from './cpf_cnpj';
-import {
-  normalPassword,
-  strongPassword,
-  weakPassword,
-  passwordConfirm,
-} from './passwords';
-import { cellphone, phone } from './phones';
-
-export const validations = {
-  name,
-  cep,
-  email,
-  dateWithRestrictionOfAge,
-  cpf,
-  cnpj,
-  cpf_cnpj,
-  cellphone,
-  phone,
-  normalPassword,
-  strongPassword,
-  weakPassword,
-  passwordConfirm,
-};
+export * from './yup_messages';
+export * from './yup_cep';
+export * from './yup_cpf_cnpj';
+export * from './yup_dates';
+export * from './yup_email';
+export * from './yup_fullName';
+export * from './yup_password';
+export * from './yup_phones';

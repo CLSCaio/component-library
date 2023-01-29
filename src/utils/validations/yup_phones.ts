@@ -2,18 +2,20 @@ import * as yup from 'yup';
 
 import { regex_phone, regex_cellphone } from 'src/utils';
 
-import * as C from './content';
+import * as M from './yup_messages';
 import * as I from './interface';
 
-export const phone = ({ message = C.message1 }: I.ValidationsProps) => {
+export const yup_phone = ({
+  invalid = M.yup_menssages.phones.phone,
+}: I.MessagesYupError) => {
   const validate = yup
     .string()
-    .min(14, message)
-    .test('phone', message, value => {
+    .min(14, invalid)
+    .test('phone', invalid, value => {
       if (value) return value.trim().length >= 1;
       return false;
     })
-    .test('phone', message, value => {
+    .test('phone', invalid, value => {
       if (value) return value.length >= 1 && regex_phone.test(value);
       return false;
     });
@@ -21,15 +23,17 @@ export const phone = ({ message = C.message1 }: I.ValidationsProps) => {
   return validate;
 };
 
-export const cellphone = ({ message = C.message2 }: I.ValidationsProps) => {
+export const yup_cellphone = ({
+  invalid = M.yup_menssages.phones.cellphone,
+}: I.MessagesYupError) => {
   const validate = yup
     .string()
-    .min(16, message)
-    .test('cellphone', message, value => {
+    .min(16, invalid)
+    .test('cellphone', invalid, value => {
       if (value) return value.trim().length >= 1;
       return false;
     })
-    .test('cellphone', message, value => {
+    .test('cellphone', invalid, value => {
       if (value) return value.length >= 1 && regex_cellphone.test(value);
       return false;
     });
