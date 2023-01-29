@@ -351,7 +351,6 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Ajustando estilo do accordion
 - Adicionando cores hexadecimais para utilização no Accordion
 
-
 ### dia 21/01/2023
 ## Versão 0.0.63
 ### Refactor
@@ -362,13 +361,40 @@ by [Caio Sousa](https://github.com/CLSCaio)
 ### dia 22/01/2023
 ## Versão 0.0.64
 ### Refactor \ Feature
-- Movendo functions / regex / validations para nova pasta utils
-- Movendo pasta layout para dentro de components
-- Criando pastas para typagens globais e conversão de tipagens em valores
 - Ajustando tipagens e importes do button e form/button
 - Ajustando tipagens e importes do link e header/link
 - Ajustando tipagens e importes do tooltip
 - Ajustando importes e styles do accordion
+- Movendo functions / regex / validations para nova pasta utils
+- Movendo pasta layout para dentro de components
+- Criando pastas para typagens globais e conversão de tipagens em valores
+
+### dia 28/01/2023 - 29/01/2023
+## Versão 0.0.65
+### Refactor \ Feature
+- Ajustando tipagens do description
+- Ajustando tipagens e importes do input
+- Ajustando tipagens e importes do select
+- Ajustando importes da base
+- Melhorando estrutura da table
+- Melhorando estrutura do form
+- Melhorando estrutura do group
+- Melhorando estrutura do container
+- Melhorando estrutura do main
+- Melhorando estrutura do loading
+- Melhorando estrutura do header
+- Melhorando estrutura do router
+- Melhorando estrutura do modal
+- Melhorando estrutura do tooltip
+- Melhorando estrutura das funções
+- Melhorando estrutura das validações
+- Melhorando função para converter tamanho
+- Alterando nome da função sizeConvert para convertSize para padronizar
+- Adicionando função mouseEventWheel para table
+- Adicionando nova mascara para o input
+- Adicionando icones passados por props para o header/router
+- Adicionando função para breakpoint
+- Adicionando regex para telefone e celular
 
 
 
