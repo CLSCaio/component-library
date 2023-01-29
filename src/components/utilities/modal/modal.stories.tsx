@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Modal, ModalProps, Button } from '../../..';
+import { Modal, ModalProps, Button } from 'src/components';
 
 export default {
   title: 'Utilities/Modal',
@@ -16,7 +16,7 @@ export const Overview: Story<ModalProps> = ({
   const [visible, setVisible] = useState(false);
   return (
     <>
-      <Modal isVisible={visible} onClose={setVisible} {...args} />
+      <Modal isVisible={visible} onClose={() => setVisible(false)} {...args} />
       <Button
         type="button"
         onClick={() => setVisible(true)}
@@ -29,9 +29,9 @@ export const Overview: Story<ModalProps> = ({
 Overview.args = {
   title: 'Este é um modal',
   description: 'descrição do modal',
-  closeButton: 'voltar',
+  tooltip: 'tooltip do modal',
   onSubmit: {
     label: 'submit',
-    onClick: () => '',
+    onClick: () => alert('botao clicado'),
   },
 };

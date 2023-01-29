@@ -1,19 +1,42 @@
-import * as I from './modalConfig/interface';
+import { ReactNode } from 'react';
+import { colors } from 'src/global';
 
-export interface ModalProps {
-  isVisible: boolean;
+export type sizes = 'xXsmall' | 'small' | 'medium' | 'large' | 'xXlarge';
+export type variants = 'transparent' | 'dark' | 'light';
+
+export interface ModalProps extends ModalStyles {
+  isVisible?: boolean;
   withoutBase?: boolean;
   title: string;
+  onClose: () => void;
   description?: string;
-  size?: I.sizes;
-  variant?: I.variants;
   tooltip?: string;
   isLoading?: boolean;
-  closeButton?: string;
-  onClose: React.Dispatch<React.SetStateAction<boolean>>;
+  children?: ReactNode;
   onSubmit?: {
     label: string;
     onClick: () => void;
     disabled?: boolean;
+    isLoading?: boolean;
   };
 }
+
+export interface ModalStyles {
+  size?: sizes;
+  variant?: variants;
+  isLoading?: boolean;
+}
+
+export const sizes = {
+  xXsmall: '200px',
+  small: '250px',
+  medium: '300px',
+  large: '350px',
+  xXlarge: '400px',
+};
+
+export const variants = {
+  transparent: colors.third,
+  dark: colors.black,
+  light: colors.white,
+};

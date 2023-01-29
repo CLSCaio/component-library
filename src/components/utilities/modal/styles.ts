@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
 import { IoMdClose } from 'react-icons/io';
 
-import { colors } from '../../../../global';
+import { colors } from 'src/global';
 
 import * as I from './interface';
 
-const iconStyles = css<I.ModalConfigStyles>`
-  height: 1.5rem;
-  width: 1.5rem;
+const iconStyles = css<I.ModalStyles>`
+  height: 25px;
+  width: 25px;
   cursor: pointer;
 
   ${({ variant }) =>
@@ -20,7 +20,7 @@ const iconStyles = css<I.ModalConfigStyles>`
         `}
 `;
 
-const colorsStyles = css<I.ModalConfigStyles>`
+const colorsStyles = css<I.ModalStyles>`
   ${({ variant }) =>
     !variant || variant === 'light'
       ? css`
@@ -31,12 +31,14 @@ const colorsStyles = css<I.ModalConfigStyles>`
         `};
 `;
 
-export const Container = styled.span<I.ModalConfigStyles>`
+export const Container = styled.span<I.ModalStyles>`
   width: ${({ size }) => (size ? I.sizes[size] : I.sizes.small)};
   min-height: ${({ size }) => (size ? I.sizes[size] : I.sizes.small)};
 
   background-color: ${({ variant }) =>
     variant ? I.variants[variant] : I.variants.light};
+
+  padding: 20px;
 
   display: flex;
   flex-direction: column;
@@ -45,9 +47,8 @@ export const Container = styled.span<I.ModalConfigStyles>`
   align-items: center;
 
   gap: 20px;
-  padding: 15px;
 
-  position: fixed;
+  position: relative;
 
   border-radius: 15px;
   border: 4px double
@@ -73,24 +74,19 @@ export const Container = styled.span<I.ModalConfigStyles>`
     hover: {
     }
   }
-
-  h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    width: ${({ size }) =>
-      size
-        ? size === 'small'
-          ? '110px'
-          : size === 'medium'
-          ? '210px'
-          : '310px'
-        : '110px'};
-  }
 `;
 
-export const Icon = styled(IoMdClose)<I.ModalConfigStyles>`
+export const IconsContainer = styled.div`
+  position: absolute;
+  right: 3px;
+  top: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+`;
+
+export const CloseIcon = styled(IoMdClose)<I.ModalStyles>`
   ${iconStyles};
 `;
