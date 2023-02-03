@@ -396,7 +396,7 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Adicionando função para breakpoint
 - Adicionando regex para telefone e celular
 
-### dia 28/01/2023 - 03/02/2023
+### dia 03/02/2023
 ## Versão 0.0.66
 ### Refactor  \ Feature
 - Adicionando configuração para cores
@@ -404,6 +404,12 @@ by [Caio Sousa](https://github.com/CLSCaio)
 - Adicionando Effector e criando addStore
 - Adicionando cookiePersist para store
 - Alterando nome da lib para cls-master-lib
+
+## Versão 0.0.67
+### Fix
+- Ajustando erro de tipagens pos compilação
+
+
 
 
 
