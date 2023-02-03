@@ -6,13 +6,7 @@ import { Input, Button, Select } from '../..';
 import * as I from './interface';
 import * as S from './styles';
 
-export const Form = ({
-  // inputs,
-  // selects,
-  components,
-  button,
-  form,
-}: I.FormProps) => (
+export const Form = ({ components, button, form }: I.FormProps) => (
   <FormikProvider value={form}>
     <S.Form onSubmit={form.handleSubmit}>
       {components.map(({ options, ...rest }) =>

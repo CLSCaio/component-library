@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { colors, medias } from 'src/global';
-import { convertSize } from 'src/typesConvert';
+import { colors, medias } from '../../../global';
+import { convertSize } from '../../../typesConvert';
 
 import * as I from './interface';
 

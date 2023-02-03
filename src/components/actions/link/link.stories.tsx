@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Link, LinkProps } from 'src/components';
+import { Link, LinkProps } from '../../index';
 
 export default {
   title: 'Actions/Link',

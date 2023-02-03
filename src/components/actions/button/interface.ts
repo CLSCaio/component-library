@@ -1,4 +1,4 @@
-import { TbuttonVariants, Tsize, TbuttonTypes } from 'src/@types';
+import { TbuttonVariants, Tsize, TbuttonTypes } from '../../../types';
 
 export interface ButtonProps extends ButtonStyle {
   isLoading?: boolean;

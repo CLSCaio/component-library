@@ -1,7 +1,7 @@
 import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import { Description } from 'src/components';
+import { Description } from '../index';
 
 import * as C from './content';
 import * as I from './interface';

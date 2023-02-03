@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
-import { convertSize } from 'src/typesConvert';
-import { colors, weights } from 'src/global';
+import { colors, weights } from '../../../index';
+import { convertSize } from '../../../typesConvert';
 
 import * as I from './interface';
 

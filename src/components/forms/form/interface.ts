@@ -1,11 +1,11 @@
 import { FormikContextType } from 'formik';
 
-import { FormComponentsProps } from 'src/@types';
+import { TFormComponentsProps } from '../../../types';
 
-import { ButtonProps } from 'src/components';
+import { ButtonProps } from '../../actions';
 
 export interface FormProps {
-  components: FormComponentsProps[];
+  components: TFormComponentsProps[];
   button: ButtonProps;
   form: FormikContextType<any>;
 }

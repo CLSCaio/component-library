@@ -1,4 +1,4 @@
-import config_colors from 'src/global/themes/colors';
+import config_colors from './global/themes/colors';
 
 export const config = {
   config_colors,

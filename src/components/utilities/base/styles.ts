@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from 'src/global';
+import { colors } from '../../../global';
 
 import * as I from './interface';
 

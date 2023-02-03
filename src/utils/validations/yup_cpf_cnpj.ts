@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { regex_cpf, regex_cnpj, regex_cpf_cnpj } from 'src/utils';
+import { regex_cpf, regex_cnpj, regex_cpf_cnpj } from '../regex';
 
 import * as M from './yup_messages';
 import * as I from './interface';
