@@ -43,7 +43,10 @@
   },
   "dependencies": {
     "date-fns": "^2.29.2",
+    "effector": "^22.5.0",
+    "effector-react": "^22.4.0",
     "formik": "^2.2.9",
+    "js-cookie": "^3.0.1",
     "next": "12.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -72,6 +75,7 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
+    "@types/js-cookie": "^3.0.2",
     "@types/react": "^16.9.34",
     "@types/react-router-dom": "^5.3.3",
     "@types/storybook__addon-info": "^5.2.5",
