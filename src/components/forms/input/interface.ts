@@ -3,26 +3,10 @@ import {
   TInputTypes,
   Tsize,
   TTransformType,
-  InputSelectDefault,
-} from 'src/@types';
+  TInputSelectDefault,
+} from '../../../types';
 
-export type masks =
-  | 'cep'
-  | 'cellphone'
-  | 'phone'
-  | 'phone_cellphone'
-  | 'plate'
-  | 'cpf'
-  | 'cnpj'
-  | 'cpf_cnpj'
-  | 'date'
-  | 'shortDate'
-  | 'creditCard'
-  | 'cvv'
-  | 'height';
-
-export interface InputProps extends InputSelectDefault {
-  mask?: masks;
+export interface InputProps extends TInputSelectDefault {
   autoComplete?: 'off' | 'on';
   type?: TInputTypes;
 }

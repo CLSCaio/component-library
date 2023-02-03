@@ -12,34 +12,29 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "noImplicitUseStrict": true,
-    "typeRoots" : ["node_modules/@types", "src/@types"],
+    "typeRoots" : ["node_modules/@types", "node_modules/types", "src/types"],
     "rootDirs": ["./src", "./stories"],
     "strict": true,
+    "noImplicitUseStrict": true,
+    "alwaysStrict": false,
     "target": "es6",
     "lib": ["dom", "es6",],
-    "sourceMap": false,
-    "alwaysStrict": false,
+    "sourceMap": true,
     "allowJs": true,
     "declarationMap": true
   },
-
   "types": [
     "react",
     "node"
   ],
-  "paths": {
-    "*": ["./src/*"],
-  },
   "tsc-alias": {
     "verbose": false,
     "resolveFullPaths": true,
   },
   "include": [
-    "src",
     "src/**/*",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
   ],
   "exclude": [
     "dist",

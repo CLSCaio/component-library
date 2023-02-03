@@ -1,7 +1,7 @@
 /* eslint-disable import/no-useless-path-segments */
 import React from 'react';
 
-import { Link } from 'src/components';
+import { Link } from '../../../../index';
 
 import * as I from './interface';
 import * as S from './styles';

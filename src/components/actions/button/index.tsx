@@ -2,8 +2,8 @@ import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { MdAdsClick } from 'react-icons/md';
 
-import { colors } from 'src/global';
-import { Group } from 'src/components';
+import { colors } from '../../../global';
+import { Group } from '../../layouts';
 
 import * as I from './interface';
 import * as S from './styles';

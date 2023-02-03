@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { IoMdClose } from 'react-icons/io';
 
-import { colors } from 'src/global';
+import { colors } from '../../../global';
 
 import * as I from './interface';
 

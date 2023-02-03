@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { regex_phone, regex_cellphone } from 'src/utils';
+import { regex_phone, regex_cellphone } from '../regex';
 
 import * as M from './yup_messages';
 import * as I from './interface';

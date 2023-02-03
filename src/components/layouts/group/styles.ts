@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { convertAlign, convertJustify, convertSize } from 'src/typesConvert';
-import { medias } from 'src/global';
+import {
+  convertAlign,
+  convertJustify,
+  convertSize,
+} from '../../../typesConvert';
+import { medias } from '../../../global';
 
 import * as I from './interface';
 

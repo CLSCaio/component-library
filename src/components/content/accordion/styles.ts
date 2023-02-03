@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors } from 'src/global';
+import { colors } from '../../../global';
 
 import * as C from './content';
 import * as I from './interface';

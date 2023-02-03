@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { returnMinDate, returnMaxDate, parseDateString } from 'src/utils';
+import { returnMinDate, returnMaxDate, parseDateString } from '../functions';
 
 import * as M from './yup_messages';
 import * as I from './interface';

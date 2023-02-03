@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { FaFrownOpen, FaCodepen, FaOpencart } from 'react-icons/fa';
 
-import { Header, HeaderProps } from 'src/components';
+import { Header, HeaderProps } from '../index';
 
 export default {
   title: 'Layouts/Header',
@@ -21,6 +21,7 @@ Overview.args = {
   titleIcon: FaFrownOpen,
   closeIcon: FaCodepen,
   openIcon: FaOpencart,
+
   routes: [
     {
       label: 'h1',

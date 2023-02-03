@@ -1,7 +1,7 @@
 import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import { Button, Group, Tooltip, Base } from 'src/components';
+import { Button, Group, Tooltip, Base } from '../../..';
 
 import * as C from './content';
 import * as I from './interface';

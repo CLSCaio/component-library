@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { medias } from 'src/global';
+import { medias } from '../../../../../global';
 
 export const Container = styled.div`
   display: flex;
