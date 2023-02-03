@@ -1,4 +1,4 @@
-import { TInputTypes, TBordersType, Tsize, TTransformType } from 'src/types';
+import { TInputTypes, TBordersType, Tsize, TTransformType } from 'src/@types';
 
 export interface InputSelectDefault {
   id?: string;

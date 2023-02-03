@@ -4,7 +4,7 @@ import {
   Tsize,
   TTransformType,
   InputSelectDefault,
-} from 'src/types';
+} from 'src/@types';
 
 export type masks =
   | 'cep'

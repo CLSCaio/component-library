@@ -1,4 +1,4 @@
-import { THeaderBarDefaultProps } from 'src/types';
+import { THeaderBarDefaultProps } from 'src/@types';
 
 export interface BarProps extends THeaderBarDefaultProps {
   menu: boolean;

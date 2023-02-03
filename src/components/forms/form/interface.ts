@@ -1,6 +1,6 @@
 import { FormikContextType } from 'formik';
 
-import { FormComponentsProps } from 'src/types';
+import { FormComponentsProps } from 'src/@types';
 
 import { ButtonProps } from 'src/components';
 

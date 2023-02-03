@@ -1,4 +1,4 @@
-import { THeaderTypes, Tsize, TLink, THeaderBarDefaultProps } from 'src/types';
+import { THeaderTypes, Tsize, TLink, THeaderBarDefaultProps } from 'src/@types';
 
 export interface DefaultTypes {
   bgColor?: string;

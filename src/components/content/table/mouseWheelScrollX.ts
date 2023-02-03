@@ -4,17 +4,18 @@ const eventWheel = (id: string) => {
   elem?.addEventListener('wheel', (event: WheelEvent) => {
     event.preventDefault();
 
-    const [y, x] = [event.deltaX, event.deltaY];
-    let magnitude;
+    const y = event.deltaY;
+    let scrollWheel;
 
-    if (x === 0) {
-      magnitude = y > 0 ? -1 : 1;
+    if (y > 0) {
+      scrollWheel = 200;
     } else {
-      magnitude = x;
+      scrollWheel = -200;
     }
 
     elem.scrollBy({
-      left: magnitude,
+      left: scrollWheel,
+      behavior: 'smooth',
     });
   });
 };

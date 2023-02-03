@@ -4,7 +4,7 @@ import {
   TBordersType,
   Tsize,
   TTransformType,
-} from 'src/types';
+} from 'src/@types';
 
 export interface SelectProps extends InputSelectDefault {
   options: OptionsSelectProps[];

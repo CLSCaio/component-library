@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Tsize, TAlignOrJustify, TJustify, TXy } from 'src/types';
+import { Tsize, TAlignOrJustify, TJustify, TXy } from 'src/@types';
 
 export interface GroupProps extends GroupStyles {
   children: ReactNode;
