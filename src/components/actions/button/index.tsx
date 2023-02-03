@@ -2,7 +2,8 @@ import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { MdAdsClick } from 'react-icons/md';
 
-import { colors as themeColor } from 'src/global';
+import { colors } from 'src/global';
+import { Group } from 'src/components';
 
 import * as I from './interface';
 import * as S from './styles';
@@ -13,19 +14,13 @@ export const Button = ({
   disabled,
   variant,
   className,
-  colors,
+
   onClick,
   ...rest
 }: I.ButtonProps) => (
-  <S.Container
-    colors={colors}
-    disabled={isLoading || disabled}
-    variant={variant}
-    {...rest}
-  >
+  <S.Container disabled={isLoading || disabled} variant={variant} {...rest}>
     <S.Button
-      colors={colors}
-      onClick={e => onClick(e)}
+      onClick={onClick}
       disabled={isLoading || disabled}
       className={`btn btn-bg btn-animate effect effect-1 ${
         className && className
@@ -34,7 +29,9 @@ export const Button = ({
       type={rest.type || 'submit'}
     >
       {isLoading && !disabled && (
-        <ClipLoader color={themeColor.warning} size={16} />
+        <Group justify="around" maxW="block">
+          <ClipLoader color={colors.primary} size={16} />
+        </Group>
       )}
       {!isLoading && variant !== 'floating' && label}
       {isLoading && disabled && variant !== 'floating' && label}

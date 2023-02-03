@@ -11,7 +11,8 @@ export const Accordion = ({
   list,
   icon = 'default',
   variant = 'default',
-  colors,
+  bgColor,
+  hoverColor,
   maxW,
 }: I.AccordionProps) => {
   const displayDescription = (id: string) => {
@@ -34,10 +35,10 @@ export const Accordion = ({
           <S.Panel
             key={`accordion-${validId}`}
             variant={variant}
-            colors={colors}
+            bgColor={bgColor}
           >
             <S.PanelHead
-              colors={colors}
+              hoverColor={hoverColor}
               variant={variant}
               id={validId}
               onClick={() => displayDescription(validId)}

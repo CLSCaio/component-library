@@ -19,7 +19,7 @@ export const Container = styled.header<I.HeaderStyles>`
 
   position: ${({ type }) => type || 'fixed'};
 
-  background: ${({ bgColor }) => bgColor || 'white'};
+  background: ${({ bgColor }) => bgColor || colors.white};
 
   transition: 0.7s;
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors as themeColor } from 'src/global';
+import { colors } from 'src/global';
 
 import * as C from './content';
 import * as I from './interface';
@@ -14,7 +14,7 @@ export const Panel = styled.div<I.AccordionStyles>`
   width: 100%;
   height: max-content;
 
-  ${({ variant, colors }) => C.returnBorder({ variant, colors })}
+  ${({ variant, bgColor }) => C.returnBorder({ variant, bgColor })}
 
   .icons {
     display: none;
@@ -33,25 +33,18 @@ export const PanelHead = styled.span<I.AccordionStyles>`
 
   cursor: pointer;
 
-  ${({ variant, colors }) =>
-    variant !== 'inline'
-      ? css`
-          background-color: ${colors?.[0]};
-          :hover {
-            background-color: ${colors?.[1]};
-          }
-        `
-      : css`
-          background-color: transparent;
-          :hover {
-            background-color: color;
-          }
-        `}
+  ${({ hoverColor }) =>
+    css`
+      background-color: transparent;
+      :hover {
+        background-color: ${hoverColor || 'transparent'};
+      }
+    `}
 
   svg {
     width: 20px;
     height: 20px;
-    fill: ${themeColor.black};
+    fill: ${colors.black};
   }
 `;
 

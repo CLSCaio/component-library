@@ -20,7 +20,8 @@ export interface AccordionList extends AccordionStyles {
 export interface AccordionStyles {
   variant?: variants;
   maxW?: number;
-  colors?: [bg?: `#${string}`, hover?: `#${string}`, border?: `#${string}`];
+  bgColor?: `#${string}`;
+  hoverColor?: `#${string}`;
 }
 
 export interface ChangeIconProps {

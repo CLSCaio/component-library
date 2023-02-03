@@ -19,8 +19,8 @@ export const Label = styled.label<I.SelectStyle>`
     disabled || readOnly
       ? colors.disabled
       : error
-      ? colors.error
-      : colors.black};
+      ? colors.suport.error
+      : colors.forms.primary};
 
   ${({ boldLabel }) =>
     boldLabel &&
@@ -51,14 +51,18 @@ export const Select = styled.select<I.SelectStyle>`
 
   width: 100%;
 
+  :hover {
+    border-color: ${colors.forms.hover};
+  }
+
   :focus {
     ${({ border }) =>
       border && border === 'outline'
         ? `
         border-radius: 5px;
-        border: 2px solid ${colors.focus}`
+        border: 2px solid ${colors.forms.focus}`
         : `
-      border-bottom: 2px solid ${colors.focus};
+      border-bottom: 2px solid ${colors.forms.focus};
   `};
   }
 
@@ -76,7 +80,7 @@ export const Select = styled.select<I.SelectStyle>`
 
   :placeholder {
     color: ${({ disabled, readOnly }) =>
-      disabled || readOnly ? colors.disabled : colors.black};
+      disabled || readOnly ? colors.disabled : colors.forms.primary};
   }
 
   ::-webkit-inner-spin-button {
@@ -94,8 +98,8 @@ export const Select = styled.select<I.SelectStyle>`
           disabled || readOnly
             ? colors.disabled
             : error
-            ? colors.error
-            : colors.black
+            ? colors.suport.error
+            : colors.forms.primary
         }`
       : `
         border: none;
@@ -105,13 +109,13 @@ export const Select = styled.select<I.SelectStyle>`
           disabled || readOnly
             ? colors.disabled
             : error
-            ? colors.error
-            : colors.black
+            ? colors.suport.error
+            : colors.forms.primary
         }
   `};
 `;
 
 export const Option = styled.option`
   background-color: ${colors.others[4]};
-  color: ${colors.black};
+  color: ${colors.forms.primary};
 `;

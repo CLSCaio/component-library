@@ -9,12 +9,9 @@ const returnTextColor = ({ color }: I.TooltipStyles) => {
     switch (color) {
       case 'black':
       case 'transparent':
-      case 'others-3':
-      case 'others-5':
         return css`
           ${colors.white};
         `;
-
       default:
         return css`
           ${colors.black};
@@ -28,56 +25,6 @@ const returnTextColor = ({ color }: I.TooltipStyles) => {
 
 const returnColor = ({ color, sinal }: I.TooltipStyles) => {
   switch (color) {
-    case 'others-1':
-      if (!sinal)
-        return css`
-          ${colors.others[1]};
-        `;
-      if (sinal)
-        return css`
-          border-color: ${colors.others[1]} transparent;
-        `;
-      break;
-    case 'others-2':
-      if (!sinal)
-        return css`
-          ${colors.others[2]};
-        `;
-      if (sinal)
-        return css`
-          border-color: ${colors.others[2]} transparent;
-        `;
-      break;
-    case 'others-3':
-      if (!sinal)
-        return css`
-          ${colors.others[3]};
-        `;
-      if (sinal)
-        return css`
-          border-color: ${colors.others[3]} transparent;
-        `;
-      break;
-    case 'others-4':
-      if (!sinal)
-        return css`
-          ${colors.others[4]};
-        `;
-      if (sinal)
-        return css`
-          border-color: ${colors.others[4]} transparent;
-        `;
-      break;
-    case 'others-5':
-      if (!sinal)
-        return css`
-          ${colors.others[5]};
-        `;
-      if (sinal)
-        return css`
-          border-color: ${colors.others[5]} transparent;
-        `;
-      break;
     case 'white':
       if (!sinal)
         return css`
@@ -91,11 +38,11 @@ const returnColor = ({ color, sinal }: I.TooltipStyles) => {
     case 'transparent':
       if (!sinal)
         return css`
-          ${colors.third};
+          ${colors.transparent};
         `;
       if (sinal)
         return css`
-          border-color: ${colors.third} transparent;
+          border-color: ${colors.transparent} transparent;
         `;
       break;
     default:
@@ -114,7 +61,7 @@ const handlePlacementTooltip = ({ placement }: I.TooltipStyles) => {
   switch (placement) {
     case 'begin':
       return css`
-        transform: translate(108px, -48px);
+        transform: translate(91px, -48px);
       `;
     case 'middle':
       return css`
@@ -122,7 +69,7 @@ const handlePlacementTooltip = ({ placement }: I.TooltipStyles) => {
       `;
     default:
       return css`
-        transform: translate(-115px, -48px);
+        transform: translate(-88.5px, -48px);
       `;
   }
 };
@@ -131,7 +78,7 @@ const handlePlacementTooltipArrow = ({ placement }: I.TooltipStyles) => {
   switch (placement) {
     case 'begin':
       return css`
-        left: 10%;
+        left: 12%;
       `;
     case 'middle':
       return css`
@@ -139,7 +86,7 @@ const handlePlacementTooltipArrow = ({ placement }: I.TooltipStyles) => {
       `;
     default:
       return css`
-        left: 90%;
+        left: 84%;
       `;
   }
 };
@@ -183,11 +130,9 @@ export const Container = styled.div<I.TooltipStyles>`
 `;
 
 export const Description = styled.p<I.TooltipStyles>`
-  width: max-content;
-  min-width: 120px;
-  height: 70px;
+  width: 250px;
 
-  max-width: 320px;
+  height: 60px;
 
   display: flex;
   justify-content: center;
@@ -195,11 +140,11 @@ export const Description = styled.p<I.TooltipStyles>`
 
   position: absolute;
 
-  padding: 15px 25px;
+  padding: 5px;
 
   z-index: 15;
 
-  border-radius: 4px;
+  border-radius: 50px;
 
   opacity: 0;
   visibility: hidden;

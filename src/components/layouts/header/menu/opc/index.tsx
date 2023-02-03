@@ -13,7 +13,6 @@ export const Opc = ({ openMenu, routes, link }: I.OpcProps) => (
         href !== '/*' && (
           <Link
             type={link?.type}
-            colors={link?.colors}
             variant={link?.variant}
             key={label}
             href={{ defautlLink: href }}

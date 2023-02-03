@@ -15,11 +15,11 @@ export const Container = styled.span`
 `;
 
 export const To = styled(Link)<I.LinkStyles>`
-  ${({ colors }) => C.defaultStyle({ colors })};
-  ${({ colors, variant }) => C.customStyles({ colors, variant })};
+  ${C.defaultStyle()};
+  ${({ variant }) => C.customStyles({ variant })};
 `;
 
 export const Href = styled.a<I.LinkStyles>`
-  ${({ colors }) => C.defaultStyle({ colors })};
-  ${({ colors, variant }) => C.customStyles({ colors, variant })};
+  ${C.defaultStyle()};
+  ${({ variant }) => C.customStyles({ variant })};
 `;

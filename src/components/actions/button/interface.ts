@@ -1,11 +1,5 @@
 import { TbuttonVariants, Tsize, TbuttonTypes } from 'src/types';
 
-type colors = {
-  primary?: string;
-  secundary?: string;
-  third?: string;
-};
-
 export interface ButtonProps extends ButtonStyle {
   isLoading?: boolean;
   label: string;
@@ -17,7 +11,6 @@ export interface ButtonProps extends ButtonStyle {
 
 export interface ButtonStyle {
   variant?: TbuttonVariants;
-  colors?: colors;
   maxW?: Tsize;
   disabled?: boolean;
 }

@@ -1,13 +1,15 @@
 export interface ColorsProps {
-  primary: string;
-  secundary: string;
-  third?: string;
+  primary: `#${string}`;
+  secundary: `#${string}`;
+  disabled: `#${string}`;
+  transparent: `rgba(${string})`;
 
   black: '#000000';
   white: '#ffffff';
+
   grey: {
-    steel: '#708090';
-    sky: '#B0C4DE';
+    '800': '#708090';
+    '700': '#B0C4DE';
     '600': '#363636';
     '500': '#4F4F4F';
     '400': '#696969';
@@ -16,20 +18,43 @@ export interface ColorsProps {
     '100': '#C0C0C0';
   };
 
-  error: string;
-  warning: string;
-  sucess: string;
+  button: {
+    primary: `#${string}`;
+    secundary: `#${string}`;
+    floating: `#${string}`;
+  };
 
-  disabled: string;
-  hover: string; // steelBlue,
-  link: string;
-  focus: string; // ciano,
+  link: {
+    primary: `#${string}`;
+    hover: `#${string}`;
+  };
+
+  table: {
+    title: `#${string}`;
+    separator: `#${string}`;
+  };
+
+  forms: {
+    primary: `#${string}`;
+    border: `#${string}`;
+    focus: `#${string}`;
+    hover: `#${string}`;
+  };
+
+  suport: {
+    error: `#${string}`;
+    warning: `#${string}`;
+    sucess: `#${string}`;
+  };
 
   others: {
-    1: string; // darkRed
-    2: string; // lightGreen
-    3: string; // indigo
-    4: string; // lavender
-    5: string; // midnightBlue
+    1: `#${string}`;
+    2: `#${string}`;
+    3: `#${string}`;
+    4: `#${string}`;
+    5: `#${string}`;
+    6: `#${string}`;
+    7: `#${string}`;
+    8: `#${string}`;
   };
 }

@@ -13,6 +13,5 @@ export type TRoutes = {
 
 export type TLink = {
   type?: TlinkTypes;
-  colors?: [text: string, hover?: string];
   variant?: TlinkVariants;
 };

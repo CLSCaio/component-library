@@ -9,7 +9,7 @@ export const Loading = ({
   isLoading,
   withoutBase,
   size = 200,
-  color,
+  color = 'black',
 }: I.LoadingProps) =>
   isLoading ? (
     <Base withoutBase={withoutBase}>

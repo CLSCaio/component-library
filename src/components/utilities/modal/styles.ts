@@ -62,18 +62,6 @@ export const Container = styled.span<I.ModalStyles>`
   .text {
     ${colorsStyles}
   }
-
-  .btn-modal-1 {
-    ${colorsStyles}
-    hover: {
-    }
-  }
-
-  .btn-modal-2 {
-    ${colorsStyles}
-    hover: {
-    }
-  }
 `;
 
 export const IconsContainer = styled.div`

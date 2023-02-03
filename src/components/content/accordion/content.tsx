@@ -4,7 +4,7 @@ import { css } from 'styled-components';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
-import { colors as themeColor } from 'src/global';
+import { colors } from 'src/global';
 
 import * as I from './interface';
 
@@ -28,7 +28,9 @@ export const returnIcon = ({ title, icon }: I.ChangeIconProps) => {
   return validIcon[icon];
 };
 
-export const returnBorder = ({ variant, colors }: I.AccordionStyles) => {
+export const returnBorder = ({ variant, bgColor }: I.AccordionStyles) => {
+  const validColor = bgColor || 'transparent';
+
   if (!variant)
     return css`
       border: none;
@@ -36,13 +38,16 @@ export const returnBorder = ({ variant, colors }: I.AccordionStyles) => {
 
   const validVariant = {
     default: css`
-      border: 1px solid ${colors?.[2] || themeColor.black};
+      border: 1px solid ${colors.black};
+      background-color: ${validColor};
     `,
     inline: css`
-      border-bottom: 1px solid ${colors?.[2] || themeColor.black};
+      border-bottom: 1px solid ${colors.black};
+      background-color: ${validColor};
     `,
     onlyBg: css`
-      border-bottom: 1px solid ${colors?.[2] || themeColor.black};
+      border: none;
+      background-color: ${validColor};
     `,
   };
 

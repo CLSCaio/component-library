@@ -12,4 +12,5 @@ export const Overview: Story<ButtonProps> = args => <Button {...args} />;
 
 Overview.args = {
   label: 'button',
+  onClick: () => console.log(),
 };

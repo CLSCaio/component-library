@@ -18,6 +18,5 @@ export interface LinkProps extends LinkStyles {
   onClick?: () => void;
 }
 export interface LinkStyles {
-  colors?: [text: string, hover?: string];
   variant?: TlinkVariants;
 }

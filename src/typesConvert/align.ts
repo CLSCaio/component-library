@@ -4,8 +4,8 @@ import { TAlignOrJustify, TJustify, TTextAlign } from 'src/types/align';
 
 export const convertTextAlign = (align?: TTextAlign) => {
   const defaultCss = css`
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: start;
   `;
 
   if (!align) return defaultCss;
@@ -19,7 +19,10 @@ export const convertTextAlign = (align?: TTextAlign) => {
       justify-content: flex-end;
       text-align: end;
     `,
-    center: defaultCss,
+    center: css`
+      justify-content: center;
+      text-align: center;
+    `,
   };
 
   return validAlign[align];

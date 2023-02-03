@@ -52,8 +52,7 @@ export const Modal = ({
             {onSubmit?.label && (
               <Button
                 {...onSubmit}
-                className="btn-modal-2"
-                variant="outline-reverse"
+                variant={variant === 'light' ? 'outline-reverse' : 'default'}
                 maxW="block"
               />
             )}

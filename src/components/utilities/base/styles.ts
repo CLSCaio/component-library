@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from 'src/global';
 
 import * as I from './interface';
 
@@ -18,5 +19,5 @@ export const Container = styled.span<I.BaseStyles>`
   z-index: 100;
 
   background: ${({ withoutBase }) =>
-    withoutBase ? 'transparent' : 'rgba(0, 0, 0, 0.6)'};
+    withoutBase ? 'transparent' : colors.transparent};
 `;

@@ -36,7 +36,7 @@ export const sizes = {
 };
 
 export const variants = {
-  transparent: colors.third,
+  transparent: colors.transparent,
   dark: colors.black,
   light: colors.white,
 };

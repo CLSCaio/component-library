@@ -18,10 +18,9 @@ export const colorsMap = [
     color: colors.secundary,
   },
   {
-    name: 'Third',
-    description:
-      'Cor para usar como backgrounds, ou textos com menor importacia no website',
-    color: colors.third,
+    name: 'Transparente',
+    description: 'Cor para usar como backgrounds, modais.',
+    color: colors.transparent,
   },
 
   // text colors
@@ -58,7 +57,7 @@ export const colorsMap = [
   {
     name: 'SkyGrey',
     description: text,
-    color: colors.grey.sky,
+    color: colors.grey[700],
   },
 
   // elements colors
@@ -70,12 +69,12 @@ export const colorsMap = [
   {
     name: 'SkyBlue',
     description: 'Usada para focus, active',
-    color: colors.focus,
+    color: colors.forms.focus,
   },
   {
     name: 'StellBlue',
     description: 'Usada para hover',
-    color: colors.hover,
+    color: colors.link.hover,
   },
   {
     name: 'Blue',
@@ -87,17 +86,17 @@ export const colorsMap = [
   {
     name: 'Success',
     description: 'Use como indicação de sucesso',
-    color: colors.sucess,
+    color: colors.suport.sucess,
   },
   {
     name: 'Warning',
     description: 'Use como indicação de alertas',
-    color: colors.warning,
+    color: colors.suport.warning,
   },
   {
     name: 'Error',
     description: 'Use como indicação de error',
-    color: colors.error,
+    color: colors.suport.error,
   },
 
   // other colors

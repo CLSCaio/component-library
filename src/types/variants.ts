@@ -5,5 +5,5 @@ export type TbuttonVariants =
   | 'floating'
   | 'default';
 
-export type TlinkVariants = 'default' | 'doubleLine' | 'underline';
+export type TlinkVariants = 'default' | 'stretch' | 'doubleLine' | 'underline';
 export type TplacementTooltip = 'begin' | 'middle' | 'last';
