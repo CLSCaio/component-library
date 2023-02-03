@@ -403,7 +403,7 @@ by [Caio Sousa](https://github.com/CLSCaio)
 * Componentes refatorados: Input, Select, Accordion, Button, Tooltip, Link, ErrorMessage, Header, Base, Loading, Modal
 - Adicionando Effector e criando addStore
 - Adicionando cookiePersist para store
-- Alterando nome da lib para @CLS-LibMaster
+- Alterando nome da lib para cls-master-lib
 
 
 
