@@ -10,7 +10,7 @@ export const Container = styled.div<I.TableStyles>`
   max-width: ${({ size }) => convertSize('1280px', size)};
 `;
 
-export const Table = styled.div`
+export const Table = styled.table`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -21,12 +21,11 @@ export const Table = styled.div`
   overflow-x: hidden;
 
   ::-webkit-scrollbar {
-    width: 1px;
-    height: 3px;
+    height: 5px;
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: ${colors.grey.steel};
+    background: ${colors.grey[800]};
   }
 
   :hover {
@@ -35,54 +34,50 @@ export const Table = styled.div`
   }
 `;
 
-export const Row = styled.span<I.TableStyles>`
-  display: flex;
+export const Thead = styled.thead`
   width: max-content;
-  padding: 15px 0;
-  border-bottom: 1px solid ${colors.grey['100']};
-  background-color: ${({ color, colorDivider }) => colorDivider && color};
+  background-color: ${colors.grey[800]};
+  padding: 15px;
+  border-bottom: 1px solid ${colors.grey['200']};
+`;
 
-  ${({ click }) =>
-    click &&
+export const Tr = styled.tr`
+  display: flex;
+  gap: 5px;
+`;
+
+export const Th = styled.th<I.TableStyles>`
+  display: flex;
+  align-items: center;
+  width: ${({ width }) => (!width ? '170px' : `${width}px`)};
+  text-transform: ${({ transform }) => transform};
+  ${({ textAlign }) => convertTextAlign(textAlign)};
+`;
+
+export const Tbody = styled.tbody<I.TableStyles>`
+  width: max-content;
+  padding: 15px;
+  border-bottom: 1px solid ${colors.grey['100']};
+  background-color: ${({ color, withDivider }) => withDivider && color};
+
+  ${({ withHover }) =>
+    withHover &&
     css`
       cursor: pointer;
-
       :hover {
-        box-shadow: inset 0 0 1em ${colors.third};
-      }
-
-      :disabled {
-        cursor: not-allowed;
+        box-shadow: inset 0 0 1em ${colors.transparent};
       }
     `}
 `;
 
-export const Heading = styled.span`
-  display: flex;
-  justify-content: space-between;
-  width: max-content;
-  background-color: ${colors.grey.steel};
-  padding: 15px 0;
-  border-bottom: 1px solid ${colors.grey['200']};
-  gap: 5px;
-`;
-
-export const Title = styled.h2<I.TableStyles>`
-  display: flex;
-  align-items: center;
-  width: 300px;
-  padding: 0 15px;
-
-  ${({ textAlign }) => convertTextAlign(textAlign)};
-`;
-
-export const Content = styled.p<I.TableStyles>`
+export const Td = styled.td<I.TableStyles>`
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 300px;
-  padding: 0 15px;
+  width: ${({ width }) => (!width ? '170px' : `${width}px`)};
+
+  text-transform: ${({ transform }) => transform};
 
   ${({ textAlign }) => convertTextAlign(textAlign)};
 `;
