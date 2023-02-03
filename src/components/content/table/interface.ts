@@ -1,28 +1,27 @@
-import { ReactNode } from 'react';
-import { TTextAlign, Tsize } from 'src/types';
+import { TTextAlign, Tsize, TTransformType } from '../../../@types';
+
+type TTitles = {
+  name: string;
+  width?: number;
+  textAlign?: TTextAlign;
+  textTransform?: TTransformType;
+};
 
 export interface TableProps {
-  list: TableList;
-  // variant?: 'default' | '';
-  textAlign?: TTextAlign;
-  colorDivider?: boolean;
+  titles: TTitles[];
+  list: any[];
+  withDivider?: boolean;
   size?: Tsize;
-}
-
-type onClick = (e?: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
-
-export interface TableList {
-  titles: string[];
-  columns: rows[];
-  onClick?: onClick;
+  globalTextAlign?: TTextAlign;
+  withHover?: boolean;
 }
 
 export interface TableStyles {
   color?: string;
-  click?: onClick;
   textAlign?: TTextAlign;
-  colorDivider?: boolean;
+  withDivider?: boolean;
   size?: Tsize;
+  width?: number;
+  transform?: TTransformType;
+  withHover?: boolean;
 }
-
-type rows = string[] | ReactNode[];
