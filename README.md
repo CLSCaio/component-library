@@ -1,9 +1,9 @@
 <h1 align="center">
-Caio L Sousa Library
+cls-master-lib
 </h1>
 
 <p align="center">Simple Library for React.js with Storybook.</p>
-<p align="center">Published at <a href="https://www.npmjs.com/package/library-caiol.sousa">NPM</a>.</p>
+<p align="center">Published at <a href="https://www.npmjs.com/package/cls-master-lib">NPM</a>.</p>
 
 <p align="center">
   <a href="https://clscaio.github.io/component-library/?path=/story/welcome--page">Storybook</a>

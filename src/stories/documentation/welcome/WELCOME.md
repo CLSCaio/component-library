@@ -25,7 +25,7 @@ Pode-se encontrar um exemplo na aba abaixo "CHANGE LOG"
 
 ### Como usar
 
-1. Rode o comando `npm install / yarn library-caiol.sousa` no seu projeto React.
+1. Rode o comando `npm install / yarn cls-master-lib` no seu projeto React.
 2. Importe os components do pacote e comece a usar.
 OBS: A lib é compativel com React.js e Next.js
 
