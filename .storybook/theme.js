@@ -32,7 +32,7 @@ export default create({
   inputBorderRadius: 4,
 
   // Title
-  brandTitle: 'Caio L Sousa Library',
+  brandTitle: '@CLS-LibMaster',
   // brandImage: ',
   brandTarget: '_blank',
   brandUrl: 'https://github.com/CLSCaio/component-library',
