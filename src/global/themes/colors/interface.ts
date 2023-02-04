@@ -22,6 +22,7 @@ export interface ColorsProps {
     primary: `#${string}`;
     secundary: `#${string}`;
     floating: `#${string}`;
+    shadow: `#${string}`;
   };
 
   link: {

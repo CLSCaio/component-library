@@ -4,7 +4,7 @@ const text = 'Usada para textos';
 const others = 'Cor adicional para usar avontade';
 
 export const colorsMap = [
-  // text colors
+  // principal colors
   {
     name: 'Primary',
     description:
@@ -57,29 +57,7 @@ export const colorsMap = [
   {
     name: 'SkyGrey',
     description: text,
-    color: colors.grey[700],
-  },
-
-  // elements colors
-  {
-    name: 'StellGrey',
-    description: 'Usada para disabled, readOnly, loading',
-    color: colors.disabled,
-  },
-  {
-    name: 'SkyBlue',
-    description: 'Usada para focus, active',
-    color: colors.forms.focus,
-  },
-  {
-    name: 'StellBlue',
-    description: 'Usada para hover',
-    color: colors.link.hover,
-  },
-  {
-    name: 'Blue',
-    description: 'Usada para link',
-    color: colors.link,
+    color: colors.grey['700'],
   },
 
   // suport colors

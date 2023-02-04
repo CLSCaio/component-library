@@ -1,21 +1,20 @@
-# Bem vindo
-## A minha biblioteca de componentes
+# Wellcome
+## My component library
 
-### Nossos principios
-Nossos princípios de design foram desenvolvidos com base nas melhores práticas para garantir uma experiência de usuário de alto nível, aderência e prazer.
-Facilitando assim o desenvolvimento das aplicações envolvidas no projeto por você.
+### Our principles
+Our design principles were developed based on best practices to ensure a top-notch user experience, grip and enjoyment.
+Thus facilitating the development of applications involved in your projects.
 
-### O que é o storybook
-O storybook é uma ferramenta para visualização de components, em geral é muito usada pra debugar
-os mesmos, pois facilita a visualização deles sem precisar executar uma aplicação por trás, fazendo
-com que você consiga criar components reutilizáveis com muito mais praticidade e perfeição.
+### What is the storybook
+The storybook is a component visualization tool, it is generally used for debugging.
+the same, as they facilitate their visualization without having to run an application behind it, making
+with which you can create reusable components with much more practicality and perfection.
 
 ### O que é e pra que serve o change log?
-o Change Log é o local onde serão anotadas todas as alterações feitas dentro da lib de components. 
-Pode-se encontrar um exemplo na aba abaixo "CHANGE LOG"
+The Change Log is the place where all changes made within the components lib will be noted.
+An example can be found in the tab below "CHANGE LOG"
 
 ### Techs
-
 - [x] React.js
 - [x] Next.js
 - [x] Storybook
@@ -23,25 +22,21 @@ Pode-se encontrar um exemplo na aba abaixo "CHANGE LOG"
 - [x] TypeScript
 - [x] Eslint
 
-### Como usar
+### How to use
+1. Run the command `npm install / yarn add cls-master-lib` in your React project.
+2. Import the components from the package and get started.
+NOTE: The lib is compatible with React.js and Next.js
 
-1. Rode o comando `npm install / yarn cls-master-lib` no seu projeto React.
-2. Importe os components do pacote e comece a usar.
-OBS: A lib é compativel com React.js e Next.js
+### Start development environment
+1. Clone this repository.
+2. Run the command `npm i or yarn` in your project to install the dependencies.
+3. Run the `yarn storybook` command.
+4. Access `localhost:6006` in your browser.
+5. Run the `yarn buildtp` command to generate your "/dist" build.
+6. Run the command `yarn build-storybook` to generate the build for the storybook "/docs".
 
-### Iniciar ambiente de desenvolvimento
-
-1. Clone este repositorio. 
-2. Rode o comando `npm install or yarn` no seu projeto para instalar as dependencias.
-3. Rode o comando `yarn storybook`.
-4. Acesse `localhost:6006` no seu navegador.
-5. Rode o comando `yarn buildtp` para gerar o seu build "/dist".
-6. Rode o comando `yarn build-storybook` para gerar o build para o storybook "/docs".
-
-### Conheça a equipe que faz parte desse projeto
-
+### Meet the team that is part of this project
 
 ## Caio Sousa
-![Caio Sousa](https://avatars.githubusercontent.com/u/90207109?v=4)
 ### [Github](https://github.com/CLSCaio)   [Linkedin](https://www.linkedin.com/notifications/)   [Portfolio](https://clscaio.github.io/)
 

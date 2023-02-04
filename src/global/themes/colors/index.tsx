@@ -24,6 +24,7 @@ export let colors: ColorsProps = {
     primary: '#000000',
     secundary: `#ffffff`,
     floating: `#00ffcb`,
+    shadow: '#000000',
   },
 
   link: {

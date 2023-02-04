@@ -55,7 +55,9 @@ export const parameters = {
     storySort: {
       order: [
         "Welcome",
-        "Change-log",
+        "change-log",
+        "change-log-QA",
+        "change-log-OLD",
         "Foundations",
         "Actions",
         "Forms",
