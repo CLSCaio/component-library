@@ -1,4 +1,4 @@
-import { TbuttonVariants, Tsize, TbuttonTypes } from 'src/@types';
+import { TbuttonVariants, Tsize, TbuttonTypes } from '../../../@types';
 
 export interface ButtonProps extends ButtonStyle {
   isLoading?: boolean;
@@ -6,11 +6,12 @@ export interface ButtonProps extends ButtonStyle {
   className?: string;
   id?: string;
   type?: TbuttonTypes;
-  onClick: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export interface ButtonStyle {
   variant?: TbuttonVariants;
   maxW?: Tsize;
   disabled?: boolean;
+  withShadow?: boolean;
 }

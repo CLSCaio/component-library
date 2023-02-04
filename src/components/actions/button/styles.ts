@@ -25,7 +25,9 @@ export const Container = styled.div<I.ButtonStyle>`
       .btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 20px ${colors.transparent};
-        color: ${colors.button?.primary};
+        color: ${variant === 'pulse'
+          ? colors.button?.primary
+          : colors.button?.secundary};
         border-color: ${colors.button?.primary};
         background-color: transparent;
       }
@@ -44,7 +46,9 @@ export const Container = styled.div<I.ButtonStyle>`
       }
 
       .btn-bg::after {
-        background-color: ${colors.button?.primary};
+        background-color: ${variant === 'pulse'
+          ? colors.button?.primary
+          : colors.button.secundary};
       }
 
       .btn:hover::after {
@@ -170,7 +174,7 @@ export const Button = styled.button<I.ButtonStyle>`
   padding: 15px 30px;
   transition: 0.7s;
   height: 45px;
-  border-radius:  15px;
+  border-radius: 15px;
   outline: none;
   cursor: pointer;
 
@@ -184,38 +188,31 @@ export const Button = styled.button<I.ButtonStyle>`
     `}
 
   ${({ variant, disabled }) =>
-    variant === 'outline' &&
+    (variant === 'outline' || variant === 'outline-reverse') &&
     !disabled &&
     css`
-      background-color: transparent;
-      color: ${colors.button?.primary};
-      border-color: ${colors.button?.primary};
+      background-color: ${variant === 'outline'
+        ? colors.button?.primary
+        : colors.button?.secundary};
+      color: ${variant === 'outline'
+        ? colors.button?.secundary
+        : colors.button?.primary};
+      border-color: ${variant === 'outline'
+        ? colors.button?.secundary
+        : colors.button?.primary};
       :hover {
-        border: 3px solid ${colors.button?.secundary};
-        background-color: ${colors.button?.primary};
-        color: ${colors.button?.secundary};
-        border-color: ${colors.button?.primary};
-      }
-    `}
-
-  ${({ variant, disabled }) =>
-    variant === 'outline-reverse' &&
-    !disabled &&
-    css`
-      border: 2px solid ${colors.button?.secundary};
-      color: ${colors.button?.secundary};
-      :hover {
-        border: 2px solid ${colors.button?.primary};
-        background-color: transparent;
-        color: ${colors.button?.primary};
-        box-shadow: 0 0 15px ${colors.button?.primary};
+        background-color: ${variant === 'outline'
+          ? colors.button?.secundary
+          : colors.button?.primary};
+        color: ${variant === 'outline'
+          ? colors.button?.primary
+          : colors.button?.secundary};
+        border-color: ${variant === 'outline'
+          ? colors.button?.primary
+          : colors.button?.secundary};
       }
     `}
   
-  :active {
-    transform: scale(0.8);
-  }
-
   :disabled {
     ${({ variant }) =>
       variant !== 'floating'
@@ -240,4 +237,17 @@ export const Button = styled.button<I.ButtonStyle>`
             :focus {
             }
           `}
+  }
+
+  ${({ withShadow }) =>
+    withShadow &&
+    css`
+      :hover {
+        box-shadow: 0 0 15px ${colors.button?.shadow};
+      }
+    `}
+
+  :active {
+    transform: scale(0.97);
+  }
 `;

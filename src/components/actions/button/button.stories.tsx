@@ -11,6 +11,7 @@ export default {
 export const Overview: Story<ButtonProps> = args => <Button {...args} />;
 
 Overview.args = {
+  withShadow: true,
   label: 'button',
   onClick: () => console.log(),
 };

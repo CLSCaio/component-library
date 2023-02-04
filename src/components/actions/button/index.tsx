@@ -2,8 +2,8 @@ import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { MdAdsClick } from 'react-icons/md';
 
-import { colors } from 'src/global';
 import { Group } from 'src/components';
+import { colors } from '../../../global';
 
 import * as I from './interface';
 import * as S from './styles';
@@ -14,12 +14,13 @@ export const Button = ({
   disabled,
   variant,
   className,
-
+  withShadow,
   onClick,
   ...rest
 }: I.ButtonProps) => (
   <S.Container disabled={isLoading || disabled} variant={variant} {...rest}>
     <S.Button
+      withShadow={withShadow}
       onClick={onClick}
       disabled={isLoading || disabled}
       className={`btn btn-bg btn-animate effect effect-1 ${
