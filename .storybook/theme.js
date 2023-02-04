@@ -32,7 +32,7 @@ export default create({
   inputBorderRadius: 4,
 
   // Title
-  brandTitle: '@CLS-LibMaster',
+  brandTitle: 'cls-master-lib',
   // brandImage: ',
   brandTarget: '_blank',
   brandUrl: 'https://github.com/CLSCaio/component-library',
