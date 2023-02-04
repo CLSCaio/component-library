@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { colors } from 'src/global';
+import { colors } from '@global';
 
 import eventWheel from './mouseWheelScrollX';
 import * as I from './interface';
@@ -41,29 +41,40 @@ export const Table = ({
           </S.Tr>
         </S.Thead>
 
-        {tableList.map((rows, i) => (
-          <S.Tbody
-            withHover={withHover}
-            withDivider={withDivider}
-            id={`table-row-${+i}`}
-            key={`table-row-${+i}`}
-            color={i % 2 === 0 ? colors.grey[700] : ''}
-          >
-            <S.Tr>
-              {rows.map((content, indice) => (
-                <S.Td
-                  id={`table-row-content-${+indice}`}
-                  width={titles[indice].width}
-                  textAlign={titles[indice].textAlign || globalTextAlign}
-                  transform={titles[indice].textTransform}
-                  key={`table-row-content-${+indice}`}
-                >
-                  {content}
-                </S.Td>
-              ))}
-            </S.Tr>
-          </S.Tbody>
-        ))}
+        {tableList.map((rows, i) => {
+          const changeDivider =
+            withDivider === 'pair'
+              ? i % 2 === 0
+                ? colors.grey[700]
+                : ''
+              : (i + 1) % 2 === 0
+              ? colors.grey[700]
+              : '';
+
+          return (
+            <S.Tbody
+              withHover={withHover}
+              withDivider={withDivider}
+              id={`table-row-${+i}`}
+              key={`table-row-${+i}`}
+              color={withDivider ? changeDivider : ''}
+            >
+              <S.Tr>
+                {rows.map((content, indice) => (
+                  <S.Td
+                    id={`table-row-content-${+indice}`}
+                    width={titles[indice].width}
+                    textAlign={titles[indice].textAlign || globalTextAlign}
+                    transform={titles[indice].textTransform}
+                    key={`table-row-content-${+indice}`}
+                  >
+                    {content}
+                  </S.Td>
+                ))}
+              </S.Tr>
+            </S.Tbody>
+          );
+        })}
       </S.Table>
     </S.Container>
   );

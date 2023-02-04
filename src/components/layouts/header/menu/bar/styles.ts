@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { GoThreeBars } from 'react-icons/go';
 import { AiOutlineClose } from 'react-icons/ai';
 
-import { medias } from 'src/global';
+import { medias } from '@global';
 
 export const Container = styled.div`
   display: flex;

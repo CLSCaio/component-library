@@ -1,6 +1,6 @@
 import { ColorsProps } from './interface';
 
-export let colors: ColorsProps = {
+export const colors: ColorsProps = {
   primary: '#000000',
   secundary: '#B0C4DE',
   transparent: 'rgba(0, 0, 0, 0.6)',
@@ -62,9 +62,7 @@ export let colors: ColorsProps = {
   },
 };
 
-const config_colors = (state: ColorsProps) => {
-  colors = state;
-  return colors;
+export const config_colors = (state: ColorsProps) => {
+  // colors = state;
+  // return colors;
 };
-
-export default config_colors;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Modal, ModalProps, Button } from 'src/components';
+import { Modal, ModalProps, Button } from '@components';
 
 export default {
   title: 'Utilities/Modal',

@@ -4,7 +4,7 @@ import { css } from 'styled-components';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
-import { colors } from 'src/global';
+import { colors } from '@global';
 
 import * as I from './interface';
 

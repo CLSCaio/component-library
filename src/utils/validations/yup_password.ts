@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { regex_strongPassword, regex_weakPassword } from 'src/utils';
+import { regex_strongPassword, regex_weakPassword } from '@utils';
 
 import * as M from './yup_messages';
 import * as I from './interface';

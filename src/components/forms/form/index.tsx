@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormikProvider } from 'formik';
 
-import { Input, Button, Select } from '../..';
+import { Input, Button, Select } from '@components';
 
 import * as I from './interface';
 import * as S from './styles';

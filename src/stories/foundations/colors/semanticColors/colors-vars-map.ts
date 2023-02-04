@@ -1,4 +1,4 @@
-import { colors } from '../../../../index';
+import { colors } from '../../../../global';
 
 const text = 'Usada para textos';
 const others = 'Cor adicional para usar avontade';

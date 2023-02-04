@@ -1,4 +1,4 @@
-import { sizes, weights } from '../../../../index';
+import { sizes, weights } from '../../../../global';
 
 const font = 'Font-size';
 const weight = 'Font-weight';

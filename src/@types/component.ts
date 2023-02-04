@@ -15,23 +15,33 @@ export type masks =
   | 'cvv'
   | 'height';
 
-interface InputSelectDefault {
+type TLabel = 'top' | 'left';
+export interface InputSelectDefaultStylesExtends {
+  error?: 'error';
+  positionLabel?: TLabel;
+  boldLabel?: boolean;
+}
+
+export interface InputSelectDefaultExtends {
+  maxW?: Tsize;
+  transform?: TTransformType;
+  disabled?: boolean;
+  readOnly?: boolean;
+  border?: TBordersType;
+}
+
+interface InputSelectDefault extends InputSelectDefaultExtends {
   id?: string;
   label?: {
     name: string;
-    position?: 'top' | 'left';
+    position?: TLabel;
     bold?: boolean;
     tooltip?: string;
     required?: boolean;
   };
   name: string;
   placeholder?: string;
-  maxW?: Tsize;
-  transform?: TTransformType;
-  disabled?: boolean;
-  readOnly?: boolean;
   className?: string;
-  border?: TBordersType;
 }
 
 export interface InputProps extends InputSelectDefault {

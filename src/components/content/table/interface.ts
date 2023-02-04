@@ -1,4 +1,4 @@
-import { TTextAlign, Tsize, TTransformType } from '../../../@types';
+import { TTextAlign, Tsize, TTransformType } from '@types';
 
 type TTitles = {
   name: string;
@@ -7,10 +7,12 @@ type TTitles = {
   textTransform?: TTransformType;
 };
 
+type Divider = 'pair' | 'unpaired';
+
 export interface TableProps {
   titles: TTitles[];
   list: any[];
-  withDivider?: boolean;
+  withDivider?: Divider;
   size?: Tsize;
   globalTextAlign?: TTextAlign;
   withHover?: boolean;
@@ -19,7 +21,7 @@ export interface TableProps {
 export interface TableStyles {
   color?: string;
   textAlign?: TTextAlign;
-  withDivider?: boolean;
+  withDivider?: Divider;
   size?: Tsize;
   width?: number;
   transform?: TTransformType;

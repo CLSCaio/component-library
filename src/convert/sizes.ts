@@ -1,4 +1,4 @@
-import { Tsize } from '../@types';
+import { Tsize } from '@types';
 
 export const convertSize = (defaultSize?: string, size?: Tsize) => {
   if (typeof size === 'number') return `${size}px`;

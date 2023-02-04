@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Main, MainProps } from '../..';
+import { Main, MainProps } from '@components';
 
 export default {
   title: 'Layouts/Main',

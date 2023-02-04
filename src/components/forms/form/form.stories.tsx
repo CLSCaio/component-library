@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import * as yup from 'yup';
 import { useFormik } from 'formik';
 
-import { Form, FormProps } from '../../..';
+import { Form, FormProps } from '@components';
 
 export default {
   title: 'Forms/Form',

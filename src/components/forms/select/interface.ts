@@ -1,20 +1,11 @@
 import {
   OptionsSelectProps,
-  TBordersType,
-  Tsize,
-  TTransformType,
   SelectProps,
-} from '../../../@types';
+  InputSelectDefaultExtends,
+  InputSelectDefaultStylesExtends,
+} from '@types';
 
-export interface SelectStyle {
-  maxW?: Tsize;
-  transform?: TTransformType;
-  disabled?: boolean;
-  readOnly?: boolean;
-  error?: 'error';
-  positionLabel?: 'top' | 'left';
-  border?: TBordersType;
-  boldLabel?: boolean;
-}
+export type SelectStyle = InputSelectDefaultExtends &
+  InputSelectDefaultStylesExtends;
 
 export type { OptionsSelectProps, SelectProps };

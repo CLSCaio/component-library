@@ -1,4 +1,4 @@
-import { TRoutes, TDefaultTypes, THeaderProps } from '../../../@types';
+import { TRoutes, TDefaultTypes, THeaderProps } from '@types';
 
 export interface HeaderProps extends THeaderProps {
   routes: TRoutes[];

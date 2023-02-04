@@ -3,7 +3,7 @@ import { FormikProvider, useFormik } from 'formik';
 import { Meta, Story } from '@storybook/react';
 
 import * as yup from 'yup';
-import { Select, SelectProps } from '../../..';
+import { Select, SelectProps } from '@components';
 
 const error = {
   select: 'Selecione um valor no select!',

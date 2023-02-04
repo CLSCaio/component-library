@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { colors } from 'src/global';
-import { convertTextAlign, convertSize } from 'src/typesConvert';
+import { colors } from '@global';
+import { convertTextAlign, convertSize } from '@convert';
 
 import * as I from './interface';
 

@@ -1,4 +1,4 @@
-import { TlinkTypes, TlinkVariants, THref } from '../../../@types';
+import { TlinkTypes, TlinkVariants, THref } from '@types';
 
 export interface HrefProps {
   defautlLink: THref;

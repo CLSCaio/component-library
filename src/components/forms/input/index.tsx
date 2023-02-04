@@ -3,7 +3,7 @@ import { useField } from 'formik';
 
 import { mask as masker, unMask } from 'ts-remask';
 
-import * as C from '../../..';
+import * as C from '@components';
 
 import * as M from './masks';
 import * as I from './interface';
@@ -84,7 +84,7 @@ export const Input = ({
               htmlFor={rest.name}
               disabled={disabled || readOnly}
               error={errorStyle}
-              labelposition={label?.position}
+              positionLabel={label?.position}
               border={border}
               boldLabel={label?.bold}
             >
@@ -107,7 +107,7 @@ export const Input = ({
             required={label?.required}
             onBlur={handleBlur}
             onKeyUp={onKeyUp}
-            labelposition={label?.position}
+            positionLabel={label?.position}
             onPaste={e => type === 'password' && e.preventDefault()}
             autoComplete={autoComplete}
           />

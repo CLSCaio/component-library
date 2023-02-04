@@ -1,6 +1,6 @@
 import { FormikContextType } from 'formik';
 
-import { FormComponentsProps } from '../../../@types';
+import { FormComponentsProps } from '@types';
 
 export interface FormProps {
   components: FormComponentsProps[];

@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
-import { convertSize } from 'src/typesConvert';
-import { colors, weights } from 'src/global';
+import { convertSize } from '@convert';
+import { colors, weights } from '@global';
 
 import * as I from './interface';
 
@@ -35,8 +35,8 @@ export const Label = styled.label<I.InputStyle>`
       font-weight: ${weights.bold};
     `};
 
-  margin-left: ${({ labelposition, border }) =>
-    labelposition === 'top' && border === 'outline' && '10px'};
+  margin-left: ${({ positionLabel, border }) =>
+    positionLabel === 'top' && border === 'outline' && '10px'};
 `;
 
 export const Field = styled.span`

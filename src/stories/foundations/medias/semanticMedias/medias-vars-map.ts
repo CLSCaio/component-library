@@ -1,4 +1,4 @@
-import { medias } from '../../../../index';
+import { medias } from '../../../../global';
 
 export const mediasMap = [
   {

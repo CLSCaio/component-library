@@ -1,7 +1,9 @@
 import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import { medias, IsMobile, convertMedia, Base } from 'src';
+import { Base } from '@components';
+import { medias } from '@global';
+import { IsMobile, convertMedia } from '@utils';
 
 import * as I from './interface';
 

@@ -1,4 +1,4 @@
-import { TTextAlign } from '../../../@types';
+import { TTextAlign } from '@types';
 
 export interface DescriptionProps extends DescriptionStyles {
   text: string;

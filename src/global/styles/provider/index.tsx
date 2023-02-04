@@ -1,9 +1,7 @@
 import React, { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { GlobalStyle } from '../reset';
-
-import { colors, sizes, weights } from '../../themes';
+import { colors, sizes, weights, GlobalStyle } from '@global';
 
 const theme = {
   colors,

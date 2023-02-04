@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { FaFrownOpen, FaCodepen, FaOpencart } from 'react-icons/fa';
 
-import { Header, HeaderProps } from 'src/components';
+import { Header, HeaderProps } from '@components';
 
 export default {
   title: 'Layouts/Header',

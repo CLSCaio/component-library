@@ -1,4 +1,3 @@
-/* eslint-disable import/no-useless-path-segments */
 import React from 'react';
 
 import { Link } from 'src/components';

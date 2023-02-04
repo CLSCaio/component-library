@@ -1,7 +1,8 @@
 import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import { Button, Group, Tooltip, Base } from 'src/components';
+import { Button, Group, Tooltip, Base } from '@components';
+import { colors } from '@global';
 
 import * as C from './content';
 import * as I from './interface';
@@ -38,6 +39,7 @@ export const Modal = ({
         {isLoading ? (
           <ClipLoader
             size={!size ? C.calcSize(I.sizes.small) : C.calcSize(I.sizes[size])}
+            color={variant !== 'light' ? colors.white : colors.black}
           />
         ) : (
           <>

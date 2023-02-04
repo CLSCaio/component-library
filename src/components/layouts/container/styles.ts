@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { convertAlign, convertJustify, convertSize } from 'src/typesConvert';
+import { convertAlign, convertJustify, convertSize } from '@convert';
 import { medias } from 'src/global';
 
 import * as I from './interface';

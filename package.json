@@ -1,5 +1,5 @@
 {
-  "name": "cls-master-lib-qa",
+  "name": "cls-master-lib-test",
   "version": "0.0.1",
   "author": "Caio Sousa",
   "main": "dist/index.js",

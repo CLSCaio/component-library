@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { colors, medias } from 'src/global';
-import { convertSize } from 'src/typesConvert';
+import { colors, medias } from '@global';
+import { convertSize } from '@convert';
 
 import * as I from './interface';
 
@@ -183,7 +183,7 @@ export const Button = styled.button<I.ButtonStyle>`
     !disabled &&
     css`
       :hover {
-        color: ${colors?.disabled};
+        color: ${colors?.others[1]};
       }
     `}
 

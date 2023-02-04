@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { ErrorMessage, ErrorMessageProps } from '../../..';
+import { ErrorMessage, ErrorMessageProps } from '@components';
 
 export default {
   title: 'Forms/ErrorMessage',

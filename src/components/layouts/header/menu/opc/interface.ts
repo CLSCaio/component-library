@@ -1,4 +1,4 @@
-import { TLink, TRoutes } from '../../../../../@types';
+import { TLink, TRoutes } from '@types';
 
 export interface OpcProps {
   openMenu: React.Dispatch<React.SetStateAction<boolean>>;

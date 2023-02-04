@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useField } from 'formik';
 
-import * as C from '../../..';
+import * as C from '@components';
 
 import * as I from './interface';
 import * as S from './styles';

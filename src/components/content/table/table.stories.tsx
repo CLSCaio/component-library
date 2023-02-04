@@ -2,7 +2,7 @@ import React from 'react';
 import { MdOutlineDeleteForever } from 'react-icons/md';
 import { Meta, Story } from '@storybook/react';
 
-import { Table, TableProps } from '../../..';
+import { Table, TableProps } from '@components';
 
 export default {
   title: 'Content/Table',

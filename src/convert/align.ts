@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { TAlignOrJustify, TJustify, TTextAlign } from '../@types';
+import { TAlignOrJustify, TJustify, TTextAlign } from '@types';
 
 export const convertTextAlign = (align?: TTextAlign) => {
   const defaultCss = css`

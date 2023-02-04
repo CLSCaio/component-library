@@ -22,6 +22,8 @@ export type {
   InputProps,
   OptionsSelectProps,
   SelectProps,
+  InputSelectDefaultExtends,
+  InputSelectDefaultStylesExtends,
 } from './component';
 export type { THref, TLink, TRoutes } from './route';
 export type { TDefaultTypes, THeaderProps } from './header';

@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import { colors } from 'src/global';
+
+import { colors } from '@global';
 
 export type sizes = 'xXsmall' | 'small' | 'medium' | 'large' | 'xXlarge';
 export type variants = 'transparent' | 'dark' | 'light';
