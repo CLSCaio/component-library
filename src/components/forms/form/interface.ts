@@ -1,11 +1,14 @@
 import { FormikContextType } from 'formik';
 
-import { FormComponentsProps } from 'src/@types';
-
-import { ButtonProps } from 'src/components';
+import { FormComponentsProps } from '../../../@types';
 
 export interface FormProps {
   components: FormComponentsProps[];
-  button: ButtonProps;
+  button: {
+    isLoading?: boolean;
+    label: string;
+    className?: string;
+    id?: string;
+  };
   form: FormikContextType<any>;
 }

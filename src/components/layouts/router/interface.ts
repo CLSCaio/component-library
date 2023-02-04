@@ -1,4 +1,4 @@
-import { TRoutes, THeaderProps } from 'src/@types';
+import { TRoutes, THeaderProps } from '../../../@types';
 
 interface RoutesProps extends TRoutes {
   reactComponent?: JSX.Element;

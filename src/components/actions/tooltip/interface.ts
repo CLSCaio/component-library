@@ -1,4 +1,4 @@
-import { TplacementTooltip } from 'src/@types';
+import { TplacementTooltip } from '../../../@types';
 
 type colors = 'transparent' | 'black' | 'white';
 

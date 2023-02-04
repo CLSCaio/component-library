@@ -85,7 +85,6 @@ Overview.args = {
   ],
 
   button: {
-    onClick: () => console.log(''),
     label: 'confirmar',
   },
 };

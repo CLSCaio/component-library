@@ -1,6 +1,21 @@
-import { TInputTypes, TBordersType, Tsize, TTransformType } from 'src/@types';
+import { TInputTypes, TBordersType, Tsize, TTransformType } from '.';
 
-export interface InputSelectDefault {
+export type masks =
+  | 'cep'
+  | 'cellphone'
+  | 'phone'
+  | 'phone_cellphone'
+  | 'plate'
+  | 'cpf'
+  | 'cnpj'
+  | 'cpf_cnpj'
+  | 'date'
+  | 'shortDate'
+  | 'creditCard'
+  | 'cvv'
+  | 'height';
+
+interface InputSelectDefault {
   id?: string;
   label?: {
     name: string;
@@ -19,12 +34,21 @@ export interface InputSelectDefault {
   border?: TBordersType;
 }
 
+export interface InputProps extends InputSelectDefault {
+  mask?: masks;
+  autoComplete?: 'off' | 'on';
+  type?: TInputTypes;
+}
+
+export interface SelectProps extends InputSelectDefault {
+  options: OptionsSelectProps[];
+}
+
 export type OptionsSelectProps = {
   label: string;
   value: string | number;
 };
 
-export interface FormComponentsProps extends InputSelectDefault {
+export interface FormComponentsProps extends InputProps {
   options?: OptionsSelectProps[];
-  type?: TInputTypes;
 }
