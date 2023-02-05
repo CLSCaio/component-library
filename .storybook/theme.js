@@ -32,7 +32,7 @@ export default create({
   inputBorderRadius: 4,
 
   // Title
-  brandTitle: 'cls-master-lib',
+  brandTitle: 'testing-config-stroybook',
   // brandImage: ',
   brandTarget: '_blank',
   brandUrl: 'https://github.com/CLSCaio/component-library',
