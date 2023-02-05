@@ -25,6 +25,8 @@
     "paths": {
       "@components": ["src/components"],
       "@components/*": ["src/components/*"],
+      "@config": ["src/config"],
+      "@config/*": ["src/config/*"],
       "@global": ["src/global"],
       "@global/*": ["src/global/*"],
       "@hooks": ["src/hooks"],
