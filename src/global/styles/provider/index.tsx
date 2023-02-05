@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { colors, sizes, weights, GlobalStyle } from '@global';
+import { colors, fonts, GlobalStyle } from '@global';
 
 const theme = {
   colors,
-  sizes,
-  weights,
+  sizes: fonts.sizes,
+  weights: fonts.weights,
 };
 
 type ProviderProps = {

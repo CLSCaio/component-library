@@ -1,6 +1,6 @@
 import { ColorsProps } from './interface';
 
-export const colors: ColorsProps = {
+export let colors: ColorsProps = {
   primary: '#000000',
   secundary: '#B0C4DE',
   transparent: 'rgba(0, 0, 0, 0.6)',
@@ -9,15 +9,15 @@ export const colors: ColorsProps = {
   black: '#000000',
   white: '#ffffff',
 
-  grey: {
-    '800': '#708090',
-    '700': '#B0C4DE',
-    '600': '#363636',
-    '500': '#4F4F4F',
-    '400': '#696969',
-    '300': '#808080',
-    '200': '#A9A9A9',
-    '100': '#C0C0C0',
+  text: {
+    1: '#708090',
+    2: '#B0C4DE',
+    3: '#363636',
+    4: '#4F4F4F',
+    5: '#696969',
+    6: '#808080',
+    7: '#A9A9A9',
+    8: '#C0C0C0',
   },
 
   button: {
@@ -35,6 +35,7 @@ export const colors: ColorsProps = {
   table: {
     title: '#708090',
     separator: '#B0C4DE',
+    border: `#C0C0C0`,
   },
 
   forms: {
@@ -44,7 +45,7 @@ export const colors: ColorsProps = {
     hover: '#B0C4DE',
   },
 
-  suport: {
+  support: {
     error: '#DC143C',
     warning: '#FFD700',
     sucess: '#00FF00',
@@ -62,7 +63,49 @@ export const colors: ColorsProps = {
   },
 };
 
-export const config_colors = (state: ColorsProps) => {
-  // colors = state;
-  // return colors;
+export const config_colors = (state?: ColorsProps) => {
+  if (state)
+    colors = {
+      primary: state.primary || colors.primary,
+      secundary: state.secundary || colors.secundary,
+      disabled: state.disabled || colors.disabled,
+      transparent: state.transparent || colors.transparent,
+      black: state.black || colors.black,
+      white: state.white || colors.white,
+      others: state.others || colors.others,
+      text: state.text || colors.text,
+
+      button: {
+        primary: state.button?.primary || colors.button?.primary,
+        secundary: state.button?.secundary || colors.button?.secundary,
+        floating: state.button?.floating || colors.button?.floating,
+        shadow: state.button?.shadow || colors.button?.shadow,
+      },
+
+      link: {
+        primary: state.link?.primary || colors.link?.primary,
+        hover: state.link?.hover || colors.link?.hover,
+      },
+
+      table: {
+        title: state.table?.title || colors.table?.title,
+        border: state.table?.border || colors.table?.border,
+        separator: state.table?.separator || colors.table?.separator,
+      },
+
+      forms: {
+        primary: state.forms?.primary || colors.forms?.primary,
+        border: state.forms?.border || colors.forms?.border,
+        focus: state.forms?.focus || colors.forms?.focus,
+        hover: state.forms?.hover || colors.forms?.hover,
+      },
+
+      support: {
+        error: state.support?.error || colors.support?.error,
+        warning: state.support?.warning || colors.support?.warning,
+        sucess: state.support?.sucess || colors.support?.sucess,
+      },
+    };
+
+  return colors;
 };

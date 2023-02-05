@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { medias, sizes, weights } from '../global';
+import { medias, fonts } from '../global';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -50,27 +50,27 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: ${sizes.xXlarge};
-    font-weight: ${weights.black};
+    font-size: ${fonts.sizes.xXlarge};
+    font-weight: ${fonts.weights.black};
   }
 
   h2, button {
-    font-size: ${sizes.large};
-    font-weight: ${weights.bold};
+    font-size: ${fonts.sizes.large};
+    font-weight: ${fonts.weights.bold};
   }
 
   a, h3 {
-    font-size: ${sizes.medium};
-    font-weight: ${weights.bold};
+    font-size: ${fonts.sizes.medium};
+    font-weight: ${fonts.weights.bold};
   }
 
   h4, p, li, ul, span, input, label, select {
-    font-size: ${sizes.default};
-    font-weight: ${weights.regular};
+    font-size: ${fonts.sizes.default};
+    font-weight: ${fonts.weights.regular};
   }
 
   h5 {
-    font-size: ${sizes.small};
-    font-weight: ${weights.light};
+    font-size: ${fonts.sizes.small};
+    font-weight: ${fonts.weights.light};
   }
 `;
