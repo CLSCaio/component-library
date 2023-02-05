@@ -45,10 +45,10 @@ export const Table = ({
           const changeDivider =
             withDivider === 'pair'
               ? i % 2 === 0
-                ? colors.grey[700]
+                ? colors.table?.separator
                 : ''
               : (i + 1) % 2 === 0
-              ? colors.grey[700]
+              ? colors.table?.separator
               : '';
 
           return (

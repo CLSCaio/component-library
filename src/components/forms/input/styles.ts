@@ -2,14 +2,14 @@ import styled, { css } from 'styled-components';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 import { convertSize } from '@convert';
-import { colors, weights } from '@global';
+import { colors, fonts } from '@global';
 
 import * as I from './interface';
 
 const passwordIcon = css`
   height: 1.5rem;
   width: 1.5rem;
-  fill: ${colors.forms.primary};
+  fill: ${colors.forms?.primary};
 `;
 
 export const Container = styled.div<I.InputStyle>`
@@ -26,13 +26,13 @@ export const Label = styled.label<I.InputStyle>`
     disabled || readOnly
       ? colors.disabled
       : error
-      ? colors.suport.error
-      : colors.forms.primary};
+      ? colors.support?.error
+      : colors.forms?.primary};
 
   ${({ boldLabel }) =>
     boldLabel &&
     css`
-      font-weight: ${weights.bold};
+      font-weight: ${fonts.weights.bold};
     `};
 
   margin-left: ${({ positionLabel, border }) =>
@@ -59,7 +59,7 @@ export const Input = styled.input<I.InputStyle>`
   width: 100%;
 
   :hover {
-    border-color: ${colors.forms.hover};
+    border-color: ${colors.forms?.hover};
   }
 
   :focus {
@@ -67,9 +67,9 @@ export const Input = styled.input<I.InputStyle>`
       border && border === 'outline'
         ? `
         border-radius: 5px;
-        border: 2px solid ${colors.forms.focus}`
+        border: 2px solid ${colors.forms?.focus}`
         : `
-      border-bottom: 2px solid ${colors.forms.focus};
+      border-bottom: 2px solid ${colors.forms?.focus};
   `};
   }
 
@@ -87,7 +87,7 @@ export const Input = styled.input<I.InputStyle>`
 
   :placeholder {
     color: ${({ disabled, readOnly }) =>
-      disabled || readOnly ? colors.disabled : colors.forms.primary};
+      disabled || readOnly ? colors.disabled : colors.forms?.primary};
   }
 
   ::-webkit-inner-spin-button {
@@ -105,8 +105,8 @@ export const Input = styled.input<I.InputStyle>`
           disabled || readOnly
             ? colors.disabled
             : error
-            ? colors.suport.error
-            : colors.forms.primary
+            ? colors.support?.error
+            : colors.forms?.primary
         }`
       : `
         border: none;
@@ -116,8 +116,8 @@ export const Input = styled.input<I.InputStyle>`
           disabled || readOnly
             ? colors.disabled
             : error
-            ? colors.suport.error
-            : colors.forms.primary
+            ? colors.support?.error
+            : colors.forms?.primary
         }
   `};
 `;

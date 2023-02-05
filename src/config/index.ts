@@ -1,1 +1,3 @@
-export * from './config_color';
+export * from './config';
+
+export type { ConfigProps } from './interface';

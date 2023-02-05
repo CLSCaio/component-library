@@ -1,5 +1,14 @@
-import * as components from './components';
-import * as global from './global';
-import * as utils from './utils';
+export * as hooks from './hooks';
+export * as utils from './utils';
 
-export { components, global, utils };
+export * from './config';
+export * from './components';
+
+export {
+  ColorsProps,
+  GlobalStyle,
+  Provider,
+  colors,
+  fonts,
+  medias,
+} from './global';

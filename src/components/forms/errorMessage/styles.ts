@@ -10,5 +10,5 @@ export const ErrorContainer = styled.div`
   gap: 8px;
   margin-top: 3px;
 
-  color: ${colors.suport.error};
+  color: ${colors.support?.error};
 `;

@@ -16,7 +16,7 @@ export const Table = styled.table`
   width: 100%;
   max-width: max-content;
 
-  border: 1px solid ${colors.grey['200']};
+  border: 1px solid ${colors.table?.border};
 
   overflow-x: hidden;
 
@@ -25,7 +25,7 @@ export const Table = styled.table`
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: ${colors.grey[800]};
+    background: ${colors.table?.title};
   }
 
   :hover {
@@ -36,14 +36,14 @@ export const Table = styled.table`
 
 export const Thead = styled.thead`
   width: max-content;
-  background-color: ${colors.grey[800]};
+  background-color: ${colors.table?.title};
   padding: 15px;
-  border-bottom: 1px solid ${colors.grey['200']};
+  border-bottom: 1px solid ${colors.table?.border};
 `;
 
 export const Tr = styled.tr`
   display: flex;
-  gap: 5px;
+  gap: 20px;
 `;
 
 export const Th = styled.th<I.TableStyles>`
@@ -57,7 +57,7 @@ export const Th = styled.th<I.TableStyles>`
 export const Tbody = styled.tbody<I.TableStyles>`
   width: max-content;
   padding: 15px;
-  border-bottom: 1px solid ${colors.grey['100']};
+  border-bottom: 1px solid ${colors.table?.border};
   background-color: ${({ color, withDivider }) => withDivider && color};
 
   ${({ withHover }) =>

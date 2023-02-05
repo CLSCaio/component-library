@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { convertSize } from '@convert';
-import { colors, weights } from '@global';
+import { colors, fonts } from '@global';
 
 import * as I from './interface';
 
@@ -19,13 +19,13 @@ export const Label = styled.label<I.SelectStyle>`
     disabled || readOnly
       ? colors.disabled
       : error
-      ? colors.suport.error
-      : colors.forms.primary};
+      ? colors.support?.error
+      : colors.forms?.primary};
 
   ${({ boldLabel }) =>
     boldLabel &&
     css`
-      font-weight: ${weights.bold};
+      font-weight: ${fonts.weights.bold};
     `};
 
   margin-left: ${({ positionLabel, border }) =>
@@ -52,7 +52,7 @@ export const Select = styled.select<I.SelectStyle>`
   width: 100%;
 
   :hover {
-    border-color: ${colors.forms.hover};
+    border-color: ${colors.forms?.hover};
   }
 
   :focus {
@@ -60,9 +60,9 @@ export const Select = styled.select<I.SelectStyle>`
       border && border === 'outline'
         ? `
         border-radius: 5px;
-        border: 2px solid ${colors.forms.focus}`
+        border: 2px solid ${colors.forms?.focus}`
         : `
-      border-bottom: 2px solid ${colors.forms.focus};
+      border-bottom: 2px solid ${colors.forms?.focus};
   `};
   }
 
@@ -80,7 +80,7 @@ export const Select = styled.select<I.SelectStyle>`
 
   :placeholder {
     color: ${({ disabled, readOnly }) =>
-      disabled || readOnly ? colors.disabled : colors.forms.primary};
+      disabled || readOnly ? colors.disabled : colors.forms?.primary};
   }
 
   ::-webkit-inner-spin-button {
@@ -98,8 +98,8 @@ export const Select = styled.select<I.SelectStyle>`
           disabled || readOnly
             ? colors.disabled
             : error
-            ? colors.suport.error
-            : colors.forms.primary
+            ? colors.support?.error
+            : colors.forms?.primary
         }`
       : `
         border: none;
@@ -109,13 +109,13 @@ export const Select = styled.select<I.SelectStyle>`
           disabled || readOnly
             ? colors.disabled
             : error
-            ? colors.suport.error
-            : colors.forms.primary
+            ? colors.support?.error
+            : colors.forms?.primary
         }
   `};
 `;
 
 export const Option = styled.option`
-  background-color: ${colors.others[4]};
-  color: ${colors.forms.primary};
+  background-color: ${colors.others?.[4]};
+  color: ${colors.forms?.primary};
 `;

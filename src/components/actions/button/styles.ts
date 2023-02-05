@@ -48,7 +48,7 @@ export const Container = styled.div<I.ButtonStyle>`
       .btn-bg::after {
         background-color: ${variant === 'pulse'
           ? colors.button?.primary
-          : colors.button.secundary};
+          : colors.button?.secundary};
       }
 
       .btn:hover::after {
@@ -183,7 +183,7 @@ export const Button = styled.button<I.ButtonStyle>`
     !disabled &&
     css`
       :hover {
-        color: ${colors?.others[1]};
+        color: ${colors?.others?.[1]};
       }
     `}
 
