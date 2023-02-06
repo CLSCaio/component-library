@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'src/components';
+import { Link } from '@components';
 
 import * as I from './interface';
 import * as S from './styles';

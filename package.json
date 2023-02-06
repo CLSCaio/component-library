@@ -1,6 +1,6 @@
 {
   "name": "cls-master-lib-testing-config-stroybook",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Caio Sousa",
   "main": "dist/index.js",
   "license": "MIT",
