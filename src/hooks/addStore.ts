@@ -1,17 +1,19 @@
 import { createEvent, createStore } from 'effector';
 import { useStore as useStoreEffector } from 'effector-react';
-import { cookieStorePersist, PersistConfig } from './cookieStorePersist';
+import { cookieStorePersist } from './cookieStorePersist';
 
 interface IAddStore<Type> {
   data: Type;
-  name: string;
-  config?: PersistConfig;
+  name?: string;
+  expire?: number;
 }
 
-export const addStore = <Type>({ data, name, config }: IAddStore<Type>) => {
-  const configStore = cookieStorePersist(createStore<Type>(data, { name }), {
-    ...config,
-  });
+export const addStore = <Type>({ data, name, expire }: IAddStore<Type>) => {
+  const configStore = cookieStorePersist(
+    createStore<Type>(data, { name }),
+    name,
+    expire,
+  );
 
   const saveStore = createEvent<Type>();
   const resetStore = createEvent();

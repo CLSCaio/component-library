@@ -1,18 +1,13 @@
 import { createEvent, Store } from 'effector';
 import Cookies from 'js-cookie';
 
-export type PersistConfig = {
-  expire?: number;
-  dontPersist?: boolean;
-};
-
 export const cookieStorePersist = <State>(
   store: Store<State>,
-  config: PersistConfig,
+  name?: string,
+  expire?: number,
 ) => {
-  const name = store.shortName;
-  const { expire } = config;
-  const persistKey = name;
+  const names = store.shortName;
+  const persistKey = names;
   const cookie = createEvent('@PERSIST/COOKIE');
   const isExpired = (expires: number) => expires < Date.now();
 
@@ -20,7 +15,7 @@ export const cookieStorePersist = <State>(
     Cookies.remove(persistKey);
   }
 
-  if (!config.dontPersist) {
+  if (name) {
     const snapshot = Cookies.get(persistKey);
 
     if (snapshot) {
