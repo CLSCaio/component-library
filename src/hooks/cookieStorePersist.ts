@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 
 export type PersistConfig = {
   expire?: number;
+  dontPersist?: boolean;
 };
 
 export const cookieStorePersist = <State>(
@@ -19,16 +20,18 @@ export const cookieStorePersist = <State>(
     Cookies.remove(persistKey);
   }
 
-  const snapshot = Cookies.get(persistKey);
+  if (!config.dontPersist) {
+    const snapshot = Cookies.get(persistKey);
 
-  if (snapshot) {
-    store.on(cookie, () => JSON.parse(snapshot));
-    cookie();
+    if (snapshot) {
+      store.on(cookie, () => JSON.parse(snapshot));
+      cookie();
+    }
+
+    store.watch(state => {
+      Cookies.set(persistKey, JSON.stringify(state));
+    });
   }
-
-  store.watch(state => {
-    Cookies.set(persistKey, JSON.stringify(state));
-  });
 
   return store;
 };
