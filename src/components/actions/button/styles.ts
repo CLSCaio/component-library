@@ -10,7 +10,7 @@ export const Container = styled.div<I.ButtonStyle>`
   position: relative;
   width: 100%;
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, user_colors }) =>
     variant === 'pulse' &&
     !disabled &&
     css`
@@ -25,10 +25,12 @@ export const Container = styled.div<I.ButtonStyle>`
 
       .btn:hover {
         transform: translateY(-3px);
-        box-shadow: 0 10px 20px ${colors.transparent};
-        color: ${colors.button?.primary};
-        border-color: ${colors.button?.primary};
-        background-color: ${colors.button?.secundary};
+        box-shadow: 0 10px 20px
+          ${user_colors?.transparent || colors.transparent};
+        color: ${user_colors?.button?.primary || colors.button?.primary};
+        border-color: ${user_colors?.button?.primary || colors.button?.primary};
+        background-color: ${user_colors?.button?.secundary ||
+        colors.button?.secundary};
       }
 
       .btn::after {
@@ -45,7 +47,8 @@ export const Container = styled.div<I.ButtonStyle>`
       }
 
       .btn-bg::after {
-        background-color: ${colors.button?.primary};
+        background-color: ${user_colors?.button?.primary ||
+        colors.button?.primary};
       }
 
       .btn:hover::after {
@@ -71,21 +74,21 @@ export const Container = styled.div<I.ButtonStyle>`
       }
     `}
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, user_colors }) =>
     variant === 'floating' &&
     !disabled &&
     css`
       .btn {
-        color: ${colors.black};
+        color: ${user_colors?.black || colors.black};
         padding: 0;
         min-width: fit-content;
         width: 40px;
         border-radius: 100%;
-        background: ${colors.button?.floating};
+        background: ${user_colors?.button?.floating || colors.button?.floating};
         background: linear-gradient(
           90deg,
-          ${colors.button?.floating} 0%,
-          ${colors.button?.floating} 100%
+          ${user_colors?.button?.floating || colors.button?.floating} 0%,
+          ${user_colors?.button?.floating || colors.button?.floating} 100%
         );
         border: none;
         transition: all 0.3s ease-in-out 0s;
@@ -95,8 +98,10 @@ export const Container = styled.div<I.ButtonStyle>`
         content: '';
         width: calc(40px + 10px);
         height: calc(40px + 10px);
-        border: 2px solid ${colors.button?.floating};
-        box-shadow: 0 0 60px ${colors.button?.floating};
+        border: 2px solid
+          ${user_colors?.button?.floating || colors.button?.floating};
+        box-shadow: 0 0 60px
+          ${user_colors?.button?.floating || colors.button?.floating};
         position: absolute;
         top: 50%;
         left: 50%;
@@ -121,7 +126,8 @@ export const Container = styled.div<I.ButtonStyle>`
         width: 30px;
         height: 30px;
         border-radius: 100%;
-        border: 6px double ${colors.button?.floating};
+        border: 6px double
+          ${user_colors?.button?.floating || colors.button?.floating};
         position: absolute;
         z-index: -1;
         top: 50%;
@@ -163,9 +169,13 @@ export const Button = styled.button<I.ButtonStyle>`
 
   position: relative;
 
-  color: ${colors.button?.secundary};
-  background-color: ${colors.button?.primary};
-  border: 2px solid ${colors.button?.secundary};
+  color: ${({ user_colors }) =>
+    user_colors?.button?.secundary || colors.button?.secundary};
+  background-color: ${({ user_colors }) =>
+    user_colors?.button?.primary || colors.button?.primary};
+  border: 2px solid
+    ${({ user_colors }) =>
+      user_colors?.button?.secundary || colors.button?.secundary};
   transition: 0.7s;
 
   width: 100%;
@@ -176,50 +186,52 @@ export const Button = styled.button<I.ButtonStyle>`
   outline: none;
   cursor: pointer;
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, user_colors }) =>
     (!variant || variant === 'default') &&
     !disabled &&
     css`
-      color: ${colors.button?.secundary};
-      background-color: ${colors.button?.primary};
+      color: ${user_colors?.button?.secundary || colors.button?.secundary};
+      background-color: ${user_colors?.button?.primary ||
+      colors.button?.primary};
       :hover {
-        color: ${colors?.button?.floating};
+        color: ${user_colors?.button?.floating || colors?.button?.floating};
       }
     `}
 
-  ${({ variant, disabled }) =>
+  ${({ variant, disabled, user_colors }) =>
     (variant === 'outline' || variant === 'outline-reverse') &&
     !disabled &&
     css`
       background-color: ${variant === 'outline'
-        ? colors.button?.primary
-        : colors.button?.secundary};
+        ? user_colors?.button?.primary || colors.button?.primary
+        : user_colors?.button?.secundary || colors.button?.secundary};
       color: ${variant === 'outline'
-        ? colors.button?.secundary
-        : colors.button?.primary};
+        ? user_colors?.button?.secundary || colors.button?.secundary
+        : user_colors?.button?.primary || colors.button?.primary};
       border-color: ${variant === 'outline'
-        ? colors.button?.secundary
-        : colors.button?.primary};
+        ? user_colors?.button?.secundary || colors.button?.secundary
+        : user_colors?.button?.primary || colors.button?.primary};
       :hover {
         background-color: ${variant === 'outline'
-          ? colors.button?.secundary
-          : colors.button?.primary};
+          ? user_colors?.button?.secundary || colors.button?.secundary
+          : user_colors?.button?.primary || colors.button?.primary};
         color: ${variant === 'outline'
-          ? colors.button?.primary
-          : colors.button?.secundary};
+          ? user_colors?.button?.primary || colors.button?.primary
+          : user_colors?.button?.secundary || colors.button?.secundary};
         border-color: ${variant === 'outline'
-          ? colors.button?.primary
-          : colors.button?.secundary};
+          ? user_colors?.button?.primary || colors.button?.primary
+          : user_colors?.button?.secundary || colors.button?.secundary};
       }
     `}
   
   :disabled {
-    ${({ variant }) =>
+    ${({ variant, user_colors }) =>
       variant !== 'floating'
         ? css`
-            background-color: ${colors?.disabled};
-            color: ${colors.black};
-            border: 3px solid ${colors.button?.secundary};
+            background-color: ${user_colors?.disabled || colors?.disabled};
+            color: ${user_colors?.black || colors.black};
+            border: 3px solid
+              ${user_colors?.button?.secundary || colors.button?.secundary};
             cursor: not-allowed;
             opacity: 0.5;
           `
@@ -228,7 +240,7 @@ export const Button = styled.button<I.ButtonStyle>`
             width: 40px;
             min-width: fit-content;
             border-radius: 100%;
-            background-color: ${colors?.disabled};
+            background-color: ${user_colors?.disabled || colors?.disabled};
             cursor: not-allowed;
             opacity: 0.5;
 
@@ -239,11 +251,12 @@ export const Button = styled.button<I.ButtonStyle>`
           `}
   }
 
-  ${({ withShadow }) =>
+  ${({ withShadow, user_colors }) =>
     withShadow &&
     css`
       :hover {
-        box-shadow: 0 0 15px ${colors.button?.shadow};
+        box-shadow: 0 0 15px
+          ${user_colors?.button?.shadow || colors.button?.shadow};
       }
     `}
 
