@@ -1,5 +1,5 @@
-export * as hooks from './utils';
-
+export * from './utils';
+export * from './hooks';
 export * from './config';
 export * from './components';
 
