@@ -64,6 +64,7 @@ export const Select = ({
         {label?.name && (
           <C.Group gap={[10, 10]} align="center" maxW="maxContent">
             <S.Label
+              store={store}
               htmlFor={rest.name}
               disabled={disabled || readOnly}
               error={errorStyle}
@@ -80,6 +81,7 @@ export const Select = ({
         <S.Field>
           <S.Select
             {...field}
+            store={store}
             id={rest.name}
             border={border}
             placeholder={placeholder}
