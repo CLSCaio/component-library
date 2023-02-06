@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import { colors } from '@global';
+import { Modal } from '@components';
+import { colors_config } from '@config';
 
 import eventWheel from './mouseWheelScrollX';
 import * as I from './interface';
@@ -14,6 +16,7 @@ export const Table = ({
   globalTextAlign,
   withHover,
 }: I.TableProps) => {
+  const { store } = colors_config();
   const [tableList, setTableList] = useState<any[][]>([]);
 
   useEffect(() => {
@@ -22,20 +25,24 @@ export const Table = ({
     setTableList(newArray);
   }, [list]);
 
-  return (
+  return list.length < titles.length ? (
     <S.Container size={size}>
-      <S.Table id="eventWheel" onWheel={e => eventWheel(e.currentTarget.id)}>
-        <S.Thead>
+      <S.Table
+        id="eventWheel"
+        onWheel={e => eventWheel(e.currentTarget.id)}
+        store={store}
+      >
+        <S.Thead store={store}>
           <S.Tr>
             {titles.map(title => (
               <S.Th
-                width={title.width}
-                textAlign={title.textAlign || globalTextAlign}
-                transform={title.textTransform}
-                key={`table-title-${title.name}`}
+                width={title?.width}
+                textAlign={title?.textAlign || globalTextAlign}
+                transform={title?.textTransform}
+                key={`table-title-${title?.name}`}
                 size={size}
               >
-                {title.name}
+                {title?.name}
               </S.Th>
             ))}
           </S.Tr>
@@ -45,10 +52,10 @@ export const Table = ({
           const changeDivider =
             withDivider === 'pair'
               ? i % 2 === 0
-                ? colors.table?.separator
+                ? store?.table?.separator || colors.table?.separator
                 : ''
               : (i + 1) % 2 === 0
-              ? colors.table?.separator
+              ? store?.table?.separator || colors.table?.separator
               : '';
 
           return (
@@ -77,5 +84,10 @@ export const Table = ({
         })}
       </S.Table>
     </S.Container>
+  ) : (
+    <Modal
+      title="Rendering error"
+      description="Please check table props and try again."
+    />
   );
 };

@@ -6,10 +6,9 @@ export type sizes = 'xXsmall' | 'small' | 'medium' | 'large' | 'xXlarge';
 export type variants = 'transparent' | 'dark' | 'light';
 
 export interface ModalProps extends ModalStyles {
-  isVisible?: boolean;
   withoutBase?: boolean;
   title: string;
-  onClose: () => void;
+  onClose?: () => void;
   description?: string;
   tooltip?: string;
   isLoading?: boolean;

@@ -14,7 +14,7 @@ export const Opc = ({ openMenu, routes, link }: I.OpcProps) => (
             type={link?.type}
             variant={link?.variant}
             key={label}
-            href={{ defautlLink: href }}
+            href={href}
             onClick={() => {
               openMenu(false);
               onClick && onClick();

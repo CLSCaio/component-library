@@ -1,6 +1,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 
+import { colors_config } from '@config';
 import * as I from './interface';
 import * as S from './styles';
 
@@ -9,30 +10,38 @@ export const Link = ({
   label,
   type = 'react',
   onClick,
+  nextConfig,
   variant = 'doubleLine',
-}: I.LinkProps) => (
-  <S.Container onClick={onClick}>
-    {type === 'react' && ( // React link
-      <S.To variant={variant} to={href.defautlLink}>
-        {label}
-      </S.To>
-    )}
+  target,
+}: I.LinkProps) => {
+  const { store } = colors_config();
+  return (
+    <S.Container onClick={onClick}>
+      {type === 'react' && ( // React link
+        <S.To variant={variant} to={href} target={target} store={store}>
+          {label}
+        </S.To>
+      )}
 
-    {type === 'default' && ( // Normal link
-      <S.Href
-        href={href.defautlLink}
-        target="_blank"
-        rel="noreferrer"
-        variant={variant}
-      >
-        {label}
-      </S.Href>
-    )}
+      {type === 'default' && ( // Normal link
+        <S.Href
+          store={store}
+          href={href}
+          target={target || '_blank'}
+          rel="noreferrer"
+          variant={variant}
+        >
+          {label}
+        </S.Href>
+      )}
 
-    {type === 'next' && ( // Next link
-      <NextLink href={href?.customLink || href.defautlLink} as={href.as}>
-        <S.Href variant={variant}>{label}</S.Href>
-      </NextLink>
-    )}
-  </S.Container>
-);
+      {type === 'next' && ( // Next link
+        <NextLink href={href} {...nextConfig}>
+          <S.Href store={store} variant={variant}>
+            {label}
+          </S.Href>
+        </NextLink>
+      )}
+    </S.Container>
+  );
+};

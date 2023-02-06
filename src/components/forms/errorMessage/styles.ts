@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { colors } from '@global';
 
-export const ErrorContainer = styled.div`
+import * as I from './interface';
+
+export const ErrorContainer = styled.div<I.ErrorMessageStyles>`
   display: flex;
   align-items: flex-end;
 
@@ -10,5 +12,5 @@ export const ErrorContainer = styled.div`
   gap: 8px;
   margin-top: 3px;
 
-  color: ${colors.support?.error};
+  color: ${({ store }) => store?.support?.error || colors.support?.error};
 `;

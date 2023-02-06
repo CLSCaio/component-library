@@ -5,7 +5,7 @@ import { MdAdsClick } from 'react-icons/md';
 import { Group } from '@components';
 import { colors } from '@global';
 
-import { useConfig, colors_config } from '@config';
+import { colors_config } from '@config';
 import * as I from './interface';
 import * as S from './styles';
 

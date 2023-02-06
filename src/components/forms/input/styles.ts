@@ -22,12 +22,12 @@ export const Container = styled.div<I.InputStyle>`
 `;
 
 export const Label = styled.label<I.InputStyle>`
-  color: ${({ disabled, readOnly, error }) =>
+  color: ${({ disabled, readOnly, error, store }) =>
     disabled || readOnly
-      ? colors.disabled
+      ? store?.disabled || colors.disabled
       : error
-      ? colors.support?.error
-      : colors.forms?.primary};
+      ? store?.support?.error || colors.support?.error
+      : store?.forms?.primary || colors.forms?.primary};
 
   ${({ boldLabel }) =>
     boldLabel &&
@@ -59,35 +59,37 @@ export const Input = styled.input<I.InputStyle>`
   width: 100%;
 
   :hover {
-    border-color: ${colors.forms?.hover};
+    border-color: ${({ store }) => store?.forms?.hover || colors.forms?.hover};
   }
 
   :focus {
-    ${({ border }) =>
+    ${({ border, store }) =>
       border && border === 'outline'
         ? `
         border-radius: 5px;
-        border: 2px solid ${colors.forms?.focus}`
+        border: 2px solid ${store?.forms?.focus || colors.forms?.focus}`
         : `
-      border-bottom: 2px solid ${colors.forms?.focus};
+      border-bottom: 2px solid ${store?.forms?.focus || colors.forms?.focus};
   `};
   }
 
   :disabled,
   :readonly {
-    ${({ border }) =>
+    ${({ border, store }) =>
       border && border === 'outline'
         ? `
         border-radius: 5px;
-        border: 2px solid ${colors.disabled}`
+        border: 2px solid ${store?.disabled || colors.disabled}`
         : `
-      border-bottom: 2px solid ${colors.disabled};
+      border-bottom: 2px solid ${store?.disabled || colors.disabled};
   `};
   }
 
   :placeholder {
-    color: ${({ disabled, readOnly }) =>
-      disabled || readOnly ? colors.disabled : colors.forms?.primary};
+    color: ${({ disabled, readOnly, store }) =>
+      disabled || readOnly
+        ? store?.disabled || colors.disabled
+        : store?.forms?.primary || colors.forms?.primary};
   }
 
   ::-webkit-inner-spin-button {
@@ -97,16 +99,16 @@ export const Input = styled.input<I.InputStyle>`
   -moz-appearance: textfield;
   appearance: textfield;
 
-  ${({ disabled, readOnly, error, border }) =>
+  ${({ disabled, readOnly, error, border, store }) =>
     border && border === 'outline'
       ? `
         border-radius: 5px;
         border: 2px solid ${
           disabled || readOnly
-            ? colors.disabled
+            ? store?.disabled || colors.disabled
             : error
-            ? colors.support?.error
-            : colors.forms?.primary
+            ? store?.support?.error || colors.support?.error
+            : store?.forms?.primary || colors.forms?.primary
         }`
       : `
         border: none;
@@ -114,10 +116,10 @@ export const Input = styled.input<I.InputStyle>`
 
         ${
           disabled || readOnly
-            ? colors.disabled
+            ? store?.disabled || colors.disabled
             : error
-            ? colors.support?.error
-            : colors.forms?.primary
+            ? store?.support?.error || colors.support?.error
+            : store?.forms?.primary || colors.forms?.primary
         }
   `};
 `;

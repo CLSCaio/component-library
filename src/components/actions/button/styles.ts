@@ -176,11 +176,10 @@ export const Button = styled.button<I.ButtonStyle>`
   border: 2px solid
     ${({ user_colors }) =>
       user_colors?.button?.secundary || colors.button?.secundary};
-  transition: 0.7s;
 
+  transition: 0.5s;
   width: 100%;
   padding: 15px 30px;
-  transition: 0.7s;
   height: 45px;
   border-radius: 15px;
   outline: none;

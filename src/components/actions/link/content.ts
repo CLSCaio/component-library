@@ -3,13 +3,13 @@ import { colors } from '@global';
 
 import * as I from './interface';
 
-export const defaultStyle = () => css`
+export const defaultStyle = ({ store }: I.LinkStyles) => css`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  color: ${colors.link?.primary};
+  color: ${store?.link?.primary || colors.link?.primary};
   cursor: pointer;
   width: max-content;
   position: relative;
@@ -18,14 +18,14 @@ export const defaultStyle = () => css`
   gap: 10px;
 `;
 
-export const customStyles = ({ variant }: I.LinkStyles) => {
+export const customStyles = ({ variant, store }: I.LinkStyles) => {
   switch (variant) {
     case 'doubleLine':
       return css`
         :hover,
         :active {
           letter-spacing: 3px;
-          color: ${colors.link?.primary};
+          color: ${store?.link?.primary || colors.link?.primary};
         }
 
         :after,
@@ -39,9 +39,9 @@ export const customStyles = ({ variant }: I.LinkStyles) => {
 
         :hover:after,
         :hover:before {
-          border: 0.5px solid ${colors.link?.primary};
+          border: 0.5px solid ${store?.link?.primary || colors.link?.primary};
           backface-visibility: hidden;
-          border-color: ${colors.link?.primary};
+          border-color: ${store?.link?.primary || colors.link?.primary};
           transition: width 350ms ease-in-out;
           width: 120%;
           bottom: auto;
@@ -54,7 +54,7 @@ export const customStyles = ({ variant }: I.LinkStyles) => {
         :hover,
         :active {
           letter-spacing: 3px;
-          color: ${colors.link?.primary};
+          color: ${store?.link?.primary || colors.link?.primary};
         }
 
         :after {
@@ -66,9 +66,9 @@ export const customStyles = ({ variant }: I.LinkStyles) => {
         }
 
         :hover:after {
-          border: 0.5px solid ${colors.link?.primary};
+          border: 0.5px solid ${store?.link?.primary || colors.link?.primary};
           backface-visibility: hidden;
-          border-color: ${colors.link?.primary};
+          border-color: ${store?.link?.primary || colors.link?.primary};
           transition: width 350ms ease-in-out;
           width: 120%;
           bottom: auto;
@@ -81,7 +81,7 @@ export const customStyles = ({ variant }: I.LinkStyles) => {
         :hover,
         :active {
           letter-spacing: 3px;
-          color: ${colors.link?.primary};
+          color: ${store?.link?.primary || colors.link?.primary};
         }
 
         :after {
@@ -94,7 +94,7 @@ export const customStyles = ({ variant }: I.LinkStyles) => {
 
         :hover:after {
           backface-visibility: hidden;
-          border-color: ${colors.link?.primary};
+          border-color: ${store?.link?.primary || colors.link?.primary};
           transition: width 350ms ease-in-out;
           width: 120%;
           bottom: auto;
@@ -103,9 +103,9 @@ export const customStyles = ({ variant }: I.LinkStyles) => {
       `;
     default:
       return css`
-        color: ${colors.link?.primary};
+        color: ${store?.link?.primary || colors.link?.primary};
         :hover {
-          color: ${colors.link?.hover};
+          color: ${store?.link?.hover || colors.link?.hover};
         }
       `;
   }

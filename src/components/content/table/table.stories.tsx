@@ -32,6 +32,7 @@ Overview.args = {
       tipo: 'admin',
       delete: <MdOutlineDeleteForever />,
     },
+
     {
       id: 2,
       name: 'Sabrina',
@@ -41,6 +42,7 @@ Overview.args = {
       tipo: 'comum',
       delete: <MdOutlineDeleteForever />,
     },
+
     {
       id: 3,
       name: 'Julio',
@@ -50,6 +52,7 @@ Overview.args = {
       tipo: 'admin',
       delete: <MdOutlineDeleteForever />,
     },
+
     {
       id: 4,
       name: 'Igor',
@@ -59,6 +62,7 @@ Overview.args = {
       tipo: 'comum',
       delete: <MdOutlineDeleteForever />,
     },
+
     {
       id: 5,
       name: 'Enio',
@@ -68,6 +72,7 @@ Overview.args = {
       tipo: 'comum',
       delete: <MdOutlineDeleteForever />,
     },
+
     {
       id: 6,
       name: 'Pedro',

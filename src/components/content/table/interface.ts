@@ -1,3 +1,4 @@
+import { ColorsProps } from '@global';
 import { TTextAlign, Tsize, TTransformType } from '@types';
 
 type TTitles = {
@@ -9,7 +10,7 @@ type TTitles = {
 
 type Divider = 'pair' | 'unpaired';
 
-export interface TableProps {
+export interface TableProps extends TableDefaultStyles {
   titles: TTitles[];
   list: any[];
   withDivider?: Divider;
@@ -18,12 +19,16 @@ export interface TableProps {
   withHover?: boolean;
 }
 
-export interface TableStyles {
+export interface TableStyles extends TableDefaultStyles {
   color?: string;
   textAlign?: TTextAlign;
-  withDivider?: Divider;
-  size?: Tsize;
   width?: number;
   transform?: TTransformType;
+  store?: ColorsProps | null;
+}
+
+export interface TableDefaultStyles {
   withHover?: boolean;
+  size?: Tsize;
+  withDivider?: Divider;
 }

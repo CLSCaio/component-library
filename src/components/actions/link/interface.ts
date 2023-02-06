@@ -1,22 +1,22 @@
 import { TlinkTypes, TlinkVariants, THref } from '@types';
 
-export interface HrefProps {
-  defautlLink: THref;
+import { ColorsProps } from '@global';
 
-  // apenas pro next.js
-  customLink?: {
-    pathname: THref;
-    rest?: object;
-  };
-  as?: string;
-}
-
-export interface LinkProps extends LinkStyles {
-  href: HrefProps;
+export interface LinkProps {
+  href: THref;
+  target?: '_target' | '_self' | '_top' | '_parent';
   label: string;
   type?: TlinkTypes | 'default';
+  variant?: TlinkVariants;
   onClick?: () => void;
+  nextConfig?: {
+    replace?: boolean;
+    as?: string;
+    passHref?: boolean;
+    shallow?: boolean;
+  };
 }
 export interface LinkStyles {
   variant?: TlinkVariants;
+  store?: ColorsProps | null;
 }

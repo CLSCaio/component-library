@@ -3,6 +3,7 @@ import { useField } from 'formik';
 
 import { mask as masker, unMask } from 'ts-remask';
 
+import { colors_config } from '@config';
 import * as C from '@components';
 
 import * as M from './masks';
@@ -23,6 +24,7 @@ export const Input = ({
   autoComplete = 'off',
   ...rest
 }: I.InputProps) => {
+  const { store } = colors_config();
   const [field, meta, helpers] = useField(rest);
 
   const [inputType, setInputType] = useState(type || 'text');
@@ -81,6 +83,7 @@ export const Input = ({
         {label?.name && (
           <C.Group gap={[10, 10]} align="center" maxW="maxContent">
             <S.Label
+              store={store}
               htmlFor={rest.name}
               disabled={disabled || readOnly}
               error={errorStyle}
@@ -97,6 +100,7 @@ export const Input = ({
         <S.Field>
           <S.Input
             {...field}
+            store={store}
             id={rest.name}
             border={border}
             placeholder={placeholder}

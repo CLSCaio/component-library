@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useField } from 'formik';
 
+import { colors_config } from '@config';
 import * as C from '@components';
 
 import * as I from './interface';
@@ -19,6 +20,7 @@ export const Select = ({
   label,
   ...rest
 }: I.SelectProps) => {
+  const { store } = colors_config();
   const [field, meta] = useField(rest);
 
   const [error, setError] = useState(false);

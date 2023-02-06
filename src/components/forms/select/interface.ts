@@ -1,3 +1,4 @@
+import { ColorsProps } from '@global';
 import {
   OptionsSelectProps,
   SelectProps,
@@ -5,7 +6,11 @@ import {
   InputSelectDefaultStylesExtends,
 } from '@types';
 
-export type SelectStyle = InputSelectDefaultExtends &
+type SelectStyleExtends = InputSelectDefaultExtends &
   InputSelectDefaultStylesExtends;
+
+export interface SelectStyle extends SelectStyleExtends {
+  store?: ColorsProps | null;
+}
 
 export type { OptionsSelectProps, SelectProps };

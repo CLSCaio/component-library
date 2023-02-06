@@ -8,15 +8,11 @@ export default {
   component: Modal,
 } as Meta;
 
-export const Overview: Story<ModalProps> = ({
-  onClose,
-  isVisible,
-  ...args
-}) => {
+export const Overview: Story<ModalProps> = ({ onClose, ...args }) => {
   const [visible, setVisible] = useState(false);
   return (
     <>
-      <Modal isVisible={visible} onClose={() => setVisible(false)} {...args} />
+      {visible && <Modal onClose={() => setVisible(false)} {...args} />}
       <Button
         type="button"
         onClick={() => setVisible(true)}

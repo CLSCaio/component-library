@@ -10,13 +10,14 @@ export const Container = styled.div<I.TableStyles>`
   max-width: ${({ size }) => convertSize('1280px', size)};
 `;
 
-export const Table = styled.table`
+export const Table = styled.table<I.TableStyles>`
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: max-content;
 
-  border: 1px solid ${colors.table?.border};
+  border: 1px solid
+    ${({ store }) => store?.table?.border || colors.table?.border};
 
   overflow-x: hidden;
 
@@ -25,7 +26,8 @@ export const Table = styled.table`
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: ${colors.table?.primary};
+    background: ${({ store }) =>
+      store?.table?.primary || colors.table?.primary};
   }
 
   :hover {
@@ -34,11 +36,13 @@ export const Table = styled.table`
   }
 `;
 
-export const Thead = styled.thead`
+export const Thead = styled.thead<I.TableStyles>`
   width: max-content;
-  background-color: ${colors.table?.primary};
+  background-color: ${({ store }) =>
+    store?.table?.primary || colors.table?.primary};
   padding: 15px;
-  border-bottom: 1px solid ${colors.table?.border};
+  border-bottom: 1px solid
+    ${({ store }) => store?.table?.border || colors.table?.border};
 `;
 
 export const Tr = styled.tr`
@@ -49,7 +53,7 @@ export const Tr = styled.tr`
 export const Th = styled.th<I.TableStyles>`
   display: flex;
   align-items: center;
-  width: ${({ width }) => (!width ? '170px' : `${width}px`)};
+  width: ${({ width }) => (width ? `${width}px` : '170px')};
   text-transform: ${({ transform }) => transform};
   ${({ textAlign }) => convertTextAlign(textAlign)};
 `;
@@ -57,7 +61,8 @@ export const Th = styled.th<I.TableStyles>`
 export const Tbody = styled.tbody<I.TableStyles>`
   width: max-content;
   padding: 15px;
-  border-bottom: 1px solid ${colors.table?.border};
+  border-bottom: 1px solid
+    ${({ store }) => store?.table?.border || colors.table?.border};
   background-color: ${({ color, withDivider }) => withDivider && color};
 
   ${({ withHover }) =>
@@ -75,7 +80,7 @@ export const Td = styled.td<I.TableStyles>`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: ${({ width }) => (!width ? '170px' : `${width}px`)};
+  width: ${({ width }) => (width ? `${width}px` : '170px')};
 
   text-transform: ${({ transform }) => transform};
 

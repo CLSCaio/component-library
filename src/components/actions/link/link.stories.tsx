@@ -17,8 +17,5 @@ export const Overview: Story<LinkProps> = args => (
 
 Overview.args = {
   label: 'Link',
-  href: {
-    defautlLink:
-      'https://clscaio.github.io/component-library/?path=/story/welcome--page',
-  },
+  href: '/',
 };
