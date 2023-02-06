@@ -4,9 +4,11 @@ import { ColorsProps } from '@global';
 
 import { addStore } from '@hooks';
 
+const name = window && window.location.host.replace(/[:/?]/g, '-');
+
 export const colors_config = addStore<ColorsProps | null>({
   data: null,
-  name: 'user-colors',
+  name: `${name}-user-colors`,
 });
 
 export const useConfig = (colors: ColorsProps) => {
