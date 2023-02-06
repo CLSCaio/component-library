@@ -5,8 +5,18 @@ import { MdAdsClick } from 'react-icons/md';
 import { Group } from '@components';
 import { colors } from '@global';
 
+import { config } from '@config';
 import * as I from './interface';
 import * as S from './styles';
+
+config({
+  colors: {
+    button: {
+      primary: '#008000',
+      secundary: '#1a1543',
+    },
+  },
+});
 
 export const Button = ({
   isLoading,

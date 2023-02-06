@@ -26,11 +26,9 @@ export const Container = styled.div<I.ButtonStyle>`
       .btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 20px ${colors.transparent};
-        color: ${variant === 'pulse'
-          ? colors.button?.primary
-          : colors.button?.secundary};
+        color: ${colors.button?.primary};
         border-color: ${colors.button?.primary};
-        background-color: transparent;
+        background-color: ${colors.button?.secundary};
       }
 
       .btn::after {
@@ -47,9 +45,7 @@ export const Container = styled.div<I.ButtonStyle>`
       }
 
       .btn-bg::after {
-        background-color: ${variant === 'pulse'
-          ? colors.button?.primary
-          : colors.button?.secundary};
+        background-color: ${colors.button?.primary};
       }
 
       .btn:hover::after {
@@ -80,7 +76,7 @@ export const Container = styled.div<I.ButtonStyle>`
     !disabled &&
     css`
       .btn {
-        color: ${colors.button?.primary};
+        color: ${colors.black};
         padding: 0;
         min-width: fit-content;
         width: 40px;
@@ -184,6 +180,8 @@ export const Button = styled.button<I.ButtonStyle>`
     (!variant || variant === 'default') &&
     !disabled &&
     css`
+      color: ${colors.button?.secundary};
+      background-color: ${colors.button?.primary};
       :hover {
         color: ${colors?.button?.floating};
       }
@@ -220,7 +218,7 @@ export const Button = styled.button<I.ButtonStyle>`
       variant !== 'floating'
         ? css`
             background-color: ${colors?.disabled};
-            color: ${colors.button?.secundary};
+            color: ${colors.black};
             border: 3px solid ${colors.button?.secundary};
             cursor: not-allowed;
             opacity: 0.5;

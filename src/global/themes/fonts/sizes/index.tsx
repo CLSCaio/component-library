@@ -11,15 +11,14 @@ export let sizes: SizesProps = {
 };
 
 export const config_sizes = (state?: SizesProps) => {
-  if (state)
-    sizes = {
-      xSmall: state.xSmall || sizes.xSmall,
-      small: state.small || sizes.small,
-      default: state.default || sizes.default,
-      medium: state.medium || sizes.medium,
-      large: state.large || sizes.large,
-      xLarge: state.xLarge || sizes.xLarge,
-      huge: state.huge || sizes.huge,
-    };
+  sizes = {
+    xSmall: state?.xSmall || sizes.xSmall,
+    small: state?.small || sizes.small,
+    default: state?.default || sizes.default,
+    medium: state?.medium || sizes.medium,
+    large: state?.large || sizes.large,
+    xLarge: state?.xLarge || sizes.xLarge,
+    huge: state?.huge || sizes.huge,
+  };
   return sizes;
 };

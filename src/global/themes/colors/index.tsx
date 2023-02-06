@@ -64,56 +64,48 @@ export let colors: ColorsProps = {
 };
 
 export const config_colors = (state?: ColorsProps) => {
-  if (state)
-    colors = {
-      primary: state.primary || colors.primary,
-      secundary: state.secundary || colors.secundary,
-      disabled: state.disabled || colors.disabled,
-      transparent: state.transparent || colors.transparent,
-      black: state.black || colors.black,
-      white: state.white || colors.white,
+  colors = {
+    primary: state?.primary || colors.primary,
+    secundary: state?.secundary || colors.secundary,
+    disabled: state?.disabled || colors.disabled,
+    transparent: state?.transparent || colors.transparent,
+    black: state?.black || colors.black,
+    white: state?.white || colors.white,
 
-      others: {
-        ...state.others,
-        ...colors.others,
-      },
+    others: state?.others,
+    text: state?.text,
 
-      text: {
-        ...state.text,
-        ...colors.text,
-      },
+    button: {
+      primary: state?.button?.primary || colors.button?.primary,
+      secundary: state?.button?.secundary || colors.button?.secundary,
+      floating: state?.button?.floating || colors.button?.floating,
+      shadow: state?.button?.shadow || colors.button?.shadow,
+    },
 
-      button: {
-        primary: state.button?.primary || colors.button?.primary,
-        secundary: state.button?.secundary || colors.button?.secundary,
-        floating: state.button?.floating || colors.button?.floating,
-        shadow: state.button?.shadow || colors.button?.shadow,
-      },
+    link: {
+      primary: state?.link?.primary || colors.link?.primary,
+      hover: state?.link?.hover || colors.link?.hover,
+    },
 
-      link: {
-        primary: state.link?.primary || colors.link?.primary,
-        hover: state.link?.hover || colors.link?.hover,
-      },
+    table: {
+      primary: state?.table?.primary || colors.table?.primary,
+      border: state?.table?.border || colors.table?.border,
+      separator: state?.table?.separator || colors.table?.separator,
+    },
 
-      table: {
-        primary: state.table?.primary || colors.table?.primary,
-        border: state.table?.border || colors.table?.border,
-        separator: state.table?.separator || colors.table?.separator,
-      },
+    forms: {
+      primary: state?.forms?.primary || colors.forms?.primary,
+      border: state?.forms?.border || colors.forms?.border,
+      focus: state?.forms?.focus || colors.forms?.focus,
+      hover: state?.forms?.hover || colors.forms?.hover,
+    },
 
-      forms: {
-        primary: state.forms?.primary || colors.forms?.primary,
-        border: state.forms?.border || colors.forms?.border,
-        focus: state.forms?.focus || colors.forms?.focus,
-        hover: state.forms?.hover || colors.forms?.hover,
-      },
-
-      support: {
-        error: state.support?.error || colors.support?.error,
-        warning: state.support?.warning || colors.support?.warning,
-        sucess: state.support?.sucess || colors.support?.sucess,
-      },
-    };
+    support: {
+      error: state?.support?.error || colors.support?.error,
+      warning: state?.support?.warning || colors.support?.warning,
+      sucess: state?.support?.sucess || colors.support?.sucess,
+    },
+  };
 
   return colors;
 };
