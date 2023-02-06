@@ -53,6 +53,8 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
+/*! js-cookie v3.0.1 | MIT */
+
 /**
  * @license React
  * react-dom.production.min.js
