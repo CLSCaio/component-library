@@ -25,7 +25,7 @@ export const Table = styled.table`
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: ${colors.table?.title};
+    background: ${colors.table?.primary};
   }
 
   :hover {
@@ -36,7 +36,7 @@ export const Table = styled.table`
 
 export const Thead = styled.thead`
   width: max-content;
-  background-color: ${colors.table?.title};
+  background-color: ${colors.table?.primary};
   padding: 15px;
   border-bottom: 1px solid ${colors.table?.border};
 `;

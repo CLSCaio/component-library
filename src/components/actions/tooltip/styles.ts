@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { medias, colors } from '@global';
+import { colors } from '@global';
+import { mediaQuery } from '@hooks';
 
 import * as I from './interface';
 
@@ -180,7 +181,7 @@ export const Icon = styled.span<I.TooltipStyles>`
     width: 16px;
     height: 16px;
 
-    ${medias.medium} {
+    ${mediaQuery('medium')} {
       width: 20px;
       height: 20px;
     }

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { convertAlign, convertJustify, convertSize } from '@convert';
-import { medias } from 'src/global';
+import { mediaQuery } from '@hooks';
 
 import * as I from './interface';
 
@@ -68,7 +68,7 @@ export const Container = styled.div<I.ContainerStyles>`
                 : 'flex-start'
               : convertJustify(justify)};
 
-          ${medias.small} {
+          ${mediaQuery('small')} {
             flex-direction: ${mobileResponsive === 'row' ? 'column' : 'row'};
             align-items: ${({ align }) =>
               !align
@@ -85,7 +85,7 @@ export const Container = styled.div<I.ContainerStyles>`
           }
         `}
 
-  ${medias.small} {
+  ${mediaQuery('small')} {
     gap: ${({ gap }) => (!gap ? 0 : `${gap[0]}px`)};
   }
 `;

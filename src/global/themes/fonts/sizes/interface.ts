@@ -1,9 +1,9 @@
 export interface SizesProps {
-  xXsmall: '0.7rem';
-  small: '0.85rem';
-  default: '1rem';
-  medium: '1.25rem';
-  large: '1.5rem';
-  xXlarge: '1.7rem';
-  huge: '1.85';
+  xSmall: `${number}rem`;
+  small: `${number}rem`;
+  default: `${number}rem`;
+  medium: `${number}rem`;
+  large: `${number}rem`;
+  xLarge: `${number}rem`;
+  huge: `${number}rem`;
 }

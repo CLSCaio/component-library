@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
 import { convertSize } from '@convert';
-import { medias, colors } from '@global';
+import { colors } from '@global';
+import { mediaQuery } from '@hooks';
 
 import calcHeaderHeight from './calcHeaderHeight';
 import * as I from './interface';
@@ -29,7 +30,7 @@ export const Container = styled.header<I.HeaderStyles>`
       border-bottom: 5px double ${colors.primary};
     `}
 
-  ${medias.xXsmall} {
+  ${mediaQuery('xSmall')} {
     align-items: center;
     justify-content: center;
     height: 70px;
@@ -45,7 +46,7 @@ export const Separator = styled.span<I.HeaderStyles>`
   width: 100%;
   max-width: max-content;
 
-  ${medias.xXsmall} {
+  ${mediaQuery('xSmall')} {
     align-items: center;
     justify-content: space-between;
     flex-direction: row;

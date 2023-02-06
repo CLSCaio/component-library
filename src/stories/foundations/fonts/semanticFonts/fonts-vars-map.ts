@@ -1,78 +1,92 @@
-import { sizes, weights } from '../../../../global';
+import { fonts } from '../../../../global';
 
 const font = 'Font-size';
-const weight = 'Font-weight';
 
 export const fontsMap = [
   // font-size
   {
-    name: `${font} xXsmall`,
+    name: `xSmall`,
     description:
-      'Font usada para textos muito pequenos, com pouco destaque no site',
+      'Font usada para textos muito pequenos, com pouco destaque no site.',
     font: {
-      size: sizes.xXsmall,
+      size: fonts.sizes.xSmall,
     },
   },
   {
-    name: `${font} Small`,
-    description: 'Font usada para textos pequenos',
+    name: `Small`,
+    description: 'Font usada para textos pequenos.',
     font: {
-      size: sizes.small,
+      size: fonts.sizes.small,
     },
   },
   {
-    name: `${font} Default`,
-    description: 'Font padrão usado em quase todos o site',
+    name: `Default`,
+    description: 'Font padrão usado em quase todos o site.',
     font: {
-      size: sizes.default,
+      size: fonts.sizes.default,
     },
   },
   {
-    name: `${font} Large`,
+    name: `Medium`,
     description:
-      'Font usada para dar destaque a algo, como por exemplo em subTitulos',
+      'Font usada para dar um pouco mais de destaque do que a default.',
     font: {
-      size: sizes.large,
+      size: fonts.sizes.medium,
     },
   },
   {
-    name: `${font} xXlarge`,
+    name: `Large`,
     description:
-      'Font usada para dar destaque a algo, como por exemplo em titulos',
+      'Font usada para dar destaque a algo, como por exemplo em subTitulos.',
     font: {
-      size: sizes.xXlarge,
+      size: fonts.sizes.large,
+    },
+  },
+  {
+    name: `xLarge`,
+    description:
+      'Font usada para dar destaque a algo, como por exemplo em titulos.',
+    font: {
+      size: fonts.sizes.xLarge,
+    },
+  },
+  {
+    name: `Huge`,
+    description: 'Font usada para texto muito grandes.',
+    font: {
+      size: fonts.sizes.huge,
     },
   },
 
   // font weight
   {
-    name: `${weight} Light`,
+    name: `extraLight`,
     description: 'Weight usada a algo com pouco destaque',
     font: {
-      weight: weights.light,
+      weight: fonts.weights.extraLight,
     },
   },
   {
-    name: `${weight} Regular`,
+    name: `Regular`,
     description: 'Weight padrão usada na maioria do site',
     font: {
-      weight: weights.regular,
+      weight: fonts.weights.regular,
     },
   },
   {
-    name: `${weight} Bold`,
+    name: `Bold`,
     description:
       'Weight usada para dar destaque, como por exemlplo em subTitulos',
     font: {
-      weight: weights.bold,
+      weight: fonts.weights.bold,
     },
   },
   {
-    name: `${weight} Black`,
+    name: `Black`,
     description:
       'Weight usada para dar destaque a algo, como por exemplo em titulos',
     font: {
-      weight: weights.black,
+      weight: fonts.weights.black,
     },
   },
 ];

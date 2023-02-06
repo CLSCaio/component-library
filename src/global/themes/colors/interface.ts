@@ -1,5 +1,5 @@
 type TOthers = {
-  [key: number | string]: `#${string}`;
+  [key: string]: `#${string}`;
 };
 
 export interface ColorsProps {
@@ -28,7 +28,7 @@ export interface ColorsProps {
   };
 
   table?: {
-    title?: `#${string}`;
+    primary?: `#${string}`;
     separator?: `#${string}`;
     border?: `#${string}`;
   };

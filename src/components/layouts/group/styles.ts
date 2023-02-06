@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { convertAlign, convertJustify, convertSize } from '@convert';
-import { medias } from '@global';
+import { mediaQuery } from '@hooks';
 
 import * as I from './interface';
 
@@ -29,7 +29,7 @@ export const Container = styled.div<I.GroupStyles>`
       left: ${pos.XY?.[3] || 0}%;
     `};
 
-  ${medias.small} {
+  ${mediaQuery('small')} {
     gap: ${({ gap }) => (!gap ? 0 : `${gap[0]}px`)};
   }
 `;

@@ -3,7 +3,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 
 import { Base } from '@components';
 import { medias } from '@global';
-import { IsMobile, convertMedia } from '@utils';
+import { IsMobile } from '@hooks';
 
 import * as I from './interface';
 
@@ -15,9 +15,6 @@ export const Loading = ({
 }: I.LoadingProps) =>
   isLoading ? (
     <Base withoutBase={withoutBase}>
-      <ClipLoader
-        size={IsMobile(convertMedia(medias.xXsmall)) ? 200 : size}
-        color={color}
-      />
+      <ClipLoader size={IsMobile(medias.xSmall) ? 200 : size} color={color} />
     </Base>
   ) : null;

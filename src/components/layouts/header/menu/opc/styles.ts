@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { medias } from '@global';
+import { mediaQuery } from '@hooks';
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding: 30px 0 0 40px;
   gap: 10px;
 
-  ${medias.xXsmall} {
+  ${mediaQuery('xSmall')} {
     align-items: center;
     justify-content: center;
     flex-direction: row;

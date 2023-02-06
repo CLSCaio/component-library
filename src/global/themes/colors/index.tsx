@@ -33,7 +33,7 @@ export let colors: ColorsProps = {
   },
 
   table: {
-    title: '#708090',
+    primary: '#708090',
     separator: '#B0C4DE',
     border: `#C0C0C0`,
   },
@@ -72,8 +72,16 @@ export const config_colors = (state?: ColorsProps) => {
       transparent: state.transparent || colors.transparent,
       black: state.black || colors.black,
       white: state.white || colors.white,
-      others: state.others || colors.others,
-      text: state.text || colors.text,
+
+      others: {
+        ...state.others,
+        ...colors.others,
+      },
+
+      text: {
+        ...state.text,
+        ...colors.text,
+      },
 
       button: {
         primary: state.button?.primary || colors.button?.primary,
@@ -88,7 +96,7 @@ export const config_colors = (state?: ColorsProps) => {
       },
 
       table: {
-        title: state.table?.title || colors.table?.title,
+        primary: state.table?.primary || colors.table?.primary,
         border: state.table?.border || colors.table?.border,
         separator: state.table?.separator || colors.table?.separator,
       },

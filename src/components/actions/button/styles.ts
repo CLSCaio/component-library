@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { colors, medias } from '@global';
+import { colors } from '@global';
 import { convertSize } from '@convert';
+import { mediaQuery } from '@hooks';
 
 import * as I from './interface';
 
@@ -153,7 +154,8 @@ export const Container = styled.div<I.ButtonStyle>`
       }
     `}
 
-  ${medias.xXsmall} {
+
+  ${mediaQuery('xSmall')} {
     max-width: ${({ maxW }) => convertSize('220px', maxW)};
   }
 `;
@@ -183,7 +185,7 @@ export const Button = styled.button<I.ButtonStyle>`
     !disabled &&
     css`
       :hover {
-        color: ${colors?.others?.[1]};
+        color: ${colors?.button?.floating};
       }
     `}
 

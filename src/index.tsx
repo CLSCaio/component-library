@@ -6,6 +6,8 @@ export * from './components';
 
 export {
   ColorsProps,
+  MediasProps,
+  SizesProps,
   GlobalStyle,
   Provider,
   colors,

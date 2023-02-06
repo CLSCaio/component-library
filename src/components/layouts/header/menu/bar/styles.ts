@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { GoThreeBars } from 'react-icons/go';
 import { AiOutlineClose } from 'react-icons/ai';
 
-import { medias } from '@global';
+import { mediaQuery } from '@hooks';
 
 export const Container = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const IMG = styled.img`
 
 export const IconImgGroup = styled.span`
   display: none;
-  ${medias.xXsmall} {
+  ${mediaQuery('xSmall')} {
     display: flex;
   }
 
@@ -41,7 +41,7 @@ export const OpenCloseMenuOpc = styled.span`
     cursor: pointer;
   }
 
-  ${medias.xXsmall} {
+  ${mediaQuery('xSmall')} {
     display: none;
   }
 `;
@@ -49,7 +49,7 @@ export const OpenCloseMenuOpc = styled.span`
 export const Bars = styled(GoThreeBars)`
   display: flex;
 
-  ${medias.xXsmall} {
+  ${mediaQuery('xSmall')} {
     display: none;
   }
 `;
@@ -57,7 +57,7 @@ export const Bars = styled(GoThreeBars)`
 export const Close = styled(AiOutlineClose)`
   display: flex;
 
-  ${medias.xXsmall} {
+  ${mediaQuery('xSmall')} {
     display: none;
   }
 `;

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { medias, fonts } from '@global';
+import { fonts } from '@global';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -12,23 +12,23 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 11px;
 
-    ${medias.small} {
+    @media (min-width: 500px) {
       font-size: 13px;
     }
 
-   ${medias.default} {
+    @media (min-width: 1080px) {
       font-size: 16px;
     }
 
-   ${medias['fullHD+']} {
+    @media (min-width: 1920px) {
       font-size: 19px;
     }
 
-   ${medias['2k']} {
+    @media (min-width: 2560px) {
       font-size: 22px;
     }
 
-   ${medias['4k']} {
+    @media (min-width: 3840px) {
       font-size: 24px;
     }
   }
@@ -41,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: ${fonts.sizes.xXlarge};
+    font-size: ${fonts.sizes.xLarge};
     font-weight: ${fonts.weights.black};
   }
 
@@ -55,7 +55,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: ${fonts.weights.bold};
   }
 
-  h4, p, li, ul, span, input, label, select {
+  h4, p, li, ul, span, input, label, select, th, td {
     font-size: ${fonts.sizes.default};
     font-weight: ${fonts.weights.regular};
   }
