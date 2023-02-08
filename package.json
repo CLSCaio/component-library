@@ -1,6 +1,6 @@
 {
   "name": "cls-master-lib",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Caio Sousa",
   "main": "dist/index.js",
   "license": "MIT",
