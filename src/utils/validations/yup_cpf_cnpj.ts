@@ -10,15 +10,9 @@ export const yup_cpf = ({
 }: I.MessagesYupError) => {
   const validate = yup
     .string()
-    .min(11, invalid)
-    .test('cpf', invalid, value => {
-      if (value) return value.trim().length >= 1;
-      return false;
-    })
-    .test('cpf', invalid, value => {
-      if (value) return value.length >= 1 && regex_cpf.test(value);
-      return false;
-    });
+    .test('cpf', invalid, value =>
+      value ? value.length >= 1 && regex_cpf.test(value) : true,
+    );
 
   return validate;
 };
@@ -28,15 +22,9 @@ export const yup_cnpj = ({
 }: I.MessagesYupError) => {
   const validate = yup
     .string()
-    .min(17, invalid)
-    .test('cnpj', invalid, value => {
-      if (value) return value.trim().length >= 1;
-      return false;
-    })
-    .test('cnpj', invalid, value => {
-      if (value) return value.length >= 1 && regex_cnpj.test(value);
-      return false;
-    });
+    .test('cnpj', invalid, value =>
+      value ? value.length >= 1 && regex_cnpj.test(value) : true,
+    );
 
   return validate;
 };
@@ -46,15 +34,9 @@ export const yup_cpf_cnpj = ({
 }: I.MessagesYupError) => {
   const validate = yup
     .string()
-    .min(11, invalid)
-    .test('cpf_cnpj', invalid, value => {
-      if (value) return value.trim().length >= 1;
-      return false;
-    })
-    .test('cpf_cnpj', invalid, value => {
-      if (value) return value.length >= 1 && regex_cpf_cnpj.test(value);
-      return false;
-    });
+    .test('cpf-cnpj', invalid, value =>
+      value ? value.length >= 1 && regex_cpf_cnpj.test(value) : true,
+    );
 
   return validate;
 };

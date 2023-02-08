@@ -1,5 +1,7 @@
 import * as yup from 'yup';
 
+import { validName } from '@utils';
+
 import * as M from './yup_messages';
 import * as I from './interface';
 
@@ -8,11 +10,7 @@ export const yup_fullName = ({
 }: I.MessagesYupError) => {
   const validate = yup
     .string()
-    .min(3, invalid)
-    .test('name', invalid, value => {
-      if (value) return value.trim().split(' ').length >= 2;
-      return false;
-    });
+    .test('name', invalid, value => (value ? validName(value) : true));
 
   return validate;
 };

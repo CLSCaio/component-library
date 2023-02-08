@@ -12,7 +12,7 @@ const config_name =
 
 export const colors_config = addStore<ColorsProps | null>({
   data: null,
-  name: config_name,
+  persist: config_name,
 });
 
 export const useConfig = (colors: ColorsProps) => {

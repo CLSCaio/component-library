@@ -1,5 +1,4 @@
 import React from 'react';
-import NextLink from 'next/link';
 
 import { colors_config } from '@config';
 import * as I from './interface';
@@ -10,7 +9,6 @@ export const Link = ({
   label,
   type = 'react',
   onClick,
-  nextConfig,
   variant = 'doubleLine',
   target,
 }: I.LinkProps) => {
@@ -36,11 +34,9 @@ export const Link = ({
       )}
 
       {type === 'next' && ( // Next link
-        <NextLink href={href} {...nextConfig}>
-          <S.Href store={store} variant={variant}>
-            {label}
-          </S.Href>
-        </NextLink>
+        <S.NLink href={href} store={store} variant={variant}>
+          {label}
+        </S.NLink>
       )}
     </S.Container>
   );

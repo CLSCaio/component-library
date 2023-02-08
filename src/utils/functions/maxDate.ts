@@ -1,6 +1,6 @@
 import { padTo2Digits, formatDate } from './formatDate';
 
-export const returnMaxDate = (minAge = 18) => {
+export const returnMaxDate = (minAge = 17) => {
   const date = new Date();
   const year = date.getFullYear();
   const maxYear = year - minAge;

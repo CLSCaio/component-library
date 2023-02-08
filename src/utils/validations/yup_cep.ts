@@ -1,5 +1,7 @@
 import * as yup from 'yup';
 
+import { regex_cep } from '../regex';
+
 import * as M from './yup_messages';
 import * as I from './interface';
 
@@ -8,11 +10,9 @@ export const yup_cep = ({
 }: I.MessagesYupError) => {
   const validate = yup
     .string()
-    .min(9, invalid)
-    .test('cep', invalid, value => {
-      if (value) return value.trim().length >= 1;
-      return false;
-    });
+    .test('cep', invalid, value =>
+      value ? value.length >= 1 && regex_cep.test(value) : true,
+    );
 
   return validate;
 };

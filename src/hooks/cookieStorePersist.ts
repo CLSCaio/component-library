@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 export const cookieStorePersist = <State>(
   store: Store<State>,
-  name?: string,
+  persist?: string,
   expire?: number,
 ) => {
   const names = store.shortName;
@@ -15,7 +15,7 @@ export const cookieStorePersist = <State>(
     Cookies.remove(persistKey);
   }
 
-  if (name) {
+  if (persist) {
     const snapshot = Cookies.get(persistKey);
 
     if (snapshot) {

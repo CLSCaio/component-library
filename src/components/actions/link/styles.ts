@@ -1,9 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Link } from 'react-router-dom';
+import NextLink from 'next/link';
 
 import * as C from './content';
 import * as I from './interface';
+
+export const globalStyles = ({ store, variant }: I.LinkStyles) => css`
+  ${C.defaultStyle({ store })};
+  ${C.customStyles({ variant, store })};
+`;
 
 export const Container = styled.span`
   * {
@@ -15,11 +21,13 @@ export const Container = styled.span`
 `;
 
 export const To = styled(Link)<I.LinkStyles>`
-  ${({ store }) => C.defaultStyle({ store })};
-  ${({ variant, store }) => C.customStyles({ variant, store })};
+  ${({ variant, store }) => globalStyles({ variant, store })};
 `;
 
 export const Href = styled.a<I.LinkStyles>`
-  ${({ store }) => C.defaultStyle({ store })};
-  ${({ variant, store }) => C.customStyles({ variant, store })};
+  ${({ variant, store }) => globalStyles({ variant, store })};
+`;
+
+export const NLink = styled(NextLink)<I.LinkStyles>`
+  ${({ variant, store }) => globalStyles({ variant, store })};
 `;

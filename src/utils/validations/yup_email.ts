@@ -10,15 +10,9 @@ export const yup_email = ({
 }: I.MessagesYupError) => {
   const validate = yup
     .string()
-    .min(5, invalid)
-    .test('e-mail', invalid, value => {
-      if (value) return value.trim().length >= 1;
-      return false;
-    })
-    .test('e-mail', invalid, value => {
-      if (value) return value.length >= 1 && regex_email.test(value);
-      return false;
-    });
+    .test('email', invalid, value =>
+      value ? value.length >= 1 && regex_email.test(value) : true,
+    );
 
   return validate;
 };

@@ -1,4 +1,4 @@
-export const plate = ['AAA-9S99'];
+export const plate = ['AAA-9999'];
 
 export const cep = ['99999-999'];
 

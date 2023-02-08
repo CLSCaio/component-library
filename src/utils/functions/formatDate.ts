@@ -9,10 +9,20 @@ export const formatDate = (date: Date) =>
     date.getFullYear(),
   ].join('/');
 
-export const parseDateString = (value: string, originalValue: string) => {
-  const parsedDate = isDate(originalValue)
-    ? originalValue
-    : parse(originalValue, 'dd/MM/yyyy', new Date());
+export const parseDateString = (value: string) => {
+  const parsedDate = isDate(value)
+    ? value
+    : parse(value, 'dd/MM/yyyy', new Date());
 
   return parsedDate;
+};
+
+export const convertShorDate = (value: string) => {
+  const validDate = value.length === 10 ? value : `01/${value}`;
+
+  const date = new Date(Date.parse(`${validDate}`));
+  const month = date.toLocaleString('default', { month: 'short' });
+  const year = date.getFullYear();
+
+  return `${month} ${year}`;
 };

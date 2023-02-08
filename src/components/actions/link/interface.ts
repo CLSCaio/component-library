@@ -9,12 +9,6 @@ export interface LinkProps {
   type?: TlinkTypes | 'default';
   variant?: TlinkVariants;
   onClick?: () => void;
-  nextConfig?: {
-    replace?: boolean;
-    as?: string;
-    passHref?: boolean;
-    shallow?: boolean;
-  };
 }
 export interface LinkStyles {
   variant?: TlinkVariants;

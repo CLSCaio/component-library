@@ -1,5 +1,5 @@
 export interface MessagesYupError {
-  invalid: string;
+  invalid?: string;
   over18Years?: string;
   weak?: string;
   equals?: string;

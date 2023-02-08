@@ -10,9 +10,13 @@ type TTitles = {
 
 type Divider = 'pair' | 'unpaired';
 
+export type ListType = {
+  [key: string]: string | number | JSX.Element;
+};
+
 export interface TableProps extends TableDefaultStyles {
   titles: TTitles[];
-  list: any[];
+  list: ListType[];
   withDivider?: Divider;
   size?: Tsize;
   globalTextAlign?: TTextAlign;
