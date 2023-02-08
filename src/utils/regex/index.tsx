@@ -23,9 +23,9 @@ export const regex_phone = /\([\d]{2}\) [\d]{4}-[\d]{4}/;
 export const regex_fullName = /([A-z]{0,})\s([A-z]{0,})/;
 
 export const regex_cpf_cnpj =
-  /((([\d]{3}).){2}[\d]{3}-[\d]{2})|[\d]{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}/;
+  /([\d]{3}.){2}[\d]{3}-[\d]{2}|[\d]{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}/;
 
 export const regex_phone_cellphone =
   /\([\d]{2}\) [\d]{4}-[\d]{4}|\([\d]{2}\) 9 [\d]{4}-[\d]{4}/;
 
-export const regex_date_shortDate = /[\d]{2}\/[\d]{4}|[\d]{2}\/){2}[\d]{4}/;
+export const regex_date_shortDate = /[\d]{2}\/[\d]{4}|([\d]{2}\/){2}[\d]{4}/;
