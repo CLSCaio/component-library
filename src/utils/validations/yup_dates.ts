@@ -10,9 +10,7 @@ import {
 import * as M from './yup_messages';
 import * as I from './interface';
 
-const minDate = `a data não pode ser menor que ${convertShorDate(
-  returnMinDate(),
-)}`;
+const minDate = `A data não pode ser menor que ${returnMinDate()}`;
 
 export const yup_dateWithRestrictionOfAge = ({
   invalid = M.yup_menssages.date.invalid,

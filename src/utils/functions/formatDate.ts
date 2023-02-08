@@ -9,7 +9,7 @@ export const formatDate = (date: Date) =>
     date.getFullYear(),
   ].join('/');
 
-export const parseDateString = (value: string) => {
+export const convertDateToPtbr = (value: string) => {
   const parsedDate = isDate(value)
     ? value
     : parse(value, 'dd/MM/yyyy', new Date());
@@ -18,11 +18,12 @@ export const parseDateString = (value: string) => {
 };
 
 export const convertShorDate = (value: string) => {
-  const validDate = value.length === 10 ? value : `01/${value}`;
+  const date =
+    value.length === 7
+      ? value.replace(/(\d{2})\/(\d{4})/, '$1/01/$2')
+      : value.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3');
 
-  const date = new Date(Date.parse(`${validDate}`));
-  const month = date.toLocaleString('default', { month: 'short' });
-  const year = date.getFullYear();
+  const newDate = new Date(date);
 
-  return `${month} ${year}`;
+  return newDate;
 };
