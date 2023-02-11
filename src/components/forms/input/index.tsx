@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { FocusEvent, KeyboardEvent, useEffect, useState } from 'react';
 import { useField } from 'formik';
 
 import { mask as masker, unMask } from 'ts-remask';
 
 import { colors_config } from '@config';
+import { colors } from '@global';
 import * as C from '@components';
 
 import * as M from './masks';
@@ -19,9 +20,11 @@ export const Input = ({
   readOnly,
   disabled,
   className,
+  handleClean,
   placeholder,
   border = 'inline',
   autoComplete = 'off',
+  isLoading,
   ...rest
 }: I.InputProps) => {
   const { store } = colors_config();
@@ -31,18 +34,19 @@ export const Input = ({
   const [error, setError] = useState(false);
   const [errorStyle, setErrorStyle] = useState<'error' | undefined>(undefined);
 
-  const handleBlur = (event: any) => {
+  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
     field.onBlur(event);
   };
 
   const handleInputPassword = () => {
-    setInputType((state: string) =>
-      state === 'password' ? 'text' : 'password',
-    );
+    setInputType(inputType === 'password' ? 'text' : 'password');
   };
 
-  const onKeyUp = (event: any) => {
-    mask && helpers.setValue(masker(unMask(event.target.value), M[mask]));
+  const handleClearInput = () => helpers.setValue('');
+
+  const onKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
+    mask &&
+      helpers.setValue(masker(unMask(event.currentTarget.value), M[mask]));
   };
 
   useEffect(() => {
@@ -60,6 +64,7 @@ export const Input = ({
   return (
     <S.Container maxW={maxW} className={className}>
       <C.Group
+        maxW="block"
         direction={
           label?.position
             ? label?.position === 'top'
@@ -85,7 +90,7 @@ export const Input = ({
             <S.Label
               store={store}
               htmlFor={rest.name}
-              disabled={disabled || readOnly}
+              disabled={disabled || readOnly || isLoading}
               error={errorStyle}
               positionLabel={label?.position}
               border={border}
@@ -93,38 +98,46 @@ export const Input = ({
             >
               {label?.name} {label?.required && '*'}
             </S.Label>
-            {label?.tooltip && <C.Tooltip description={label?.tooltip} />}
+            {label?.tooltip && (
+              <C.Tooltip description={label?.tooltip} isLoading={isLoading} />
+            )}
           </C.Group>
         )}
 
-        <S.Field>
+        <S.Field
+          store={store}
+          disabled={disabled || readOnly || isLoading}
+          error={errorStyle}
+          positionLabel={label?.position}
+          border={border}
+        >
           <S.Input
             {...field}
-            store={store}
-            id={rest.name}
-            border={border}
             placeholder={placeholder}
             type={inputType}
             transform={transform}
-            disabled={disabled || readOnly}
-            error={errorStyle}
+            disabled={disabled || readOnly || isLoading}
             required={label?.required}
             onBlur={handleBlur}
             onKeyUp={onKeyUp}
-            positionLabel={label?.position}
             onPaste={e => type === 'password' && e.preventDefault()}
             autoComplete={autoComplete}
           />
+          <S.Toggle isLoading={isLoading}>
+            {isLoading && <S.Loading color={colors.black} size={20} />}
 
-          {field.value && type === 'password' && (
-            <S.Toggle onClick={handleInputPassword}>
-              {inputType === 'password' ? (
-                <S.ClosedEye size={20} />
+            {!isLoading && handleClean && (
+              <S.ClearInput size={20} onClick={handleClearInput} />
+            )}
+
+            {!isLoading &&
+              type === 'password' &&
+              (inputType === 'password' ? (
+                <S.ClosedEye size={20} onClick={handleInputPassword} />
               ) : (
-                <S.OpenedEye size={20} />
-              )}
-            </S.Toggle>
-          )}
+                <S.OpenedEye size={20} onClick={handleInputPassword} />
+              ))}
+          </S.Toggle>
         </S.Field>
       </C.Group>
       {error && <C.ErrorMessage error={meta.error || 'Occorreu um erro'} />}

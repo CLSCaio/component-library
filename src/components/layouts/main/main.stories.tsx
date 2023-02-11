@@ -12,8 +12,8 @@ export default {
 export const Overview: Story<MainProps> = args => (
   <BrowserRouter>
     <Main {...args}>
-      <h2>testando main</h2>
-      <h1>testando 123</h1>
+      <h2>testing main</h2>
+      <h1>testing 123</h1>
     </Main>
   </BrowserRouter>
 );

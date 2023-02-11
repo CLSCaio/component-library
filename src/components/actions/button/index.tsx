@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { MdAdsClick } from 'react-icons/md';
 
@@ -13,9 +13,10 @@ export const Button = ({
   isLoading,
   label,
   disabled,
-  variant,
+  variant = 'default',
   className,
   withShadow,
+  icon: Icon,
   onClick,
   ...rest
 }: I.ButtonProps) => {
@@ -28,6 +29,11 @@ export const Button = ({
       {...rest}
       user_colors={store}
     >
+      {Icon && !isLoading && variant !== 'floating' && variant !== 'pulse' && (
+        <S.IconBadge user_colors={store} variant={variant}>
+          <Icon className="icon-cls-master-lib" />
+        </S.IconBadge>
+      )}
       <S.Button
         user_colors={store}
         withShadow={withShadow}
@@ -39,13 +45,16 @@ export const Button = ({
         variant={variant}
         type={rest.type || 'submit'}
       >
-        {isLoading && !disabled && (
+        {isLoading && !disabled ? (
           <Group justify="around" maxW="block">
             <ClipLoader color={colors.primary} size={16} />
           </Group>
+        ) : (
+          variant !== 'floating' && label
         )}
-        {!isLoading && variant !== 'floating' && label}
-        {isLoading && disabled && variant !== 'floating' && label}
+
+        {/* {!isLoading && variant !== 'floating' && label} */}
+        {/* {isLoading && disabled && variant !== 'floating' && label} */}
         {!isLoading && variant === 'floating' && <MdAdsClick />}
       </S.Button>
     </S.Container>

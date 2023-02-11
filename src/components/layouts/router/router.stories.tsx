@@ -24,19 +24,19 @@ Overview.args = {
       href: '/',
     },
     {
-      reactComponent: <div> Tela 1 </div>,
-      label: 'tela1',
-      href: '/tela1',
+      reactComponent: <div> view 1 </div>,
+      label: 'view 1',
+      href: '/view1',
     },
     {
-      reactComponent: <div> Tela 2 </div>,
-      label: 'tela2',
-      href: '/tela2',
+      reactComponent: <div> view 2 </div>,
+      label: 'view 2',
+      href: '/view2',
     },
     {
-      reactComponent: <div> Tela 3 </div>,
-      label: 'tela3',
-      href: '/tela3',
+      reactComponent: <div> view 3 </div>,
+      label: 'view 3',
+      href: '/view3',
     },
   ],
 };

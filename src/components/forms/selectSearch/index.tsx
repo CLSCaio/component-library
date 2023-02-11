@@ -8,7 +8,7 @@ import { colors } from '@global';
 import * as I from './interface';
 import * as S from './styles';
 
-export const Select = ({
+export const SelectSearch = ({
   maxW = 'block',
   transform,
   readOnly,
@@ -16,13 +16,14 @@ export const Select = ({
   placeholder,
   border = 'inline',
   handleClean,
-  errorMessage,
   options,
   disabled,
   isLoading,
+  forcedOption = true,
+  errorMessages,
   label,
   ...rest
-}: I.SelectProps) => {
+}: I.SelectSearchProps) => {
   const { store } = colors_config();
   const [field, meta, helpers] = useField(rest);
 
@@ -30,6 +31,12 @@ export const Select = ({
   const [errorStyle, setErrorStyle] = useState<'error' | undefined>(undefined);
 
   const [datalistView, setDatalistView] = useState<'block' | 'none'>('none');
+
+  const filteredOptions = !field?.value
+    ? options
+    : options.filter(({ value }) =>
+        value.toUpperCase().includes(field.value?.toUpperCase()),
+      );
 
   const handleClearInput = () => helpers.setValue('');
 
@@ -44,17 +51,38 @@ export const Select = ({
     }, 80);
   };
 
-  const onBlur = (event: React.FocusEvent<HTMLInputElement, Element>) => {
-    if (datalistView === 'block') closeDatalist();
+  const verifyValueWithOptions = () =>
+    helpers.setError(errorMessages?.[1] || 'Enter a valid value.');
+
+  const fieldBlur = (event: React.FocusEvent<HTMLInputElement, Element>) => {
     setTimeout(() => {
       field.onBlur(event);
     }, 80);
   };
 
+  const returnTestValueFromOption = (
+    event: React.FocusEvent<HTMLInputElement, Element>,
+  ) =>
+    filteredOptions.forEach(({ value }) =>
+      value !== field.value
+        ? forcedOption &&
+          helpers.setError(errorMessages?.[0] || 'select a valid value.')
+        : fieldBlur(event),
+    );
+
+  const onKeyUp = () => {
+    if (!filteredOptions.length && forcedOption) verifyValueWithOptions();
+  };
+
+  const onBlur = (event: React.FocusEvent<HTMLInputElement, Element>) => {
+    if (datalistView === 'block') closeDatalist();
+    returnTestValueFromOption(event);
+  };
+
   const openOrCloseDataListWithArrow = (view: 'block' | 'none') => {
     setDatalistView(view);
     if (meta.value === '' && datalistView === 'block')
-      helpers.setError(errorMessage || 'select a valid value.');
+      helpers.setError(errorMessages?.[0] || 'select a valid value.');
   };
 
   useEffect(() => {
@@ -118,29 +146,31 @@ export const Select = ({
           datalistView={datalistView}
           border={border}
           disabled={disabled || readOnly || isLoading}
-          readOnly
           error={errorStyle}
           positionLabel={label?.position}
         >
           <S.Select
             {...field}
+            onKeyUp={onKeyUp}
+            autoComplete="off"
             border={border}
             onFocus={() => setDatalistView('block')}
             onBlur={onBlur}
-            autoComplete="off"
             store={store}
             placeholder={placeholder}
             transform={transform}
             disabled={disabled || readOnly || isLoading}
-            readOnly
             required={label?.required}
             data-gtm-form="select"
             data-gtm-name={label?.name}
           />
 
           {!disabled && !readOnly && !isLoading && options.length > 0 && (
-            <S.Datalist datalistView={datalistView}>
-              {options.map((option, i) => (
+            <S.Datalist
+              datalistView={datalistView}
+              filteredOptions={filteredOptions.length}
+            >
+              {filteredOptions.map((option, i) => (
                 <S.Option
                   key={`${option.value}-${+i}`}
                   onClick={() => setSelectValue(option.value)}

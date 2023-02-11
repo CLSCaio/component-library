@@ -18,7 +18,7 @@ export const Container = styled.div<I.ButtonStyle>`
       .btn:visited {
         padding: 15px 40px;
         display: inline-block;
-        border-radius: 15px;
+        border-radius: 8px;
         transition: all 0.2s;
         position: absolute;
       }
@@ -38,7 +38,7 @@ export const Container = styled.div<I.ButtonStyle>`
         display: inline-block;
         height: 100%;
         width: 100%;
-        border-radius: 15px;
+        border-radius: 8px;
         position: absolute;
         top: 0;
         left: 0;
@@ -160,12 +160,26 @@ export const Container = styled.div<I.ButtonStyle>`
   ${mediaQuery('xSmall')} {
     max-width: ${({ maxW }) => convertSize('220px', maxW)};
   }
+
+  :hover {
+    .icon-cls-master-lib {
+      color: ${({ user_colors, variant }) =>
+        variant === 'outline'
+          ? user_colors?.button?.primary || colors.button?.primary
+          : variant === 'default'
+          ? user_colors?.button?.floating || colors.button?.floating
+          : (variant === 'outline-reverse' && user_colors?.button?.secundary) ||
+            colors.button?.secundary};
+    }
+  }
 `;
 
 export const Button = styled.button<I.ButtonStyle>`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  gap: 30px;
 
   position: relative;
 
@@ -181,7 +195,7 @@ export const Button = styled.button<I.ButtonStyle>`
   width: 100%;
   padding: 15px 30px;
   height: 45px;
-  border-radius: 15px;
+  border-radius: 8px;
   outline: none;
   cursor: pointer;
 
@@ -250,8 +264,9 @@ export const Button = styled.button<I.ButtonStyle>`
           `}
   }
 
-  ${({ withShadow, user_colors }) =>
+  ${({ withShadow, user_colors, disabled }) =>
     withShadow &&
+    !disabled &&
     css`
       :hover {
         box-shadow: 0 0 15px
@@ -261,5 +276,21 @@ export const Button = styled.button<I.ButtonStyle>`
 
   :active {
     transform: scale(0.97);
+  }
+`;
+
+export const IconBadge = styled.span<I.ButtonStyle>`
+  position: absolute;
+  z-index: 100;
+  top: 9px;
+  left: 20px;
+
+  svg {
+    color: ${({ user_colors, variant }) =>
+      variant === 'outline' || variant === 'default'
+        ? user_colors?.button?.secundary || colors.button?.secundary
+        : user_colors?.button?.primary || colors.button?.primary};
+    width: 25px;
+    height: 25px;
   }
 `;

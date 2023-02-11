@@ -1,11 +1,13 @@
 import { ColorsProps } from '@global';
 import { TbuttonVariants, Tsize, TbuttonTypes } from '@types';
+import { IconType } from 'react-icons';
 
 export interface ButtonProps extends ButtonDefaultStyle {
   isLoading?: boolean;
   label: string;
   className?: string;
   id?: string;
+  icon?: IconType;
   type?: TbuttonTypes;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }

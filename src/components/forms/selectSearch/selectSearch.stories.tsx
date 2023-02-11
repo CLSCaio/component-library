@@ -3,14 +3,14 @@ import { FormikProvider, useFormik } from 'formik';
 import { Meta, Story } from '@storybook/react';
 
 import * as yup from 'yup';
-import { Select, SelectProps } from '@components';
+import { SelectSearch, SelectSearchProps } from '@components';
 
 const error = {
-  select: 'select a valid value.',
+  selectSearch: 'Select a valid value.',
 };
 
 const validationSchema = yup.object().shape({
-  select: yup.string().test('select', error.select, value => {
+  selectSearch: yup.string().test('selectSearch', error.selectSearch, value => {
     if (value) {
       return value.trim().length >= 1;
     }
@@ -19,14 +19,14 @@ const validationSchema = yup.object().shape({
 });
 
 export default {
-  title: 'Forms/Select',
-  component: Select,
+  title: 'Forms/SelectSearch',
+  component: SelectSearch,
 } as Meta;
 
-export const Overview: Story<SelectProps> = args => {
+export const Overview: Story<SelectSearchProps> = args => {
   const form = useFormik({
     initialValues: {
-      select: '',
+      selectSearch: '',
     },
     validationSchema,
     validateOnBlur: true,
@@ -34,18 +34,18 @@ export const Overview: Story<SelectProps> = args => {
   });
 
   return (
-    <form onSubmit={form.handleSubmit} style={{ width: '100%' }}>
-      <FormikProvider value={form}>
-        <Select {...args} placeholder="Select a value..." />
-      </FormikProvider>
-    </form>
+    <FormikProvider value={form}>
+      <form onSubmit={form.handleSubmit} style={{ width: '100%' }}>
+        <SelectSearch {...args} placeholder="Select a value..." />
+      </form>
+    </FormikProvider>
   );
 };
 
 Overview.args = {
-  name: 'select',
+  name: 'selectSearch',
   label: {
-    name: 'Label select!',
+    name: 'Label selectSearch!',
     position: 'top',
   },
   options: [

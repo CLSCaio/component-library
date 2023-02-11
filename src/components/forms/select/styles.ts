@@ -1,10 +1,16 @@
 import styled, { css } from 'styled-components';
-import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { AiOutlineClose } from 'react-icons/ai';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 import { convertSize } from '@convert';
 import { colors, fonts } from '@global';
 
 import * as I from './interface';
+
+const defaultIconsstyle = css`
+  fill: ${colors.forms?.primary};
+`;
 
 export const Container = styled.div<I.SelectStyle>`
   display: flex;
@@ -16,8 +22,8 @@ export const Container = styled.div<I.SelectStyle>`
 `;
 
 export const Label = styled.label<I.SelectStyle>`
-  color: ${({ disabled, readOnly, error, store }) =>
-    disabled || readOnly
+  color: ${({ disabled, error, store }) =>
+    disabled
       ? store?.disabled || colors.disabled
       : error
       ? store?.support?.error || colors.support?.error
@@ -33,72 +39,48 @@ export const Label = styled.label<I.SelectStyle>`
     positionLabel === 'top' && border === 'outline' && '10px'};
 `;
 
-export const Field = styled.span`
+export const Field = styled.span<I.SelectStyle>`
   width: 100%;
-  position: relative;
-`;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
 
-export const Select = styled.select<I.SelectStyle>`
-  outline: none;
-  text-indent: 9px;
-  background: none;
+  cursor: ${({ disabled }) => disabled && 'not-allowed'};
 
-  padding: ${({ border }) => (border === 'outline' ? '7px 0' : '0 0 7px 0')};
-
-  cursor: ${({ disabled, readOnly }) =>
-    (disabled || readOnly) && 'not-allowed'};
-
-  text-transform: ${({ transform }) => transform};
-
-  width: 100%;
-
-  :hover {
-    border-color: ${({ store }) => store?.forms?.hover || colors.forms?.hover};
+  cursor: ${({ disabled }) => disabled && 'not-allowed'};
+  :read-only {
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   }
 
   :focus {
     ${({ border, store }) =>
       border && border === 'outline'
         ? `
-        border-radius: 5px;
+        border-radius: 8px;
         border: 2px solid ${store?.forms?.focus || colors.forms?.focus}`
         : `
       border-bottom: 2px solid ${store?.forms?.focus || colors.forms?.focus};
   `};
   }
 
-  :disabled,
-  :readonly {
+  :disabled {
     ${({ border, store }) =>
       border && border === 'outline'
         ? `
-        border-radius: 5px;
+        border-radius: 8px;
         border: 2px solid ${store?.disabled || colors.disabled}`
         : `
       border-bottom: 2px solid ${store?.disabled || colors.disabled};
   `};
   }
 
-  :placeholder {
-    color: ${({ disabled, readOnly, store }) =>
-      disabled || readOnly
-        ? store?.disabled || colors.disabled
-        : store?.forms?.primary || colors.forms?.primary};
-  }
-
-  ::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-
-  -moz-appearance: textfield;
-  appearance: textfield;
-
-  ${({ disabled, readOnly, error, border, store }) =>
+  ${({ disabled, error, border, store }) =>
     border && border === 'outline'
       ? `
         border-radius: 5px;
         border: 2px solid ${
-          disabled || readOnly
+          disabled
             ? store?.disabled || colors.disabled
             : error
             ? store?.support?.error || colors.support?.error
@@ -109,12 +91,106 @@ export const Select = styled.select<I.SelectStyle>`
         border-bottom: 2px solid
 
         ${
-          disabled || readOnly
+          disabled
             ? store?.disabled || colors.disabled
             : error
             ? store?.support?.error || colors.support?.error
             : store?.forms?.primary || colors.forms?.primary
         }
   `};
+
+  ${({ datalistView }) =>
+    datalistView &&
+    datalistView === 'block' &&
+    css`
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    `}
 `;
-export const Option = styled.option``;
+
+export const Select = styled.input<I.SelectStyle>`
+  outline: none;
+  text-indent: 4px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: calc(100% - 50px);
+  border: none;
+
+  padding: ${({ border }) => (border === 'outline' ? '7px 0' : '0 0 7px 0')};
+
+  cursor: ${({ disabled }) => disabled && 'not-allowed'};
+  :read-only {
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  }
+
+  text-transform: ${({ transform }) => transform};
+
+  :placeholder {
+    color: ${({ disabled, store }) =>
+      disabled
+        ? store?.disabled || colors.disabled
+        : store?.forms?.primary || colors.forms?.primary};
+  }
+`;
+
+export const Datalist = styled.span<I.SelectStyle>`
+  display: ${({ datalistView }) => datalistView};
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  border: 2px solid black;
+  border-top: none;
+
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  overflow: hidden;
+
+  background-color: white;
+  z-index: 100;
+`;
+
+export const Option = styled.p`
+  padding: 10px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  :hover {
+    background-color: ${colors.forms?.hover};
+    cursor: pointer;
+  }
+`;
+
+export const Toggle = styled.span<I.SelectStyle>`
+  all: unset;
+  cursor: ${({ isLoading }) => (!isLoading ? 'pointer' : 'not-allowed')};
+  padding-right: 5px;
+
+  ${({ border }) =>
+    border === 'inline' &&
+    css`
+      transform: translateY(-3px);
+    `}
+
+  display: flex;
+  align-items: center;
+`;
+
+export const ClearInput = styled(AiOutlineClose)`
+  ${defaultIconsstyle}
+`;
+
+export const ArrowDown = styled(IoIosArrowDown)`
+  ${defaultIconsstyle}
+`;
+
+export const ArrowUp = styled(IoIosArrowUp)`
+  ${defaultIconsstyle}
+`;
+
+export const Loading = styled(ClipLoader)``;

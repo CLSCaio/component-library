@@ -13,5 +13,5 @@ export const Overview: Story<DescriptionProps> = args => (
 );
 
 Overview.args = {
-  text: "pode passar algum html harder code como um <strong> 'strong' </strong> ou um <br/> 'br' para pular linha e etc...",
+  text: 'description component',
 };

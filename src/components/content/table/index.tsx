@@ -4,7 +4,6 @@ import { colors } from '@global';
 import { Modal } from '@components';
 import { colors_config } from '@config';
 
-import eventWheel from './mouseWheelScrollX';
 import * as I from './interface';
 import * as S from './styles';
 
@@ -19,6 +18,32 @@ export const Table = ({
   const { store } = colors_config();
   const [tableList, setTableList] = useState<any[][]>([]);
 
+  const elem = document.getElementById('eventWheel');
+
+  const eventWheel = () => {
+    elem?.addEventListener('wheel', (event: WheelEvent) => {
+      event.preventDefault();
+
+      const y = event.deltaY;
+      let scrollWheel;
+
+      if (y > 0) {
+        scrollWheel = 200;
+      } else {
+        scrollWheel = -200;
+      }
+
+      elem.scrollBy({
+        left: scrollWheel,
+        behavior: 'smooth',
+      });
+    });
+  };
+
+  useEffect(() => {
+    eventWheel();
+  }, []);
+
   useEffect(() => {
     const newArray: any[] = [];
     if (list) list.map(items => newArray.push([...Object.values(items)]));
@@ -27,11 +52,7 @@ export const Table = ({
 
   return list.length < titles.length ? (
     <S.Container size={size}>
-      <S.Table
-        id="eventWheel"
-        onWheel={e => eventWheel(e.currentTarget.id)}
-        store={store}
-      >
+      <S.Table id="eventWheel" onWheel={e => eventWheel()} store={store}>
         <S.Thead store={store}>
           <S.Tr>
             {titles.map(title => (

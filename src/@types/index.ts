@@ -16,11 +16,13 @@ export type {
   TXy,
   TTransformType,
   Tsize,
+  TFormikProps,
 } from './others';
 export type {
   FormComponentsProps,
   InputProps,
-  OptionsSelectProps,
+  OptionsSelectAndSelectSearchProps,
+  SelectSearchProps,
   SelectProps,
   InputSelectDefaultExtends,
   InputSelectDefaultStylesExtends,

@@ -13,15 +13,13 @@ export const Overview: Story<AccordionProps> = args => <Accordion {...args} />;
 Overview.args = {
   list: [
     {
-      description:
-        "pode passar algum html harder code como um <strong> 'strong' </strong> ou um <br/> 'br' para pular linha e etc...",
+      description: 'description with <strong> innerhtml </strong>',
       isInnerHtml: true,
-      title: 'Um Accordion com innerHtml',
+      title: 'Accotions with innerHtml',
     },
     {
-      description:
-        "pode passar algum html harder code como um <strong> 'strong' </strong> ou um <br/> 'br' para pular linha e etc...",
-      title: 'Um Accordion sem innerHtml',
+      description: 'description without <strong> innerHtml </strong>',
+      title: 'Accordion without innerHtml',
     },
   ],
 };

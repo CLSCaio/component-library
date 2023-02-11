@@ -28,6 +28,8 @@ export interface InputSelectDefaultExtends {
   disabled?: boolean;
   readOnly?: boolean;
   border?: TBordersType;
+  handleClean?: boolean;
+  isLoading?: boolean;
 }
 
 interface InputSelectDefault extends InputSelectDefaultExtends {
@@ -50,15 +52,21 @@ export interface InputProps extends InputSelectDefault {
   type?: TInputTypes;
 }
 
-export interface SelectProps extends InputSelectDefault {
-  options: OptionsSelectProps[];
-}
-
-export type OptionsSelectProps = {
-  label: string;
-  value: string | number;
+export type OptionsSelectAndSelectSearchProps = {
+  value: string;
 };
 
+export interface SelectProps extends InputSelectDefault {
+  options: OptionsSelectAndSelectSearchProps[];
+  errorMessage?: string;
+}
+
+export interface SelectSearchProps extends SelectProps {
+  forcedOption?: boolean;
+  errorMessages?: [invalidOpção?: string, selectOption?: string];
+}
+
 export interface FormComponentsProps extends InputProps {
-  options?: OptionsSelectProps[];
+  options?: OptionsSelectAndSelectSearchProps[];
+  as: 'input' | 'select' | 'selectSearch';
 }

@@ -10,8 +10,7 @@ export default {
 
 export const Overview: Story<GroupProps> = args => (
   <Group {...args}>
-    {' '}
-    <h1> caio </h1> <h1> sousa </h1>{' '}
+    <h1> caio </h1> <h1> sousa </h1>
   </Group>
 );
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
+import { IoMdAddCircleOutline } from 'react-icons/io';
 
 import { Button, ButtonProps } from '@components';
 
@@ -11,7 +12,8 @@ export default {
 export const Overview: Story<ButtonProps> = args => <Button {...args} />;
 
 Overview.args = {
+  icon: IoMdAddCircleOutline,
   withShadow: true,
-  label: 'button',
+  label: 'Adicionar',
   onClick: () => console.log(),
 };

@@ -11,5 +11,5 @@ export default {
 export const Overview: Story<TooltipProps> = args => <Tooltip {...args} />;
 
 Overview.args = {
-  description: 'eu sou um tooltip',
+  description: 'Im tooltip!',
 };

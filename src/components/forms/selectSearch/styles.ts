@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { AiFillEye, AiFillEyeInvisible, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 import { convertSize } from '@convert';
 import { colors, fonts } from '@global';
@@ -11,7 +12,7 @@ const defaultIconsstyle = css`
   fill: ${colors.forms?.primary};
 `;
 
-export const Container = styled.div<I.InputStyle>`
+export const Container = styled.div<I.SelectSearchStyle>`
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -20,7 +21,7 @@ export const Container = styled.div<I.InputStyle>`
   max-width: ${({ maxW }) => convertSize('1280px', maxW)};
 `;
 
-export const Label = styled.label<I.InputStyle>`
+export const Label = styled.label<I.SelectSearchStyle>`
   color: ${({ disabled, error, store }) =>
     disabled
       ? store?.disabled || colors.disabled
@@ -38,7 +39,7 @@ export const Label = styled.label<I.InputStyle>`
     positionLabel === 'top' && border === 'outline' && '10px'};
 `;
 
-export const Field = styled.span<I.InputStyle>`
+export const Field = styled.span<I.SelectSearchStyle>`
   width: 100%;
   display: flex;
   align-items: center;
@@ -48,9 +49,6 @@ export const Field = styled.span<I.InputStyle>`
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
 
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
-  :read-only {
-    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  }
 
   :focus {
     ${({ border, store }) =>
@@ -97,9 +95,17 @@ export const Field = styled.span<I.InputStyle>`
             : store?.forms?.primary || colors.forms?.primary
         }
   `};
+
+  ${({ datalistView }) =>
+    datalistView &&
+    datalistView === 'block' &&
+    css`
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    `}
 `;
 
-export const Input = styled.input<I.InputStyle>`
+export const Select = styled.input<I.SelectSearchStyle>`
   outline: none;
   text-indent: 4px;
 
@@ -113,9 +119,6 @@ export const Input = styled.input<I.InputStyle>`
   padding: ${({ border }) => (border === 'outline' ? '7px 0' : '0 0 7px 0')};
 
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
-  :read-only {
-    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  }
 
   text-transform: ${({ transform }) => transform};
 
@@ -127,7 +130,43 @@ export const Input = styled.input<I.InputStyle>`
   }
 `;
 
-export const Toggle = styled.span<I.InputStyle>`
+export const Datalist = styled.span<I.SelectSearchStyle>`
+  display: ${({ datalistView }) => datalistView};
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  border: 2px solid black;
+  border-top: none;
+
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  ${({ filteredOptions }) =>
+    filteredOptions === 0 &&
+    css`
+      border-bottom: none;
+    `}
+
+  overflow: hidden;
+
+  background-color: white;
+  z-index: 100;
+`;
+
+export const Option = styled.p`
+  padding: 10px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  :hover {
+    background-color: ${colors.forms?.hover};
+    cursor: pointer;
+  }
+`;
+
+export const Toggle = styled.span<I.SelectSearchStyle>`
   all: unset;
   cursor: ${({ isLoading }) => (!isLoading ? 'pointer' : 'not-allowed')};
   padding-right: 5px;
@@ -142,15 +181,16 @@ export const Toggle = styled.span<I.InputStyle>`
   align-items: center;
 `;
 
-export const ClosedEye = styled(AiFillEyeInvisible)`
-  ${defaultIconsstyle};
-`;
-
-export const OpenedEye = styled(AiFillEye)`
-  ${defaultIconsstyle}
-`;
-
 export const ClearInput = styled(AiOutlineClose)`
   ${defaultIconsstyle}
 `;
+
+export const ArrowDown = styled(IoIosArrowDown)`
+  ${defaultIconsstyle}
+`;
+
+export const ArrowUp = styled(IoIosArrowUp)`
+  ${defaultIconsstyle}
+`;
+
 export const Loading = styled(ClipLoader)``;

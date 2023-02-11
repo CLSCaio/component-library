@@ -6,14 +6,14 @@ import * as yup from 'yup';
 import { Input, InputProps } from '@components';
 
 const error = {
-  input: 'Escreva algo no input!',
+  input: 'Write something in the input.',
 };
 
 const validationSchema = yup.object().shape({
   input: yup
     .string()
-    .min(2, 'Minimo de 2 caracteres.')
-    .max(20, 'Maximo de 20 caracteres.')
+    .min(2)
+    .max(20)
     .test('input', error.input, (value: any) => {
       if (value) {
         return value.trim().length >= 1;
@@ -48,6 +48,7 @@ export const Overview: Story<InputProps> = args => {
 
 Overview.args = {
   name: 'input',
+  handleClean: true,
   label: {
     name: 'Label input!',
     position: 'top',
