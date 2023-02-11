@@ -56,7 +56,6 @@ export const parameters = {
       order: [
         "Welcome",
         "change-log",
-        "change-log-QA",
         "change-log-OLD",
         "Foundations",
         "Actions",
