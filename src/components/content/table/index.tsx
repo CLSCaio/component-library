@@ -52,15 +52,15 @@ export const Table = ({
 
   return list.length < titles.length ? (
     <S.Container size={size}>
-      <S.Table id="eventWheel" onWheel={e => eventWheel()} store={store}>
+      <S.Table id="eventWheel" onWheel={eventWheel} store={store}>
         <S.Thead store={store}>
           <S.Tr>
-            {titles.map(title => (
+            {titles.map((title, i) => (
               <S.Th
+                key={`table-title-${+i}`}
                 width={title?.width}
                 textAlign={title?.textAlign || globalTextAlign}
                 transform={title?.textTransform}
-                key={`table-title-${title?.name}`}
                 size={size}
               >
                 {title?.name}
@@ -81,20 +81,20 @@ export const Table = ({
 
           return (
             <S.Tbody
+              key={`table-row-${+i}`}
               withHover={withHover}
               withDivider={withDivider}
               id={`table-row-${+i}`}
-              key={`table-row-${+i}`}
               color={withDivider ? changeDivider : ''}
             >
               <S.Tr>
                 {rows.map((content, indice) => (
                   <S.Td
+                    key={`table-row-content-${+indice}`}
                     id={`table-row-content-${+indice}`}
                     width={titles[indice].width}
                     textAlign={titles[indice].textAlign || globalTextAlign}
                     transform={titles[indice].textTransform}
-                    key={`table-row-content-${+indice}`}
                   >
                     {content}
                   </S.Td>

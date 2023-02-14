@@ -142,7 +142,7 @@ export const Select = ({
             <S.Datalist datalistView={datalistView}>
               {options.map((option, i) => (
                 <S.Option
-                  key={`${option.value}-${+i}`}
+                  key={`select-option${+i}`}
                   onClick={() => setSelectValue(option.value)}
                 >
                   {option.value}

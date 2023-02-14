@@ -44,3 +44,8 @@
 - Improving select to make it look like selectSearch
 - Adjusting components stories
 
+### dia 02/14/23
+## Versão 0.0.11 - 0.0.12
+### Refactor
+- General code improvements
+

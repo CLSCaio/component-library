@@ -16,14 +16,22 @@ export const FormProvider = <Type extends {}>({
   form,
 }: I.FormProviderProps<Type>) => (
   <FormikProvider {...form}>
-    {components.map(({ as, options, ...rest }) => (
+    {components.map(({ as, options, ...rest }, i) => (
       <>
-        {as === 'input' && <Input key={rest.name} {...rest} />}
+        {as === 'input' && <Input key={`formProvider-input${+i}`} {...rest} />}
         {as === 'select' && (
-          <Select key={rest.name} {...rest} options={options || []} />
+          <Select
+            key={`formProvider-select${+i}`}
+            {...rest}
+            options={options || []}
+          />
         )}
         {as === 'selectSearch' && (
-          <SelectSearch key={rest.name} {...rest} options={options || []} />
+          <SelectSearch
+            key={`formProvider-selectSearch${+i}`}
+            {...rest}
+            options={options || []}
+          />
         )}
       </>
     ))}

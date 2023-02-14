@@ -28,13 +28,13 @@ export const Accordion = ({
 
   return list ? (
     <S.Container maxW={maxW}>
-      {list.map(({ title, description, isInnerHtml, children, id }) => {
+      {list.map(({ title, description, isInnerHtml, children, id }, i) => {
         const validTitle = title.replace(/[' ']/g, '-').toLowerCase();
         const validId = id || validTitle;
 
         return (
           <S.Panel
-            key={`accordion-${validId}`}
+            key={`accordion-panel-${+i}`}
             variant={variant}
             bgColor={bgColor}
           >

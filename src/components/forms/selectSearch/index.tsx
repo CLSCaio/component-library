@@ -172,7 +172,7 @@ export const SelectSearch = ({
             >
               {filteredOptions.map((option, i) => (
                 <S.Option
-                  key={`${option.value}-${+i}`}
+                  key={`selectSearch-option${+i}`}
                   onClick={() => setSelectValue(option.value)}
                 >
                   {option.value}
