@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import { colors } from '@global';
 import { Modal } from '@components';
-import { colors_config } from '@config';
 
 import * as I from './interface';
 import * as S from './styles';
@@ -15,7 +14,6 @@ export const Table = ({
   globalTextAlign,
   withHover,
 }: I.TableProps) => {
-  const { store } = colors_config();
   const [tableList, setTableList] = useState<any[][]>([]);
 
   const elem = document.getElementById('eventWheel');
@@ -52,8 +50,8 @@ export const Table = ({
 
   return list.length < titles.length ? (
     <S.Container size={size}>
-      <S.Table id="eventWheel" onWheel={eventWheel} store={store}>
-        <S.Thead store={store}>
+      <S.Table id="eventWheel" onWheel={eventWheel}>
+        <S.Thead>
           <S.Tr>
             {titles.map((title, i) => (
               <S.Th
@@ -73,10 +71,10 @@ export const Table = ({
           const changeDivider =
             withDivider === 'pair'
               ? i % 2 === 0
-                ? store?.table?.separator || colors.table?.separator
+                ? colors.secundary
                 : ''
               : (i + 1) % 2 === 0
-              ? store?.table?.separator || colors.table?.separator
+              ? colors.secundary
               : '';
 
           return (

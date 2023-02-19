@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useField } from 'formik';
 
-import { colors_config } from '@config';
 import * as C from '@components';
 
 import { colors } from '@global';
@@ -24,7 +23,6 @@ export const SelectSearch = ({
   label,
   ...rest
 }: I.SelectSearchProps) => {
-  const { store } = colors_config();
   const [field, meta, helpers] = useField(rest);
 
   const [error, setError] = useState(false);
@@ -125,7 +123,6 @@ export const SelectSearch = ({
         {label?.name && (
           <C.Group gap={[10, 10]} align="center" maxW="maxContent">
             <S.Label
-              store={store}
               htmlFor={rest.name}
               disabled={disabled || readOnly || isLoading}
               error={errorStyle}
@@ -142,21 +139,19 @@ export const SelectSearch = ({
         )}
 
         <S.Field
-          store={store}
           datalistView={datalistView}
           border={border}
           disabled={disabled || readOnly || isLoading}
           error={errorStyle}
           positionLabel={label?.position}
         >
-          <S.Select
+          <S.SelectSearch
             {...field}
             onKeyUp={onKeyUp}
             autoComplete="off"
             border={border}
             onFocus={() => setDatalistView('block')}
             onBlur={onBlur}
-            store={store}
             placeholder={placeholder}
             transform={transform}
             disabled={disabled || readOnly || isLoading}
@@ -180,7 +175,10 @@ export const SelectSearch = ({
               ))}
             </S.Datalist>
           )}
-          <S.Toggle isLoading={isLoading} border={border}>
+          <S.Toggle
+            disabled={disabled || readOnly || isLoading}
+            border={border}
+          >
             {isLoading && <S.Loading color={colors.black} size={20} />}
 
             {!isLoading && handleClean && (

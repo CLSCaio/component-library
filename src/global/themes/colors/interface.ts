@@ -1,48 +1,36 @@
-type TOthers = {
-  [key: string]: `#${string}`;
-};
-
 export interface ColorsProps {
-  primary?: `#${string}`;
-  secundary?: `#${string}`;
+  primary: `#${string}`;
+  secundary: `#${string}`;
 
-  disabled?: `#${string}`;
+  transparent: 'rgba(0, 0, 0, 0.6)' | 'rgba(255, 255, 255, 0.7)';
+  black: '#000000' | '#1b1e23' | '#202020';
+  white: '#ffffff' | '#F5F5F5' | '#E6E6E6';
 
-  transparent?: 'rgba(0, 0, 0, 0.6)' | 'rgba(255, 255, 255, 0.7)';
-  black?: '#000000' | '#1b1e23' | '#202020';
-  white?: '#ffffff' | '#F5F5F5' | '#E6E6E6';
-
-  text?: TOthers;
-  others?: TOthers;
-
-  button?: {
-    primary?: `#${string}`;
-    secundary?: `#${string}`;
-    floating?: `#${string}`;
-    shadow?: `#${string}`;
+  support: {
+    error: `#${string}`;
+    warning: `#${string}`;
+    sucess: `#${string}`;
+    disabled: `#${string}`;
   };
 
-  link?: {
-    primary?: `#${string}`;
-    hover?: `#${string}`;
+  text: {
+    1: `#${string}`;
+    2: `#${string}`;
+    3: `#${string}`;
+    4: `#${string}`;
+    5: `#${string}`;
+    6: `#${string}`;
   };
 
-  table?: {
-    primary?: `#${string}`;
-    separator?: `#${string}`;
-    border?: `#${string}`;
-  };
-
-  forms?: {
-    primary?: `#${string}`;
-    border?: `#${string}`;
-    focus?: `#${string}`;
-    hover?: `#${string}`;
-  };
-
-  support?: {
-    error?: `#${string}`;
-    warning?: `#${string}`;
-    sucess?: `#${string}`;
+  others: {
+    1: `#${string}`;
+    2: `#${string}`;
+    3: `#${string}`;
+    4: `#${string}`;
+    5: `#${string}`;
+    6: `#${string}`;
+    7: `#${string}`;
+    8: `#${string}`;
+    9: `#${string}`;
   };
 }

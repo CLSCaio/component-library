@@ -8,8 +8,19 @@ import { colors, fonts } from '@global';
 
 import * as I from './interface';
 
-const defaultIconsstyle = css`
-  fill: ${colors.forms?.primary};
+const colorStyle = css<I.SelectSearchStyle>`
+  ${({ error, disabled }) =>
+    !error && !disabled
+      ? colors.primary
+      : error
+      ? colors.support?.error
+      : colors.support.disabled}
+`;
+
+const defaultIconStyle = css<I.SelectSearchStyle>`
+  color: ${colors.black};
+  width: ${fonts.sizes.medium};
+  height: ${fonts.sizes.medium};
 `;
 
 export const Container = styled.div<I.SelectSearchStyle>`
@@ -22,12 +33,8 @@ export const Container = styled.div<I.SelectSearchStyle>`
 `;
 
 export const Label = styled.label<I.SelectSearchStyle>`
-  color: ${({ disabled, error, store }) =>
-    disabled
-      ? store?.disabled || colors.disabled
-      : error
-      ? store?.support?.error || colors.support?.error
-      : store?.forms?.primary || colors.forms?.primary};
+  color: ${colors.primary};
+  font-size: ${fonts.sizes.default};
 
   ${({ boldLabel }) =>
     boldLabel &&
@@ -49,65 +56,37 @@ export const Field = styled.span<I.SelectSearchStyle>`
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
 
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
+  :read-only {
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  }
 
-  :focus {
-    ${({ border, store }) =>
-      border && border === 'outline'
-        ? `
-        border-radius: 8px;
-        border: 2px solid ${store?.forms?.focus || colors.forms?.focus}`
-        : `
-      border-bottom: 2px solid ${store?.forms?.focus || colors.forms?.focus};
-  `};
+  ${({ border }) =>
+    border && border === 'outline'
+      ? css`
+          border-radius: 8px;
+          border: 2px solid ${colorStyle};
+        `
+      : css`
+          border: none;
+          border-bottom: 2px solid ${colorStyle};
+        `};
+
+  :hover {
+    border-color: ${colors.secundary};
   }
 
   :disabled {
-    ${({ border, store }) =>
-      border && border === 'outline'
-        ? `
-        border-radius: 8px;
-        border: 2px solid ${store?.disabled || colors.disabled}`
-        : `
-      border-bottom: 2px solid ${store?.disabled || colors.disabled};
-  `};
+    border-color: ${colors.support.disabled};
   }
-
-  ${({ disabled, error, border, store }) =>
-    border && border === 'outline'
-      ? `
-        border-radius: 5px;
-        border: 2px solid ${
-          disabled
-            ? store?.disabled || colors.disabled
-            : error
-            ? store?.support?.error || colors.support?.error
-            : store?.forms?.primary || colors.forms?.primary
-        }`
-      : `
-        border: none;
-        border-bottom: 2px solid
-
-        ${
-          disabled
-            ? store?.disabled || colors.disabled
-            : error
-            ? store?.support?.error || colors.support?.error
-            : store?.forms?.primary || colors.forms?.primary
-        }
-  `};
-
-  ${({ datalistView }) =>
-    datalistView &&
-    datalistView === 'block' &&
-    css`
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    `}
 `;
 
-export const Select = styled.input<I.SelectSearchStyle>`
+export const SelectSearch = styled.input<I.SelectSearchStyle>`
   outline: none;
   text-indent: 4px;
+  font-size: ${fonts.sizes.default};
+  color: ${colors.black};
+
+  background: none;
 
   white-space: nowrap;
   overflow: hidden;
@@ -116,17 +95,12 @@ export const Select = styled.input<I.SelectSearchStyle>`
   width: calc(100% - 50px);
   border: none;
 
+  text-transform: ${({ transform }) => transform};
   padding: ${({ border }) => (border === 'outline' ? '7px 0' : '0 0 7px 0')};
 
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
-
-  text-transform: ${({ transform }) => transform};
-
-  :placeholder {
-    color: ${({ disabled, store }) =>
-      disabled
-        ? store?.disabled || colors.disabled
-        : store?.forms?.primary || colors.forms?.primary};
+  :read-only {
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   }
 `;
 
@@ -138,9 +112,17 @@ export const Datalist = styled.span<I.SelectSearchStyle>`
   width: 100%;
   border: 2px solid black;
   border-top: none;
+  height: auto;
+  max-height: 200px;
 
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-color: white;
+  z-index: 100;
 
   ${({ filteredOptions }) =>
     filteredOptions === 0 &&
@@ -148,10 +130,14 @@ export const Datalist = styled.span<I.SelectSearchStyle>`
       border-bottom: none;
     `}
 
-  overflow: hidden;
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: ${colors.primary};
+  }
 
-  background-color: white;
-  z-index: 100;
+  ::-webkit-scrollbar-thumb {
+    background: ${colors.secundary};
+  }
 `;
 
 export const Option = styled.p`
@@ -161,14 +147,14 @@ export const Option = styled.p`
   text-overflow: ellipsis;
 
   :hover {
-    background-color: ${colors.forms?.hover};
+    background-color: ${colors.secundary};
     cursor: pointer;
   }
 `;
 
 export const Toggle = styled.span<I.SelectSearchStyle>`
   all: unset;
-  cursor: ${({ isLoading }) => (!isLoading ? 'pointer' : 'not-allowed')};
+  cursor: ${({ disabled }) => (!disabled ? 'pointer' : 'not-allowed')};
   padding-right: 5px;
 
   ${({ border }) =>
@@ -182,15 +168,15 @@ export const Toggle = styled.span<I.SelectSearchStyle>`
 `;
 
 export const ClearInput = styled(AiOutlineClose)`
-  ${defaultIconsstyle}
+  ${defaultIconStyle}
 `;
 
 export const ArrowDown = styled(IoIosArrowDown)`
-  ${defaultIconsstyle}
+  ${defaultIconStyle}
 `;
 
 export const ArrowUp = styled(IoIosArrowUp)`
-  ${defaultIconsstyle}
+  ${defaultIconStyle}
 `;
 
 export const Loading = styled(ClipLoader)``;

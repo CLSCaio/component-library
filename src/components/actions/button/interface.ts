@@ -1,4 +1,3 @@
-import { ColorsProps } from '@global';
 import { TbuttonVariants, Tsize, TbuttonTypes } from '@types';
 import { IconType } from 'react-icons';
 
@@ -12,9 +11,7 @@ export interface ButtonProps extends ButtonDefaultStyle {
   onClick?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export interface ButtonStyle extends ButtonDefaultStyle {
-  user_colors?: ColorsProps | null;
-}
+export type ButtonStyle = ButtonDefaultStyle;
 
 export interface ButtonDefaultStyle {
   variant?: TbuttonVariants;

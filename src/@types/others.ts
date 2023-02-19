@@ -22,5 +22,5 @@ export type THeaderBarDefaultProps = {
 export type TFormikProps<Type> = {
   onSubmit: (values: Type) => void | Promise<void>;
   initialValues: Type;
-  validationSchema: yup.ObjectSchema<ObjectShape>;
+  validationSchema?: yup.ObjectSchema<ObjectShape>;
 };

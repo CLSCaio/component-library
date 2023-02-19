@@ -1,7 +1,5 @@
 import { TlinkTypes, TlinkVariants, THref } from '@types';
 
-import { ColorsProps } from '@global';
-
 export interface LinkProps {
   href: THref;
   target?: '_target' | '_self' | '_top' | '_parent';
@@ -12,5 +10,4 @@ export interface LinkProps {
 }
 export interface LinkStyles {
   variant?: TlinkVariants;
-  store?: ColorsProps | null;
 }

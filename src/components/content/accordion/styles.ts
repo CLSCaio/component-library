@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors } from '@global';
+import { colors, fonts } from '@global';
 
 import * as C from './content';
 import * as I from './interface';
@@ -48,7 +48,11 @@ export const PanelHead = styled.span<I.AccordionStyles>`
   }
 `;
 
-export const Title = styled.h3``;
+export const Title = styled.h2`
+  font-size: ${fonts.sizes.large};
+  font-weight: ${fonts.weights.bold};
+  color: ${colors.primary};
+`;
 
 export const Text = styled.span<I.AccordionStyles>`
   padding: 13px 18px;
@@ -63,4 +67,6 @@ export const Text = styled.span<I.AccordionStyles>`
 
 export const Desc = styled.p`
   width: 100%;
+  font-size: ${fonts.sizes.default};
+  color: ${colors.primary};
 `;

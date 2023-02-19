@@ -3,7 +3,6 @@ import ClipLoader from 'react-spinners/ClipLoader';
 
 import { Description } from '@components';
 
-import { useConfig } from '@config';
 import * as C from './content';
 import * as I from './interface';
 import * as S from './styles';

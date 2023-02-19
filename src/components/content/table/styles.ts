@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors } from '@global';
+import { colors, fonts } from '@global';
 import { convertTextAlign, convertSize } from '@convert';
 
 import * as I from './interface';
@@ -16,8 +16,7 @@ export const Table = styled.table<I.TableStyles>`
   width: 100%;
   max-width: max-content;
 
-  border: 1px solid
-    ${({ store }) => store?.table?.border || colors.table?.border};
+  border: 1px solid ${colors.secundary};
 
   overflow-x: hidden;
 
@@ -26,8 +25,7 @@ export const Table = styled.table<I.TableStyles>`
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: ${({ store }) =>
-      store?.table?.primary || colors.table?.primary};
+    background: ${colors.primary};
   }
 
   :hover {
@@ -38,11 +36,9 @@ export const Table = styled.table<I.TableStyles>`
 
 export const Thead = styled.thead<I.TableStyles>`
   width: max-content;
-  background-color: ${({ store }) =>
-    store?.table?.primary || colors.table?.primary};
+  background-color: ${colors.primary};
   padding: 15px;
-  border-bottom: 1px solid
-    ${({ store }) => store?.table?.border || colors.table?.border};
+  border-bottom: 1px solid ${colors.secundary};
 `;
 
 export const Tr = styled.tr`
@@ -54,15 +50,18 @@ export const Th = styled.th<I.TableStyles>`
   display: flex;
   align-items: center;
   width: ${({ width }) => (width ? `${width}px` : '170px')};
+  color: ${colors.white};
   text-transform: ${({ transform }) => transform};
   ${({ textAlign }) => convertTextAlign(textAlign)};
+
+  font-size: ${fonts.sizes.medium};
+  font-weight: ${fonts.weights.semiBold};
 `;
 
 export const Tbody = styled.tbody<I.TableStyles>`
   width: max-content;
   padding: 15px;
-  border-bottom: 1px solid
-    ${({ store }) => store?.table?.border || colors.table?.border};
+  border-bottom: 1px solid ${colors.secundary};
   background-color: ${({ color, withDivider }) => withDivider && color};
 
   ${({ withHover }) =>
@@ -85,4 +84,6 @@ export const Td = styled.td<I.TableStyles>`
   text-transform: ${({ transform }) => transform};
 
   ${({ textAlign }) => convertTextAlign(textAlign)};
+
+  font-size: ${fonts.sizes.default};
 `;

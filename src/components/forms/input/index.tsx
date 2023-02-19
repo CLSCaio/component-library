@@ -3,7 +3,6 @@ import { useField } from 'formik';
 
 import { mask as masker, unMask } from 'ts-remask';
 
-import { colors_config } from '@config';
 import { colors } from '@global';
 import * as C from '@components';
 
@@ -27,7 +26,6 @@ export const Input = ({
   isLoading,
   ...rest
 }: I.InputProps) => {
-  const { store } = colors_config();
   const [field, meta, helpers] = useField(rest);
 
   const [inputType, setInputType] = useState(type || 'text');
@@ -88,7 +86,6 @@ export const Input = ({
         {label?.name && (
           <C.Group gap={[10, 10]} align="center" maxW="maxContent">
             <S.Label
-              store={store}
               htmlFor={rest.name}
               disabled={disabled || readOnly || isLoading}
               error={errorStyle}
@@ -105,7 +102,6 @@ export const Input = ({
         )}
 
         <S.Field
-          store={store}
           disabled={disabled || readOnly || isLoading}
           error={errorStyle}
           positionLabel={label?.position}
@@ -123,19 +119,19 @@ export const Input = ({
             onPaste={e => type === 'password' && e.preventDefault()}
             autoComplete={autoComplete}
           />
-          <S.Toggle isLoading={isLoading}>
-            {isLoading && <S.Loading color={colors.black} size={20} />}
+          <S.Toggle disabled={disabled || readOnly || isLoading}>
+            {isLoading && <S.Loading color={colors.primary} />}
 
             {!isLoading && handleClean && (
-              <S.ClearInput size={20} onClick={handleClearInput} />
+              <S.HandleClean onClick={handleClearInput} />
             )}
 
             {!isLoading &&
               type === 'password' &&
               (inputType === 'password' ? (
-                <S.ClosedEye size={20} onClick={handleInputPassword} />
+                <S.ClosedEye onClick={handleInputPassword} />
               ) : (
-                <S.OpenedEye size={20} onClick={handleInputPassword} />
+                <S.OpenedEye onClick={handleInputPassword} />
               ))}
           </S.Toggle>
         </S.Field>

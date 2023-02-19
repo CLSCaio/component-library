@@ -3,12 +3,16 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import NextLink from 'next/link';
 
+import { fonts } from '@global';
+
 import * as C from './content';
 import * as I from './interface';
 
-export const globalStyles = ({ store, variant }: I.LinkStyles) => css`
-  ${C.defaultStyle({ store })};
-  ${C.customStyles({ variant, store })};
+export const globalStyles = ({ variant }: I.LinkStyles) => css`
+  ${C.defaultStyle()};
+  ${C.customStyles({ variant })};
+  font-size: ${fonts.sizes.large};
+  font-weight: ${fonts.weights.medium};
 `;
 
 export const Container = styled.span`
@@ -21,13 +25,13 @@ export const Container = styled.span`
 `;
 
 export const To = styled(Link)<I.LinkStyles>`
-  ${({ variant, store }) => globalStyles({ variant, store })};
+  ${({ variant }) => globalStyles({ variant })};
 `;
 
 export const Href = styled.a<I.LinkStyles>`
-  ${({ variant, store }) => globalStyles({ variant, store })};
+  ${({ variant }) => globalStyles({ variant })};
 `;
 
 export const NLink = styled(NextLink)<I.LinkStyles>`
-  ${({ variant, store }) => globalStyles({ variant, store })};
+  ${({ variant }) => globalStyles({ variant })};
 `;

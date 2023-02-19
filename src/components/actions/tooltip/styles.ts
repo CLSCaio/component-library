@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors } from '@global';
+import { colors, fonts } from '@global';
 import { mediaQuery } from '@hooks';
 
 import * as I from './interface';
@@ -125,7 +125,7 @@ export const Container = styled.div<I.TooltipStyles>`
       }
 
       * {
-        color: ${colors.disabled};
+        color: ${colors.support.disabled};
       }
     `}
 `;
@@ -138,6 +138,8 @@ export const Description = styled.p<I.TooltipStyles>`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-size: ${fonts.sizes.default};
 
   position: absolute;
 

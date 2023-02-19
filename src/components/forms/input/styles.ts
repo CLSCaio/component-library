@@ -7,8 +7,19 @@ import { colors, fonts } from '@global';
 
 import * as I from './interface';
 
-const defaultIconsstyle = css`
-  fill: ${colors.forms?.primary};
+const colorStyle = css<I.InputStyle>`
+  ${({ error, disabled }) =>
+    !error && !disabled
+      ? colors.primary
+      : error
+      ? colors.support?.error
+      : colors.support.disabled}
+`;
+
+const defaultIconStyle = css<I.InputStyle>`
+  color: ${colors.black};
+  width: ${fonts.sizes.medium};
+  height: ${fonts.sizes.medium};
 `;
 
 export const Container = styled.div<I.InputStyle>`
@@ -21,12 +32,8 @@ export const Container = styled.div<I.InputStyle>`
 `;
 
 export const Label = styled.label<I.InputStyle>`
-  color: ${({ disabled, error, store }) =>
-    disabled
-      ? store?.disabled || colors.disabled
-      : error
-      ? store?.support?.error || colors.support?.error
-      : store?.forms?.primary || colors.forms?.primary};
+  color: ${colors.primary};
+  font-size: ${fonts.sizes.default};
 
   ${({ boldLabel }) =>
     boldLabel &&
@@ -52,56 +59,33 @@ export const Field = styled.span<I.InputStyle>`
     cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   }
 
-  :focus {
-    ${({ border, store }) =>
-      border && border === 'outline'
-        ? `
-        border-radius: 8px;
-        border: 2px solid ${store?.forms?.focus || colors.forms?.focus}`
-        : `
-      border-bottom: 2px solid ${store?.forms?.focus || colors.forms?.focus};
-  `};
+  ${({ border }) =>
+    border && border === 'outline'
+      ? css`
+          border-radius: 8px;
+          border: 2px solid ${colorStyle};
+        `
+      : css`
+          border: none;
+          border-bottom: 2px solid ${colorStyle};
+        `};
+
+  :hover {
+    border-color: ${colors.secundary};
   }
 
   :disabled {
-    ${({ border, store }) =>
-      border && border === 'outline'
-        ? `
-        border-radius: 8px;
-        border: 2px solid ${store?.disabled || colors.disabled}`
-        : `
-      border-bottom: 2px solid ${store?.disabled || colors.disabled};
-  `};
+    border-color: ${colors.support.disabled};
   }
-
-  ${({ disabled, error, border, store }) =>
-    border && border === 'outline'
-      ? `
-        border-radius: 5px;
-        border: 2px solid ${
-          disabled
-            ? store?.disabled || colors.disabled
-            : error
-            ? store?.support?.error || colors.support?.error
-            : store?.forms?.primary || colors.forms?.primary
-        }`
-      : `
-        border: none;
-        border-bottom: 2px solid
-
-        ${
-          disabled
-            ? store?.disabled || colors.disabled
-            : error
-            ? store?.support?.error || colors.support?.error
-            : store?.forms?.primary || colors.forms?.primary
-        }
-  `};
 `;
 
 export const Input = styled.input<I.InputStyle>`
   outline: none;
   text-indent: 4px;
+  font-size: ${fonts.sizes.default};
+  color: ${colors.black};
+
+  background: none;
 
   white-space: nowrap;
   overflow: hidden;
@@ -110,26 +94,18 @@ export const Input = styled.input<I.InputStyle>`
   width: calc(100% - 50px);
   border: none;
 
+  text-transform: ${({ transform }) => transform};
   padding: ${({ border }) => (border === 'outline' ? '7px 0' : '0 0 7px 0')};
 
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
   :read-only {
     cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   }
-
-  text-transform: ${({ transform }) => transform};
-
-  :placeholder {
-    color: ${({ disabled, store }) =>
-      disabled
-        ? store?.disabled || colors.disabled
-        : store?.forms?.primary || colors.forms?.primary};
-  }
 `;
 
 export const Toggle = styled.span<I.InputStyle>`
   all: unset;
-  cursor: ${({ isLoading }) => (!isLoading ? 'pointer' : 'not-allowed')};
+  cursor: ${({ disabled }) => (!disabled ? 'pointer' : 'not-allowed')};
   padding-right: 5px;
 
   ${({ border }) =>
@@ -143,14 +119,14 @@ export const Toggle = styled.span<I.InputStyle>`
 `;
 
 export const ClosedEye = styled(AiFillEyeInvisible)`
-  ${defaultIconsstyle};
+  ${defaultIconStyle};
 `;
 
 export const OpenedEye = styled(AiFillEye)`
-  ${defaultIconsstyle}
+  ${defaultIconStyle}
 `;
 
-export const ClearInput = styled(AiOutlineClose)`
-  ${defaultIconsstyle}
+export const HandleClean = styled(AiOutlineClose)`
+  ${defaultIconStyle}
 `;
 export const Loading = styled(ClipLoader)``;

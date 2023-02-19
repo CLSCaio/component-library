@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { fonts } from '../global';
-
 export const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;
@@ -10,12 +8,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 11px;
+    font-size: 12px;
     width: 100%;
     height: 100%;
-    
+
     @media (min-width: 500px) {
-      font-size: 13px;
+      font-size: 14px;
     }
 
     @media (min-width: 1080px) {
@@ -35,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+
   body {
     margin: 20px;
   }
@@ -49,28 +48,5 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
   }
 
-  h1 {
-    font-size: ${fonts.sizes.xLarge};
-    font-weight: ${fonts.weights.black};
-  }
 
-  h2, button {
-    font-size: ${fonts.sizes.large};
-    font-weight: ${fonts.weights.bold};
-  }
-
-  a, h3 {
-    font-size: ${fonts.sizes.medium};
-    font-weight: ${fonts.weights.bold};
-  }
-
-  h4, p, li, ul, span, input, label, select, td, th {
-    font-size: ${fonts.sizes.default};
-    font-weight: ${fonts.weights.regular};
-  }
-
-  h5 {
-    font-size: ${fonts.sizes.small};
-    font-weight: ${fonts.weights.light};
-  }
 `;

@@ -1,4 +1,3 @@
-import { ColorsProps } from '@global';
 import {
   InputProps,
   InputSelectDefaultExtends,
@@ -8,9 +7,7 @@ import {
 type InputStyleExtends = InputSelectDefaultExtends &
   InputSelectDefaultStylesExtends;
 
-export interface InputStyle extends InputStyleExtends {
-  store?: ColorsProps | null;
-}
+export type InputStyle = InputStyleExtends;
 
 export const widths = {
   block: '100%',

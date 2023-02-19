@@ -1,4 +1,3 @@
-import { ColorsProps } from '@global';
 import {
   OptionsSelectAndSelectSearchProps,
   SelectProps,
@@ -10,7 +9,6 @@ type SelectStyleExtends = InputSelectDefaultExtends &
   InputSelectDefaultStylesExtends;
 
 export interface SelectStyle extends SelectStyleExtends {
-  store?: ColorsProps | null;
   datalistView?: 'block' | 'none';
 }
 

@@ -8,8 +8,19 @@ import { colors, fonts } from '@global';
 
 import * as I from './interface';
 
-const defaultIconsstyle = css`
-  fill: ${colors.forms?.primary};
+const colorStyle = css<I.SelectStyle>`
+  ${({ error, disabled }) =>
+    !error && !disabled
+      ? colors.primary
+      : error
+      ? colors.support?.error
+      : colors.support.disabled}
+`;
+
+const defaultIconStyle = css<I.SelectStyle>`
+  color: ${colors.black};
+  width: ${fonts.sizes.medium};
+  height: ${fonts.sizes.medium};
 `;
 
 export const Container = styled.div<I.SelectStyle>`
@@ -22,12 +33,8 @@ export const Container = styled.div<I.SelectStyle>`
 `;
 
 export const Label = styled.label<I.SelectStyle>`
-  color: ${({ disabled, error, store }) =>
-    disabled
-      ? store?.disabled || colors.disabled
-      : error
-      ? store?.support?.error || colors.support?.error
-      : store?.forms?.primary || colors.forms?.primary};
+  color: ${colors.primary};
+  font-size: ${fonts.sizes.default};
 
   ${({ boldLabel }) =>
     boldLabel &&
@@ -53,64 +60,33 @@ export const Field = styled.span<I.SelectStyle>`
     cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   }
 
-  :focus {
-    ${({ border, store }) =>
-      border && border === 'outline'
-        ? `
-        border-radius: 8px;
-        border: 2px solid ${store?.forms?.focus || colors.forms?.focus}`
-        : `
-      border-bottom: 2px solid ${store?.forms?.focus || colors.forms?.focus};
-  `};
+  ${({ border }) =>
+    border && border === 'outline'
+      ? css`
+          border-radius: 8px;
+          border: 2px solid ${colorStyle};
+        `
+      : css`
+          border: none;
+          border-bottom: 2px solid ${colorStyle};
+        `};
+
+  :hover {
+    border-color: ${colors.secundary};
   }
 
   :disabled {
-    ${({ border, store }) =>
-      border && border === 'outline'
-        ? `
-        border-radius: 8px;
-        border: 2px solid ${store?.disabled || colors.disabled}`
-        : `
-      border-bottom: 2px solid ${store?.disabled || colors.disabled};
-  `};
+    border-color: ${colors.support.disabled};
   }
-
-  ${({ disabled, error, border, store }) =>
-    border && border === 'outline'
-      ? `
-        border-radius: 5px;
-        border: 2px solid ${
-          disabled
-            ? store?.disabled || colors.disabled
-            : error
-            ? store?.support?.error || colors.support?.error
-            : store?.forms?.primary || colors.forms?.primary
-        }`
-      : `
-        border: none;
-        border-bottom: 2px solid
-
-        ${
-          disabled
-            ? store?.disabled || colors.disabled
-            : error
-            ? store?.support?.error || colors.support?.error
-            : store?.forms?.primary || colors.forms?.primary
-        }
-  `};
-
-  ${({ datalistView }) =>
-    datalistView &&
-    datalistView === 'block' &&
-    css`
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    `}
 `;
 
 export const Select = styled.input<I.SelectStyle>`
   outline: none;
   text-indent: 4px;
+  font-size: ${fonts.sizes.default};
+  color: ${colors.black};
+
+  background: none;
 
   white-space: nowrap;
   overflow: hidden;
@@ -119,20 +95,12 @@ export const Select = styled.input<I.SelectStyle>`
   width: calc(100% - 50px);
   border: none;
 
+  text-transform: ${({ transform }) => transform};
   padding: ${({ border }) => (border === 'outline' ? '7px 0' : '0 0 7px 0')};
 
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
   :read-only {
     cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  }
-
-  text-transform: ${({ transform }) => transform};
-
-  :placeholder {
-    color: ${({ disabled, store }) =>
-      disabled
-        ? store?.disabled || colors.disabled
-        : store?.forms?.primary || colors.forms?.primary};
   }
 `;
 
@@ -145,13 +113,26 @@ export const Datalist = styled.span<I.SelectStyle>`
   border: 2px solid black;
   border-top: none;
 
+  height: auto;
+  max-height: 200px;
+
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   background-color: white;
   z-index: 100;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: ${colors.primary};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${colors.secundary};
+  }
 `;
 
 export const Option = styled.p`
@@ -161,14 +142,14 @@ export const Option = styled.p`
   text-overflow: ellipsis;
 
   :hover {
-    background-color: ${colors.forms?.hover};
+    background-color: ${colors.secundary};
     cursor: pointer;
   }
 `;
 
 export const Toggle = styled.span<I.SelectStyle>`
   all: unset;
-  cursor: ${({ isLoading }) => (!isLoading ? 'pointer' : 'not-allowed')};
+  cursor: ${({ disabled }) => (!disabled ? 'pointer' : 'not-allowed')};
   padding-right: 5px;
 
   ${({ border }) =>
@@ -182,15 +163,15 @@ export const Toggle = styled.span<I.SelectStyle>`
 `;
 
 export const ClearInput = styled(AiOutlineClose)`
-  ${defaultIconsstyle}
+  ${defaultIconStyle}
 `;
 
 export const ArrowDown = styled(IoIosArrowDown)`
-  ${defaultIconsstyle}
+  ${defaultIconStyle}
 `;
 
 export const ArrowUp = styled(IoIosArrowUp)`
-  ${defaultIconsstyle}
+  ${defaultIconStyle}
 `;
 
 export const Loading = styled(ClipLoader)``;
