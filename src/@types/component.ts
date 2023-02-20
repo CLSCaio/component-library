@@ -22,31 +22,34 @@ export interface InputSelectDefaultStylesExtends {
   boldLabel?: boolean;
 }
 
-export interface InputSelectDefaultExtends {
+export interface LabelProps {
+  name: string;
+  position?: TLabel;
+  bold?: boolean;
+  tooltip?: string;
+  required?: boolean;
+}
+
+export interface DefaultStylesProps {
   maxW?: Tsize;
-  transform?: TTransformType;
   disabled?: boolean;
   readOnly?: boolean;
   border?: TBordersType;
-  handleClean?: boolean;
   isLoading?: boolean;
+}
+
+export interface InputSelectDefaultExtends extends DefaultStylesProps {
+  handleClean?: boolean;
+  transform?: TTransformType;
 }
 
 interface InputSelectDefault extends InputSelectDefaultExtends {
   id?: string;
-  label?: {
-    name: string;
-    position?: TLabel;
-    bold?: boolean;
-    tooltip?: string;
-    required?: boolean;
-  };
-  name: string;
+  label?: LabelProps;
   placeholder?: string;
-  className?: string;
 }
 
-export interface InputProps extends InputSelectDefault {
+export interface InputDefaultProps extends InputSelectDefault {
   mask?: masks;
   autoComplete?: 'off' | 'on';
   type?: TInputTypes;
@@ -56,17 +59,45 @@ export type OptionsSelectAndSelectSearchProps = {
   value: string;
 };
 
-export interface SelectProps extends InputSelectDefault {
-  options: OptionsSelectAndSelectSearchProps[];
+export interface SelectDefaultProps extends InputSelectDefault {
+  options?: OptionsSelectAndSelectSearchProps[];
   errorMessage?: string;
 }
 
-export interface SelectSearchProps extends SelectProps {
+export interface SelectSearchDefaultProps extends SelectDefaultProps {
   forcedOption?: boolean;
   errorMessages?: [invalidOpção?: string, selectOption?: string];
 }
 
-export interface FormComponentsProps extends InputProps {
-  options?: OptionsSelectAndSelectSearchProps[];
-  as: 'input' | 'select' | 'selectSearch';
+export interface SliderRangeStylesExtends {
+  variant?: 'singleThumb' | 'doubleThumb';
+  position?:
+    | 'horizontal'
+    | 'horizontal-reverse'
+    | 'vertical'
+    | 'vertical-reverse';
+}
+
+type SliderRangePropsExtends = SliderRangeStylesExtends & DefaultStylesProps;
+
+export type SliderRangeStylesExtendsProps = InputSelectDefaultStylesExtends &
+  SliderRangePropsExtends;
+
+export interface SliderRangeDefaultProps extends SliderRangePropsExtends {
+  min?: number;
+  max?: number;
+  textMin?: string;
+  textMax?: string;
+  step?: 'default' | 'little' | 'very';
+  label?: LabelProps;
+  type?: 'number' | 'hour' | 'km' | 'money';
+}
+
+export interface FormComponentsProps {
+  as: 'input' | 'select' | 'selectSearch' | 'sliderRange';
+  name: [principal: string, secundary?: string];
+  inputProps?: InputDefaultProps;
+  sliderRangeProps?: SliderRangeDefaultProps;
+  selectProps?: SelectDefaultProps;
+  selectSearchProps?: SelectSearchDefaultProps;
 }

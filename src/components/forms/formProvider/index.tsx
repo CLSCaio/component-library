@@ -1,10 +1,11 @@
 import React from 'react';
 
 import {
-  Input,
   Button,
+  Input,
   Select,
   SelectSearch,
+  SliderRange,
   FormikProvider,
 } from '@components';
 
@@ -16,25 +17,50 @@ export const FormProvider = <Type extends {}>({
   form,
 }: I.FormProviderProps<Type>) => (
   <FormikProvider {...form}>
-    {components.map(({ as, options, ...rest }, i) => (
-      <>
-        {as === 'input' && <Input key={`formProvider-input${+i}`} {...rest} />}
-        {as === 'select' && (
-          <Select
-            key={`formProvider-select${+i}`}
-            {...rest}
-            options={options || []}
-          />
-        )}
-        {as === 'selectSearch' && (
-          <SelectSearch
-            key={`formProvider-selectSearch${+i}`}
-            {...rest}
-            options={options || []}
-          />
-        )}
-      </>
-    ))}
+    {components.map(
+      (
+        {
+          as,
+          name,
+          inputProps,
+          selectProps,
+          selectSearchProps,
+          sliderRangeProps,
+        },
+        i,
+      ) => (
+        <>
+          {as === 'input' && (
+            <Input
+              key={`formProvider-input-${+i}`}
+              name={name[0]}
+              {...inputProps}
+            />
+          )}
+          {as === 'select' && (
+            <Select
+              key={`formProvider-select-${+i}`}
+              name={name[0]}
+              {...selectProps}
+            />
+          )}
+          {as === 'selectSearch' && (
+            <SelectSearch
+              key={`formProvider-selectSearch-${+i}`}
+              name={name[0]}
+              {...selectSearchProps}
+            />
+          )}
+          {as === 'sliderRange' && (
+            <SliderRange
+              key={`formProvider-sliderRange-${+i}`}
+              name={[name[0], 'max']}
+              {...sliderRangeProps}
+            />
+          )}
+        </>
+      ),
+    )}
 
     <Button {...button} type="submit" />
   </FormikProvider>

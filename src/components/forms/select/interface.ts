@@ -1,6 +1,6 @@
 import {
   OptionsSelectAndSelectSearchProps,
-  SelectProps,
+  SelectDefaultProps,
   InputSelectDefaultExtends,
   InputSelectDefaultStylesExtends,
 } from '@types';
@@ -8,8 +8,12 @@ import {
 type SelectStyleExtends = InputSelectDefaultExtends &
   InputSelectDefaultStylesExtends;
 
+export interface SelectProps extends SelectDefaultProps {
+  name: string;
+}
+
 export interface SelectStyle extends SelectStyleExtends {
   datalistView?: 'block' | 'none';
 }
 
-export type { OptionsSelectAndSelectSearchProps, SelectProps };
+export type { OptionsSelectAndSelectSearchProps };

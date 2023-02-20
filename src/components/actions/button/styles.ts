@@ -173,8 +173,6 @@ export const Button = styled.button<I.ButtonStyle>`
 
   gap: 30px;
 
-  position: relative;
-
   font-size: ${fonts.sizes.large};
   font-weight: ${fonts.weights.bold};
 
@@ -264,21 +262,5 @@ export const Button = styled.button<I.ButtonStyle>`
 
   ${mediaQuery('medium')} {
     font-size: ${fonts.sizes.medium};
-  }
-`;
-
-export const IconBadge = styled.span<I.ButtonStyle>`
-  position: absolute;
-  z-index: 100;
-  top: 9px;
-  left: 20px;
-
-  svg {
-    color: ${({ variant }) =>
-      variant === 'outline' || variant === 'default'
-        ? colors.secundary
-        : colors.primary};
-    width: 25px;
-    height: 25px;
   }
 `;

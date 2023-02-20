@@ -20,11 +20,6 @@ export const Button = ({
   ...rest
 }: I.ButtonProps) => (
   <S.Container disabled={isLoading || disabled} variant={variant} {...rest}>
-    {Icon && !isLoading && variant !== 'floating' && variant !== 'pulse' && (
-      <S.IconBadge variant={variant}>
-        <Icon className="icon-cls-master-lib" />
-      </S.IconBadge>
-    )}
     <S.Button
       withShadow={withShadow}
       onClick={onClick}
@@ -35,9 +30,20 @@ export const Button = ({
       variant={variant}
       type={rest.type || 'submit'}
     >
+      {Icon && !isLoading && variant !== 'floating' && variant !== 'pulse' && (
+        <Icon
+          color={
+            variant === 'outline' || variant === 'default'
+              ? colors.secundary
+              : colors.primary
+          }
+          className="icon-cls-master-lib"
+          size={25}
+        />
+      )}
       {isLoading && !disabled ? (
         <Group justify="around" maxW="block">
-          <ClipLoader color={colors.primary} size={16} />
+          <ClipLoader color={colors.primary} size={25} />
         </Group>
       ) : (
         variant !== 'floating' && label

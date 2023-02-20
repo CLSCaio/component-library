@@ -18,7 +18,6 @@ export const Input = ({
   transform,
   readOnly,
   disabled,
-  className,
   handleClean,
   placeholder,
   border = 'inline',
@@ -60,7 +59,7 @@ export const Input = ({
   }, [meta.touched && meta.error]);
 
   return (
-    <S.Container maxW={maxW} className={className}>
+    <S.Container maxW={maxW}>
       <C.Group
         maxW="block"
         direction={

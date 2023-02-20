@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FormikProvider, useFormik } from 'formik';
 import { Meta, Story } from '@storybook/react';
 
@@ -35,7 +35,7 @@ export const Overview: Story<SelectSearchProps> = args => {
 
   return (
     <FormikProvider value={form}>
-      <form onSubmit={form.handleSubmit} style={{ width: '100%' }}>
+      <form onSubmit={form.handleSubmit}>
         <SelectSearch {...args} placeholder="Select a value..." />
       </form>
     </FormikProvider>

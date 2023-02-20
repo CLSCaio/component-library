@@ -11,7 +11,6 @@ export const SelectSearch = ({
   maxW = 'block',
   transform,
   readOnly,
-  className,
   placeholder,
   border = 'inline',
   handleClean,
@@ -30,12 +29,13 @@ export const SelectSearch = ({
 
   const [datalistView, setDatalistView] = useState<'block' | 'none'>('none');
 
-  const filteredOptions = !field?.value
+  const filteredOptions = !options
+    ? []
+    : !field?.value
     ? options
     : options.filter(({ value }) =>
         value.toUpperCase().includes(field.value?.toUpperCase()),
       );
-
   const handleClearInput = () => helpers.setValue('');
 
   const setSelectValue = (value: string) => {
@@ -61,7 +61,7 @@ export const SelectSearch = ({
   const returnTestValueFromOption = (
     event: React.FocusEvent<HTMLInputElement, Element>,
   ) =>
-    filteredOptions.forEach(({ value }) =>
+    filteredOptions?.forEach(({ value }) =>
       value !== field.value
         ? forcedOption &&
           helpers.setError(errorMessages?.[0] || 'select a valid value.')
@@ -69,7 +69,7 @@ export const SelectSearch = ({
     );
 
   const onKeyUp = () => {
-    if (!filteredOptions.length && forcedOption) verifyValueWithOptions();
+    if (!filteredOptions?.length && forcedOption) verifyValueWithOptions();
   };
 
   const onBlur = (event: React.FocusEvent<HTMLInputElement, Element>) => {
@@ -96,7 +96,7 @@ export const SelectSearch = ({
   }, [meta.error]);
 
   return (
-    <S.Container maxW={maxW} className={className}>
+    <S.Container maxW={maxW}>
       <C.Group
         pos={{ type: 'relative' }}
         maxW="block"
@@ -160,21 +160,25 @@ export const SelectSearch = ({
             data-gtm-name={label?.name}
           />
 
-          {!disabled && !readOnly && !isLoading && options.length > 0 && (
-            <S.Datalist
-              datalistView={datalistView}
-              filteredOptions={filteredOptions.length}
-            >
-              {filteredOptions.map((option, i) => (
-                <S.Option
-                  key={`selectSearch-option${+i}`}
-                  onClick={() => setSelectValue(option.value)}
-                >
-                  {option.value}
-                </S.Option>
-              ))}
-            </S.Datalist>
-          )}
+          {!disabled &&
+            !readOnly &&
+            !isLoading &&
+            options &&
+            options.length > 0 && (
+              <S.Datalist
+                datalistView={datalistView}
+                filteredOptions={filteredOptions.length}
+              >
+                {filteredOptions.map((option, i) => (
+                  <S.Option
+                    key={`selectSearch-option${+i}`}
+                    onClick={() => setSelectValue(option.value)}
+                  >
+                    {option.value}
+                  </S.Option>
+                ))}
+              </S.Datalist>
+            )}
           <S.Toggle
             disabled={disabled || readOnly || isLoading}
             border={border}

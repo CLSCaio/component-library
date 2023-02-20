@@ -34,7 +34,7 @@ export const Overview: Story<SelectProps> = args => {
   });
 
   return (
-    <form onSubmit={form.handleSubmit} style={{ width: '100%' }}>
+    <form onSubmit={form.handleSubmit}>
       <FormikProvider value={form}>
         <Select {...args} placeholder="Select a value..." />
       </FormikProvider>

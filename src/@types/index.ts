@@ -20,12 +20,17 @@ export type {
 } from './others';
 export type {
   FormComponentsProps,
-  InputProps,
+  InputDefaultProps,
   OptionsSelectAndSelectSearchProps,
-  SelectSearchProps,
-  SelectProps,
+  SelectSearchDefaultProps,
+  SelectDefaultProps,
   InputSelectDefaultExtends,
   InputSelectDefaultStylesExtends,
+  DefaultStylesProps,
+  LabelProps,
+  SliderRangeDefaultProps,
+  SliderRangeStylesExtends,
+  SliderRangeStylesExtendsProps,
 } from './component';
 export type { THref, TLink, TRoutes } from './route';
 export type { TDefaultTypes, THeaderProps } from './header';

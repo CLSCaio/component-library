@@ -11,7 +11,6 @@ export const Select = ({
   maxW = 'block',
   transform,
   readOnly,
-  className,
   placeholder,
   border = 'inline',
   handleClean,
@@ -68,7 +67,7 @@ export const Select = ({
   }, [meta.error]);
 
   return (
-    <S.Container maxW={maxW} className={className}>
+    <S.Container maxW={maxW}>
       <C.Group
         pos={{ type: 'relative' }}
         maxW="block"
@@ -133,18 +132,22 @@ export const Select = ({
             data-gtm-name={label?.name}
           />
 
-          {!disabled && !readOnly && !isLoading && options.length > 0 && (
-            <S.Datalist datalistView={datalistView}>
-              {options.map((option, i) => (
-                <S.Option
-                  key={`select-option${+i}`}
-                  onClick={() => setSelectValue(option.value)}
-                >
-                  {option.value}
-                </S.Option>
-              ))}
-            </S.Datalist>
-          )}
+          {!disabled &&
+            !readOnly &&
+            !isLoading &&
+            options &&
+            options.length > 0 && (
+              <S.Datalist datalistView={datalistView}>
+                {options.map((option, i) => (
+                  <S.Option
+                    key={`select-option${+i}`}
+                    onClick={() => setSelectValue(option.value)}
+                  >
+                    {option.value}
+                  </S.Option>
+                ))}
+              </S.Datalist>
+            )}
           <S.Toggle
             disabled={disabled || readOnly || isLoading}
             border={border}

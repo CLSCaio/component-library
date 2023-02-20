@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 20px;
   }
 
-  body, #root {
+  body, #root, form {
     display: flex;
     align-items: center;
     justify-content: center;

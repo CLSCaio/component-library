@@ -38,7 +38,7 @@ export const Overview: Story<InputProps> = args => {
   });
 
   return (
-    <form onSubmit={form.handleSubmit} style={{ width: '100%' }}>
+    <form onSubmit={form.handleSubmit}>
       <FormikProvider value={form}>
         <Input {...args} />
       </FormikProvider>
