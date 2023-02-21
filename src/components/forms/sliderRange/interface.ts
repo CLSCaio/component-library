@@ -1,6 +1,13 @@
-import { SliderRangeStylesExtendsProps, SliderRangeDefaultProps } from '@types';
+import {
+  SliderRangeStylesExtendsProps,
+  SliderRangeDefaultProps,
+  InputSelectDefaultStylesExtends,
+} from '@types';
 
-export interface SliderRangeStyles extends SliderRangeStylesExtendsProps {
+type SliderPropsExtendsStyles = InputSelectDefaultStylesExtends &
+  SliderRangeStylesExtendsProps;
+
+export interface SliderRangeStyles extends SliderPropsExtendsStyles {
   left?: number;
   right?: number;
 }

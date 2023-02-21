@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useField } from 'formik';
 
+import { convertValues } from '@utils';
+import { colors } from '@global';
 import * as C from '@components';
 
-import { convertValues } from '@utils';
 import * as I from './interface';
 import * as S from './styles';
 
@@ -14,11 +15,9 @@ export const SliderRange = ({
   textMax = 'Max: ',
   maxW,
   name,
-  border,
   disabled,
   isLoading,
   label,
-  readOnly,
   type = 'number',
   step = 'default',
   position = 'horizontal',
@@ -53,15 +52,20 @@ export const SliderRange = ({
   };
 
   const convertValueForView = (value: number) => {
-    if (!value) return;
+    if (value.toString() === '') return;
     const types = {
       hour: `${convertValues({ type: 'hour', value })} h`,
-      number: value.toFixed(0),
-      km: `${value.toFixed(2)} km`,
+      number: value === 0 ? value : value.toFixed(2),
+      km: `${value === 0 ? value : value.toFixed(2)} km`,
       money: convertValues({ type: 'money', value }),
     };
 
     return types[type];
+  };
+
+  const loadingProps = {
+    color: colors.primary,
+    size: 20,
   };
 
   useEffect(() => {
@@ -86,55 +90,74 @@ export const SliderRange = ({
   }, [metaMin.value, metaMax.value]);
 
   return (
-    <S.Container maxW={maxW}>
+    <S.Container
+      maxW={maxW}
+      positionLabel={label?.position}
+      position={position}
+    >
       {label?.name && (
-        <C.Group gap={[10, 10]} align="center" maxW="maxContent">
+        <S.HStack position={position}>
           <S.Label
+            position={position}
             htmlFor={field.name}
-            disabled={disabled || readOnly || isLoading}
-            positionLabel={label.position}
-            border={border}
             boldLabel={label?.bold}
+            positionLabel={label?.position}
           >
             {label?.name} {label?.required && '*'}
           </S.Label>
           {label?.tooltip && (
             <C.Tooltip description={label?.tooltip} isLoading={isLoading} />
           )}
-        </C.Group>
+        </S.HStack>
       )}
 
-      <C.Group direction="column" maxW="block">
+      <S.SubContainer position={position}>
         <S.Section>
-          <p>
+          <S.MinText position={position}>
             {textMin} {convertValueForView(metaMin.value)}
-          </p>
-          <p>
+          </S.MinText>
+          <S.MaxText position={position}>
             {textMax} {convertValueForView(metaMax.value)}
-          </p>
+          </S.MaxText>
         </S.Section>
         <S.Wrapper position={position}>
-          <S.Slider variant={variant}>
-            <S.Bar variant={variant} left={inputMin} right={100 - inputMax} />
+          <S.Slider
+            variant={variant}
+            position={position}
+            disabled={disabled || isLoading}
+          >
+            <S.Bar
+              disabled={disabled || isLoading}
+              variant={variant}
+              position={position}
+              left={inputMin}
+              right={100 - inputMax}
+            />
           </S.Slider>
 
           <S.Field>
-            <S.Input
-              id="min-range"
-              type="range"
-              min={0}
-              max={100}
-              step={step === 'default' ? 1 : step === 'little' ? 10 : 100}
-              value={inputMin}
-              onChange={e => {
-                setInputMin(+e.currentTarget.value);
-              }}
-              onInput={verifyValuesOnInput}
-              onMouseLeave={verifyValuesOnMouseLeave}
-            />
-
-            {variant === 'doubleThumb' && (
-              <S.Input
+            {isLoading ? (
+              <S.LeftLoading {...loadingProps} />
+            ) : (
+              <S.SliderRange
+                id="min-range"
+                type="range"
+                min={0}
+                max={100}
+                step={step === 'default' ? 1 : step === 'little' ? 10 : 100}
+                value={inputMin}
+                onChange={e => {
+                  setInputMin(+e.currentTarget.value);
+                }}
+                onInput={verifyValuesOnInput}
+                onMouseLeave={verifyValuesOnMouseLeave}
+                disabled={disabled || isLoading}
+              />
+            )}
+            {variant === 'doubleThumb' && isLoading ? (
+              <S.RightLoading {...loadingProps} />
+            ) : (
+              <S.SliderRange
                 type="range"
                 min={0}
                 max={100}
@@ -145,11 +168,12 @@ export const SliderRange = ({
                 }}
                 onInput={verifyValuesOnInput}
                 onMouseLeave={verifyValuesOnMouseLeave}
+                disabled={disabled || isLoading}
               />
             )}
           </S.Field>
         </S.Wrapper>
-      </C.Group>
+      </S.SubContainer>
     </S.Container>
   );
 };

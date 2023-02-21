@@ -51,15 +51,19 @@ Overview.args = {
   options: [
     {
       value: '',
+      label: 'Select...',
     },
     {
       value: 'string text',
+      label: 'testing',
     },
     {
       value: '200',
+      label: 'number',
     },
     {
       value: 'true',
+      label: 'boolean',
     },
   ],
 };

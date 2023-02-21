@@ -13,6 +13,7 @@ function convertValueToMoney(value: number) {
 }
 
 function convertValueToHour(minutos: number) {
+  console.log('minuto: ', minutos);
   const horas = Math.floor(minutos / 60);
   const minutosRestantes = minutos % 60;
   const formatedValue = `${horas.toString().padStart(2, '0')}:${minutosRestantes
@@ -20,7 +21,8 @@ function convertValueToHour(minutos: number) {
     .toString()
     .padStart(2, '0')}`;
 
-  const valid24 = formatedValue === '24:00' ? '00:00' : formatedValue;
+  const valid0 = formatedValue === '0' ? '00:00' : formatedValue;
+  const valid24 = valid0 === '24:00' ? '00:00' : valid0;
 
   return valid24;
 }

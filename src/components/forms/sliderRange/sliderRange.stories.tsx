@@ -31,9 +31,11 @@ Overview.args = {
   maxW: 600,
   type: 'hour',
   label: {
-    name: 'Label SliderRange',
+    name: 'Label ',
+    tooltip: 'tooltip',
+    position: 'left',
   },
-  min: 60,
+  min: 0,
   max: 1440,
   name: ['sliderMin', 'sliderMax'],
 };

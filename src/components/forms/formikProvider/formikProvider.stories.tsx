@@ -70,12 +70,12 @@ export const Overview: Story = args => (
     <Select
       name="select1"
       placeholder="Select"
-      options={[{ value: 'option 1' }]}
+      options={[{ value: 'option1', label: 'option 1' }]}
     />
     <SelectSearch
       name="selectSearch"
       placeholder="SelectSearch"
-      options={[{ value: 'option 1' }]}
+      options={[{ value: 'option1', label: 'option 1' }]}
     />
     <Button label="click here" type="submit" />
   </FormikProvider>

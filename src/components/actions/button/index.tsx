@@ -2,7 +2,6 @@ import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { MdAdsClick } from 'react-icons/md';
 
-import { Group } from '@components';
 import { colors } from '@global';
 
 import * as I from './interface';
@@ -42,9 +41,7 @@ export const Button = ({
         />
       )}
       {isLoading && !disabled ? (
-        <Group justify="around" maxW="block">
-          <ClipLoader color={colors.primary} size={25} />
-        </Group>
+        <ClipLoader color={colors.primary} size={25} />
       ) : (
         variant !== 'floating' && label
       )}

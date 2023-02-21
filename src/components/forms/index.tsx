@@ -5,13 +5,11 @@ export * from './formProvider';
 export * from './formikProvider';
 export * from './selectSearch';
 export * from './sliderRange';
+export * from './checkbox';
 
 export type { InputProps } from './input/interface';
 export type { ErrorMessageProps } from './errorMessage/interface';
-export type {
-  SelectProps,
-  OptionsSelectAndSelectSearchProps,
-} from './select/interface';
+export type { SelectProps, OptionsProps } from './select/interface';
 export type {
   FormProviderProps,
   FormComponentsProps,
@@ -19,3 +17,4 @@ export type {
 export type { FormikProviderProps } from './formikProvider/interface';
 export type { SelectSearchProps } from './selectSearch/interface';
 export type { SliderRangeProps } from './sliderRange/interface';
+export type { CheckboxProps } from './checkbox/interface';

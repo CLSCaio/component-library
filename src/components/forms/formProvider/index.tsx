@@ -6,6 +6,7 @@ import {
   Select,
   SelectSearch,
   SliderRange,
+  Checkbox,
   FormikProvider,
 } from '@components';
 
@@ -26,6 +27,7 @@ export const FormProvider = <Type extends {}>({
           selectProps,
           selectSearchProps,
           sliderRangeProps,
+          checkboxProps,
         },
         i,
       ) => (
@@ -56,6 +58,14 @@ export const FormProvider = <Type extends {}>({
               key={`formProvider-sliderRange-${+i}`}
               name={[name[0], 'max']}
               {...sliderRangeProps}
+            />
+          )}
+          {as === 'checkbox' && (
+            <Checkbox
+              key={`formProvider-checkbox-${+i}`}
+              name={name[0]}
+              label={checkboxProps?.label || ''}
+              {...checkboxProps}
             />
           )}
         </>

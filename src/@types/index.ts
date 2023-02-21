@@ -21,7 +21,7 @@ export type {
 export type {
   FormComponentsProps,
   InputDefaultProps,
-  OptionsSelectAndSelectSearchProps,
+  OptionsProps,
   SelectSearchDefaultProps,
   SelectDefaultProps,
   InputSelectDefaultExtends,
@@ -31,6 +31,8 @@ export type {
   SliderRangeDefaultProps,
   SliderRangeStylesExtends,
   SliderRangeStylesExtendsProps,
+  CheckboxDefaultProps,
+  CheckBoxExtendsProps,
 } from './component';
 export type { THref, TLink, TRoutes } from './route';
 export type { TDefaultTypes, THeaderProps } from './header';

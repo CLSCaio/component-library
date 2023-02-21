@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FormikProvider, useFormik } from 'formik';
 import { Meta, Story } from '@storybook/react';
 
@@ -33,6 +33,10 @@ export const Overview: Story<SelectSearchProps> = args => {
     onSubmit: values => console.log(values),
   });
 
+  useEffect(() => {
+    console.log(form.values.selectSearch);
+  }, [form.values.selectSearch]);
+
   return (
     <FormikProvider value={form}>
       <form onSubmit={form.handleSubmit}>
@@ -51,15 +55,19 @@ Overview.args = {
   options: [
     {
       value: '',
+      label: 'Select...',
     },
     {
       value: 'string text',
+      label: 'testing',
     },
     {
       value: '200',
+      label: 'number',
     },
     {
       value: 'true',
+      label: 'boolean',
     },
   ],
 };

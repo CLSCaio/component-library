@@ -33,14 +33,14 @@ export interface LabelProps {
 export interface DefaultStylesProps {
   maxW?: Tsize;
   disabled?: boolean;
-  readOnly?: boolean;
-  border?: TBordersType;
   isLoading?: boolean;
 }
 
 export interface InputSelectDefaultExtends extends DefaultStylesProps {
   handleClean?: boolean;
   transform?: TTransformType;
+  border?: TBordersType;
+  readOnly?: boolean;
 }
 
 interface InputSelectDefault extends InputSelectDefaultExtends {
@@ -55,12 +55,13 @@ export interface InputDefaultProps extends InputSelectDefault {
   type?: TInputTypes;
 }
 
-export type OptionsSelectAndSelectSearchProps = {
+export type OptionsProps = {
   value: string;
+  label: string;
 };
 
 export interface SelectDefaultProps extends InputSelectDefault {
-  options?: OptionsSelectAndSelectSearchProps[];
+  options?: OptionsProps[];
   errorMessage?: string;
 }
 
@@ -80,8 +81,7 @@ export interface SliderRangeStylesExtends {
 
 type SliderRangePropsExtends = SliderRangeStylesExtends & DefaultStylesProps;
 
-export type SliderRangeStylesExtendsProps = InputSelectDefaultStylesExtends &
-  SliderRangePropsExtends;
+export type SliderRangeStylesExtendsProps = SliderRangePropsExtends;
 
 export interface SliderRangeDefaultProps extends SliderRangePropsExtends {
   min?: number;
@@ -93,11 +93,25 @@ export interface SliderRangeDefaultProps extends SliderRangePropsExtends {
   type?: 'number' | 'hour' | 'km' | 'money';
 }
 
+export interface CheckboxDefaultProps extends CheckBoxExtendsProps {
+  label: string;
+  readOnly?: boolean;
+  isLoading?: boolean;
+  tooltip?: string;
+  align?: 'row' | 'column';
+}
+export interface CheckBoxExtendsProps {
+  disabled?: boolean;
+  bold?: boolean;
+  maxW?: Tsize;
+}
+
 export interface FormComponentsProps {
-  as: 'input' | 'select' | 'selectSearch' | 'sliderRange';
+  as: 'input' | 'select' | 'selectSearch' | 'sliderRange' | 'checkbox';
   name: [principal: string, secundary?: string];
   inputProps?: InputDefaultProps;
   sliderRangeProps?: SliderRangeDefaultProps;
   selectProps?: SelectDefaultProps;
   selectSearchProps?: SelectSearchDefaultProps;
+  checkboxProps?: CheckboxDefaultProps;
 }

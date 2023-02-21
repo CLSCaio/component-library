@@ -19,19 +19,23 @@ export const Select = ({
   disabled,
   isLoading,
   label,
-  ...rest
+  name,
+  id,
 }: I.SelectProps) => {
-  const [field, meta, helpers] = useField(rest);
+  const [field, meta, helpers] = useField(name);
 
   const [error, setError] = useState(false);
   const [errorStyle, setErrorStyle] = useState<'error' | undefined>(undefined);
+
+  const [inputValue, setInputValue] = useState(meta.value || '');
 
   const [datalistView, setDatalistView] = useState<'block' | 'none'>('none');
 
   const handleClearInput = () => helpers.setValue('');
 
-  const setSelectValue = (value: string) => {
-    helpers.setValue(value);
+  const setSelectValue = (option: I.OptionsProps) => {
+    helpers.setValue(option.value);
+    setInputValue(option.label);
     setDatalistView('none');
   };
 
@@ -94,7 +98,7 @@ export const Select = ({
         {label?.name && (
           <C.Group gap={[10, 10]} align="center" maxW="maxContent">
             <S.Label
-              htmlFor={rest.name}
+              htmlFor={name}
               disabled={disabled || readOnly || isLoading}
               error={errorStyle}
               positionLabel={label.position}
@@ -118,7 +122,10 @@ export const Select = ({
           positionLabel={label?.position}
         >
           <S.Select
-            {...field}
+            id={id}
+            name={name}
+            value={inputValue}
+            type="text"
             border={border}
             onFocus={() => setDatalistView('block')}
             onBlur={onBlur}
@@ -130,6 +137,7 @@ export const Select = ({
             required={label?.required}
             data-gtm-form="select"
             data-gtm-name={label?.name}
+            onChange={e => setInputValue(e.currentTarget.value)}
           />
 
           {!disabled &&
@@ -141,9 +149,9 @@ export const Select = ({
                 {options.map((option, i) => (
                   <S.Option
                     key={`select-option${+i}`}
-                    onClick={() => setSelectValue(option.value)}
+                    onClick={() => setSelectValue(option)}
                   >
-                    {option.value}
+                    {option.label}
                   </S.Option>
                 ))}
               </S.Datalist>

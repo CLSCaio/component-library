@@ -11,6 +11,7 @@ export default {
 
 const error = {
   input1: 'Write something in the input.',
+  checkbox: 'Select the checkbox',
 };
 
 type SubmitProps = {
@@ -19,6 +20,7 @@ type SubmitProps = {
   select: string;
   min: string;
   max: string;
+  checkbox: boolean;
 };
 
 const validationSchema = yup.object().shape({
@@ -32,6 +34,7 @@ const validationSchema = yup.object().shape({
       }
       return false;
     }),
+  checkbox: yup.string().required(),
 });
 
 const initialValues = {
@@ -40,10 +43,12 @@ const initialValues = {
   select: '',
   min: '',
   max: '',
+  checkbox: false,
 };
 
 const components: FormComponentsProps[] = [
   { as: 'input', name: ['input'], inputProps: { label: { name: 'input' } } },
+  { as: 'checkbox', name: ['checkbox'], checkboxProps: { label: 'Checkbox' } },
   {
     as: 'selectSearch',
     name: ['selectSearch'],
@@ -52,10 +57,20 @@ const components: FormComponentsProps[] = [
       label: { name: 'selectSearch' },
       options: [
         {
-          value: 'value 1',
+          value: '',
+          label: 'Select...',
         },
         {
-          value: 'value 2',
+          value: 'string text',
+          label: 'testing',
+        },
+        {
+          value: '200',
+          label: 'number',
+        },
+        {
+          value: 'true',
+          label: 'boolean',
         },
       ],
     },
@@ -68,10 +83,20 @@ const components: FormComponentsProps[] = [
       label: { name: 'select' },
       options: [
         {
-          value: 'value 1',
+          value: '',
+          label: 'Select...',
         },
         {
-          value: 'value 2',
+          value: 'string text',
+          label: 'testing',
+        },
+        {
+          value: '200',
+          label: 'number',
+        },
+        {
+          value: 'true',
+          label: 'boolean',
         },
       ],
     },

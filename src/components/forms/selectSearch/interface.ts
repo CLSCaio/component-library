@@ -1,5 +1,5 @@
 import {
-  OptionsSelectAndSelectSearchProps,
+  OptionsProps,
   InputSelectDefaultExtends,
   SelectSearchDefaultProps,
   InputSelectDefaultStylesExtends,
@@ -17,4 +17,4 @@ export interface SelectSearchStyle extends SelectStyleExtends {
   filteredOptions?: number;
 }
 
-export type { OptionsSelectAndSelectSearchProps };
+export type { OptionsProps };
