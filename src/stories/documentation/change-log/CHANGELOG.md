@@ -55,3 +55,17 @@
 ### Refactor
 - Making general adjustments to the storybook code
 
+### dia 02/20/23 - ### dia 02/22/23
+## Versão 0.0.14
+### Feat / Refactor 
+- General adjustments to improve the Storybook
+- Adjustments types to improve future maintenance
+ * FormProvider
+ * Input
+ * Select
+ * SelectSearch
+- Adding a new SliderRange component
+- Adding typing and/of SliderRange in the FormProvider
+- Adding a new Checkbox component
+- Adding typing and/of Checkbox in the FormProvider
+- Improving structure of select and selectSearch
