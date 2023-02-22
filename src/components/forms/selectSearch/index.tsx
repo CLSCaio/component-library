@@ -28,22 +28,26 @@ export const SelectSearch = ({
   const [error, setError] = useState(false);
   const [errorStyle, setErrorStyle] = useState<'error' | undefined>(undefined);
 
-  const [inputValue, setInputValue] = useState(meta.value || '');
+  const [selectSearchValue, setSelectSearchValue] = useState(meta.value || '');
 
   const [datalistView, setDatalistView] = useState<'block' | 'none'>('none');
 
   const filteredOptions = !options
     ? []
-    : !inputValue
+    : !selectSearchValue
     ? options
     : options.filter(({ label: l }) =>
-        l.toUpperCase().includes(inputValue?.toUpperCase()),
+        l.toUpperCase().includes(selectSearchValue?.toUpperCase()),
       );
-  const handleClearInput = () => helpers.setValue('');
 
-  const setSelectValue = (option: I.OptionsProps) => {
+  const handleClearInput = () => {
+    helpers.setValue('');
+    setSelectSearchValue('');
+  };
+
+  const onChangeOption = (option: I.OptionsProps) => {
     helpers.setValue(option.value);
-    setInputValue(option.label);
+    setSelectSearchValue(option.value ? option.label : '');
     setDatalistView('none');
   };
 
@@ -99,6 +103,19 @@ export const SelectSearch = ({
     }
   }, [meta.error]);
 
+  useEffect(() => {
+    if (meta.value === '') return;
+    const values = options?.filter(
+      ({ value, label: l }) => value === meta.value || l === meta.value,
+    );
+
+    if (!values?.length)
+      throw new Error('Cannot find this default value in options.');
+
+    helpers.setValue(values[0].value);
+    setSelectSearchValue(values[0].label);
+  }, []);
+
   return (
     <S.Container maxW={maxW}>
       <C.Group
@@ -152,7 +169,7 @@ export const SelectSearch = ({
           <S.SelectSearch
             name={name}
             id={id}
-            value={inputValue}
+            value={selectSearchValue}
             type="text"
             onKeyUp={onKeyUp}
             autoComplete="off"
@@ -165,7 +182,7 @@ export const SelectSearch = ({
             required={label?.required}
             data-gtm-form="select"
             data-gtm-name={label?.name}
-            onChange={e => setInputValue(e.currentTarget.value)}
+            onChange={e => setSelectSearchValue(e.currentTarget.value)}
           />
 
           {!disabled &&
@@ -180,7 +197,7 @@ export const SelectSearch = ({
                 {filteredOptions.map((option, i) => (
                   <S.Option
                     key={`select-option${+i}`}
-                    onClick={() => setSelectValue(option)}
+                    onClick={() => onChangeOption(option)}
                   >
                     {option.label}
                   </S.Option>
@@ -191,10 +208,10 @@ export const SelectSearch = ({
             disabled={disabled || readOnly || isLoading}
             border={border}
           >
-            {isLoading && <S.Loading color={colors.black} size={20} />}
+            {isLoading && <S.Loading color={colors.black} size={15} />}
 
             {!isLoading && handleClean && (
-              <S.ClearInput size={20} onClick={handleClearInput} />
+              <S.ClearInput size={15} onClick={handleClearInput} />
             )}
 
             {!isLoading && !disabled && !readOnly && datalistView === 'none' ? (

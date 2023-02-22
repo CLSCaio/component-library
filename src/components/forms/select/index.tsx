@@ -27,15 +27,18 @@ export const Select = ({
   const [error, setError] = useState(false);
   const [errorStyle, setErrorStyle] = useState<'error' | undefined>(undefined);
 
-  const [inputValue, setInputValue] = useState(meta.value || '');
+  const [selectValue, setSelectValue] = useState(meta.value || '');
 
   const [datalistView, setDatalistView] = useState<'block' | 'none'>('none');
 
-  const handleClearInput = () => helpers.setValue('');
+  const handleClearInput = () => {
+    helpers.setValue('');
+    setSelectValue('');
+  };
 
-  const setSelectValue = (option: I.OptionsProps) => {
+  const onChangeOption = (option: I.OptionsProps) => {
     helpers.setValue(option.value);
-    setInputValue(option.label);
+    setSelectValue(option.value ? option.label : '');
     setDatalistView('none');
   };
 
@@ -69,6 +72,19 @@ export const Select = ({
       setErrorStyle(undefined);
     }
   }, [meta.error]);
+
+  useEffect(() => {
+    if (meta.value === '') return;
+    const values = options?.filter(
+      ({ value, label: l }) => value === meta.value || l === meta.value,
+    );
+
+    if (!values?.length)
+      throw new Error('Cannot find this default value in options.');
+
+    helpers.setValue(values[0].value);
+    setSelectValue(values[0].label);
+  }, []);
 
   return (
     <S.Container maxW={maxW}>
@@ -124,7 +140,7 @@ export const Select = ({
           <S.Select
             id={id}
             name={name}
-            value={inputValue}
+            value={selectValue}
             type="text"
             border={border}
             onFocus={() => setDatalistView('block')}
@@ -137,7 +153,7 @@ export const Select = ({
             required={label?.required}
             data-gtm-form="select"
             data-gtm-name={label?.name}
-            onChange={e => setInputValue(e.currentTarget.value)}
+            onChange={e => setSelectValue(e.currentTarget.value)}
           />
 
           {!disabled &&
@@ -149,7 +165,7 @@ export const Select = ({
                 {options.map((option, i) => (
                   <S.Option
                     key={`select-option${+i}`}
-                    onClick={() => setSelectValue(option)}
+                    onClick={() => onChangeOption(option)}
                   >
                     {option.label}
                   </S.Option>
@@ -160,10 +176,10 @@ export const Select = ({
             disabled={disabled || readOnly || isLoading}
             border={border}
           >
-            {isLoading && <S.Loading color={colors.black} size={20} />}
+            {isLoading && <S.Loading color={colors.black} size={15} />}
 
             {!isLoading && handleClean && (
-              <S.ClearInput size={20} onClick={handleClearInput} />
+              <S.ClearInput size={15} onClick={handleClearInput} />
             )}
 
             {!isLoading && !disabled && !readOnly && datalistView === 'none' ? (

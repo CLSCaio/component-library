@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FormikProvider, useFormik } from 'formik';
 import { Meta, Story } from '@storybook/react';
 
@@ -26,7 +26,7 @@ export default {
 export const Overview: Story<SelectProps> = args => {
   const form = useFormik({
     initialValues: {
-      select: '',
+      select: '200',
     },
     validationSchema,
     validateOnBlur: true,

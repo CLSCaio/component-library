@@ -55,7 +55,7 @@ Overview.args = {
   options: [
     {
       value: '',
-      label: 'Select...',
+      label: 'Select a value...',
     },
     {
       value: 'string text',

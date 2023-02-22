@@ -13,7 +13,6 @@ function convertValueToMoney(value: number) {
 }
 
 function convertValueToHour(minutos: number) {
-  console.log('minuto: ', minutos);
   const horas = Math.floor(minutos / 60);
   const minutosRestantes = minutos % 60;
   const formatedValue = `${horas.toString().padStart(2, '0')}:${minutosRestantes

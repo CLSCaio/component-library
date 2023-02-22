@@ -160,6 +160,7 @@ export const Toggle = styled.span<I.SelectStyle>`
 
   display: flex;
   align-items: center;
+  gap: 2px;
 `;
 
 export const ClearInput = styled(AiOutlineClose)`
