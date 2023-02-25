@@ -36,9 +36,9 @@
 ### dia 02/11/23
 ## Versão 0.0.10
 ### Feat / Refactor
-- Adding new component selectSearch
-- Adding new component FormikProvider
-- Adding new component FormProvider
+- Adding a new component: selectSearch
+- Adding a new component: FormikProvider
+- Adding a new component: FormProvider
 * changing form component to formProvider
 - Adding propert icon for button
 - Improving select to make it look like selectSearch
@@ -55,7 +55,7 @@
 ### Refactor
 - Making general adjustments to the storybook code
 
-### dia 02/20/23 - ### dia 02/22/23
+### dia 02/20/23 - dia 02/22/23
 ## Versão 0.0.14
 ### Feat / Refactor 
 - General adjustments to improve the Storybook
@@ -64,8 +64,16 @@
  * Input
  * Select
  * SelectSearch
-- Adding a new SliderRange component
+- Adding a new component: SliderRange 
+- Adding a new component: Checkbox 
 - Adding typing and/of SliderRange in the FormProvider
-- Adding a new Checkbox component
 - Adding typing and/of Checkbox in the FormProvider
-- Improving structure of select and selectSearch
+- Improving structure of Select and SelectSearch
+
+### dia 02/25/23
+## Versão 0.0.15
+### Feat / Refactor 
+- Adding a new component: Pagination 
+- Improving structure of SliderRange
+- Improving structure of Checkbox
+- Improving structure of Tooltip for mobile
