@@ -27,9 +27,7 @@ export const Overview: Story<CheckboxProps> = args => {
 };
 
 Overview.args = {
-  // align: 'column',
   name: 'checkbox',
-  tooltip: 'kdjsalkdjsakl',
-  label:
-    'Label Checkbox! dlakdsj dlksajdlkajsdlkjasldasjdlkasjdlasjdlasjdlkasjdlksajdlkjsaldkjsalkdjaslkdjsalkdjalksjdlksajdlksajdklsa jdlksajdlksajdlkjdl kjsadlkajskl djsalkdj aslkdjlksj dlksja dkl',
+  tooltip: 'Im tooltip',
+  label: 'Label Checkbox!',
 };

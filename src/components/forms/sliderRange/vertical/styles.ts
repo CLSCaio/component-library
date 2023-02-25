@@ -5,34 +5,15 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import { convertSize } from '@convert';
 import { colors, fonts } from '@global';
 
-import * as I from './interface';
+import * as I from '../interface';
 
 export const Container = styled.div<I.SliderRangeStyles>`
   display: flex;
-  flex-direction: ${({ positionLabel, position }) =>
-    position === 'horizontal' || position === 'horizontal-reverse'
-      ? !positionLabel
-        ? 'column'
-        : positionLabel === 'top'
-        ? 'column'
-        : 'row'
-      : 'column'};
 
-  align-items: ${({ positionLabel, position }) =>
-    position === 'horizontal' || position === 'horizontal-reverse'
-      ? !positionLabel
-        ? 'flex-start'
-        : positionLabel === 'top'
-        ? 'flex-start'
-        : 'flex-end'
-      : 'flex-start'};
+  transform: rotate(90deg);
+  align-items: center;
 
-  ${({ position }) =>
-    position === 'vertical' || position === 'vertical-reverse'
-      ? css`
-          transform: rotate(90deg);
-        `
-      : null}
+  position: relative;
 
   gap: 10px;
 
@@ -40,18 +21,13 @@ export const Container = styled.div<I.SliderRangeStyles>`
   max-width: ${({ maxW }) => convertSize('1280px', maxW)};
 `;
 
-export const HStack = styled.span<I.SliderRangeStyles>`
+export const HStack = styled.span`
   display: flex;
   width: max-content;
   gap: 10px;
   align-items: center;
 
-  ${({ position }) =>
-    position === 'vertical' || position === 'vertical-reverse'
-      ? css`
-          transform: rotate(-90deg) translate(-25px, -120px);
-        `
-      : null}
+  transform: rotate(-90deg);
 `;
 
 export const Label = styled.label<I.SliderRangeStyles>`
@@ -63,25 +39,6 @@ export const Label = styled.label<I.SliderRangeStyles>`
     css`
       font-weight: ${fonts.weights.bold};
     `};
-
-  ${({ positionLabel, position }) =>
-    position === 'horizontal' || position === 'horizontal-reverse'
-      ? positionLabel === 'left' &&
-        css`
-          transform: translateY(4px);
-        `
-      : null};
-`;
-
-export const SubContainer = styled.div<I.SliderRangeStyles>`
-  width: 100%;
-
-  ${({ position }) =>
-    position === 'vertical' || position === 'vertical-reverse'
-      ? css`
-          transform: rotate(180deg);
-        `
-      : null}
 `;
 
 export const Section = styled.section`
@@ -91,30 +48,26 @@ export const Section = styled.section`
   align-items: center;
 `;
 
-export const MinText = styled.p<I.SliderRangeStyles>`
-  display: flex;
-  gap: 10px;
-
-  ${({ position }) =>
-    position === 'vertical' || position === 'vertical-reverse'
-      ? css`
-          transform: rotate(90deg) translate(19px, 60px);
-        `
-      : null}
+const textStyles = css`
+  transform: rotate(-90deg);
+  position: absolute;
+  width: 250px;
+  text-align: center;
 `;
 
-export const MaxText = styled.p<I.SliderRangeStyles>`
-  ${({ position }) =>
-    position === 'vertical' || position === 'vertical-reverse'
-      ? css`
-          transform: rotate(90deg) translate(19px, -60px);
-        `
-      : null}
+export const MinText = styled.p`
+  ${textStyles};
+  right: -145px;
 `;
 
-export const Wrapper = styled.div<I.SliderRangeStyles>`
+export const MaxText = styled.p`
+  ${textStyles};
+  left: -65px;
+`;
+
+export const Wrapper = styled.div`
   width: 100%;
-  margin-top: 10px;
+  transform: rotate(180deg);
 `;
 
 export const Slider = styled.div<I.SliderRangeStyles>`
@@ -122,13 +75,13 @@ export const Slider = styled.div<I.SliderRangeStyles>`
   position: relative;
   border-radius: 8px;
 
-  ${({ position, disabled }) =>
-    position === 'horizontal' || position === 'vertical'
+  ${({ position }) =>
+    position === 'vertical'
       ? css`
-          background: ${colors.secundary};
+          background: ${colors.primary};
         `
       : css`
-          background: ${!disabled ? colors.primary : colors.support.disabled};
+          background: ${colors.secundary};
         `}
 `;
 
@@ -139,13 +92,13 @@ export const Bar = styled.div<I.SliderRangeStyles>`
   border-radius: 8px;
   position: absolute;
 
-  ${({ position, disabled }) =>
-    position === 'horizontal' || position === 'vertical'
+  ${({ position }) =>
+    position === 'vertical'
       ? css`
-          background: ${!disabled ? colors.primary : colors.support.disabled};
+          background: ${colors.secundary};
         `
       : css`
-          background: ${colors.secundary};
+          background: ${colors.primary};
         `}
 `;
 
@@ -172,7 +125,7 @@ export const SliderRange = styled.input<I.SliderRangeStyles>`
     height: 17px;
     width: 17px;
     border-radius: 50%;
-    background: #fff;
+    background: ${colors.white};
     border: 2px solid
       ${({ disabled }) =>
         !disabled ? colors.primary : colors.support.disabled};
@@ -208,6 +161,13 @@ export const SliderRange = styled.input<I.SliderRangeStyles>`
   :disabled {
     cursor: not-allowed;
     pointer-events: none;
+
+    ::-webkit-slider-thumb {
+      cursor: not-allowed;
+      :hover {
+        box-shadow: none;
+      }
+    }
   }
 `;
 

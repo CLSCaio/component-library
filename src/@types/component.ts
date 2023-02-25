@@ -56,7 +56,7 @@ export interface InputDefaultProps extends InputSelectDefault {
 }
 
 export type OptionsProps = {
-  value: string;
+  value: string | boolean | number;
   label: string;
 };
 

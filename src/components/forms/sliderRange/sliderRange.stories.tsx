@@ -29,13 +29,14 @@ export const Overview: Story<SliderRangeProps> = args => {
 
 Overview.args = {
   maxW: 600,
-  type: 'hour',
+  type: 'money',
+  position: 'vertical',
   label: {
     name: 'Label ',
     tooltip: 'tooltip',
-    position: 'left',
+    position: 'top',
   },
   min: 0,
-  max: 1440,
+  max: 100000000,
   name: ['sliderMin', 'sliderMax'],
 };

@@ -23,7 +23,6 @@ export const Wrapper = styled.span`
 export const Label = styled.label<I.CheckboxStyles>`
   color: ${colors.primary};
   font-size: ${fonts.sizes.default};
-  width: calc(100% - 50px);
 
   display: inline-block;
   word-wrap: break-word;
