@@ -31,8 +31,8 @@ export type {
   SliderRangeDefaultProps,
   SliderRangeStylesExtends,
   SliderRangeStylesExtendsProps,
-  CheckboxDefaultProps,
-  CheckBoxExtendsProps,
+  CheckboxAndSwitchDefaultProps,
+  CheckboxandSwitchExtendsProps,
 } from './component';
 export type { THref, TLink, TRoutes } from './route';
 export type { TDefaultTypes, THeaderProps } from './header';

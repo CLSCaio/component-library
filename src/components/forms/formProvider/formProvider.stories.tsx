@@ -21,6 +21,7 @@ type SubmitProps = {
   min: string;
   max: string;
   checkbox: boolean;
+  switch: boolean;
 };
 
 const validationSchema = yup.object().shape({
@@ -34,7 +35,7 @@ const validationSchema = yup.object().shape({
       }
       return false;
     }),
-  checkbox: yup.string().required(),
+  checkbox: yup.boolean().isTrue(),
 });
 
 const initialValues = {
@@ -43,12 +44,22 @@ const initialValues = {
   select: '',
   min: '',
   max: '',
-  checkbox: false,
+  checkbox: true,
+  switch: false,
 };
 
 const components: FormComponentsProps[] = [
   { as: 'input', name: ['input'], inputProps: { label: { name: 'input' } } },
-  { as: 'checkbox', name: ['checkbox'], checkboxProps: { label: 'Checkbox' } },
+  {
+    as: 'checkbox',
+    name: ['checkbox'],
+    checkboxAndSwitchProps: { label: 'Checkbox' },
+  },
+  {
+    as: 'switch',
+    name: ['switch'],
+    checkboxAndSwitchProps: { label: 'Switch' },
+  },
   {
     as: 'selectSearch',
     name: ['selectSearch'],

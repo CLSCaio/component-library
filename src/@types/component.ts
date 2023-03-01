@@ -93,25 +93,32 @@ export interface SliderRangeDefaultProps extends SliderRangePropsExtends {
   type?: 'number' | 'hour' | 'km' | 'money';
 }
 
-export interface CheckboxDefaultProps extends CheckBoxExtendsProps {
+export interface CheckboxAndSwitchDefaultProps
+  extends CheckboxandSwitchExtendsProps {
   label: string;
   readOnly?: boolean;
   isLoading?: boolean;
   tooltip?: string;
   align?: 'row' | 'column';
 }
-export interface CheckBoxExtendsProps {
+export interface CheckboxandSwitchExtendsProps {
   disabled?: boolean;
   bold?: boolean;
   maxW?: Tsize;
 }
 
 export interface FormComponentsProps {
-  as: 'input' | 'select' | 'selectSearch' | 'sliderRange' | 'checkbox';
+  as:
+    | 'input'
+    | 'select'
+    | 'selectSearch'
+    | 'sliderRange'
+    | 'checkbox'
+    | 'switch';
   name: [principal: string, secundary?: string];
   inputProps?: InputDefaultProps;
   sliderRangeProps?: SliderRangeDefaultProps;
   selectProps?: SelectDefaultProps;
   selectSearchProps?: SelectSearchDefaultProps;
-  checkboxProps?: CheckboxDefaultProps;
+  checkboxAndSwitchProps?: CheckboxAndSwitchDefaultProps;
 }
