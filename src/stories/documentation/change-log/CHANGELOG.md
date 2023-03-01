@@ -77,3 +77,10 @@
 - Improving structure of SliderRange
 - Improving structure of Checkbox
 - Improving structure of Tooltip for mobile
+
+### dia 01/01/23
+## Versão 0.0.16
+### Feat / Refactor 
+- Adding a new component: Switch 
+- Adding typing and/of Switch in the FormProvider
+- Optimized checkbox internal code
