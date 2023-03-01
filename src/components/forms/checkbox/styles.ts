@@ -14,31 +14,17 @@ export const Container = styled.div<I.CheckboxStyles>`
   max-width: ${({ maxW }) => convertSize('500px', maxW)};
 `;
 
-export const Wrapper = styled.span`
+export const Field = styled.span`
   display: flex;
   gap: 5px;
   width: max-content;
 `;
 
-export const Label = styled.label<I.CheckboxStyles>`
-  color: ${colors.primary};
-  font-size: ${fonts.sizes.default};
-
-  display: inline-block;
-  word-wrap: break-word;
-
-  ${({ bold }) =>
-    bold &&
-    css`
-      font-weight: ${fonts.weights.bold};
-    `};
-`;
-
-export const Box = styled.span<I.CheckboxStyles>`
+export const Toogle = styled.span<I.CheckboxStyles>`
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  background-color: white;
+  background-color: ${colors.white};
   border: 1px solid ${colors.primary};
 
   display: flex;
@@ -51,7 +37,7 @@ export const Box = styled.span<I.CheckboxStyles>`
           cursor: pointer;
 
           :hover {
-            border-color: ${colors.secundary};
+            border-color: ${colors.black};
           }
         `
       : css`
@@ -74,4 +60,18 @@ export const Checkbox = styled.input<I.CheckboxStyles>`
   text-overflow: ellipsis;
 
   border: none;
+`;
+
+export const Label = styled.label<I.CheckboxStyles>`
+  color: ${colors.primary};
+  font-size: ${fonts.sizes.default};
+
+  display: inline-block;
+  word-wrap: break-word;
+
+  ${({ bold }) =>
+    bold &&
+    css`
+      font-weight: ${fonts.weights.bold};
+    `};
 `;

@@ -44,21 +44,25 @@ export const Checkbox = ({
   return (
     <S.Container maxW={maxW}>
       <C.Group maxW="block" gap={[10]} align="center" direction={align}>
-        <S.Wrapper>
-          <S.Box
+        <S.Field>
+          <S.Toogle
             disabled={block}
             error={errorStyle}
             onClick={() => !block && helpers.setValue(!meta.value)}
           >
-            {isLoading && <ClipLoader color={colors.primary} size={15} />}
-            {disabled && <BiBlock size={15} color={colors.support.error} />}
-            {!isLoading && !disabled && meta.value && (
-              <AiOutlineCheck size={15} color={colors.support.sucess} />
+            {isLoading ? (
+              <ClipLoader color={colors.primary} size={15} />
+            ) : disabled ? (
+              <BiBlock size={15} color={colors.support.error} />
+            ) : (
+              meta.value && (
+                <AiOutlineCheck size={15} color={colors.support.sucess} />
+              )
             )}
-          </S.Box>
+          </S.Toogle>
           <S.Checkbox {...field} type="checkbox" />
           {tooltip && <C.Tooltip description={tooltip} isLoading={isLoading} />}
-        </S.Wrapper>
+        </S.Field>
         {label && (
           <S.Label htmlFor={name} bold={bold}>
             {label}
