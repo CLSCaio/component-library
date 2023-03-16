@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "module": "es6",
+    "module": "ESNext",
     "declaration": true,
     "outDir": "./dist",
-    "isolatedModules": false,
+    "isolatedModules": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "noImplicitUseStrict": false,
+    "noImplicitUseStrict": true,
     "typeRoots" : ["node_modules/@types", "src/@types"],
+    "types": [
+      "react",
+      "node"
+    ],
     "rootDirs": ["./src", "./stories"],
     "strict": true,
     "target": "es6",
@@ -38,10 +42,10 @@
       "@types": ["src/@types"],
     },
   },
-  "types": [
-    "react",
-    "node"
-  ],
+  "tsc-alias": {
+    "verbose": false,
+    "resolveFullPaths": true,
+  },
   "include": [
     "src",
     "src/**/*",
